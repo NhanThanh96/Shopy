@@ -1,0 +1,27 @@
+//-------------------------------------------------------
+//- Modules :: Button
+//-------------------------------------------------------
+mixin buttons({ text, type, disabled, size, iconFont, isFull })
+  button.btn.button(
+    class= type ? `button--${type}` : null
+    class= size ? `button--${size}` : null
+    class= isFull ? 'button--full' : null
+  )
+    if iconFont
+      i.button__icon(
+        class= iconFont ? iconFont : null
+      )
+    | #{text}
+mixin buttons-disable({ text, type, disabled, size, iconFont, isFull })
+  button.btn.button(
+    class= type ? `button--${type}` : null
+    class= disabled ? `button--${disabled}` : null
+    class= size ? `button--${size}` : null
+    class= isFull ? 'button--full' : null
+    disabled= disabled ? 'disabled' : null
+  )
+    if iconFont
+      i.button__icon(
+        class= iconFont ? iconFont : null
+      )
+    | #{text}

@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Styleguides</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Styleguides" />
+    <meta name="keywords" content="Styleguides" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      body {
+        background-image: none;
+        background-color: #fff;
+      }
+
+      .code-example {
+        margin-bottom: 25px;
+      }
+
+      .code-example .demo {
+        box-sizing: border-box;
+        padding: 1.5rem;
+        position: relative;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem 0.25rem 0 0;
+      }
+
+      .code-example pre {
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.125);
+        padding: 15px;
+        border-radius: 0 0 0.25rem 0.25rem;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid pl-4 pr-4">
+      <div class="row justify-content-between align-items-center pt-4 pb-4">
+        <div class="col-auto mr-auto">
+          <h1>Lawson Coding Style Guides</h1>
+        </div>
+        <div class="col-auto"><a class="btn btn-success btn-sm" href="links.html">Back to list of page</a></div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <div class="list-group" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="position: fixed; z-index: 1; width: 160px; min-width: 160px;"><a class="list-group-item active" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-colors-tab" href="#v-pills-colors" aria-controls="v-pills-colors">Colors</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-buttons-tab" href="#v-pills-buttons" aria-controls="v-pills-buttons">Buttons</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-input-tab" href="#v-pills-input" aria-controls="v-pills-input">Input</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-selects-tab" href="#v-pills-selects" aria-controls="v-pills-selects">Selects</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-checkboxes-tab" href="#v-pills-checkboxes" aria-controls="v-pills-checkboxes">Checkboxes</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-radios-tab" href="#v-pills-radios" aria-controls="v-pills-radios">Radios</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-switcher-tab" href="#v-pills-switcher" aria-controls="v-pills-switcher">Switcher</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-rating-tab" href="#v-pills-rating" aria-controls="v-pills-rating">Rating</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-picker-tab" href="#v-pills-picker" aria-controls="v-pills-picker">Picker</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-publisher-tab" href="#v-pills-publisher" aria-controls="v-pills-publisher">Publisher</a>
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" role="tabpanel" id="v-pills-colors" aria-labelledby="v-pills-colors-tab">
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #ff6b00; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-orange: #ff6b00</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #e46000; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-dark-orange: #e46000</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #ff9359; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-light-orange: #ff9359</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #373737; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-black: #373737</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #888; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-dark-gray: #888</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #b5b5b5; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-gray: #b5b5b5</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #f0f0f0; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-light-gray: #f0f0f0</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #3471eb; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-blue: #3471eb</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #083ea9; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-dark-blue: #083ea9</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #fff; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-white: #fff</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #ec3f3f; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-red: #ec3f3f</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #43aa49; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-green: #43aa49</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #f05151; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-pink: #f05151</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #fa8383; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-light-pink: #fa8383</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #4a90e2; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-sky: #4a90e2</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo" style="background-color: #f1a336; width: 100%; height: 100px"></div>
+                    <pre><code>$cl-yellow: #f1a336</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-buttons" aria-labelledby="v-pills-buttons-tab">
+              <h2>Buttons Type</h2>
+              <div class="row">
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+buttons({
+  text: 'テキストデモ',
+  type: 'primary' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+buttons({
+  text: 'テキストデモ',
+  type: 'secondary' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+buttons({
+  text: 'テキストデモ',
+  type: 'olight' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+buttons({
+  text: 'テキストデモ',
+  type: 'blight' 
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Button Disable</h2>
+              <div class="row">
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary button--disabled" disabled="disabled">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ', 
+  disabled: 'disabled',
+  type: 'primary'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary button--disabled" disabled="disabled">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ', 
+  disabled: 'disabled',
+  type: 'secondary'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight button--disabled" disabled="disabled">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ', 
+  disabled: 'disabled',
+  type: 'olight'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight button--disabled" disabled="disabled">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ', 
+  disabled: 'disabled',
+  type: 'blight'
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Button Size</h2>
+              <div class="row">
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary button--xsmall">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'primary',
+  size: 'xsmall' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary button--xsmall">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'secondary',
+  size: 'xsmall' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight button--xsmall">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'olight',
+  size: 'xsmall' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight button--xsmall">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'blight',
+  size: 'xsmall' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary button--small">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'primary',
+  size: 'small' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary button--small">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'secondary',
+  size: 'small' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight button--small">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'olight',
+  size: 'small' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight button--small">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'blight',
+  size: 'small' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary button--medium">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'primary',
+  size: 'medium' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary button--medium">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'secondary',
+  size: 'medium' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight button--medium">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'olight',
+  size: 'medium' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight button--medium">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'blight',
+  size: 'medium' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary button--large">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'primary',
+  size: 'large' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary button--large">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'secondary',
+  size: 'large' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight button--large">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'olight',
+  size: 'large' 
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight button--large">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'blight',
+  size: 'large' 
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Button Icon</h2>
+              <div class="row">
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary"><i class="button__icon ion-android-done-all"></i>テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'primary',
+  iconFont: 'ion-android-done-all'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary"><i class="button__icon ion-android-done-all"></i>テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'secondary',
+  iconFont: 'ion-android-done-all'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight"><i class="button__icon ion-android-done-all"></i>テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'olight',
+  iconFont: 'ion-android-done-all'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight"><i class="button__icon ion-android-done-all"></i>テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'blight',
+  iconFont: 'ion-android-done-all'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary button--small"><i class="button__icon ion-android-done-all"></i>テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'primary',
+  size: 'small',
+  iconFont: 'ion-android-done-all'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary button--small"><i class="button__icon ion-android-done-all"></i>テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'secondary',
+  size: 'small',
+  iconFont: 'ion-android-done-all'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight button--small"><i class="button__icon ion-android-done-all"></i>テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'olight',
+  size: 'small',
+  iconFont: 'ion-android-done-all'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight button--small"><i class="button__icon ion-android-done-all"></i>テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'blight',
+  size: 'small',
+  iconFont: 'ion-android-done-all'
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Button Full size</h2>
+              <div class="row">
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--primary button--large button--full">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'primary',
+  size: 'large',
+  isFull: true
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--secondary button--large button--full">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'secondary',
+  size: 'large',
+  isFull: true
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--olight button--large button--full">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'olight',
+  size: 'large',
+  isFull: true
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="code-example">
+                    <div class="demo">
+                      <button class="btn button button--blight button--large button--full">テキストデモ
+                      </button>
+                    </div>
+                    <pre><code>+button({
+  text: 'テキストデモ',
+  type: 'blight',
+  size: 'large',
+  isFull: true
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-input" aria-labelledby="v-pills-input-tab">
+              <h2>Input field</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <label for="example-11">発注日
+                          </label>
+                          <div class="input-field">
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize form-readonly">
+                          <label>発注日</label>
+                          <input class="form-control" type="text" value="Kazuki Jin" readonly="readonly" />
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field-readonly({
+   label: '発注日',
+   value: 'Kazuki Jin'
+})(class='form-readonly')</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Input Icon</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <label for="example-11">発注日<span class="require">*</span>
+                          </label>
+                          <div class="input-field input-field--large input-field--icon-before"><span class="input-field__icon input-field__icon--before"><i class="ion-ios-email-outline"></i></span>
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   size: 'large',
+   require: true,
+   iconBefore: 'ion-ios-email-outline'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <label for="example-11">発注日<span class="require">*</span>
+                          </label>
+                          <div class="input-field input-field--large">
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" /><span class="input-field__icon input-field__icon--after js-toggle-icon"><i class="ion-ios-eye-outline"></i></span>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   size: 'large',
+   require: true,
+   iconAfter: 'ion-ios-eye-outline'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <label for="example-11">発注日<span class="require">*</span>
+                          </label>
+                          <div class="input-field input-field--icon-before"><span class="input-field__icon input-field__icon--before"><i class="ion-ios-email-outline"></i></span>
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   require: true,
+   iconBefore: 'ion-ios-email-outline'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <label for="example-11">発注日<span class="require">*</span>
+                          </label>
+                          <div class="input-field">
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" /><span class="input-field__icon input-field__icon--after js-toggle-icon"><i class="ion-ios-eye-outline"></i></span>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   require: true,
+   iconAfter: 'ion-ios-eye-outline'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <label for="example-11">発注日
+                          </label>
+                          <div class="input-field input-field--large input-field--icon-before"><span class="input-field__icon input-field__icon--before"><i class="ion-ios-email-outline"></i></span>
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" /><span class="input-field__icon input-field__icon--after js-toggle-icon"><i class="ion-ios-eye-outline"></i></span>
+                          </div>
+                          <p class="note-text">これはメモのテキストです</p>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   size: 'large',
+   iconBefore: 'ion-ios-email-outline',
+   iconAfter: 'ion-ios-eye-outline',
+   noteText: 'これはメモのテキストです'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize form-error">
+                          <label for="example-11">発注日<span class="require">*</span>
+                          </label>
+                          <div class="input-field input-field--large">
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" />
+                          </div>
+                          <p class="error-notice"><i class="error-notice__icon ion-close-circled"></i>もう一度入力してください</p>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   size: 'large',
+   require: true,
+   noticeError: 'もう一度入力してください'
+ })(class='form-error')</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Input Size</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <label for="example-11">発注日
+                          </label>
+                          <div class="input-field input-field--medium">
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   size: 'medium',
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <label for="example-11">発注日
+                          </label>
+                          <div class="input-field input-field--large">
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   size: 'large',
+ })</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Input file disabled</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize form-group--disabled">
+                          <label for="example-11">発注日<span class="require">*</span>
+                          </label>
+                          <div class="input-field">
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" disabled="disabled" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   require: true,
+   placeholder: '派遣期間',
+   disabled: 'disabled'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize form-group--disabled">
+                          <label for="example-11">発注日
+                          </label>
+                          <div class="input-field input-field--large input-field--icon-before"><span class="input-field__icon input-field__icon--before"><i class="ion-ios-email-outline"></i></span>
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" disabled="disabled" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   iconBefore: 'ion-ios-email-outline',
+   size: 'large',
+   disabled: 'disabled'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize form-group--disabled">
+                          <label for="example-11">発注日<span class="require">*</span>
+                          </label>
+                          <div class="input-field input-field--large">
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" disabled="disabled" /><span class="input-field__icon input-field__icon--after js-toggle-icon"><i class="ion-ios-eye-outline"></i></span>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   require: true,
+   placeholder: '派遣期間',
+   size: 'large',
+   iconAfter: 'ion-ios-eye-outline',
+   disabled: 'disabled'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize form-group--disabled">
+                          <label for="example-11">発注日
+                          </label>
+                          <div class="input-field input-field--large input-field--icon-before"><span class="input-field__icon input-field__icon--before"><i class="ion-ios-email-outline"></i></span>
+                            <input class="form-control" type="text" placeholder="派遣期間" id="example-11" disabled="disabled" /><span class="input-field__icon input-field__icon--after js-toggle-icon"><i class="ion-ios-eye-outline"></i></span>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   label: '発注日',
+   id: 'example-11',
+   placeholder: '派遣期間',
+   size: 'large',
+   iconBefore: 'ion-ios-email-outline',
+   iconAfter: 'ion-ios-eye-outline',
+   disabled: 'disabled'
+ })</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-selects" aria-labelledby="v-pills-selects-tab">
+              <h2>Selecbox</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="select-box">
+                          <select class="custom-select">
+                            <option value="owner">Owner</option>
+                            <option value="member">Member</option>
+                            <option value="viewer">Viewer</option>
+                            <option value="non-member">Non-member</option>
+                          </select>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+-
+  var options = [
+    { value: 'owner', display: 'Owner' },
+    { value: 'member', display: 'Member' },
+    { value: 'viewer', display: 'Viewer' },
+    { value: 'non-member', display: 'Non-member' }
+  ];
++selectbox({
+  id: 'member',
+  label: 'Employee',
+  options
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="select-box">
+                          <select class="custom-select custom-select--disabled" disabled="disabled">
+                            <option value="owner">Owner</option>
+                            <option value="member">Member</option>
+                            <option value="viewer">Viewer</option>
+                            <option value="non-member">Non-member</option>
+                          </select>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+-
+  var options = [
+    { value: 'owner', display: 'Owner' },
+    { value: 'member', display: 'Member' },
+    { value: 'viewer', display: 'Viewer' },
+    { value: 'non-member', display: 'Non-member' }
+  ];
++selectbox({
+  id: 'member',
+  disabled: 'disabled',
+  options
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="form-group form-customize">
+                          <label for="member">Employee<span class="require">*</span>
+                          </label>
+                          <div class="select-box">
+                            <select class="custom-select">
+                              <option value="owner">Owner</option>
+                              <option value="member">Member</option>
+                              <option value="viewer">Viewer</option>
+                              <option value="non-member">Non-member</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+ -
+   var options = [
+     { value: 'owner', display: 'Owner' },
+     { value: 'member', display: 'Member' },
+     { value: 'viewer', display: 'Viewer' },
+     { value: 'non-member', display: 'Non-member' }
+   ];
+ +group-selectbox({
+   id: 'member',
+   label: 'Employee',
+   require: true,
+   options
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="form-group form-customize form-error">
+                          <label for="member">Employee<span class="require">*</span>
+                          </label>
+                          <div class="select-box">
+                            <select class="custom-select">
+                              <option value="owner">Owner</option>
+                              <option value="member">Member</option>
+                              <option value="viewer">Viewer</option>
+                              <option value="non-member">Non-member</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+ -
+   var options = [
+     { value: 'owner', display: 'Owner' },
+     { value: 'member', display: 'Member' },
+     { value: 'viewer', display: 'Viewer' },
+     { value: 'non-member', display: 'Non-member' }
+   ];
+ +group-selectbox({
+   id: 'member',
+   label: 'Employee',
+   require: true,
+   options(class='form-error')
+ })</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-checkboxes" aria-labelledby="v-pills-checkboxes-tab">
+              <h2>Checkbox</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group input-checkbox-custom">
+                          <input class="input-checkbox" type="checkbox" name="checkbox" id="checkbox1" checked="checked" />
+                          <label for="checkbox1">checkbox label 1</label>
+                        </div>
+                        <div class="form-group input-checkbox-custom">
+                          <input class="input-checkbox" type="checkbox" name="checkbox" id="checkbox2" />
+                          <label for="checkbox2">checkbox label 2</label>
+                        </div>
+                        <div class="form-group input-checkbox-custom input-checkbox--disabled">
+                          <input class="input-checkbox" type="checkbox" name="checkbox" id="checkbox3" disabled="disabled" />
+                          <label for="checkbox3">checkbox label 3</label>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-checkbox({
+   name: 'checkbox',
+   id: 'checkbox1',
+   label: 'checkbox label 1',
+   checked: true
+ })
+ +group-input-checkbox({
+   name: 'checkbox',
+   id: 'checkbox2',
+   label: 'checkbox label 2',
+ })
+ +group-input-checkbox({
+   name: 'checkbox',
+   id: 'checkbox3',
+   label: 'checkbox label 3',
+   disabled: true
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group input-checkbox-custom input-checkbox-custom--no-label">
+                          <input class="input-checkbox" type="checkbox" name="checkbox" id="checkbox4" checked="checked" />
+                          <label for="checkbox4"></label>
+                        </div>
+                        <div class="form-group input-checkbox-custom input-checkbox-custom--no-label">
+                          <input class="input-checkbox" type="checkbox" name="checkbox" id="checkbox5" />
+                          <label for="checkbox5"></label>
+                        </div>
+                        <div class="form-group input-checkbox-custom input-checkbox--disabled input-checkbox-custom--no-label">
+                          <input class="input-checkbox" type="checkbox" name="checkbox" id="checkbox6" disabled="disabled" />
+                          <label for="checkbox6"></label>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-checkbox({
+   name: 'checkbox',
+   id: 'checkbox4',
+   checked: true
+ })(class='input-checkbox-custom--no-label')
+ +group-input-checkbox({
+   name: 'checkbox',
+   id: 'checkbox5',
+ })(class='input-checkbox-custom--no-label')
+ +group-input-checkbox({
+   name: 'checkbox',
+   id: 'checkbox6',
+   disabled: true
+ })(class='input-checkbox-custom--no-label')</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-radios" aria-labelledby="v-pills-radios-tab">
+              <h2>Radio button</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group input-radio-custom">
+                          <input class="input-checkbox" type="radio" name="language" id="jp" checked="checked" />
+                          <label for="jp">日本語</label>
+                        </div>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-checkbox" type="radio" name="language" id="en" />
+                          <label for="en">English</label>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>+group-input-radio({
+  name: 'language',
+  id: 'jp',
+  label: '日本語',
+  checked: true
+})
++group-input-radio({
+  name: 'language',
+  id: 'en',
+  label: 'English'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group input-radio-custom input-radio--disabled">
+                          <input class="input-checkbox" type="radio" name="language" id="vn" checked="checked" disabled="disabled" />
+                          <label for="vn">Viet Nam</label>
+                        </div>
+                        <div class="form-group input-radio-custom input-radio--disabled">
+                          <input class="input-checkbox" type="radio" name="language" id="cn" disabled="disabled" />
+                          <label for="cn">China</label>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>+group-input-radio({
+  name: 'language',
+  id: 'vn',
+  label: 'Viet Nam',
+  checked: true,
+  disabled: true
+})
++group-input-radio({
+  name: 'language',
+  id: 'cn',
+  label: 'China',
+  disabled: true
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-switcher" aria-labelledby="v-pills-switcher-tab">
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-rating" aria-labelledby="v-pills-rating-tab">
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-picker" aria-labelledby="v-pills-picker-tab">
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="v-pills-publisher" aria-labelledby="v-pills-publisher-tab">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+mixin page-list(data)
+  .container
+    .page-list
+      h1.page-list__title Page List
+      table.table.table-custom
+        thead
+          tr(style="background-color: black")
+            th #
+            th Link
+            th Categories
+            th Name Of Screen
+        each ent, num in data
+          tr(style=`background-color: ${ent.background}`)
+            th= (num)
+            td
+              - if(ent.url == '')
+                a('#').page-list__link= ent.title
+              - else
+                a(href=`${ent.url}.html`).page-list__link= ent.title
+            td
+              - if(ent.categories != '')
+                span.page-list__categories= ent.categories
+            td
+              - if(ent.url != '')
+                span.page-list__file-name= `${ent.url}.html`

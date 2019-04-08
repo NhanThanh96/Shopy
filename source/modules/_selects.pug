@@ -1,0 +1,23 @@
+//-------------------------------------------------------
+//- Modules :: Selectbox
+//-------------------------------------------------------
+mixin selectbox({id, label, options, disabled})
+  .select-box
+    select.custom-select(
+      class= disabled ? 'custom-select--disabled' : null
+      disabled= disabled ? 'disabled' : null
+    )
+      each val in options
+        option(value= val.value)
+          | #{val.display}
+mixin group-selectbox({id, label, require, options})
+  .form-group.form-customize()&attributes(attributes)
+    label(for= id ? `${id}` : null)
+      | #{label}
+      if require
+        span.require *
+    .select-box
+      select.custom-select
+        each val in options
+          option(value= `${val.value}`)
+            | #{val.display}

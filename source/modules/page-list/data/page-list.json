@@ -1,0 +1,52 @@
+{
+  "pageList": {
+    "data": [{
+        "title": "Style Guides",
+        "url": "styleguides",
+        "categories": "N/A",
+        "background": "gray"
+      }, {
+        "title": "Home",
+        "url": "home",
+        "categories": "Home",
+        "background": "#1984c6"
+      }, {
+        "title": "Form-basic",
+        "url": "form-basic",
+        "categories": "Form Basic",
+        "background": "#006666"
+      }, {
+        "title": "User-profile",
+        "url": "user-profile",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-activities",
+        "url": "user-activities",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-teams",
+        "url": "user-teams",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-projects",
+        "url": "user-projects",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-tasks",
+        "url": "user-tasks",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-profile-settings",
+        "url": "user-profile-settings",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }
+    ]
+  }
+}
+

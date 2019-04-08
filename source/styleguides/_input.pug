@@ -1,0 +1,216 @@
+//-------------------------------------------------------
+//- Styleguides :: Forms
+//-------------------------------------------------------
+
+h2 Input field
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間' })
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間'
+          | })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-readonly({ label: '発注日', value: 'Kazuki Jin' })( class='form-readonly' )
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field-readonly({
+          |    label: '発注日',
+          |    value: 'Kazuki Jin'
+          | })(class='form-readonly')
+
+h2 Input Icon
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', require: true, iconBefore: 'ion-ios-email-outline'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間',
+          |    size: 'large',
+          |    require: true,
+          |    iconBefore: 'ion-ios-email-outline'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', require: true, iconAfter: 'ion-ios-eye-outline'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間',
+          |    size: 'large',
+          |    require: true,
+          |    iconAfter: 'ion-ios-eye-outline'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', require: true, iconBefore: 'ion-ios-email-outline'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間',
+          |    require: true,
+          |    iconBefore: 'ion-ios-email-outline'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', require: true, iconAfter: 'ion-ios-eye-outline'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間',
+          |    require: true,
+          |    iconAfter: 'ion-ios-eye-outline'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', iconBefore: 'ion-ios-email-outline', iconAfter: 'ion-ios-eye-outline', noteText: 'これはメモのテキストです'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間',
+          |    size: 'large',
+          |    iconBefore: 'ion-ios-email-outline',
+          |    iconAfter: 'ion-ios-eye-outline',
+          |    noteText: 'これはメモのテキストです'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', require: true, noticeError: 'もう一度入力してください'})(class='form-error')
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間',
+          |    size: 'large',
+          |    require: true,
+          |    noticeError: 'もう一度入力してください'
+          |  })(class='form-error')
+
+h2 Input Size
+.row
+  each val, index in ['medium', 'large']
+    .col-6
+      .code-example
+        .demo
+          form.form-custom
+            +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: val})
+        pre
+          code
+            | form.form-custom
+            |  +group-input-field({
+            |    label: '発注日',
+            |    id: 'example-11',
+            |    placeholder: '派遣期間',
+            |    size: '#{val}',
+            |  })
+
+h2 Input file disabled
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', require: true, placeholder: '派遣期間', disabled: 'disabled'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    require: true,
+          |    placeholder: '派遣期間',
+          |    disabled: 'disabled'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', iconBefore: 'ion-ios-email-outline', size: 'large', disabled: 'disabled'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間',
+          |    iconBefore: 'ion-ios-email-outline',
+          |    size: 'large',
+          |    disabled: 'disabled'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', require: true, placeholder: '派遣期間', size: 'large', iconAfter: 'ion-ios-eye-outline', disabled: 'disabled'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    require: true,
+          |    placeholder: '派遣期間',
+          |    size: 'large',
+          |    iconAfter: 'ion-ios-eye-outline',
+          |    disabled: 'disabled'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', iconBefore: 'ion-ios-email-outline', iconAfter: 'ion-ios-eye-outline', disabled: 'disabled'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |    label: '発注日',
+          |    id: 'example-11',
+          |    placeholder: '派遣期間',
+          |    size: 'large',
+          |    iconBefore: 'ion-ios-email-outline',
+          |    iconAfter: 'ion-ios-eye-outline',
+          |    disabled: 'disabled'
+          |  })
+

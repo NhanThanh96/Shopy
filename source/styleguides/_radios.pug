@@ -1,0 +1,45 @@
+//-------------------------------------------------------
+//- Styleguides :: Radio button
+//-------------------------------------------------------
+h2 Radio button
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-radio({ name: 'language', id: 'jp', label: '日本語', checked: true})
+          +group-input-radio({ name: 'language', id: 'en', label: 'English'})
+      pre
+        code
+          | +group-input-radio({
+          |   name: 'language',
+          |   id: 'jp',
+          |   label: '日本語',
+          |   checked: true
+          | })
+          | +group-input-radio({
+          |   name: 'language',
+          |   id: 'en',
+          |   label: 'English'
+          | })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-radio({ name: 'language', id: 'vn', label: 'Viet Nam', checked: true, disabled: true})
+          +group-input-radio({ name: 'language', id: 'cn', label: 'China', disabled: true})
+      pre
+        code
+          | +group-input-radio({
+          |   name: 'language',
+          |   id: 'vn',
+          |   label: 'Viet Nam',
+          |   checked: true,
+          |   disabled: true
+          | })
+          | +group-input-radio({
+          |   name: 'language',
+          |   id: 'cn',
+          |   label: 'China',
+          |   disabled: true
+          | })

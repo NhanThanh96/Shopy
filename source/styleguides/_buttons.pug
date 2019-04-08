@@ -1,0 +1,97 @@
+//-------------------------------------------------------
+//- Styleguides :: Buttons
+//-------------------------------------------------------
+-
+  var buttonType = ['primary', 'secondary', 'olight', 'blight'];
+-
+  var buttonSize = ['xsmall', 'small', 'medium', 'large'];
+
+h2 Buttons Type
+.row
+  each val, index in buttonType
+    .col-3
+      .code-example
+        .demo
+          +buttons({ text: 'テキストデモ', type: val })
+        pre
+          code
+            | +buttons({
+            |   text: 'テキストデモ',
+            |   type: '#{val}' 
+            | })
+
+h2 Button Disable
+.row
+  each val, index in buttonType
+    .col-3
+      .code-example
+        .demo
+          +buttons-disable({ text: 'テキストデモ', type: val, disabled: 'disabled' })
+        pre
+          code
+            | +button({
+            |   text: 'テキストデモ', 
+            |   disabled: 'disabled',
+            |   type: '#{val}'
+            | })
+
+h2 Button Size
+.row
+  each val, btnIndex in buttonSize
+    each item, typeIndex in buttonType
+      .col-3
+        .code-example
+          .demo
+            +buttons({ text: 'テキストデモ', type: item, size: val })
+          pre
+            code
+              | +button({
+              |   text: 'テキストデモ',
+              |   type: '#{item}',
+              |   size: '#{val}' 
+              | })
+
+h2 Button Icon
+.row
+  each val, index in buttonType
+    .col-3
+      .code-example
+        .demo
+          +buttons({ text: 'テキストデモ', type: val, iconFont: 'ion-android-done-all' })
+        pre
+          code
+            | +button({
+            |   text: 'テキストデモ',
+            |   type: '#{val}',
+            |   iconFont: 'ion-android-done-all'
+            | })
+
+  each val, index in buttonType
+    .col-3
+      .code-example
+        .demo
+          +buttons({ text: 'テキストデモ', type: val, size: 'small', iconFont: 'ion-android-done-all' })
+        pre
+          code
+            | +button({
+            |   text: 'テキストデモ',
+            |   type: '#{val}',
+            |   size: 'small',
+            |   iconFont: 'ion-android-done-all'
+            | })
+         
+h2 Button Full size
+.row
+  each val, index in buttonType
+    .col-3
+      .code-example
+        .demo
+          +buttons({ text: 'テキストデモ', type: val, size: 'large', isFull: true })
+        pre
+          code
+            | +button({
+            |   text: 'テキストデモ',
+            |   type: '#{val}',
+            |   size: 'large',
+            |   isFull: true
+            | })

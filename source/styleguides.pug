@@ -1,0 +1,140 @@
+//-
+//- This page only for Frontend Developer
+
+extends modules/layout/_page-other
+
+block head
+  +head('Styleguides')
+  style.
+    body {
+      background-image: none;
+      background-color: #fff;
+    }
+    .code-example {
+      margin-bottom: 25px;
+    }
+    .code-example .demo {
+      box-sizing: border-box;
+      padding: 1.5rem;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem 0.25rem 0 0;
+    }
+    .code-example pre {
+      margin: 0;
+      background-color: rgba(0, 0, 0, 0.125);
+      padding: 15px;
+      border-radius: 0 0 0.25rem 0.25rem;
+    }
+
+block main
+
+  -
+    var components = [
+      {
+        id: 'colors',
+        title: 'Colors'
+      },
+      {
+        id: 'buttons',
+        title: 'Buttons'
+      },
+      {
+        id: 'input',
+        title: 'Input'
+      },
+      {
+        id: 'selects',
+        title: 'Selects'
+      },
+      {
+        id: 'checkboxes',
+        title: 'Checkboxes'
+      },
+      {
+        id: 'radios',
+        title: 'Radios'
+      },
+      {
+        id: 'switcher',
+        title: 'Switcher'
+      },
+      {
+        id: 'rating',
+        title: 'Rating'
+      },
+      {
+        id: 'picker',
+        title: 'Picker'
+      },
+      {
+        id: 'publisher',
+        title: 'Publisher',
+      }
+    ];
+
+  .container-fluid.pl-4.pr-4
+    .row.justify-content-between.align-items-center.pt-4.pb-4
+      .col-auto.mr-auto
+        h1 Lawson Coding Style Guides
+      .col-auto
+        a.btn.btn-success.btn-sm(href="links.html") Back to list of page
+    .row
+      .col-2
+        #v-pills-tab.list-group(
+          role="tablist"
+          aria-orientation="vertical"
+          style="position: fixed; z-index: 1; width: 160px; min-width: 160px;"
+        )
+          each val, index in components
+            - var findFirstItem = index === 0
+            a(
+              data-toggle="pill"
+              role="tab"
+              aria-selected="true"
+              id=`v-pills-${val.id}-tab`
+              href=`#v-pills-${val.id}`
+              aria-controls=`v-pills-${val.id}`
+              class=findFirstItem ? 'list-group-item active' : 'list-group-item'
+            )= val.title
+      .col-10
+        #v-pills-tabContent.tab-content
+          each val, index in components
+            - var findFirstItem = index === 0
+            div(
+              role="tabpanel"
+              id=`v-pills-${val.id}`
+              aria-labelledby=`v-pills-${val.id}-tab`
+              class=findFirstItem ? 'tab-pane fade show active' : 'tab-pane fade'
+            )
+              case val.id
+                when 'colors'
+                  include styleguides/_colors
+                when 'buttons'
+                  include styleguides/_buttons
+                when 'input'
+                  include styleguides/_input
+                when 'selects'
+                  include styleguides/_selects
+                when 'checkboxes'
+                  include styleguides/_checkboxes
+                when 'radios'
+                  include styleguides/_radios
+                when 'switcher'
+                  include styleguides/_switcher
+                when 'rating'
+                  include styleguides/_rating
+                when 'picker'
+                  include styleguides/_picker
+                when 'publisher'
+                  include styleguides/_publisher
+                default
+                  - throw new Error('"val.id" must be in "components" variable')
+
+
+
+
+
+
+
+                  

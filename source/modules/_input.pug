@@ -1,0 +1,57 @@
+//-------------------------------------------------------
+//- Modules :: Input
+//-------------------------------------------------------
+ 
+mixin group-input-field({ label, id, placeholder, size, require, iconBefore, iconAfter, noteText, noticeError, disabled})
+  .form-group.form-customize(
+    class= disabled ? `form-group--${disabled}` : null
+  )&attributes(attributes)
+    label( for= id ? id : null )
+      | #{label}
+      if require
+        span.require *
+    .input-field(
+      class= size ? `input-field--${size}` : null
+      class= iconBefore ? 'input-field--icon-before' : null
+    )
+      if iconBefore
+        span.input-field__icon.input-field__icon--before
+          i( class= iconBefore)
+      input.form-control(
+        type='text'
+        placeholder= placeholder
+        id= id
+        disabled= disabled ? 'disabled' : null
+      )
+      if iconAfter
+        span.input-field__icon.input-field__icon--after.js-toggle-icon
+          i( class= iconAfter )
+    if noteText
+      p.note-text= noteText
+    if noticeError
+      p.error-notice
+        i.error-notice__icon.ion-close-circled
+        | #{noticeError}
+
+mixin group-input-field-readonly({ label, value})
+  .form-group.form-customize()&attributes(attributes)
+    label
+      | #{label}
+    input.form-control(
+      type='text'
+      value= value
+      readonly='readonly'
+    )
+
+mixin group-input-radio({ name, id, label, checked, disabled})
+  .form-group.input-radio-custom
+    input.input-checkbox(
+      type= 'radio'
+      name= name
+      id= id
+      checked= checked ? 'checked' : null
+      disabled= disabled ? 'disabled' : null 
+    )
+    label(for= id)
+      | #{label}
+    

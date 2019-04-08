@@ -1,0 +1,45 @@
+// ======================================================
+// Abstracts :: Variables
+// ======================================================
+
+// Paths
+$path-image: '../images';
+$path-fonts: '../fonts';
+
+// Fonts
+// >> Font-family
+$font-family-base : 'Hiragino Sans', 'Noto Sans Japanese', 'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', '游ゴシック', 'メイリオ', 'MS ゴシック', 'sans-serif';
+// >> Color
+$cl-white       : #fff;
+$cl-red         : #f05151;
+$cl-orange      : #ff6b00;
+$cl-xlight-gray : #f0f0f0;
+$cl-light-gray  : #888;
+$cl-dark-gray   : #373737;
+// >> Font-size
+$font-size-small  : 12px;
+$font-size-base   : 13px;
+$font-size-medium : 16px;
+$font-size-large  : 18px;
+// >> Box shadow
+$bsh-primary : rgba(255, 107, 0, .2);
+$bsh-secondary : rgba(0, 0, 0, .1);
+
+// >> Font-weight
+$font-weight-light  : 300;
+$font-weight-base   : 400;
+$font-weight-xbase  : 500;
+$font-weight-bold   : 600;
+
+// Borders
+$border-radius-small : 2px;
+$border-radius-base  : 4px;
+$border-radius-medium: 8px;
+
+// z-index
+$z-indexes: (
+  base    : 1,
+  under   : -1,
+  modal   : 1001,
+  sidebar : 1000
+);

@@ -1,0 +1,31 @@
+//-------------------------------------------------------
+//- Styleguides :: Colors
+//-------------------------------------------------------
+
+-
+  var colors = [
+    { key: '$cl-orange', color: '#ff6b00' },
+    { key: '$cl-dark-orange', color: '#e46000' },
+    { key: '$cl-light-orange', color: '#ff9359' },
+    { key: '$cl-black', color: '#373737' },
+    { key: '$cl-dark-gray', color: '#888' },
+    { key: '$cl-gray', color: '#b5b5b5' },
+    { key: '$cl-light-gray', color: '#f0f0f0' },
+    { key: '$cl-blue', color: '#3471eb' },
+    { key: '$cl-dark-blue', color: '#083ea9' },
+    { key: '$cl-white', color: '#fff' },
+    { key: '$cl-red', color: '#ec3f3f' },
+    { key: '$cl-green', color: '#43aa49' },
+    { key: '$cl-pink', color: '#f05151' },
+    { key: '$cl-light-pink', color: '#fa8383' },
+    { key: '$cl-sky', color: '#4a90e2' },
+    { key: '$cl-yellow', color: '#f1a336' },
+  ];
+.row
+  each val in colors
+    .col-4
+      .code-example
+        .demo(style=`background-color: ${val.color}; width: 100%; height: 100px`)
+        pre
+          code
+            | #{val.key}: #{val.color}

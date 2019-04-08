@@ -1,0 +1,34 @@
+//-------------------------------------------------------
+//- Styleguides :: Textarea
+//-------------------------------------------------------
+
+h2 Textarea
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-textarea({ label: '備考', require: true, placeholder: 'コメントを書く',row: '2'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |     label: '備考',
+          |     require: true,
+          |     placeholder: 'コメントを書く',
+          |     row: '2'
+          | })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-textarea({ label: '備考', disabled: 'disabled', placeholder: 'コメントを書く',row: '2'})
+      pre
+        code
+          | form.form-custom
+          |  +group-input-field({
+          |     label: '備考',
+          |     disabled: 'disabled',
+          |     placeholder: 'コメントを書く',
+          |     row: '2'
+          | })
