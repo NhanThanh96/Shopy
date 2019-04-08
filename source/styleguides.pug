@@ -28,7 +28,6 @@ block head
     }
 
 block main
-
   -
     var components = [
       {
@@ -69,10 +68,9 @@ block main
       },
       {
         id: 'publisher',
-        title: 'Publisher',
+        title: 'Publisher'
       }
     ];
-
   .container-fluid.pl-4.pr-4
     .row.justify-content-between.align-items-center.pt-4.pb-4
       .col-auto.mr-auto
@@ -130,6 +128,7 @@ block main
                   include styleguides/_publisher
                 default
                   - throw new Error('"val.id" must be in "components" variable')
+          
 
 
 

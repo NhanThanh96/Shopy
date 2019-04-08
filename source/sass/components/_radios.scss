@@ -1,0 +1,62 @@
+// ======================================================
+// Components :: Radio Button
+// ======================================================
+// .input-radio-custom {
+//   position: relative;
+//   margin-bottom: 8px;
+//   input {
+//     &[type='radio'] {
+//       position: absolute;
+//       visibility: hidden;
+//     }
+//   }
+//   label {
+//     position: relative;
+//     padding-left: 35px;
+//     margin-bottom: 0;
+//     cursor: pointer;
+//     font-size: 13px;
+//     font-weight: $font-weight-light;
+//     color: $cl-dark-gray;
+//     &:before {
+//       content: '';
+//       position: absolute;
+//       top: -2px;
+//       left: 0;
+//       width: 24px;
+//       height: 24px;
+//       background-color: $cl-white;
+//       border: 1px solid $cl-xlight-gray;
+//       border-radius: 50%;
+//     }
+//     &:after {
+//       content: '';
+//       width: 14px;
+//       height: 14px;
+//       border-radius: 50%;
+//       position: absolute;
+//       top: 3px;
+//       left: 5px;
+//       background-color: $cl-orange;
+//       opacity: 0;
+//     }
+//   }
+// }
+// input {
+//   &[type='radio'] {
+//     position: absolute;
+//     visibility: hidden;
+//   }
+//   &:checked {
+//     & ~ label {
+//       &:after {
+//         opacity: 1;
+//       }
+//     }
+//   }
+// }
+// .input-radio {
+//   &--disabled {
+//     opacity: .8;
+//   }
+// }

@@ -37,17 +37,17 @@
 
 // 5. Components
 // -------------
-@import 'components/table';
 @import 'components/button';
 @import 'components/input';
-@import 'components/textarea';
-@import 'components/radio-button';
-@import 'components/checkbox';
-@import 'components/selectbox';
+@import 'components/checkboxes';
+@import 'components/radios';
+@import 'components/switcher';
+@import 'components/selects';
 
 // 6. Pages
 // --------
 @import 'pages/home';
+@import 'pages/form-basic';
 
 
 // 7. Themes

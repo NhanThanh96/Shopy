@@ -1,27 +1,54 @@
 //-------------------------------------------------------
 //- Modules :: Button
 //-------------------------------------------------------
-mixin buttons({ text, type, disabled, size, iconFont, isFull })
+
+mixin buttons({ text, type, disabled, size, isFull })
   button.btn.button(
+    type= 'button'
     class= type ? `button--${type}` : null
     class= size ? `button--${size}` : null
     class= isFull ? 'button--full' : null
+    class= disabled ? 'button--disabled' : null
   )
-    if iconFont
-      i.button__icon(
-        class= iconFont ? iconFont : null
-      )
     | #{text}
-mixin buttons-disable({ text, type, disabled, size, iconFont, isFull })
+mixin button-outline({ text, type, disabled, size, isFull })
   button.btn.button(
-    class= type ? `button--${type}` : null
-    class= disabled ? `button--${disabled}` : null
+    type= 'button'
+    class= type ? `button--outline-${type}` : null
     class= size ? `button--${size}` : null
     class= isFull ? 'button--full' : null
-    disabled= disabled ? 'disabled' : null
+    class= disabled ? 'button--disabled' : null
   )
-    if iconFont
-      i.button__icon(
-        class= iconFont ? iconFont : null
-      )
     | #{text}
+mixin button-subtle({ text, type, disabled, size, isFull })
+  button.btn.button(
+    type= 'button'
+    class= type ? `button--subtle-${type}` : null
+    class= size ? `button--${size}` : null
+    class= isFull ? 'button--full' : null
+    class= disabled ? 'button--disabled' : null
+  )
+    | #{text}
+mixin button-dropdown({ text, id, type, size, isFull, disabled, lists})
+  .btn-group(role= 'group')
+    button.btn.button(
+      type= 'button'
+      data-toggle= 'dropdown'
+      aria-expanded= 'false'
+      id= id ? `${id}` : null
+      class= type ? `button-${type}` : null
+      class= size ? `button--${size}` : null
+      class= isFull ? 'button--full' : null
+      class= disabled ? 'button--disabled' : null
+    )
+      | #{text}
+      span.caret
+    .dropdown-arrow
+    .dropdown-menu(
+      aria-labelledby= id ? `${id}` : null
+      x-placement="bottom-start"
+    )
+      each item, index in lists
+        a.dropdown-item(href="#")
+          | #{item}
+

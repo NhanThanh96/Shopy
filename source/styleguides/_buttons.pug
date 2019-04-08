@@ -2,9 +2,9 @@
 //- Styleguides :: Buttons
 //-------------------------------------------------------
 -
-  var buttonType = ['primary', 'secondary', 'olight', 'blight'];
+  var buttonType = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link'];
 -
-  var buttonSize = ['xsmall', 'small', 'medium', 'large'];
+  var buttonSize = ['large', 'default', 'small', 'xsmall'];
 
 h2 Buttons Type
 .row
@@ -12,11 +12,11 @@ h2 Buttons Type
     .col-3
       .code-example
         .demo
-          +buttons({ text: 'テキストデモ', type: val })
+          +buttons({ text: 'Button', type: val })
         pre
           code
             | +buttons({
-            |   text: 'テキストデモ',
+            |   text: 'Button',
             |   type: '#{val}' 
             | })
 
@@ -26,12 +26,40 @@ h2 Button Disable
     .col-3
       .code-example
         .demo
-          +buttons-disable({ text: 'テキストデモ', type: val, disabled: 'disabled' })
+          +buttons({ text: 'Disabled', type: val, disabled: 'disabled' })
         pre
           code
             | +button({
-            |   text: 'テキストデモ', 
+            |   text: 'Disabled', 
             |   disabled: 'disabled',
+            |   type: '#{val}'
+            | })
+
+h2 Button Outline
+.row
+  each val, index in buttonType
+    .col-3
+      .code-example
+        .demo
+          +button-outline({ text: 'Outline', type: val})
+        pre
+          code
+            | +button({
+            |   text: 'Outline', 
+            |   type: '#{val}'
+            | })
+
+h2 Button Subtle
+.row
+  each val, index in buttonType
+    .col-3
+      .code-example
+        .demo
+          +button-subtle({ text: 'Subtle', type: val})
+        pre
+          code
+            | +button({
+            |   text: 'Subtle', 
             |   type: '#{val}'
             | })
 
@@ -42,56 +70,48 @@ h2 Button Size
       .col-3
         .code-example
           .demo
-            +buttons({ text: 'テキストデモ', type: item, size: val })
+            +buttons({ text: val, type: item, size: val })
           pre
             code
               | +button({
-              |   text: 'テキストデモ',
+              |   text: '#{val}',
               |   type: '#{item}',
               |   size: '#{val}' 
               | })
 
-h2 Button Icon
-.row
-  each val, index in buttonType
-    .col-3
-      .code-example
-        .demo
-          +buttons({ text: 'テキストデモ', type: val, iconFont: 'ion-android-done-all' })
-        pre
-          code
-            | +button({
-            |   text: 'テキストデモ',
-            |   type: '#{val}',
-            |   iconFont: 'ion-android-done-all'
-            | })
-
-  each val, index in buttonType
-    .col-3
-      .code-example
-        .demo
-          +buttons({ text: 'テキストデモ', type: val, size: 'small', iconFont: 'ion-android-done-all' })
-        pre
-          code
-            | +button({
-            |   text: 'テキストデモ',
-            |   type: '#{val}',
-            |   size: 'small',
-            |   iconFont: 'ion-android-done-all'
-            | })
-         
 h2 Button Full size
 .row
   each val, index in buttonType
     .col-3
       .code-example
         .demo
-          +buttons({ text: 'テキストデモ', type: val, size: 'large', isFull: true })
+          +buttons({ text: 'Button', type: val, size: 'large', isFull: true })
         pre
           code
             | +button({
-            |   text: 'テキストデモ',
+            |   text: 'Button',
             |   type: '#{val}',
             |   size: 'large',
             |   isFull: true
             | })
+
+h2 Button Dropdown
+.row
+  each val, index in buttonType
+    -
+      var lists = ['Profile', 'Login', 'Logout'];
+    .col-3
+      .code-example
+        .demo
+          +button-dropdown({ text: 'Button dropdown', type: val, lists : lists })
+        pre
+          code
+            |  -
+            |    var lists = ['Profile', 'Login', 'Logout'];
+            | +button({
+            |   text: 'Button dropdown',
+            |   type: '#{val}',
+            |   lists
+            | })
+
+         
