@@ -26,13 +26,16 @@ block head
       padding: 15px;
       border-radius: 0 0 0.25rem 0.25rem;
     }
-
 block main
   -
     var components = [
       {
         id: 'colors',
-        title: 'Colors'
+        title: 'Colors',
+      },
+      {
+        id: 'typography',
+        title: 'Typography'
       },
       {
         id: 'buttons',
@@ -60,15 +63,15 @@ block main
       },
       {
         id: 'rating',
-        title: 'Rating'
+        title: 'Rating',
       },
       {
         id: 'picker',
-        title: 'Picker'
+        title: 'Picker',
       },
       {
         id: 'publisher',
-        title: 'Publisher'
+        title: 'Publisher',
       }
     ];
   .container-fluid.pl-4.pr-4
@@ -108,6 +111,8 @@ block main
               case val.id
                 when 'colors'
                   include styleguides/_colors
+                when 'typography'
+                  include styleguides/_typography
                 when 'buttons'
                   include styleguides/_buttons
                 when 'input'
@@ -128,12 +133,4 @@ block main
                   include styleguides/_publisher
                 default
                   - throw new Error('"val.id" must be in "components" variable')
-          
-
-
-
-
-
-
-
                   

@@ -62,6 +62,52 @@ h2 Button Subtle
             |   text: 'Subtle', 
             |   type: '#{val}'
             | })
+h2 Button Dropdown
+.row
+  each val, index in buttonType
+    -
+      var lists = [
+        {
+          name: 'dateFilter',
+          id: 'dToday',
+          mainLabel: 'Today',
+          subLabel: 'Mar 27',
+          checked: true
+        },
+        {
+          name: 'dateFilter',
+          id: 'dYesterday',
+          mainLabel: 'Yesterday',
+          subLabel: 'Mar 26',
+        }
+      ];
+    .col-3
+      .code-example
+        .demo
+          +button-dropdown({ text: 'Button dropdown', type: val, lists : lists })
+        pre
+          code
+            |-
+            |  var lists = [
+            |    {
+            |      name: 'dateFilter',
+            |      id: 'dToday',
+            |      mainLabel: 'Today',
+            |      subLabel: 'Mar 27',
+            |      checked: true
+            |    },
+            |    {
+            |      name: 'dateFilter',
+            |      id: 'dYesterday',
+            |      mainLabel: 'Yesterday',
+            |      subLabel: 'Mar 26',
+            |    }
+            |  ];
+            | +button({
+            |   text: 'Button dropdown',
+            |   type: '#{val}',
+            |   lists: lists
+            | })
 
 h2 Button Size
 .row
@@ -93,25 +139,6 @@ h2 Button Full size
             |   type: '#{val}',
             |   size: 'large',
             |   isFull: true
-            | })
-
-h2 Button Dropdown
-.row
-  each val, index in buttonType
-    -
-      var lists = ['Profile', 'Login', 'Logout'];
-    .col-3
-      .code-example
-        .demo
-          +button-dropdown({ text: 'Button dropdown', type: val, lists : lists })
-        pre
-          code
-            |  -
-            |    var lists = ['Profile', 'Login', 'Logout'];
-            | +button({
-            |   text: 'Button dropdown',
-            |   type: '#{val}',
-            |   lists
             | })
 
          

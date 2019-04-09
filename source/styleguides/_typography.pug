@@ -1,0 +1,48 @@
+//-------------------------------------------------------
+//- Styleguides :: Typography
+//-------------------------------------------------------
+-
+  var fontWeight = [
+    { key: '$font-weight-light', value: '300' },
+    { key: '$font-weight-base', value: '400' },
+    { key: '$font-weight-bold', value: '500' }
+  ];
+-
+  var fontSize = [
+    { key: '$font-size-small', value: '12px' },
+    { key: '$font-size-base', value: '14px' },
+    { key: '$font-size-medium', value: '16px' },
+    { key: '$font-size-large', value: '18px' }
+  ];
+
+.row
+  .col-6.mx-auto
+    .code-example
+      .demo
+        h3(style= 'font-family: Fira Sans ; font-weight: 400') Fira Sans
+      pre
+        code
+          | font-family: $font-family-base,
+          | font-weight: $font-weight-base
+h2 Font Weight
+.row
+  each item in fontWeight
+    .col-4
+      .code-example
+        .demo
+          span(style=`font-weight: ${item.value};`)
+            | Text
+        pre
+          code
+            | #{item.key}: #{item.value}
+h2 Font Size
+.row
+  each item in fontSize
+    .col-4
+      .code-example
+        .demo
+          h4(style=`font-size: ${item.value};`)
+            | Text
+        pre
+          code
+            | #{item.key}: #{item.value}

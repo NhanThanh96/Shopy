@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //- Modules :: Checkbox
 //-------------------------------------------------------
-mixin group-input-checkbox({name, id, label, disabled, desc, checked})
+mixin group-input-checkbox({name, id, label, disabled, isValid, desc, noticeError, checked})
   .custom-control.custom-checkbox()&attributes(attributes)
     input.custom-control__input(
       type= 'checkbox'
@@ -9,9 +9,16 @@ mixin group-input-checkbox({name, id, label, disabled, desc, checked})
       id= id ? `${id}` : null
       checked= checked ? 'checked' : null
       disabled= disabled ? 'disabled' : null
+      class= isValid ? 'is-valid' : null
+      class= isInValid ? 'is-invalid' : null
     )
     label.custom-control__label(for= id ? `${id}` : null)
       | #{label}
-      if desc
-        .text-muted
-          | #{desc}
+    if desc
+      .text-muted
+        | #{desc}
+    if noticeError
+      .invalid-feedback
+        i.fa.fa-exclamation-circle.fa-fw
+        | #{noticeError}
+    

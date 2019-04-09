@@ -12,13 +12,14 @@ $font-family-base : 'Fira Sans', sans-serif;
 // >> Color
 $cl-white       : #fff;
 $cl-dark-blue   : #346cb0;
-$cl-light-blue  : #015e82;
-$cl-green       : #007c69;
+$cl-light-blue  : #0179a8;
+$cl-xlight-blue : #5282bc;
+$cl-green       : #00a28a;
 $cl-red         : #f05151;
-$cl-orange      : #f5b548;
-$cl-purple      : #a95292;
-$cl-gray        : #e6e8ed;
-$cl-light-gray  : #f6f7f9;
+$cl-orange      : #f7c46c;
+$cl-purple      : #b76ba3;
+$cl-light-gray  : #e6e8ed;
+$cl-gray        : #888c9b;
 $cl-dark-gray   : #363642;
 // >> Font-size
 $font-size-small  : 12px;
@@ -32,7 +33,6 @@ $bsh-secondary : rgba(0, 0, 0, .1);
 // >> Font-weight
 $font-weight-light  : 300;
 $font-weight-base   : 400;
-$font-weight-xbase  : 500;
 $font-weight-bold   : 600;
 
 // Borders

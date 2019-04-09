@@ -2,17 +2,38 @@
 //- Modules :: Radio Button
 //-------------------------------------------------------
 
-mixin group-input-radio({name, id, label, disabled, desc, checked})
-  .custom-control.custom-checkbox()&attributes(attributes)
+mixin group-input-radio({name, id, label, disabled, isValid, desc, noticeError, checked})
+  .custom-control.custom-radio()&attributes(attributes)
     input.custom-control__input(
       type= 'radio'
       name= name ? `${name}` : null
       id= id ? `${id}` : null
       checked= checked ? 'checked' : null
       disabled= disabled ? 'disabled' : null
+      class= isValid ? 'is-valid' : null
+      class= isInValid ? 'is-invalid' : null
     )
     label.custom-control__label(for= id ? `${id}` : null)
       | #{label}
-      if desc
-        .text-muted
-          | #{desc}
+    if desc
+      .text-muted
+        | #{desc}
+    if noticeError
+      .invalid-feedback
+        i.fa.fa-exclamation-circle.fa-fw
+        | #{noticeError}
+
+mixin group-input-radio-dropdown({name, id, mainLabel, subLabel, checked})
+  .custom-control.custom-radio()&attributes(attributes)
+    input.custom-control__input(
+      type= 'radio'
+      name= name ? `${name}` : null
+      id= id ? `${id}` : null
+      value= mainLabel ? `${mainLabel}` : null
+      checked= checked ? 'checked' : null
+    )
+    label.custom-control__label.d-flex.justify-content-between(for= id ? `${id}` : null)
+      span
+        | #{mainLabel}
+      span.text-muted
+        | #{subLabel}

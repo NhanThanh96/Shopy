@@ -10,7 +10,7 @@ h2 Checkbox
           +group-input-checkbox({ name: 'checkbox', id: 'checkbox1', label: 'checkbox label 1', checked: true})
           +group-input-checkbox({ name: 'checkbox', id: 'checkbox2', label: 'checkbox label 2'})
           +group-input-checkbox({ name: 'checkbox', id: 'checkbox3', label: 'checkbox label 3', disabled: true})
-          +group-input-checkbox({ name: 'checkbox', id: 'checkbox4', label: 'checkbox label 4', desc: 'This is a help text to guide users to explain the choice you will be making.'})
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox4', label: 'checkbox label 4', desc: 'This is a help text to guide users'})
       pre
         code
           |form.form-custom
@@ -35,29 +35,94 @@ h2 Checkbox
           |    name: 'checkbox',
           |    id: 'checkbox4',
           |    label: 'checkbox label 4',
-          |    desc: 'This is a help text to guide users to explain the choice you will be making.'
+          |    desc: 'This is a help text to guide users'
           |  })
-  //- .col-6
-  //-   .code-example
-  //-     .demo
-  //-       form.form-custom
-  //-         +group-input-checkbox({ name: 'checkbox', id: 'checkbox5', checked: true})(class='input-checkbox-custom--no-label')
-  //-         +group-input-checkbox({ name: 'checkbox', id: 'checkbox6'})(class='input-checkbox-custom--no-label')
-  //-         +group-input-checkbox({ name: 'checkbox', id: 'checkbox7', disabled: true})(class='input-checkbox-custom--no-label')
-  //-     pre
-  //-       code
-  //-         |form.form-custom
-  //-         |  +group-input-checkbox({
-  //-         |    name: 'checkbox',
-  //-         |    id: 'checkbox4',
-  //-         |    checked: true
-  //-         |  })(class='input-checkbox-custom--no-label')
-  //-         |  +group-input-checkbox({
-  //-         |    name: 'checkbox',
-  //-         |    id: 'checkbox5',
-  //-         |  })(class='input-checkbox-custom--no-label')
-  //-         |  +group-input-checkbox({
-  //-         |    name: 'checkbox',
-  //-         |    id: 'checkbox6',
-  //-         |    disabled: true
-  //-         |  })(class='input-checkbox-custom--no-label')
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox5', label: 'checkbox label 5', checked: true})(class= 'custom-checkbox--line-through')
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox6', label: 'checkbox label 6'})(class= 'custom-checkbox--line-through')
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox7', label: 'checkbox label 7', disabled: true})(class= 'custom-checkbox--line-through')
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox8', label: 'checkbox label 8', desc: 'This is a help text to guide users'})(class= 'custom-checkbox--line-through')
+      pre
+        code
+          |form.form-custom
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox5',
+          |    label: 'checkbox label 5',
+          |    checked: true
+          |  })(class= 'custom-checkbox--line-through')
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox6',
+          |    label: 'checkbox label 6',
+          |  })(class= 'custom-checkbox--line-through')
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox7',
+          |    label: 'checkbox label 7',
+          |    disabled: true
+          |  })(class= 'custom-checkbox--line-through')
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox8',
+          |    label: 'checkbox label 8',
+          |    desc: 'This is a help text to guide users'
+          |  })(class= 'custom-checkbox--line-through')
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox9', label: 'checkbox label 9', checked: true})
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox10', label: 'checkbox label 10', isValid: true})
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox11', label: 'checkbox label 11', isInValid: true, noticeError: "Can't update your setting, please try again."})
+      pre
+        code
+          |form.form-custom
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox9',
+          |    label: 'checkbox label 9',
+          |    checked: true,
+          |  })
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox10',
+          |    label: 'checkbox label 10',
+          |    isValid: true,
+          |  })
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox11',
+          |    label: 'checkbox label 11',
+          |    isInValid: true,
+          |    noticeError: "Can't update your setting, please try again."
+          |  })
+
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox12', checked: true})
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox13'})
+          +group-input-checkbox({ name: 'checkbox', id: 'checkbox14', disabled: true})
+      pre
+        code
+          |form.form-custom
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox12',
+          |    checked: true
+          |  })
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox13',
+          |  })
+          |  +group-input-checkbox({
+          |    name: 'checkbox',
+          |    id: 'checkbox14',
+          |    disabled: true
+          |  })
+  
