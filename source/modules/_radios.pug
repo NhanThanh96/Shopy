@@ -2,23 +2,45 @@
 //- Modules :: Radio Button
 //-------------------------------------------------------
 
-mixin group-input-radio({name, id, label, disabled, isValid, desc, noticeError, checked})
-  .custom-control.custom-radio()&attributes(attributes)
-    input.custom-control__input(
+//- mixin group-input-radio({name, id, label, disabled, isValid, desc, noticeError, checked})
+//-   .custom-control.custom-radio()&attributes(attributes)
+//-     input.custom-control__input(
+//-       type= 'radio'
+//-       name= name ? `${name}` : null
+//-       id= id ? `${id}` : null
+//-       checked= checked ? 'checked' : null
+//-       disabled= disabled ? 'disabled' : null
+//-       class= isValid ? 'is-valid' : null
+//-       class= isInValid ? 'is-invalid' : null
+//-     )
+//-     label.custom-control__label(for= id ? `${id}` : null)
+//-       | #{label}
+//-     if desc
+//-       .text-muted
+//-         | #{desc}
+//-     if noticeError
+//-       .invalid-feedback
+//-         i.fa.fa-exclamation-circle.fa-fw
+//-         | #{noticeError}
+mixin group-input-radio({name, id, label, disabled, isValid, isInValid, desc, noticeError, checked})
+  .form-group.input-radio-custom()&attributes(attributes)
+    input.input-radio(
       type= 'radio'
       name= name ? `${name}` : null
       id= id ? `${id}` : null
       checked= checked ? 'checked' : null
       disabled= disabled ? 'disabled' : null
-      class= isValid ? 'is-valid' : null
-      class= isInValid ? 'is-invalid' : null
+      class= isValid ? 'input-radio--valid' : null
+      class= isInValid ? 'input-radio--invalid' : null
     )
-    label.custom-control__label(for= id ? `${id}` : null)
+    label(for= id ? `${id}` : null)
       | #{label}
+    block
     if desc
-      .text-muted
+      .input-desc
         | #{desc}
     if noticeError
-      .invalid-feedback
+      .error-notice
         i.fa.fa-exclamation-circle.fa-fw
         | #{noticeError}
+

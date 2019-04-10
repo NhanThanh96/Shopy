@@ -33,6 +33,32 @@
         border-radius: 0 0 0.25rem 0.25rem;
       }
 
+      .list-group-custom {
+        position: fixed;
+        z-index: 1;
+        width: 160px;
+        min-width: 160px;
+        max-height: 100%;
+        overflow: auto;
+      }
+
+      .list-group-custom::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: #ffffff78;
+      }
+
+      .list-group-custom::-webkit-scrollbar {
+        width: 6px;
+        background-color: #ffffff78;
+      }
+
+      .list-group-custom::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: #e6e8ed;
+      }
+
     </style>
   </head>
   <body>
@@ -45,7 +71,7 @@
       </div>
       <div class="row">
         <div class="col-2">
-          <div class="list-group" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="position: fixed; z-index: 1; width: 160px; min-width: 160px;"><a class="list-group-item active" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-colors-tab" href="#v-pills-colors" aria-controls="v-pills-colors">Colors</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-typography-tab" href="#v-pills-typography" aria-controls="v-pills-typography">Typography</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-buttons-tab" href="#v-pills-buttons" aria-controls="v-pills-buttons">Buttons</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-input-tab" href="#v-pills-input" aria-controls="v-pills-input">Input</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-selects-tab" href="#v-pills-selects" aria-controls="v-pills-selects">Selects</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-checkboxes-tab" href="#v-pills-checkboxes" aria-controls="v-pills-checkboxes">Checkboxes</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-radios-tab" href="#v-pills-radios" aria-controls="v-pills-radios">Radios</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-switcher-tab" href="#v-pills-switcher" aria-controls="v-pills-switcher">Switcher</a>
+          <div class="list-group list-group-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical"><a class="list-group-item active" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-colors-tab" href="#v-pills-colors" aria-controls="v-pills-colors">Colors</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-typography-tab" href="#v-pills-typography" aria-controls="v-pills-typography">Typography</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-buttons-tab" href="#v-pills-buttons" aria-controls="v-pills-buttons">Buttons</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-input-tab" href="#v-pills-input" aria-controls="v-pills-input">Input</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-selects-tab" href="#v-pills-selects" aria-controls="v-pills-selects">Selects</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-checkboxes-tab" href="#v-pills-checkboxes" aria-controls="v-pills-checkboxes">Checkboxes</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-radios-tab" href="#v-pills-radios" aria-controls="v-pills-radios">Radios</a><a class="list-group-item" data-toggle="pill" role="tab" aria-selected="true" id="v-pills-switcher-tab" href="#v-pills-switcher" aria-controls="v-pills-switcher">Switcher</a>
           </div>
         </div>
         <div class="col-10">
@@ -1001,8 +1027,7 @@ font-weight: $font-weight-base</code></pre>
   ];
 +selectbox({
   id: 'member',
-  label: 'Employee',
-  options
+  options: options
 })</code></pre>
                   </div>
                 </div>
@@ -1031,7 +1056,7 @@ font-weight: $font-weight-base</code></pre>
 +selectbox({
   id: 'member',
   disabled: 'disabled',
-  options
+  options: options
 })</code></pre>
                   </div>
                 </div>
@@ -1065,7 +1090,7 @@ font-weight: $font-weight-base</code></pre>
    id: 'member',
    label: 'Employee',
    require: true,
-   options
+   options: options
  })</code></pre>
                   </div>
                 </div>
@@ -1073,11 +1098,11 @@ font-weight: $font-weight-base</code></pre>
                   <div class="code-example">
                     <div class="demo">
                       <form class="form-customize">
-                        <div class="form-group form-customize form-error">
-                          <label for="member">Employee<span class="require">*</span>
+                        <div class="form-group form-customize">
+                          <label for="member">Employee
                           </label>
                           <div class="select-box">
-                            <select class="custom-select">
+                            <select class="custom-select" disabled="disabled">
                               <option value="owner">Owner</option>
                               <option value="member">Member</option>
                               <option value="viewer">Viewer</option>
@@ -1098,8 +1123,173 @@ font-weight: $font-weight-base</code></pre>
  +group-selectbox({
    id: 'member',
    label: 'Employee',
-   require: true,
-   options(class='form-error')
+   options : options
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="form-group form-customize">
+                          <label for="member">Employee
+                          </label>
+                          <div class="select-box">
+                            <select class="custom-select select-box--valid">
+                              <option value="owner">Owner</option>
+                              <option value="member">Member</option>
+                              <option value="viewer">Viewer</option>
+                              <option value="non-member">Non-member</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+ -
+   var options = [
+     { value: 'owner', display: 'Owner' },
+     { value: 'member', display: 'Member' },
+     { value: 'viewer', display: 'Viewer' },
+     { value: 'non-member', display: 'Non-member' }
+   ];
+ +group-selectbox({
+   id: 'member',
+   label: 'Employee',
+   options: options 
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="form-group form-customize">
+                          <label for="member">Employee
+                          </label>
+                          <div class="select-box">
+                            <select class="custom-select select-box--invalid">
+                              <option value="owner">Owner</option>
+                              <option value="member">Member</option>
+                              <option value="viewer">Viewer</option>
+                              <option value="non-member">Non-member</option>
+                            </select>
+                            <div class="error-notice"><i class="fa fa-exclamation-circle fa-fw"></i>Please select your state.</div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+ -
+   var options = [
+     { value: 'owner', display: 'Owner' },
+     { value: 'member', display: 'Member' },
+     { value: 'viewer', display: 'Viewer' },
+     { value: 'non-member', display: 'Non-member' }
+   ];
+ +group-selectbox({
+   id: 'member',
+   label: 'Employee',
+   options: options 
+ })</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Select Size</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="form-group form-customize">
+                          <label class="select-label--small" for="member">
+                          </label>
+                          <div class="select-box">
+                            <select class="custom-select select-box--small">
+                              <option value="owner">Owner</option>
+                              <option value="member">Member</option>
+                              <option value="viewer">Viewer</option>
+                              <option value="non-member">Non-member</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+ -
+   var options = [
+     { value: 'owner', display: 'Owner' },
+     { value: 'member', display: 'Member' },
+     { value: 'viewer', display: 'Viewer' },
+     { value: 'non-member', display: 'Non-member' }
+   ];
+ +group-selectbox({
+   id: 'member',
+   options: options 
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="form-group form-customize">
+                          <label class="select-label--default" for="member">
+                          </label>
+                          <div class="select-box">
+                            <select class="custom-select select-box--default">
+                              <option value="owner">Owner</option>
+                              <option value="member">Member</option>
+                              <option value="viewer">Viewer</option>
+                              <option value="non-member">Non-member</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+ -
+   var options = [
+     { value: 'owner', display: 'Owner' },
+     { value: 'member', display: 'Member' },
+     { value: 'viewer', display: 'Viewer' },
+     { value: 'non-member', display: 'Non-member' }
+   ];
+ +group-selectbox({
+   id: 'member',
+   options: options 
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <div class="form-group form-customize">
+                          <label class="select-label--large" for="member">
+                          </label>
+                          <div class="select-box">
+                            <select class="custom-select select-box--large">
+                              <option value="owner">Owner</option>
+                              <option value="member">Member</option>
+                              <option value="viewer">Viewer</option>
+                              <option value="non-member">Non-member</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+ -
+   var options = [
+     { value: 'owner', display: 'Owner' },
+     { value: 'member', display: 'Member' },
+     { value: 'viewer', display: 'Viewer' },
+     { value: 'non-member', display: 'Non-member' }
+   ];
+ +group-selectbox({
+   id: 'member',
+   options: options 
  })</code></pre>
                   </div>
                 </div>
@@ -1273,48 +1463,48 @@ font-weight: $font-weight-base</code></pre>
    name: 'checkbox',
    id: 'checkbox12',
    checked: true
- })
+ })(class= 'input-checkbox-custom--no-label')
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox13',
- })
+ })(class= 'input-checkbox-custom--no-label')
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox14',
    isIndeterminate: true
- })
+ })(class= 'input-checkbox-custom--no-label')
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox15',
    disabled: true
- })</code></pre>
+ })(class= 'input-checkbox-custom--no-label')</code></pre>
                   </div>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" role="tabpanel" id="v-pills-radios" aria-labelledby="v-pills-radios-tab">
-              <h2>Radio Button</h2>
+              <h2>radio</h2>
               <div class="row">
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
                       <form class="form-custom">
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio1" checked="checked" />
-                          <label class="custom-control__label" for="radio1">radio label 1</label>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio" type="radio" name="radio" id="radio1" checked="checked" />
+                          <label for="radio1">radio label 1</label>
                         </div>
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio2" />
-                          <label class="custom-control__label" for="radio2">radio label 2</label>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio" type="radio" name="radio" id="radio2" />
+                          <label for="radio2">radio label 2</label>
                         </div>
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio3" disabled="disabled" />
-                          <label class="custom-control__label" for="radio3">radio label 3</label>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio" type="radio" name="radio" id="radio3" disabled="disabled" />
+                          <label for="radio3">radio label 3</label>
                         </div>
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio4" />
-                          <label class="custom-control__label" for="radio4">radio label 4</label>
-                          <div class="text-muted">This is a help text to guide users</div>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio" type="radio" name="radio" id="radio4" />
+                          <label for="radio4">radio label 4</label>
+                          <div class="input-desc">This is a help text to guide users</div>
                         </div>
                       </form>
                     </div>
@@ -1348,18 +1538,18 @@ font-weight: $font-weight-base</code></pre>
                   <div class="code-example">
                     <div class="demo">
                       <form class="form-custom">
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio9" checked="checked" />
-                          <label class="custom-control__label" for="radio9">radio label 9</label>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio" type="radio" name="radio" id="radio9" checked="checked" />
+                          <label for="radio9">radio label 9</label>
                         </div>
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input is-valid" type="radio" name="radio" id="radio10" />
-                          <label class="custom-control__label" for="radio10">radio label 10</label>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio input-radio--valid" type="radio" name="radio" id="radio10" />
+                          <label for="radio10">radio label 10</label>
                         </div>
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio11" />
-                          <label class="custom-control__label" for="radio11">radio label 11</label>
-                          <div class="invalid-feedback"><i class="fa fa-exclamation-circle fa-fw"></i>Can't update your setting, please try again.</div>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio input-radio--invalid" type="radio" name="radio" id="radio11" />
+                          <label for="radio11">radio label 11</label>
+                          <div class="error-notice"><i class="fa fa-exclamation-circle fa-fw"></i>Can't update your setting, please try again.</div>
                         </div>
                       </form>
                     </div>
@@ -1389,35 +1579,34 @@ font-weight: $font-weight-base</code></pre>
                   <div class="code-example">
                     <div class="demo">
                       <form class="form-custom">
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio12" checked="checked" />
-                          <label class="custom-control__label" for="radio12"></label>
+                        <div class="form-group input-radio-custom input-radio-custom--no-label">
+                          <input class="input-radio" type="radio" name="radio" id="radio12" checked="checked" />
+                          <label for="radio12"></label>
                         </div>
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio13" />
-                          <label class="custom-control__label" for="radio13"></label>
+                        <div class="form-group input-radio-custom input-radio-custom--no-label">
+                          <input class="input-radio" type="radio" name="radio" id="radio13" />
+                          <label for="radio13"></label>
                         </div>
-                        <div class="custom-control custom-radio">
-                          <input class="custom-control__input" type="radio" name="radio" id="radio14" disabled="disabled" />
-                          <label class="custom-control__label" for="radio14"></label>
+                        <div class="form-group input-radio-custom input-radio-custom--no-label">
+                          <input class="input-radio" type="radio" name="radio" id="radio14" disabled="disabled" />
+                          <label for="radio14"></label>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
- +group-input-radio({
    name: 'radio',
    id: 'radio12',
    checked: true
- })
+ })(class= 'input-radio-custom--no-label')
  +group-input-radio({
    name: 'radio',
    id: 'radio13',
- })
+ })(class= 'input-radio-custom--no-label')
  +group-input-radio({
    name: 'radio',
    id: 'radio14',
    disabled: true
- })</code></pre>
+ })(class= 'input-radio-custom--no-label')</code></pre>
                   </div>
                 </div>
               </div>

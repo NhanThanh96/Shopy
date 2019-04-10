@@ -14,7 +14,7 @@ h2 Selecbox
               { value: 'viewer', display: 'Viewer' },
               { value: 'non-member', display: 'Non-member' }
             ];
-          +selectbox({ id: 'member', label: 'Employee', options: options })
+          +selectbox({ id: 'member', options: options })
       pre
         code
           |form.form-customize
@@ -27,8 +27,7 @@ h2 Selecbox
           |   ];
           | +selectbox({
           |   id: 'member',
-          |   label: 'Employee',
-          |   options
+          |   options: options
           | })
   .col-6
     .code-example
@@ -55,7 +54,7 @@ h2 Selecbox
           | +selectbox({
           |   id: 'member',
           |   disabled: 'disabled',
-          |   options
+          |   options: options
           | })
   .col-6
     .code-example
@@ -83,7 +82,7 @@ h2 Selecbox
           |    id: 'member',
           |    label: 'Employee',
           |    require: true,
-          |    options
+          |    options: options
           |  })
   .col-6
     .code-example
@@ -96,7 +95,7 @@ h2 Selecbox
               { value: 'viewer', display: 'Viewer' },
               { value: 'non-member', display: 'Non-member' }
             ];
-          +group-selectbox({ id: 'member', label: 'Employee', require: true, options: options })(class='form-error')
+          +group-selectbox({ id: 'member', label: 'Employee', disabled: 'disabled', options: options })
       pre
         code
           |form.form-customize
@@ -110,6 +109,90 @@ h2 Selecbox
           |  +group-selectbox({
           |    id: 'member',
           |    label: 'Employee',
-          |    require: true,
-          |    options(class='form-error')
+          |    options : options
           |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-customize
+          -
+            var options = [
+              { value: 'owner', display: 'Owner' },
+              { value: 'member', display: 'Member' },
+              { value: 'viewer', display: 'Viewer' },
+              { value: 'non-member', display: 'Non-member' }
+            ];
+          +group-selectbox({ id: 'member', label: 'Employee', isValid: true, options: options })
+      pre
+        code
+          |form.form-customize
+          |  -
+          |    var options = [
+          |      { value: 'owner', display: 'Owner' },
+          |      { value: 'member', display: 'Member' },
+          |      { value: 'viewer', display: 'Viewer' },
+          |      { value: 'non-member', display: 'Non-member' }
+          |    ];
+          |  +group-selectbox({
+          |    id: 'member',
+          |    label: 'Employee',
+          |    options: options 
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-customize
+          -
+            var options = [
+              { value: 'owner', display: 'Owner' },
+              { value: 'member', display: 'Member' },
+              { value: 'viewer', display: 'Viewer' },
+              { value: 'non-member', display: 'Non-member' }
+            ];
+          +group-selectbox({ id: 'member', label: 'Employee', isInvalid: true, noticeError: 'Please select your state.', options: options })
+      pre
+        code
+          |form.form-customize
+          |  -
+          |    var options = [
+          |      { value: 'owner', display: 'Owner' },
+          |      { value: 'member', display: 'Member' },
+          |      { value: 'viewer', display: 'Viewer' },
+          |      { value: 'non-member', display: 'Non-member' }
+          |    ];
+          |  +group-selectbox({
+          |    id: 'member',
+          |    label: 'Employee',
+          |    options: options 
+          |  })
+h2 Select Size
+-
+  selectSize = ['small', 'default', 'large'];
+.row
+  each item, index in selectSize
+    .col-6
+      .code-example
+        .demo
+          form.form-customize
+            -
+              var options = [
+                { value: 'owner', display: 'Owner' },
+                { value: 'member', display: 'Member' },
+                { value: 'viewer', display: 'Viewer' },
+                { value: 'non-member', display: 'Non-member' }
+              ];
+            +group-selectbox({ id: 'member', size: item, options: options })
+        pre
+          code
+            |form.form-customize
+            |  -
+            |    var options = [
+            |      { value: 'owner', display: 'Owner' },
+            |      { value: 'member', display: 'Member' },
+            |      { value: 'viewer', display: 'Viewer' },
+            |      { value: 'non-member', display: 'Non-member' }
+            |    ];
+            |  +group-selectbox({
+            |    id: 'member',
+            |    options: options 
+            |  })

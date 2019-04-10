@@ -1,0 +1,27 @@
+//-------------------------------------------------------
+//- Modules :: Switcher
+//-------------------------------------------------------
+mixin switcher({disabled, isOn, isSuccess, isDanger, size, onIcon, offIcon, onText, offText})
+  label.custom-switcher(
+    class= isSuccess ? 'custom-switcher--success' : ''
+    class= isDanger ? 'custom-switcher--danger' : ''
+    class= size ? `custom-switcher--${size}` : ''
+  )
+    input(
+      type= 'checkbox'
+      checked= isOn ? 'checked' : ''
+      disabled= disabled ? 'disabled' : ''
+    )
+    span.switcher-indicator
+    if onIcon
+      span.swicher-label--on
+        i(class= onIcon ? `${onIcon}` : null)
+    if offIcon
+      span.swicher-label--off
+        i(class= offIcon ? `${offIcon}` : null)
+    if onText
+      span.swicher-label--on
+        i(class= onText ? `${onText}` : null)
+    if offText
+      span.swicher-label--off
+        i(class= offText ? `${offText}` : null)

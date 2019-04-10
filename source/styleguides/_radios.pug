@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //- Styleguides :: Radio button
 //-------------------------------------------------------
-h2 Radio Button
+h2 radio
 .row
   .col-6
     .code-example
@@ -71,23 +71,22 @@ h2 Radio Button
     .code-example
       .demo
         form.form-custom
-          +group-input-radio({ name: 'radio', id: 'radio12', checked: true})
-          +group-input-radio({ name: 'radio', id: 'radio13'})
-          +group-input-radio({ name: 'radio', id: 'radio14', disabled: true})
+          +group-input-radio({ name: 'radio', id: 'radio12', checked: true})(class= 'input-radio-custom--no-label')
+          +group-input-radio({ name: 'radio', id: 'radio13'})(class= 'input-radio-custom--no-label')
+          +group-input-radio({ name: 'radio', id: 'radio14', disabled: true})(class= 'input-radio-custom--no-label')
       pre
         code
           |form.form-custom
-          |  +group-input-radio({
           |    name: 'radio',
           |    id: 'radio12',
           |    checked: true
-          |  })
+          |  })(class= 'input-radio-custom--no-label')
           |  +group-input-radio({
           |    name: 'radio',
           |    id: 'radio13',
-          |  })
+          |  })(class= 'input-radio-custom--no-label')
           |  +group-input-radio({
           |    name: 'radio',
           |    id: 'radio14',
           |    disabled: true
-          |  })
+          |  })(class= 'input-radio-custom--no-label')
