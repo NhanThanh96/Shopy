@@ -2,47 +2,14 @@
 //- Modules :: Button
 //-------------------------------------------------------
 
-mixin buttons({ text, type, disabled, size, isFull })
+mixin buttons({ text, type, iconFont, disabled, size, isFull })
   button.btn.button(
     type= 'button'
     class= type ? `button--${type}` : null
     class= size ? `button--${size}` : null
     class= isFull ? 'button--full' : null
     class= disabled ? 'button--disabled' : null
+    disabled= disabled ? 'disabled' : null
   )
     | #{text}
-mixin button-outline({ text, type, disabled, size, isFull })
-  button.btn.button(
-    type= 'button'
-    class= type ? `button--outline-${type}` : null
-    class= size ? `button--${size}` : null
-    class= isFull ? 'button--full' : null
-    class= disabled ? 'button--disabled' : null
-  )
-    | #{text}
-mixin button-subtle({ text, type, disabled, size, isFull })
-  button.btn.button(
-    type= 'button'
-    class= type ? `button--subtle-${type}` : null
-    class= size ? `button--${size}` : null
-    class= isFull ? 'button--full' : null
-    class= disabled ? 'button--disabled' : null
-  )
-    | #{text}
-
-mixin button-dropdown({ text, type, size, isFull, lists})
-  .dropdown
-    button.btn.button(
-      class= type ? `button--${type}` : null
-      class= size ? `button--${size}` : null
-      class= isFull ? 'button--full' : null
-      class= disabled ? 'button--disabled' : null
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    )
-      span= text
-    .dropdown-arrow.dropdown-arrow--right
-    .dropdown-menu.dropdown-menu-right.dropdown-menu-md(x-placement="bottom-end")
-      each item in lists
-        +group-input-radio-dropdown({name: item.name, id: item.id, mainLabel: item.mainLabel, subLabel: item.subLabel, checked: item.checked})
+    i(class= iconFont)

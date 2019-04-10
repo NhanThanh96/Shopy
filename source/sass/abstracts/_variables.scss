@@ -12,6 +12,7 @@ $font-family-base : 'Fira Sans', sans-serif;
 // >> Color
 $cl-white       : #fff;
 $cl-dark-blue   : #346cb0;
+$cl-xdark-blue   : #2b5a92;
 $cl-light-blue  : #0179a8;
 $cl-xlight-blue : #5282bc;
 $cl-green       : #00a28a;
@@ -30,11 +31,14 @@ $font-size-large  : 18px;
 $bsh-primary : rgba(255, 107, 0, .2);
 $bsh-secondary : rgba(0, 0, 0, .1);
 
+
 // >> Font-weight
 $font-weight-light  : 300;
 $font-weight-base   : 400;
 $font-weight-bold   : 600;
 
+// >> Border
+$border-gray         : #c6c9d5;
 // Borders
 $border-radius-small : 2px;
 $border-radius-base  : 4px;

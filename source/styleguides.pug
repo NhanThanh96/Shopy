@@ -39,7 +39,7 @@ block main
       },
       {
         id: 'buttons',
-        title: 'Buttons'
+        title: 'Buttons',
       },
       {
         id: 'input',
@@ -51,27 +51,15 @@ block main
       },
       {
         id: 'checkboxes',
-        title: 'Checkboxes'
+        title: 'Checkboxes',
       },
       {
         id: 'radios',
-        title: 'Radios'
+        title: 'Radios',
       },
       {
         id: 'switcher',
-        title: 'Switcher'
-      },
-      {
-        id: 'rating',
-        title: 'Rating',
-      },
-      {
-        id: 'picker',
-        title: 'Picker',
-      },
-      {
-        id: 'publisher',
-        title: 'Publisher',
+        title: 'Switcher',
       }
     ];
   .container-fluid.pl-4.pr-4
@@ -125,12 +113,7 @@ block main
                   include styleguides/_radios
                 when 'switcher'
                   include styleguides/_switcher
-                when 'rating'
-                  include styleguides/_rating
-                when 'picker'
-                  include styleguides/_picker
-                when 'publisher'
-                  include styleguides/_publisher
                 default
                   - throw new Error('"val.id" must be in "components" variable')
+
                   

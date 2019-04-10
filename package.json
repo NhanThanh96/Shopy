@@ -46,6 +46,7 @@
     "npm": "^3.10.6",
     "postcss-assets": "^5.0.0",
     "pug": "^2.0.0-beta6",
+    "pace": "^0.0.4",
     "popper.js": "^1.14.3",
     "run-sequence": "^1.2.2",
     "stylelint": "^8.4.0",
