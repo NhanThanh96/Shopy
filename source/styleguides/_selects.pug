@@ -9,24 +9,24 @@ h2 Selecbox
         form.form-customize
           -
             var options = [
-              { value: '', display: 'Choose...', selected: true},
+              { display: 'Choose...', selected: true},
               { value: 'United States', display: 'United States' },
               { value: 'Enland', display: 'England' },
             ];
-          +selectbox({
-                        id: 'country',
-                        options: options
-                      })
+          +group-selectbox({
+            id: 'country',
+            options: options
+          })
       pre
         code
           |form.form-customize
           | -
           |   var options = [
-          |     { value: '', display: 'Choose...', selected: true},
+          |     { display: 'Choose...', selected: true},
           |     { value: 'United States', display: 'United States' },
           |     { value: 'Enland', display: 'England' },
           |   ];
-          | +selectbox({
+          | +group-selectbox({
           |   id: 'country',
           |   options: options
           | })
@@ -36,25 +36,25 @@ h2 Selecbox
         form.form-customize
           -
             var options = [
-              { value: '', display: 'Choose...', selected: true},
+              { display: 'Choose...', selected: true},
               { value: 'United States', display: 'United States' },
               { value: 'Enland', display: 'England' },
             ];
-          +selectbox({
-                        id: 'country',
-                        disabled: 'disabled',
-                        options: options
-                      })
+          +group-selectbox({
+            id: 'country',
+            disabled: 'disabled',
+            options: options
+          })
       pre
         code
           |form.form-customize
           | -
           |   var options = [
-          |     { value: '', display: 'Choose...', selected: true},
+          |     { display: 'Choose...', selected: true},
           |     { value: 'United States', display: 'United States' },
           |     { value: 'Enland', display: 'England' },
           |   ];
-          | +selectbox({
+          | +group-selectbox({
           |   id: 'country',
           |   disabled: 'disabled',
           |   options: options
@@ -65,21 +65,21 @@ h2 Selecbox
         form.form-customize
           -
             var options = [
-              { value: '', display: 'Choose...', selected: true},
+              { display: 'Choose...', selected: true},
               { value: 'United States', display: 'United States' },
               { value: 'Enland', display: 'England' },
             ];
           +group-selectbox({
-                              id: 'country',
-                              label: 'Country',
-                              options: options
-                            })
+            id: 'country',
+            label: 'Country',
+            options: options
+          })
       pre
         code
           |form.form-customize
           |  -
           |    var options = [
-          |      { value: '', display: 'Choose...', selected: true},
+          |      { display: 'Choose...', selected: true},
           |      { value: 'United States', display: 'United States' },
           |      { value: 'Enland', display: 'England' },
           |    ];
@@ -94,22 +94,22 @@ h2 Selecbox
         form.form-customize
           -
             var options = [
-              { value: '', display: 'Choose...', selected: true},
+              { display: 'Choose...', selected: true},
               { value: 'United States', display: 'United States' },
               { value: 'Enland', display: 'England' },
             ];
           +group-selectbox({
-                              id: 'country',
-                              label: 'Country',
-                              disabled: 'disabled',
-                              options: options
-                            })
+            id: 'country',
+            label: 'Country',
+            disabled: 'disabled',
+            options: options
+          })
       pre
         code
           |form.form-customize
           |  -
           |    var options = [
-          |      { value: '', display: 'Choose...', selected: true},
+          |      { display: 'Choose...', selected: true},
           |      { value: 'United States', display: 'United States' },
           |      { value: 'Enland', display: 'England' },
           |    ];
@@ -125,22 +125,22 @@ h2 Selecbox
         form.form-customize
           -
             var options = [
-              { value: '', display: 'Choose...', selected: true},
+              { display: 'Choose...', selected: true},
               { value: 'United States', display: 'United States' },
               { value: 'Enland', display: 'England' },
             ];
           +group-selectbox({
-                              id: 'country',
-                              label: 'Country',
-                              isValid: true,
-                              options: options
-                            })
+            id: 'country',
+            label: 'Country',
+            isValid: true,
+            options: options
+          })
       pre
         code
           |form.form-customize
           |  -
           |    var options = [
-          |      { value: '', display: 'Choose...', selected: true},
+          |      { display: 'Choose...', selected: true},
           |      { value: 'United States', display: 'United States' },
           |      { value: 'Enland', display: 'England' },
           |    ];
@@ -156,23 +156,24 @@ h2 Selecbox
         form.form-customize
           -
             var options = [
-              { value: '', display: 'Choose...', selected: true},
+              { display: 'Choose...', selected: true},
               { value: 'United States', display: 'United States' },
               { value: 'Enland', display: 'England' },
             ];
           +group-selectbox({
-                              id: 'country',
-                              label: 'Country',
-                              isInvalid: true,
-                              noticeError: 'Please select your state.',
-                              options: options
-                            })
+            id: 'country',
+            label: 'Country',
+            isInvalid: true,
+            noticeError: 'Please select your state.',
+            iconError: 'fa fa-exclamation-circle.fa-fw',
+            options: options
+          })
       pre
         code
           |form.form-customize
           |  -
           |    var options = [
-          |      { value: '', display: 'Choose...', selected: true},
+          |      { display: 'Choose...', selected: true},
           |      { value: 'United States', display: 'United States' },
           |      { value: 'Enland', display: 'England' },
           |    ];
@@ -181,11 +182,12 @@ h2 Selecbox
           |    label: 'Country',
           |    isInvalid: true,
           |    noticeError: 'Please select your state.',
+          |    iconError: 'fa fa-exclamation-circle.fa-fw',
           |    options: options 
           |  })
 h2 Select Size
 -
-  selectSize = ['small', 'default', 'large'];
+  selectSize = ['small', 'large'];
 .row
   each item, index in selectSize
     .col-6
@@ -194,21 +196,21 @@ h2 Select Size
           form.form-customize
             -
               var options = [
-                { value: '', display: 'Choose...', selected: true},
+                { display: 'Choose...', selected: true},
                 { value: 'United States', display: 'United States' },
                 { value: 'Enland', display: 'England' },
               ];
             +group-selectbox({
-                                id: 'country',
-                                size: item,
-                                options: options
-                              })
+              id: 'country',
+              size: item,
+              options: options
+            })
         pre
           code
             |form.form-customize
             |  -
             |    var options = [
-            |      { value: '', display: 'Choose...', selected: true},
+            |      { display: 'Choose...', selected: true},
             |      { value: 'United States', display: 'United States' },
             |      { value: 'Enland', display: 'England' },
             |    ];
@@ -217,3 +219,30 @@ h2 Select Size
             |    size: #{item},
             |    options: options 
             |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-customize
+          -
+            var options = [
+              { display: 'Choose...', selected: true},
+              { value: 'United States', display: 'United States' },
+              { value: 'Enland', display: 'England' },
+            ];
+          +group-selectbox({
+            id: 'country',
+            options: options
+          })
+      pre
+        code
+          |form.form-customize
+          |  -
+          |    var options = [
+          |      { display: 'Choose...', selected: true},
+          |      { value: 'United States', display: 'United States' },
+          |      { value: 'Enland', display: 'England' },
+          |    ];
+          |  +group-selectbox({
+          |    id: 'country',
+          |    options: options 
+          |  })

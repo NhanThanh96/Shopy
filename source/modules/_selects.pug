@@ -1,27 +1,16 @@
 //-------------------------------------------------------
 //- Modules :: Selectbox
 //-------------------------------------------------------
-mixin selectbox({id, label, options, disabled})
-  .select-box
-    select.custom-select(
-      class= disabled ? 'custom-select--disabled' : null
-      disabled= disabled ? 'disabled' : null
-    )
-      each val in options
-        option(
-          value= val.value
-          selected= val.selected ? 'selected' : null
-        )
-          | #{val.display}
-mixin group-selectbox({id, label, require, disabled, size, isValid, isInvalid, noticeError,options})
+mixin group-selectbox({id, label, require, disabled, size, isValid, isInvalid, noticeError, iconError,options})
   .form-group.form-customize()&attributes(attributes)
-    label(
-      for= id ? `${id}` : null
-      class= size ? `select-label--${size}` : null
-    )
-      | #{label}
-      if require
-        span.require *
+    if label
+      label(
+        for= id ? `${id}` : null
+        class= size ? `select-label--${size}` : null
+      )
+        | #{label}
+        if require
+          span.require *
     .select-box
       select.custom-select(
         disabled= disabled ? 'disabled' : null
@@ -31,11 +20,12 @@ mixin group-selectbox({id, label, require, disabled, size, isValid, isInvalid, n
       )
         each val in options
           option(
-            value= `${val.value}`
+            value= val.value ? `${val.value}` : null
             selected= val.selected ? 'selected' : null
           )
             | #{val.display}
       if noticeError
         .error-notice
-          i.fa.fa-exclamation-circle.fa-fw
+          if iconError
+            i(class= iconError ? `${iconError}` : null)
           | #{noticeError}
