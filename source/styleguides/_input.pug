@@ -3,214 +3,444 @@
 //-------------------------------------------------------
 
 h2 Input field
+
 .row
   .col-6
     .code-example
       .demo
         form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間' })
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-1',
+            placeholder: 'e.g. johndoe@looper.com'
+          })
       pre
         code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間'
-          | })
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-1',
+          |     placeholder: 'e.g. johndoe@looper.com'
+          |   })
+
   .col-6
     .code-example
       .demo
         form.form-custom
-          +group-input-field-readonly({ label: '発注日', value: 'Kazuki Jin' })( class='form-readonly' )
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-2',
+            type: 'email',
+            placeholder: 'e.g. johndoe@looper.com',
+            noteText: "We'll never share your email with anyone else."
+          })
       pre
         code
-          | form.form-custom
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-2',
+          |     type: 'email',
+          |     placeholder: 'e.g. johndoe@looper.com',
+          |     noteText: "We'll never share your email with anyone else."
+          |   })
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-readonly({
+            label: 'Label',
+            id: 'input-3',
+            value: 'Value'
+          })
+      pre
+        code
+          |form.form-custom
           |  +group-input-field-readonly({
-          |    label: '発注日',
-          |    value: 'Kazuki Jin'
-          | })(class='form-readonly')
+          |     label: 'Label',
+          |     id: 'input-3',
+          |     value: 'Value'
+          | })
 
-h2 Input Icon
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-disabled({
+            label: 'Label',
+            id: 'input-4',
+            placeholder: 'Placeholder',
+            disabled: 'disabled'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-disabled({
+          |     label: 'Label',
+          |     id: 'input-4',
+          |     placeholder: 'Placeholder',
+          |     disabled: 'disabled'
+          |   })
 .row
   .col-6
     .code-example
       .demo
         form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', require: true, iconBefore: 'ion-ios-email-outline'})
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-5',
+            type: 'number',
+            min: '0',
+            max: '10',
+            value: '0',
+            placeholder: 'Amount (to the nearest dollar)'
+          })
       pre
         code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間',
-          |    size: 'large',
-          |    require: true,
-          |    iconBefore: 'ion-ios-email-outline'
-          |  })
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-5',
+          |     type: 'number',
+          |     min: '0',
+          |     max: '10',
+          |     value: '0',
+          |     placeholder: 'Amount (to the nearest dollar)'
+          |   })
   .col-6
     .code-example
       .demo
         form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', require: true, iconAfter: 'ion-ios-eye-outline'})
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-6',
+            type: 'file',
+            labelInput: 'Choose file'
+          })
       pre
         code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間',
-          |    size: 'large',
-          |    require: true,
-          |    iconAfter: 'ion-ios-eye-outline'
-          |  })
-  .col-6
-    .code-example
-      .demo
-        form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', require: true, iconBefore: 'ion-ios-email-outline'})
-      pre
-        code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間',
-          |    require: true,
-          |    iconBefore: 'ion-ios-email-outline'
-          |  })
-  .col-6
-    .code-example
-      .demo
-        form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', require: true, iconAfter: 'ion-ios-eye-outline'})
-      pre
-        code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間',
-          |    require: true,
-          |    iconAfter: 'ion-ios-eye-outline'
-          |  })
-  .col-6
-    .code-example
-      .demo
-        form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', iconBefore: 'ion-ios-email-outline', iconAfter: 'ion-ios-eye-outline', noteText: 'これはメモのテキストです'})
-      pre
-        code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間',
-          |    size: 'large',
-          |    iconBefore: 'ion-ios-email-outline',
-          |    iconAfter: 'ion-ios-eye-outline',
-          |    noteText: 'これはメモのテキストです'
-          |  })
-  .col-6
-    .code-example
-      .demo
-        form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', require: true, noticeError: 'もう一度入力してください'})(class='form-error')
-      pre
-        code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間',
-          |    size: 'large',
-          |    require: true,
-          |    noticeError: 'もう一度入力してください'
-          |  })(class='form-error')
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-6',
+          |     type: 'file',
+          |     labelInput: 'Choose file'
+          |   })
 
-h2 Input Size
 .row
-  each val, index in ['medium', 'large']
-    .col-6
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-7',
+            clearable: true,
+            value: 'Moonlight',
+            placeholder: 'Type something...'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-7',
+          |     clearable: true,
+          |     value: 'Moonlight',
+          |     placeholder: 'Type something...'
+          |   })
+
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-8',
+            spinner: true,
+            value: 'Moon',
+            placeholder: 'Type something...'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-8',
+          |     spinner: true,
+          |     value: 'Moon',
+          |     placeholder: 'Type something...'
+          |   })
+
+h2 Input field states
+
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-states({
+            label: 'Label',
+            id: 'input-9',
+            isValid: true,
+            noticeSuccess: "Success! You've done it.",
+            placeholder: 'Type something...'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-states({
+          |     label: 'Label',
+          |     id: 'input-9',
+          |     isValid: true,
+          |     noticeSuccess: "Success! You've done it.",
+          |     placeholder: 'Type something...'
+          |   })
+
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-states({
+            label: 'Label',
+            id: 'input-10',
+            isInvalid: true,
+            noticeError: " Sorry, the image must be at least 300×300.",
+            placeholder: 'Type something...'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-states({
+          |     label: 'Label',
+          |     id: 'input-10',
+          |     isInvalid: true,
+          |     noticeError: " Sorry, the image must be at least 300×300.",
+          |     placeholder: 'Type something...'
+          |   })
+
+h2 Input size
+-
+  var InputSizes = [
+    { size: 'small' },
+    { size: 'medium' },
+    { size: 'large' }
+  ];
+.row
+  each val in InputSizes
+    .col-4
       .code-example
         .demo
           form.form-custom
-            +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: val})
+            +group-input-field-base({
+              label: 'Label',
+              id: 'input-11',
+              size: val.size,
+              placeholder:'e.g. johndoe@looper.com'
+            })
         pre
           code
-            | form.form-custom
-            |  +group-input-field({
-            |    label: '発注日',
-            |    id: 'example-11',
-            |    placeholder: '派遣期間',
-            |    size: '#{val}',
-            |  })
+            |form.form-custom
+            |   +group-input-field-base({
+            |     label: 'Label',
+            |     id: 'input-11',
+            |     size: '#{val.size}'
+            |     placeholder: 'e.g. johndoe@looper.com'
+            |   })
 
-h2 Input file disabled
+h2 Labels
+
 .row
   .col-6
     .code-example
       .demo
         form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', require: true, placeholder: '派遣期間', disabled: 'disabled'})
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-12',
+            required: true,
+            placeholder:'Required asterisks'
+          })
       pre
         code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    require: true,
-          |    placeholder: '派遣期間',
-          |    disabled: 'disabled'
-          |  })
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-12',
+          |     required: true,
+          |     placeholder: 'Required asterisks'
+          |   })
   .col-6
     .code-example
       .demo
         form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', iconBefore: 'ion-ios-email-outline', size: 'large', disabled: 'disabled'})
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-13',
+            badge: 'Required',
+            placeholder:'Required label'
+          })
       pre
         code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間',
-          |    iconBefore: 'ion-ios-email-outline',
-          |    size: 'large',
-          |    disabled: 'disabled'
-          |  })
-  .col-6
-    .code-example
-      .demo
-        form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', require: true, placeholder: '派遣期間', size: 'large', iconAfter: 'ion-ios-eye-outline', disabled: 'disabled'})
-      pre
-        code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    require: true,
-          |    placeholder: '派遣期間',
-          |    size: 'large',
-          |    iconAfter: 'ion-ios-eye-outline',
-          |    disabled: 'disabled'
-          |  })
-  .col-6
-    .code-example
-      .demo
-        form.form-custom
-          +group-input-field({ label: '発注日', id: 'example-11', placeholder: '派遣期間', size: 'large', iconBefore: 'ion-ios-email-outline', iconAfter: 'ion-ios-eye-outline', disabled: 'disabled'})
-      pre
-        code
-          | form.form-custom
-          |  +group-input-field({
-          |    label: '発注日',
-          |    id: 'example-11',
-          |    placeholder: '派遣期間',
-          |    size: 'large',
-          |    iconBefore: 'ion-ios-email-outline',
-          |    iconAfter: 'ion-ios-eye-outline',
-          |    disabled: 'disabled'
-          |  })
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-13',
+          |     badge: 'Required',
+          |     placeholder: 'Required label'
+          |   })
 
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-14',
+            textLabel: '0 of 80 characters used',
+            placeholder:'Label with description'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-14',
+          |     textLabel: '0 of 80 characters used',
+          |     placeholder:'Label with description'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-base({
+            label: 'Label',
+            id: 'input-15',
+            type: 'password',
+            iconLabel: 'fa fa-eye fa-fw',
+            value:'label_with_action'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-base({
+          |     label: 'Label',
+          |     id: 'input-15',
+          |     type: 'password',
+          |     iconLabel: 'fa fa-eye fa-fw',
+          |     value:'label_with_action'
+          |   })
+
+h2 Floating label
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-float-label({
+            label: 'Label',
+            id: 'input-16',
+            type: 'email',
+            value: 'johndoe@looper.com',
+            placeholder:'Email address'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-float-label({
+          |     label: 'Label',
+          |     id: 'input-16',
+          |     type: 'email',
+          |     value: 'johndoe@looper.com',
+          |     placeholder:'Email address'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-float-label({
+            label: 'Label',
+            id: 'input-18',
+            type: 'email',
+            placeholder:'Email address',
+            disabled: 'disabled'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-float-label({
+          |     label: 'Label',
+          |     id: 'input-18',
+          |     type: 'email',
+          |     placeholder:'Email address',
+          |     disabled: 'disabled'
+          |   })
+
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-float-label({
+            label: 'Label',
+            id: 'input-19',
+            spinner: true,
+            placeholder:'Email address',
+            value: 'hasloading@looper.com'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-float-label({
+          |     label: 'Label',
+          |     id: 'input-19',
+          |     spinner: true,
+          |     placeholder:'Email address',
+          |     value: 'hasloading@looper.com'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-float-label({
+            label: 'Label',
+            id: 'input-20',
+            isValid: true,
+            placeholder:'Email address',
+            value: 'hasloading@looper.com'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-float-label({
+          |     label: 'Label',
+          |     id: 'input-20',
+          |     isValid: true,
+          |     placeholder:'Email address',
+          |     value: 'hasloading@looper.com'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-float-label({
+            label: 'Label',
+            id: 'input-20',
+            isInvalid: true,
+            noticeError: "Sorry, that password isn't right.",
+            placeholder:'Email address',
+            value: 'hasloading@looper.com'
+          })
+      pre
+        code
+          |form.form-custom
+          |   +group-input-field-float-label({
+          |     label: 'Label',
+          |     id: 'input-20',
+          |     isInvalid: true,
+          |     noticeError: "Sorry, that password isn't right.",
+          |     placeholder:'Email address',
+          |     value: 'hasloading@looper.com'
+          |   })
