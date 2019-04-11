@@ -8,6 +8,7 @@
   font-size: $font-size-base;
   height: 36px;
   border-radius: $border-radius-base;
+  white-space: nowrap;
   &:hover {
     outline: none;
     box-shadow: none;
@@ -15,6 +16,9 @@
   &:focus {
     outline: none;
     box-shadow: none;
+  }
+  & > i {
+    margin-left: 4px;
   }
   &--primary {
     background-color: $cl-dark-blue;
@@ -113,14 +117,6 @@
     height: 46px;
     line-height: 42px;
     font-size: $font-size-medium;
-  }
-  &__icon {
-    color: inherit;
-    font-size: 14px;
-    margin-right: 12px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: -1.75px;
   }
   &--full {
     display: block;

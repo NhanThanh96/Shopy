@@ -1009,10 +1009,9 @@ font-weight: $font-weight-base</code></pre>
                       <form class="form-customize">
                         <div class="select-box">
                           <select class="custom-select">
-                            <option value="owner">Owner</option>
-                            <option value="member">Member</option>
-                            <option value="viewer">Viewer</option>
-                            <option value="non-member">Non-member</option>
+                            <option value="" selected="selected">Choose...</option>
+                            <option value="United States">United States</option>
+                            <option value="Enland">England</option>
                           </select>
                         </div>
                       </form>
@@ -1020,13 +1019,12 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
 -
   var options = [
-    { value: 'owner', display: 'Owner' },
-    { value: 'member', display: 'Member' },
-    { value: 'viewer', display: 'Viewer' },
-    { value: 'non-member', display: 'Non-member' }
+    { value: '', display: 'Choose...', selected: true},
+    { value: 'United States', display: 'United States' },
+    { value: 'Enland', display: 'England' },
   ];
 +selectbox({
-  id: 'member',
+  id: 'country',
   options: options
 })</code></pre>
                   </div>
@@ -1037,10 +1035,9 @@ font-weight: $font-weight-base</code></pre>
                       <form class="form-customize">
                         <div class="select-box">
                           <select class="custom-select custom-select--disabled" disabled="disabled">
-                            <option value="owner">Owner</option>
-                            <option value="member">Member</option>
-                            <option value="viewer">Viewer</option>
-                            <option value="non-member">Non-member</option>
+                            <option value="" selected="selected">Choose...</option>
+                            <option value="United States">United States</option>
+                            <option value="Enland">England</option>
                           </select>
                         </div>
                       </form>
@@ -1048,13 +1045,12 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
 -
   var options = [
-    { value: 'owner', display: 'Owner' },
-    { value: 'member', display: 'Member' },
-    { value: 'viewer', display: 'Viewer' },
-    { value: 'non-member', display: 'Non-member' }
+    { value: '', display: 'Choose...', selected: true},
+    { value: 'United States', display: 'United States' },
+    { value: 'Enland', display: 'England' },
   ];
 +selectbox({
-  id: 'member',
+  id: 'country',
   disabled: 'disabled',
   options: options
 })</code></pre>
@@ -1065,14 +1061,13 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-customize">
                         <div class="form-group form-customize">
-                          <label for="member">Employee<span class="require">*</span>
+                          <label for="country">Country
                           </label>
                           <div class="select-box">
                             <select class="custom-select">
-                              <option value="owner">Owner</option>
-                              <option value="member">Member</option>
-                              <option value="viewer">Viewer</option>
-                              <option value="non-member">Non-member</option>
+                              <option value="" selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
                             </select>
                           </div>
                         </div>
@@ -1081,15 +1076,13 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
  -
    var options = [
-     { value: 'owner', display: 'Owner' },
-     { value: 'member', display: 'Member' },
-     { value: 'viewer', display: 'Viewer' },
-     { value: 'non-member', display: 'Non-member' }
+     { value: '', display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
    ];
  +group-selectbox({
-   id: 'member',
-   label: 'Employee',
-   require: true,
+   id: 'country',
+   label: 'Country',
    options: options
  })</code></pre>
                   </div>
@@ -1099,14 +1092,13 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-customize">
                         <div class="form-group form-customize">
-                          <label for="member">Employee
+                          <label for="country">Country
                           </label>
                           <div class="select-box">
                             <select class="custom-select" disabled="disabled">
-                              <option value="owner">Owner</option>
-                              <option value="member">Member</option>
-                              <option value="viewer">Viewer</option>
-                              <option value="non-member">Non-member</option>
+                              <option value="" selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
                             </select>
                           </div>
                         </div>
@@ -1115,14 +1107,14 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
  -
    var options = [
-     { value: 'owner', display: 'Owner' },
-     { value: 'member', display: 'Member' },
-     { value: 'viewer', display: 'Viewer' },
-     { value: 'non-member', display: 'Non-member' }
+     { value: '', display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
    ];
  +group-selectbox({
-   id: 'member',
-   label: 'Employee',
+   id: 'country',
+   label: 'Country',
+   disabled: 'disabled',
    options : options
  })</code></pre>
                   </div>
@@ -1132,14 +1124,13 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-customize">
                         <div class="form-group form-customize">
-                          <label for="member">Employee
+                          <label for="country">Country
                           </label>
                           <div class="select-box">
                             <select class="custom-select select-box--valid">
-                              <option value="owner">Owner</option>
-                              <option value="member">Member</option>
-                              <option value="viewer">Viewer</option>
-                              <option value="non-member">Non-member</option>
+                              <option value="" selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
                             </select>
                           </div>
                         </div>
@@ -1148,14 +1139,14 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
  -
    var options = [
-     { value: 'owner', display: 'Owner' },
-     { value: 'member', display: 'Member' },
-     { value: 'viewer', display: 'Viewer' },
-     { value: 'non-member', display: 'Non-member' }
+     { value: '', display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
    ];
  +group-selectbox({
-   id: 'member',
-   label: 'Employee',
+   id: 'country',
+   label: 'Country',
+   isValid: true,
    options: options 
  })</code></pre>
                   </div>
@@ -1165,14 +1156,13 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-customize">
                         <div class="form-group form-customize">
-                          <label for="member">Employee
+                          <label for="country">Country
                           </label>
                           <div class="select-box">
                             <select class="custom-select select-box--invalid">
-                              <option value="owner">Owner</option>
-                              <option value="member">Member</option>
-                              <option value="viewer">Viewer</option>
-                              <option value="non-member">Non-member</option>
+                              <option value="" selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
                             </select>
                             <div class="error-notice"><i class="fa fa-exclamation-circle fa-fw"></i>Please select your state.</div>
                           </div>
@@ -1182,14 +1172,15 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
  -
    var options = [
-     { value: 'owner', display: 'Owner' },
-     { value: 'member', display: 'Member' },
-     { value: 'viewer', display: 'Viewer' },
-     { value: 'non-member', display: 'Non-member' }
+     { value: '', display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
    ];
  +group-selectbox({
-   id: 'member',
-   label: 'Employee',
+   id: 'country',
+   label: 'Country',
+   isInvalid: true,
+   noticeError: 'Please select your state.',
    options: options 
  })</code></pre>
                   </div>
@@ -1202,14 +1193,13 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-customize">
                         <div class="form-group form-customize">
-                          <label class="select-label--small" for="member">
+                          <label class="select-label--small" for="country">
                           </label>
                           <div class="select-box">
                             <select class="custom-select select-box--small">
-                              <option value="owner">Owner</option>
-                              <option value="member">Member</option>
-                              <option value="viewer">Viewer</option>
-                              <option value="non-member">Non-member</option>
+                              <option value="" selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
                             </select>
                           </div>
                         </div>
@@ -1218,13 +1208,13 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
  -
    var options = [
-     { value: 'owner', display: 'Owner' },
-     { value: 'member', display: 'Member' },
-     { value: 'viewer', display: 'Viewer' },
-     { value: 'non-member', display: 'Non-member' }
+     { value: '', display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
    ];
  +group-selectbox({
-   id: 'member',
+   id: 'country',
+   size: small,
    options: options 
  })</code></pre>
                   </div>
@@ -1234,14 +1224,13 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-customize">
                         <div class="form-group form-customize">
-                          <label class="select-label--default" for="member">
+                          <label class="select-label--default" for="country">
                           </label>
                           <div class="select-box">
                             <select class="custom-select select-box--default">
-                              <option value="owner">Owner</option>
-                              <option value="member">Member</option>
-                              <option value="viewer">Viewer</option>
-                              <option value="non-member">Non-member</option>
+                              <option value="" selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
                             </select>
                           </div>
                         </div>
@@ -1250,13 +1239,13 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
  -
    var options = [
-     { value: 'owner', display: 'Owner' },
-     { value: 'member', display: 'Member' },
-     { value: 'viewer', display: 'Viewer' },
-     { value: 'non-member', display: 'Non-member' }
+     { value: '', display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
    ];
  +group-selectbox({
-   id: 'member',
+   id: 'country',
+   size: default,
    options: options 
  })</code></pre>
                   </div>
@@ -1266,14 +1255,13 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-customize">
                         <div class="form-group form-customize">
-                          <label class="select-label--large" for="member">
+                          <label class="select-label--large" for="country">
                           </label>
                           <div class="select-box">
                             <select class="custom-select select-box--large">
-                              <option value="owner">Owner</option>
-                              <option value="member">Member</option>
-                              <option value="viewer">Viewer</option>
-                              <option value="non-member">Non-member</option>
+                              <option value="" selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
                             </select>
                           </div>
                         </div>
@@ -1282,13 +1270,13 @@ font-weight: $font-weight-base</code></pre>
                     <pre><code>form.form-customize
  -
    var options = [
-     { value: 'owner', display: 'Owner' },
-     { value: 'member', display: 'Member' },
-     { value: 'viewer', display: 'Viewer' },
-     { value: 'non-member', display: 'Non-member' }
+     { value: '', display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
    ];
  +group-selectbox({
-   id: 'member',
+   id: 'country',
+   size: large,
    options: options 
  })</code></pre>
                   </div>
@@ -1450,7 +1438,7 @@ font-weight: $font-weight-base</code></pre>
                           <label for="checkbox13"></label>
                         </div>
                         <div class="form-group input-checkbox-custom input-checkbox-custom--no-label">
-                          <input class="input-checkbox js-checkbox-indeterminate" type="checkbox" name="checkbox" id="checkbox14" />
+                          <input class="input-checkbox input-checkbox--indeterminate js-checkbox-indeterminate" type="checkbox" name="checkbox" id="checkbox14" />
                           <label for="checkbox14"></label>
                         </div>
                         <div class="form-group input-checkbox-custom input-checkbox-custom--no-label">
@@ -1612,6 +1600,305 @@ font-weight: $font-weight-base</code></pre>
               </div>
             </div>
             <div class="tab-pane fade" role="tabpanel" id="v-pills-switcher" aria-labelledby="v-pills-switcher-tab">
+              <h2>Switcher Normal</h2>
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({ isOn: true})</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher">
+                          <input class="switcher-input" type="checkbox" /><span class="switcher-indicator"></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher()</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher">
+                          <input class="switcher-input" type="checkbox" checked="checked" disabled="disabled" /><span class="switcher-indicator"></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({ 
+ isOn: true,
+ disabled: 'disabled',
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Switcher Type</h2>
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--success">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: success
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--danger">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: danger
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Switcher Size</h2>
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--large">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ size: large
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Switcher Icon</h2>
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--success">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span><span class="switcher-label--on"><i class="fas fa-check"></i></span><span class="switcher-label--off"><i class="fas fa-times"></i></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: success
+ size: 'large'
+ onIcon: 'fas fa-check'
+ offIcon: 'fas fa-times'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--danger">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span><span class="switcher-label--on"><i class="fas fa-check"></i></span><span class="switcher-label--off"><i class="fas fa-times"></i></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: danger
+ size: 'large'
+ onIcon: 'fas fa-check'
+ offIcon: 'fas fa-times'
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--success custom-switcher--large">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span><span class="switcher-label--on"><i class="fas fa-check"></i></span><span class="switcher-label--off"><i class="fas fa-times"></i></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: success
+ size: 'large'
+ onIcon: 'fas fa-check'
+ offIcon: 'fas fa-times'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--danger custom-switcher--large">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span><span class="switcher-label--on"><i class="fas fa-check"></i></span><span class="switcher-label--off"><i class="fas fa-times"></i></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: danger
+ size: 'large'
+ onIcon: 'fas fa-check'
+ offIcon: 'fas fa-times'
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Switcher Text</h2>
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--success">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span><span class="switcher-label--on">on</span><span class="switcher-label--off">off</span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: success
+ onText: 'on'
+ offText: 'off'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--danger">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span><span class="switcher-label--on">on</span><span class="switcher-label--off">off</span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: danger
+ onText: 'on'
+ offText: 'off'
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--success custom-switcher--large">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span><span class="switcher-label--on">on</span><span class="switcher-label--off">off</span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: success
+ onText: 'on'
+ offText: 'off'
+})</code></pre>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher custom-switcher--danger custom-switcher--large">
+                          <input class="switcher-input" type="checkbox" checked="checked" /><span class="switcher-indicator"></span><span class="switcher-label--on">on</span><span class="switcher-label--off">off</span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
++switcher({
+ isOn: true,
+ type: danger
+ onText: 'on'
+ offText: 'off'
+})</code></pre>
+                  </div>
+                </div>
+              </div>
+              <h2>Switcher Radio</h2>
+              <div class="row">
+                <div class="col-4">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-customize">
+                        <label class="custom-switcher">
+                          <input class="switcher-input" type="radio" name="switchRadio" checked="checked" /><span class="switcher-indicator"></span>
+                        </label>
+                        <label class="custom-switcher">
+                          <input class="switcher-input" type="radio" name="switchRadio" /><span class="switcher-indicator"></span>
+                        </label>
+                      </form>
+                    </div>
+                    <pre><code>form.form-customize
+ +switcher({
+             isSwitcherRadio: true,
+             name: 'switchRadio',
+             isOn: true
+           })
+ +switcher({
+             isSwitcherRadio: true,
+             name: 'switchRadio'
+           })</code></pre>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
