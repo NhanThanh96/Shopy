@@ -14,9 +14,9 @@ mixin group-selectbox({id, label, require, disabled, size, isValid, isInvalid, n
     .select-box
       select.custom-select(
         disabled= disabled ? 'disabled' : null
-        class= isValid ? 'select-box--valid' : null
-        class= isInvalid ? 'select-box--invalid' : null
-        class= size ? `select-box--${size}` : null
+        class= isValid ? 'custom-select--valid' : null
+        class= isInvalid ? 'custom-select--invalid' : null
+        class= size ? `custom-select--${size}` : null
       )
         each val in options
           option(

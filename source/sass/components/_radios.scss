@@ -1,9 +1,6 @@
 // ======================================================
 // Components :: Radio Button
 // ======================================================
-// ======================================================
-// Components :: radio
-// ======================================================
 .input-radio-custom {
   position: relative;
   min-height: 24px;
@@ -57,7 +54,21 @@
 
   position: absolute;
   left: 0;
-  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  &:checked {
+    & ~ label {
+      &:after {
+        transform: scale(1);
+      }
+      &:before {
+        border-color: $cl-dark-blue;
+      }
+    }
+    & ~ .input-toggle {
+      display: block;
+    }
+  }
   &#{$radio}--valid {
     & ~ label {
       color: $cl-green;
@@ -78,16 +89,6 @@
       & ~ label:before {
         border-color: $cl-green;
         box-shadow: 0 0 0 1px rgba(0, 162, 138, .25);
-      }
-    }
-  }
-  &:checked {
-    & ~ label {
-      &:after {
-        transform: scale(1);
-      }
-      &:before {
-        border-color: $cl-dark-blue;
       }
     }
   }
@@ -127,3 +128,22 @@
   color: $cl-gray;
 }
 
+.input-toggle {
+  display: none;
+  margin-top: 4px;
+  input {
+    height: 36px;
+    font-size: 14px;
+    border: 1px solid $border-gray;
+    &::placeholder {
+      color: $cl-gray;
+    }
+    &:focus {
+      color: $cl-dark-gray;
+      background-color: $cl-white;
+      border-color: $cl-dark-blue;
+      outline: 0;
+      box-shadow: 0 0 0 1px $cl-dark-blue;
+    }
+  }
+}

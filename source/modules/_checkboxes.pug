@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //- Modules :: Checkbox
 //-------------------------------------------------------
-mixin group-input-checkbox({name, id, label, disabled, isValid, isInValid, isIndeterminate, desc, noticeError, checked})
+mixin group-input-checkbox({name, id, label, disabled, isValid, isInValid, isIndeterminate, desc, noticeError, iconError, checked})
   .form-group.input-checkbox-custom()&attributes(attributes)
     input.input-checkbox(
       type= 'checkbox'
@@ -20,27 +20,8 @@ mixin group-input-checkbox({name, id, label, disabled, isValid, isInValid, isInd
         | #{desc}
     if noticeError
       .error-notice
-        i.fa.fa-exclamation-circle.fa-fw
+        if iconError
+          i(class= iconError)
         | #{noticeError}
-mixin group-input-checkboxss({name, id, label, disabled, isValid, isInValid, isIndeterminate, desc, noticeError, checked})
-  .custom-control.custom-checkbox()&attributes(attributes)
-    input.custom-control-input(
-      type= 'checkbox'
-      name= name ? `${name}` : null
-      id= id ? `${id}` : null
-      checked= checked ? 'checked' : null
-      disabled= disabled ? 'disabled' : null
-      class= isValid ? 'is-valid' : null
-      class= isInValid ? 'is-invalid' : null
-      class= isIndeterminate ? 'js-checkbox-indeterminate' : null
-    )
-    label.custom-control-label(for= id ? `${id}` : null)
-      | #{label}
-    if desc
-      .input-desc
-        | #{desc}
-    if noticeError
-      .invalid-feedback
-        i.fa.fa-exclamation-circle.fa-fw
-        | #{noticeError}
+
     

@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //- Modules :: Radio Button
 //-------------------------------------------------------
-mixin group-input-radio({name, id, label, disabled, isValid, isInValid, desc, noticeError, checked})
+mixin group-input-radio({name, id, label, disabled, isValid, isInValid, desc, noticeError, iconError, inputHintType, inputHintPlaceholder, checked})
   .form-group.input-radio-custom()&attributes(attributes)
     input.input-radio(
       type= 'radio'
@@ -20,5 +20,12 @@ mixin group-input-radio({name, id, label, disabled, isValid, isInValid, desc, no
         | #{desc}
     if noticeError
       .error-notice
-        i.fa.fa-exclamation-circle.fa-fw
+        if iconError
+          i(class= iconError)
         | #{noticeError}
+    if inputHintType
+      .input-toggle
+        +input-field({
+          type: inputHintType,
+          placeholder: inputHintPlaceholder
+        })

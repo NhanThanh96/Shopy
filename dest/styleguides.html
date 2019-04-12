@@ -536,7 +536,7 @@ font-weight: $font-weight-base</code></pre>
                       </button>
                     </div>
                     <pre><code>+button({
-  text: 'This Week', 
+  text: 'This Button', 
   type: 'primary'
   iconFont: 'fa fa-fw fa-caret-down'
 })</code></pre>
@@ -549,7 +549,7 @@ font-weight: $font-weight-base</code></pre>
                       </button>
                     </div>
                     <pre><code>+button({
-  text: 'This Week', 
+  text: 'This Button', 
   type: 'secondary'
   iconFont: 'fa fa-fw fa-caret-down'
 })</code></pre>
@@ -562,7 +562,7 @@ font-weight: $font-weight-base</code></pre>
                       </button>
                     </div>
                     <pre><code>+button({
-  text: 'This Week', 
+  text: 'This Button', 
   type: 'plight'
   iconFont: 'fa fa-fw fa-caret-down'
 })</code></pre>
@@ -575,7 +575,7 @@ font-weight: $font-weight-base</code></pre>
                       </button>
                     </div>
                     <pre><code>+button({
-  text: 'This Week', 
+  text: 'This Button', 
   type: 'slight'
   iconFont: 'fa fa-fw fa-caret-down'
 })</code></pre>
@@ -588,7 +588,7 @@ font-weight: $font-weight-base</code></pre>
                       </button>
                     </div>
                     <pre><code>+button({
-  text: 'This Week', 
+  text: 'This Button', 
   type: 'primary',
   size: 'small',
   iconFont: 'fa fa-fw fa-caret-down'
@@ -602,7 +602,7 @@ font-weight: $font-weight-base</code></pre>
                       </button>
                     </div>
                     <pre><code>+button({
-  text: 'This Week', 
+  text: 'This Button', 
   type: 'secondary',
   size: 'small',
   iconFont: 'fa fa-fw fa-caret-down'
@@ -616,7 +616,7 @@ font-weight: $font-weight-base</code></pre>
                       </button>
                     </div>
                     <pre><code>+button({
-  text: 'This Week', 
+  text: 'This Button', 
   type: 'plight',
   size: 'small',
   iconFont: 'fa fa-fw fa-caret-down'
@@ -630,7 +630,7 @@ font-weight: $font-weight-base</code></pre>
                       </button>
                     </div>
                     <pre><code>+button({
-  text: 'This Week', 
+  text: 'This Button', 
   type: 'slight',
   size: 'small',
   iconFont: 'fa fa-fw fa-caret-down'
@@ -706,20 +706,23 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label class="label" for="input-1">Label
-                          </label>
+                          <div class="form-header">
+                            <label for="input-1">Input Text
+                            </label>
+                          </div>
                           <div class="input-field">
-                            <input class="form-control" type="text" placeholder="e.g. johndoe@looper.com" id="input-1" />
+                            <input class="form-control" id="input-1" type="text" placeholder="placeholder" />
                           </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-1',
-    placeholder: 'e.g. johndoe@looper.com'
-  })</code></pre>
+ +group-input-field({
+   type: 'text',
+   id: 'input-1',
+   label: 'Label',
+   placeholder: 'e.g. johndoe@looper.com'
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-6">
@@ -727,93 +730,105 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label class="label" for="input-2">Label
-                          </label>
-                          <div class="input-field input-field--email">
-                            <input class="form-control" type="email" placeholder="e.g. johndoe@looper.com" id="input-2" />
+                          <div class="form-header">
+                            <label for="input-2">Email address
+                            </label>
                           </div>
-                          <p class="note-text">We'll never share your email with anyone else.</p>
+                          <div class="input-field">
+                            <input class="form-control" id="input-2" type="email" placeholder="e.g. johndoe@looper.com" />
+                            <p class="note-text">We'll never share your email with anyone else.</p>
+                          </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-2',
-    type: 'email',
-    placeholder: 'e.g. johndoe@looper.com',
-    noteText: "We'll never share your email with anyone else."
-  })</code></pre>
+ +group-input-field({
+   type: 'email',
+   id: 'input-2',
+   label: 'Label',
+   placeholder: 'e.g. johndoe@looper.com',
+   desc: "We'll never share your email with anyone else."
+ })</code></pre>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize form-readonly">
-                          <label>Label</label>
-                          <input class="form-control" type="text" value="Value" readonly="readonly" />
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
- +group-input-field-readonly({
-    label: 'Label',
-    id: 'input-3',
-    value: 'Value'
-})</code></pre>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize form-control__disabled">
-                          <label for="input-4">Label</label>
-                          <input class="form-control" type="text" placeholder="Placeholder" disabled="disabled" />
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-disabled({
-    label: 'Label',
-    id: 'input-4',
-    placeholder: 'Placeholder',
-    disabled: 'disabled'
-  })</code></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label class="label" for="input-5">Label
-                          </label>
-                          <div class="input-field input-field--number js-input-number">
-                            <input class="form-control" type="number" placeholder="Amount (to the nearest dollar)" value="0" id="input-5" min="0" max="10" />
-                            <div class="custom-number">
-                              <div class="custom-number__btn custom-number__up js-btn-up"><img src="../images/plus.svg" alt="" /></div>
-                              <div class="custom-number__btn custom-number__down js-btn-down"><img src="../images/minus.svg" alt="" /></div>
+                          <div class="form-header">
+                            <label for="input-3">Readonly input
+                            </label>
+                          </div>
+                          <div class="input-field">
+                            <input class="form-control" id="input-3" type="text" readonly="readonly" value="Stilearning" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   type: 'text',
+   label: 'Readonly input',
+   id: 'input-3',
+   value: 'Stilearning',
+   readonly: true
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <div class="form-header">
+                            <label for="input-4">Disabled input
+                            </label>
+                          </div>
+                          <div class="input-field">
+                            <input class="form-control" id="input-4" type="text" placeholder="e.g. johndoe@looper.com" disabled="disabled" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   type: 'text',
+   label: 'Disabled input',
+   id: 'input-4',
+   placeholder: 'e.g. johndoe@looper.com',
+   disabled: true
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <div class="form-header">
+                            <label for="input-5">Number input
+                            </label>
+                          </div>
+                          <div class="input-field">
+                            <input class="form-control" id="input-5" type="number" placeholder="Amount (to the nearest dollar)" value="0" />
+                            <div class="custom-number-controls">
+                              <div class="custom-number-button custom-number-button--plus"><i class="fas fa-plus"></i></div>
+                              <div class="custom-number-button custom-number-button--minus"><i class="fas fa-minus"></i></div>
                             </div>
                           </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-5',
-    type: 'number',
-    min: '0',
-    max: '10',
-    value: '0',
-    placeholder: 'Amount (to the nearest dollar)'
-  })</code></pre>
+ +group-input-field({
+   id: 'input-5',
+   type: 'number',
+   label: 'Number input',
+   min: '0',
+   max: '10',
+   value: '0',
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-6">
@@ -821,48 +836,22 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label class="label" for="input-6">Label
-                          </label>
-                          <div class="input-field input-field--file">
-                            <input class="form-control" type="file" id="input-6" multiple="multiple" />
-                            <label class="input-field__file-label" for="input-6">Choose file</label>
+                          <div class="form-header">
+                            <label for="input-6">File input
+                            </label>
+                          </div>
+                          <div class="input-field">
+                            <input class="form-control" id="input-6" type="file" />
                           </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-6',
-    type: 'file',
-    labelInput: 'Choose file'
-  })</code></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <label class="label" for="input-7">Label
-                          </label>
-                          <div class="input-field input-field--clearable js-input-clearable">
-                            <button class="close show" type="button" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button>
-                            <input class="form-control" type="text" placeholder="Type something..." value="Moonlight" id="input-7" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-7',
-    clearable: true,
-    value: 'Moonlight',
-    placeholder: 'Type something...'
-  })</code></pre>
+ +group-input-field({
+   id: 'input-6',
+   type: 'file',
+   label: 'File input',
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-6">
@@ -870,23 +859,48 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label class="label" for="input-8">Label
-                          </label>
-                          <div class="input-field input-field--spinner js-input-spinner">
-                            <div class="spinner-border spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>
-                            <input class="form-control" type="text" placeholder="Type something..." value="Moon" id="input-8" />
+                          <div class="form-header">
+                            <label for="input-7">Clearable
+                            </label>
+                          </div>
+                          <div class="input-field">
+                            <input class="form-control" id="input-7" type="text" placeholder="Type something..." value="Moonlight" />
                           </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-8',
-    spinner: true,
-    value: 'Moon',
-    placeholder: 'Type something...'
-  })</code></pre>
+ +group-input-field({
+   id: 'input-7',
+   type: 'text',
+   label: 'Clearable',
+   value: 'Moonlight',
+   placeholder: 'Type something...'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <div class="form-header">
+                            <label for="input-8">Spinner
+                            </label>
+                          </div>
+                          <div class="input-field">
+                            <input class="form-control" id="input-8" type="text" placeholder="Type something..." value="Moon" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   id: 'input-8',
+   label: 'Spinner',
+   value: 'Moon',
+   placeholder: 'Type something...'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -897,45 +911,51 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label for="input-9">Label</label>
-                          <div class="input-field input-field--isValid">
-                            <input class="form-control" type="text" placeholder="Type something..." id="input-9" />
+                          <div class="form-header">
+                            <label for="input-9">Valid input
+                            </label>
                           </div>
-                          <p class="success-notice">Success! You've done it.</p>
+                          <div class="input-field">
+                            <input class="form-control" id="input-9" type="text" />
+                            <p class="success-notice">Success! You've done it.</p>
+                          </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-states({
-    label: 'Label',
-    id: 'input-9',
-    isValid: true,
-    noticeSuccess: "Success! You've done it.",
-    placeholder: 'Type something...'
-  })</code></pre>
+ +group-input-field-states({
+   id: 'input-9',
+   label: 'Valid input',
+   isValid: true,
+   noticeSuccess: "Success! You've done it.",
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
                       <form class="form-custom">
-                        <div class="form-group form-customize form-error">
-                          <label for="input-10">Label</label>
-                          <div class="input-field input-field--isInvalid">
-                            <input class="form-control" type="text" placeholder="Type something..." id="input-10" />
+                        <div class="form-group form-customize">
+                          <div class="form-header">
+                            <label for="input-10">Invalid input
+                            </label>
                           </div>
-                          <p class="error-notice"><i class="error-notice__icon fa fa-exclamation-circle fa-fw"></i> Sorry, the image must be at least 300×300.</p>
+                          <div class="input-field">
+                            <input class="form-control" id="input-10" type="file" />
+                            <p class="success-notice"> Sorry, the image must be at least 300×300.
+                            </p>
+                          </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-states({
-    label: 'Label',
-    id: 'input-10',
-    isInvalid: true,
-    noticeError: " Sorry, the image must be at least 300×300.",
-    placeholder: 'Type something...'
-  })</code></pre>
+ +group-input-field({
+   id: 'input-10',
+   label: 'Invalid input',
+   type: 'file',
+   isInvalid: true,
+   noticeError: " Sorry, the image must be at least 300×300.",
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -946,21 +966,23 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label class="label" for="input-11">Label
-                          </label>
+                          <div class="form-header">
+                            <label class="form-label--small" for="input-sz0">small input
+                            </label>
+                          </div>
                           <div class="input-field input-field--small">
-                            <input class="form-control" type="text" placeholder="e.g. johndoe@looper.com" id="input-11" />
+                            <input class="form-control" id="input-sz0" type="text" placeholder="${val} input" />
                           </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-11',
-    size: 'small'
-    placeholder: 'e.g. johndoe@looper.com'
-  })</code></pre>
+ +group-input-field({
+   id: `input-sz0`,
+   label: `small input`,
+   size: val,
+   placeholder:'small input'
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -968,21 +990,23 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label class="label" for="input-11">Label
-                          </label>
+                          <div class="form-header">
+                            <label class="form-label--medium" for="input-sz1">medium input
+                            </label>
+                          </div>
                           <div class="input-field input-field--medium">
-                            <input class="form-control" type="text" placeholder="e.g. johndoe@looper.com" id="input-11" />
+                            <input class="form-control" id="input-sz1" type="text" placeholder="${val} input" />
                           </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-11',
-    size: 'medium'
-    placeholder: 'e.g. johndoe@looper.com'
-  })</code></pre>
+ +group-input-field({
+   id: `input-sz1`,
+   label: `medium input`,
+   size: val,
+   placeholder:'medium input'
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -990,233 +1014,23 @@ font-weight: $font-weight-base</code></pre>
                     <div class="demo">
                       <form class="form-custom">
                         <div class="form-group form-customize">
-                          <label class="label" for="input-11">Label
-                          </label>
+                          <div class="form-header">
+                            <label class="form-label--large" for="input-sz2">large input
+                            </label>
+                          </div>
                           <div class="input-field input-field--large">
-                            <input class="form-control" type="text" placeholder="e.g. johndoe@looper.com" id="input-11" />
+                            <input class="form-control" id="input-sz2" type="text" placeholder="${val} input" />
                           </div>
                         </div>
                       </form>
                     </div>
                     <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-11',
-    size: 'large'
-    placeholder: 'e.g. johndoe@looper.com'
-  })</code></pre>
-                  </div>
-                </div>
-              </div>
-              <h2>Labels</h2>
-              <div class="row">
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <label class="label" for="input-12">Label<abbr class="required" title="Required">*</abbr>
-                          </label>
-                          <div class="input-field">
-                            <input class="form-control" type="text" placeholder="Required asterisks" id="input-12" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-12',
-    required: true,
-    placeholder: 'Required asterisks'
-  })</code></pre>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <label class="label" for="input-13">Label<span class="badge label__badge badge--danger">Required</span>
-                          </label>
-                          <div class="input-field">
-                            <input class="form-control" type="text" placeholder="Required label" id="input-13" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-13',
-    badge: 'Required',
-    placeholder: 'Required label'
-  })</code></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <label class="label d-flex justify-content-between" for="input-14">Label<span class="label__text">0 of 80 characters used</span>
-                          </label>
-                          <div class="input-field">
-                            <input class="form-control" type="text" placeholder="Label with description" id="input-14" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-14',
-    textLabel: '0 of 80 characters used',
-    placeholder:'Label with description'
-  })</code></pre>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <label class="label d-flex justify-content-between" for="input-15">Label<span class="label__icon label__icon--after js-toggle-icon"><i class="fa fa-eye fa-fw"></i><span>Show</span></span>
-                          </label>
-                          <div class="input-field input-field--password">
-                            <input class="form-control" type="password" value="label_with_action" id="input-15" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-base({
-    label: 'Label',
-    id: 'input-15',
-    type: 'password',
-    iconLabel: 'fa fa-eye fa-fw',
-    value:'label_with_action'
-  })</code></pre>
-                  </div>
-                </div>
-              </div>
-              <h2>Floating label</h2>
-              <div class="row">
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <div class="input-label">
-                            <label for="input-16">Label</label>
-                            <input class="form-control" type="text" placeholder="Email address" value="johndoe@looper.com" id="input-16" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-float-label({
-    label: 'Label',
-    id: 'input-16',
-    type: 'email',
-    value: 'johndoe@looper.com',
-    placeholder:'Email address'
-  })</code></pre>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <div class="input-label">
-                            <label for="input-18">Label</label>
-                            <input class="form-control" type="text" placeholder="Email address" id="input-18" disabled="disabled" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-float-label({
-    label: 'Label',
-    id: 'input-18',
-    type: 'email',
-    placeholder:'Email address',
-    disabled: 'disabled'
-  })</code></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <div class="input-label input-label--spinner">
-                            <label for="input-19">Label</label>
-                            <div class="spinner-border spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>
-                            <input class="form-control" type="text" placeholder="Email address" value="hasloading@looper.com" id="input-19" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-float-label({
-    label: 'Label',
-    id: 'input-19',
-    spinner: true,
-    placeholder:'Email address',
-    value: 'hasloading@looper.com'
-  })</code></pre>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <div class="input-label input-label--isValid">
-                            <label for="input-20">Label</label>
-                            <input class="form-control" type="text" placeholder="Email address" value="hasloading@looper.com" id="input-20" />
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-float-label({
-    label: 'Label',
-    id: 'input-20',
-    isValid: true,
-    placeholder:'Email address',
-    value: 'hasloading@looper.com'
-  })</code></pre>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="code-example">
-                    <div class="demo">
-                      <form class="form-custom">
-                        <div class="form-group form-customize">
-                          <div class="input-label input-label--isInvalid">
-                            <label for="input-20">Label</label>
-                            <input class="form-control" type="text" placeholder="Email address" value="hasloading@looper.com" id="input-20" />
-                          </div>
-                          <p class="error-notice"><i class="error-notice__icon fa fa-exclamation-circle fa-fw"></i>Sorry, that password isn't right.</p>
-                        </div>
-                      </form>
-                    </div>
-                    <pre><code>form.form-custom
-  +group-input-field-float-label({
-    label: 'Label',
-    id: 'input-20',
-    isInvalid: true,
-    noticeError: "Sorry, that password isn't right.",
-    placeholder:'Email address',
-    value: 'hasloading@looper.com'
-  })</code></pre>
+ +group-input-field({
+   id: `input-sz2`,
+   label: `large input`,
+   size: val,
+   placeholder:'large input'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -1227,7 +1041,7 @@ font-weight: $font-weight-base</code></pre>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
+                      <form class="form-custom">
                         <div class="form-group form-customize">
                           <div class="select-box">
                             <select class="custom-select">
@@ -1239,7 +1053,7 @@ font-weight: $font-weight-base</code></pre>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
 -
   var options = [
     { display: 'Choose...', selected: true},
@@ -1255,7 +1069,7 @@ font-weight: $font-weight-base</code></pre>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
+                      <form class="form-custom">
                         <div class="form-group form-customize">
                           <div class="select-box">
                             <select class="custom-select" disabled="disabled">
@@ -1267,7 +1081,7 @@ font-weight: $font-weight-base</code></pre>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
 -
   var options = [
     { display: 'Choose...', selected: true},
@@ -1284,7 +1098,7 @@ font-weight: $font-weight-base</code></pre>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
+                      <form class="form-custom">
                         <div class="form-group form-customize">
                           <label for="country">Country
                           </label>
@@ -1298,7 +1112,7 @@ font-weight: $font-weight-base</code></pre>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
  -
    var options = [
      { display: 'Choose...', selected: true},
@@ -1315,7 +1129,7 @@ font-weight: $font-weight-base</code></pre>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
+                      <form class="form-custom">
                         <div class="form-group form-customize">
                           <label for="country">Country
                           </label>
@@ -1329,7 +1143,7 @@ font-weight: $font-weight-base</code></pre>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
  -
    var options = [
      { display: 'Choose...', selected: true},
@@ -1347,12 +1161,12 @@ font-weight: $font-weight-base</code></pre>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
+                      <form class="form-custom">
                         <div class="form-group form-customize">
                           <label for="country">Country
                           </label>
                           <div class="select-box">
-                            <select class="custom-select select-box--valid">
+                            <select class="custom-select custom-select--valid">
                               <option selected="selected">Choose...</option>
                               <option value="United States">United States</option>
                               <option value="Enland">England</option>
@@ -1361,7 +1175,7 @@ font-weight: $font-weight-base</code></pre>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
  -
    var options = [
      { display: 'Choose...', selected: true},
@@ -1379,23 +1193,23 @@ font-weight: $font-weight-base</code></pre>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
+                      <form class="form-custom">
                         <div class="form-group form-customize">
                           <label for="country">Country
                           </label>
                           <div class="select-box">
-                            <select class="custom-select select-box--invalid">
+                            <select class="custom-select custom-select--invalid">
                               <option selected="selected">Choose...</option>
                               <option value="United States">United States</option>
                               <option value="Enland">England</option>
                             </select>
-                            <div class="error-notice"><i class="fa fa-exclamation-circle.fa-fw"></i>Please select your state.
+                            <div class="error-notice"><i class="fa fa-exclamation-circle fa-fw"></i>Please select your state.
                             </div>
                           </div>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
  -
    var options = [
      { display: 'Choose...', selected: true},
@@ -1407,7 +1221,7 @@ font-weight: $font-weight-base</code></pre>
    label: 'Country',
    isInvalid: true,
    noticeError: 'Please select your state.',
-   iconError: 'fa fa-exclamation-circle.fa-fw',
+   iconError: 'fa fa-exclamation-circle fa-fw',
    options: options 
  })</code></pre>
                   </div>
@@ -1418,10 +1232,10 @@ font-weight: $font-weight-base</code></pre>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
+                      <form class="form-custom">
                         <div class="form-group form-customize">
                           <div class="select-box">
-                            <select class="custom-select select-box--small">
+                            <select class="custom-select custom-select--small">
                               <option selected="selected">Choose...</option>
                               <option value="United States">United States</option>
                               <option value="Enland">England</option>
@@ -1430,7 +1244,7 @@ font-weight: $font-weight-base</code></pre>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
  -
    var options = [
      { display: 'Choose...', selected: true},
@@ -1447,10 +1261,10 @@ font-weight: $font-weight-base</code></pre>
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
+                      <form class="form-custom">
                         <div class="form-group form-customize">
                           <div class="select-box">
-                            <select class="custom-select select-box--large">
+                            <select class="custom-select custom-select--medium">
                               <option selected="selected">Choose...</option>
                               <option value="United States">United States</option>
                               <option value="Enland">England</option>
@@ -1459,7 +1273,36 @@ font-weight: $font-weight-base</code></pre>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
+ -
+   var options = [
+     { display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
+   ];
+ +group-selectbox({
+   id: 'country',
+   size: medium,
+   options: options 
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <div class="select-box">
+                            <select class="custom-select custom-select--large">
+                              <option selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
  -
    var options = [
      { display: 'Choose...', selected: true},
@@ -1473,11 +1316,16 @@ font-weight: $font-weight-base</code></pre>
  })</code></pre>
                   </div>
                 </div>
+              </div>
+              <h2>Select floating label</h2>
+              <div class="row">
                 <div class="col-6">
                   <div class="code-example">
                     <div class="demo">
-                      <form class="form-customize">
-                        <div class="form-group form-customize">
+                      <form class="form-custom">
+                        <div class="form-group form-customize form-customize--nesting">
+                          <label for="country">Country
+                          </label>
                           <div class="select-box">
                             <select class="custom-select">
                               <option selected="selected">Choose...</option>
@@ -1488,7 +1336,7 @@ font-weight: $font-weight-base</code></pre>
                         </div>
                       </form>
                     </div>
-                    <pre><code>form.form-customize
+                    <pre><code>form.form-custom
  -
    var options = [
      { display: 'Choose...', selected: true},
@@ -1497,8 +1345,42 @@ font-weight: $font-weight-base</code></pre>
    ];
  +group-selectbox({
    id: 'country',
+   label: 'Country',
+   size: ,
    options: options 
- })</code></pre>
+ })(class= 'form-customize--nesting')</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize form-customize--nesting">
+                          <label for="country">Country
+                          </label>
+                          <div class="select-box">
+                            <select class="custom-select" disabled="disabled">
+                              <option selected="selected">Choose...</option>
+                              <option value="United States">United States</option>
+                              <option value="Enland">England</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ -
+   var options = [
+     { display: 'Choose...', selected: true},
+     { value: 'United States', display: 'United States' },
+     { value: 'Enland', display: 'England' },
+   ];
+ +group-selectbox({
+   id: 'country',
+   label: 'Country',
+   disabled: 'disabled',
+   options: options 
+ })(class= 'form-customize--nesting')</code></pre>
                   </div>
                 </div>
               </div>
@@ -1539,7 +1421,7 @@ font-weight: $font-weight-base</code></pre>
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox2',
-   label: 'checkbox label 2',
+   label: 'checkbox label 2'
  })
  +group-input-checkbox({
    name: 'checkbox',
@@ -1584,24 +1466,24 @@ font-weight: $font-weight-base</code></pre>
    id: 'checkbox5',
    label: 'checkbox label 5',
    checked: true
- })(class= 'custom-checkbox--line-through')
+ })(class= 'input-checkbox-custom--line-through')
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox6',
-   label: 'checkbox label 6',
- })(class= 'custom-checkbox--line-through')
+   label: 'checkbox label 6'
+ })(class= 'input-checkbox-custom--line-through')
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox7',
    label: 'checkbox label 7',
    disabled: true
- })(class= 'custom-checkbox--line-through')
+ })(class= 'input-checkbox-custom--line-through')
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox8',
    label: 'checkbox label 8',
    desc: 'This is a help text to guide users'
- })(class= 'custom-checkbox--line-through')</code></pre>
+ })(class= 'input-checkbox-custom--line-through')</code></pre>
                   </div>
                 </div>
                 <div class="col-6">
@@ -1619,7 +1501,8 @@ font-weight: $font-weight-base</code></pre>
                         <div class="form-group input-checkbox-custom">
                           <input class="input-checkbox input-checkbox--invalid" type="checkbox" name="checkbox" id="checkbox11" />
                           <label for="checkbox11">checkbox label 11</label>
-                          <div class="error-notice"><i class="fa fa-exclamation-circle fa-fw"></i>Can't update your setting, please try again.</div>
+                          <div class="error-notice"><i class="fa.fa-exclamation-circle.fa-fw"></i>Can't update your setting, please try again.
+                          </div>
                         </div>
                       </form>
                     </div>
@@ -1628,20 +1511,21 @@ font-weight: $font-weight-base</code></pre>
    name: 'checkbox',
    id: 'checkbox9',
    label: 'checkbox label 9',
-   checked: true,
+   checked: true
  })
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox10',
    label: 'checkbox label 10',
-   isValid: true,
+   isValid: true
  })
  +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox11',
    label: 'checkbox label 11',
    isInValid: true,
-   noticeError: "Can't update your setting, please try again."
+   noticeError: 'Can't update your setting, please try again.',
+   iconError: 'fa.fa-exclamation-circle.fa-fw'
  })</code></pre>
                   </div>
                 </div>
@@ -1668,13 +1552,14 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-custom
+ +group-input-checkbox({
    name: 'checkbox',
    id: 'checkbox12',
    checked: true
  })(class= 'input-checkbox-custom--no-label')
  +group-input-checkbox({
    name: 'checkbox',
-   id: 'checkbox13',
+   id: 'checkbox13'
  })(class= 'input-checkbox-custom--no-label')
  +group-input-checkbox({
    name: 'checkbox',
@@ -1726,7 +1611,7 @@ font-weight: $font-weight-base</code></pre>
  +group-input-radio({
    name: 'radio',
    id: 'radio2',
-   label: 'radio label 2',
+   label: 'radio label 2'
  })
  +group-input-radio({
    name: 'radio',
@@ -1739,7 +1624,7 @@ font-weight: $font-weight-base</code></pre>
    id: 'radio4',
    label: 'radio label 4',
    desc: 'This is a help text to guide users'
- })</code></pre>
+})</code></pre>
                   </div>
                 </div>
                 <div class="col-6">
@@ -1757,7 +1642,8 @@ font-weight: $font-weight-base</code></pre>
                         <div class="form-group input-radio-custom">
                           <input class="input-radio input-radio--invalid" type="radio" name="radio" id="radio11" />
                           <label for="radio11">radio label 11</label>
-                          <div class="error-notice"><i class="fa fa-exclamation-circle fa-fw"></i>Can't update your setting, please try again.</div>
+                          <div class="error-notice"><i class="fa fa-exclamation-circle fa-fw"></i>Can't update your setting, please try again.
+                          </div>
                         </div>
                       </form>
                     </div>
@@ -1766,20 +1652,62 @@ font-weight: $font-weight-base</code></pre>
    name: 'radio',
    id: 'radio9',
    label: 'radio label 9',
-   checked: true,
+   checked: true
  })
  +group-input-radio({
    name: 'radio',
    id: 'radio10',
    label: 'radio label 10',
-   isValid: true,
+   isValid: true
  })
  +group-input-radio({
    name: 'radio',
    id: 'radio11',
    label: 'radio label 11',
    isInValid: true,
-   noticeError: "Can't update your setting, please try again."
+   noticeError: 'Can't update your setting, please try again.',
+   iconError: 'fa fa-exclamation-circle fa-fw'
+ })</code></pre>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio" type="radio" name="radio" id="radio15" checked="checked" />
+                          <label for="radio15">radio label 15</label>
+                          <div class="input-desc">This is a help text to guide users</div>
+                        </div>
+                        <div class="form-group input-radio-custom">
+                          <input class="input-radio" type="radio" name="radio" id="radio16" />
+                          <label for="radio16">radio label 16</label>
+                          <div class="input-toggle">
+                            <input class="form-control" type="text" placeholder="e.g. paypal@looper.com" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-radio({
+   name: 'radio',
+   id: 'radio9',
+   label: 'radio label 9',
+   checked: true
+ })
+ +group-input-radio({
+   name: 'radio',
+   id: 'radio10',
+   label: 'radio label 10',
+   isValid: true
+ })
+ +group-input-radio({
+   name: 'radio',
+   id: 'radio11',
+   label: 'radio label 11',
+   isInValid: true,
+   noticeError: 'Can't update your setting, please try again.',
+   iconError: 'fa fa-exclamation-circle fa-fw'
  })</code></pre>
                   </div>
                 </div>
@@ -1802,13 +1730,14 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-custom
+ +group-input-radio({
    name: 'radio',
    id: 'radio12',
    checked: true
  })(class= 'input-radio-custom--no-label')
  +group-input-radio({
    name: 'radio',
-   id: 'radio13',
+   id: 'radio13'
  })(class= 'input-radio-custom--no-label')
  +group-input-radio({
    name: 'radio',
@@ -1832,7 +1761,7 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({ isOn: true})</code></pre>
+ +switcher({isOn: true})</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -1845,7 +1774,7 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher()</code></pre>
+ +switcher({})</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -1858,10 +1787,10 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({ 
- isOn: true,
- disabled: 'disabled',
-})</code></pre>
+ +switcher({
+   isOn: true,
+   disabled: 'disabled'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -1877,10 +1806,10 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: success
-})</code></pre>
+ +switcher({
+   isOn: true,
+   type: 'success'
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -1893,10 +1822,10 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: danger
-})</code></pre>
+ +switcher({
+   isOn: true,
+   type: 'danger'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -1912,9 +1841,7 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
-})</code></pre>
+ +switcher({isOn: true})</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -1927,10 +1854,10 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- size: large
-})</code></pre>
+ +switcher({
+   isOn: true,
+   size: 'large'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -1946,13 +1873,12 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: success
- size: 'large'
- onIcon: 'fas fa-check'
- offIcon: 'fas fa-times'
-})</code></pre>
+ +switcher({
+   isOn: true,
+   type: 'success',
+   onIcon: 'fas fa-check',
+   offIcon: 'fas fa-times'
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -1965,13 +1891,12 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: danger
- size: 'large'
- onIcon: 'fas fa-check'
- offIcon: 'fas fa-times'
-})</code></pre>
+ +switcher({
+   isOn: true,
+   type: 'danger',
+   onIcon: 'fas fa-check',
+   offIcon: 'fas fa-times'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -1986,13 +1911,13 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: success
- size: 'large'
- onIcon: 'fas fa-check'
- offIcon: 'fas fa-times'
-})</code></pre>
+ +switcher({ 
+   isOn: true,
+   type: 'success',
+   size: 'large',
+   onIcon: 'fas fa-check',
+   offIcon: 'fas fa-times'
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -2005,13 +1930,13 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: danger
- size: 'large'
- onIcon: 'fas fa-check'
- offIcon: 'fas fa-times'
-})</code></pre>
+ +switcher({ 
+   isOn: true,
+   type: 'danger',
+   size: 'large',
+   onIcon: 'fas fa-check',
+   offIcon: 'fas fa-times'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -2027,12 +1952,12 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: success
- onText: 'on'
- offText: 'off'
-})</code></pre>
+ +switcher({
+   isOn: true,
+   type: 'success',
+   onText: 'on',
+   offText: 'off'
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -2045,12 +1970,12 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: danger
- onText: 'on'
- offText: 'off'
-})</code></pre>
+ +switcher({
+   isOn: true,
+   type: 'danger',
+   onText: 'on',
+   offText: 'off'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -2065,12 +1990,13 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: success
- onText: 'on'
- offText: 'off'
-})</code></pre>
+ +switcher({
+   isOn: true,
+   size: 'large',
+   type: 'success',
+   onText: 'on',
+   offText: 'off'
+ })</code></pre>
                   </div>
                 </div>
                 <div class="col-4">
@@ -2083,12 +2009,13 @@ font-weight: $font-weight-base</code></pre>
                       </form>
                     </div>
                     <pre><code>form.form-customize
-+switcher({
- isOn: true,
- type: danger
- onText: 'on'
- offText: 'off'
-})</code></pre>
+ +switcher({
+   isOn: true,
+   size: 'large',
+   type: 'danger',
+   onText: 'on',
+   offText: 'off'
+ })</code></pre>
                   </div>
                 </div>
               </div>
@@ -2108,14 +2035,14 @@ font-weight: $font-weight-base</code></pre>
                     </div>
                     <pre><code>form.form-customize
  +switcher({
-             isSwitcherRadio: true,
-             name: 'switchRadio',
-             isOn: true
-           })
+   isSwitcherRadio: true,
+   name: 'switchRadio',
+   isOn: true
+ })
  +switcher({
-             isSwitcherRadio: true,
-             name: 'switchRadio'
-           })</code></pre>
+   isSwitcherRadio: true,
+   name: 'switchRadio'
+ })</code></pre>
                   </div>
                 </div>
               </div>

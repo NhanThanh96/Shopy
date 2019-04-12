@@ -6,7 +6,7 @@ h2 Selecbox
   .col-6
     .code-example
       .demo
-        form.form-customize
+        form.form-custom
           -
             var options = [
               { display: 'Choose...', selected: true},
@@ -19,7 +19,7 @@ h2 Selecbox
           })
       pre
         code
-          |form.form-customize
+          |form.form-custom
           | -
           |   var options = [
           |     { display: 'Choose...', selected: true},
@@ -33,7 +33,7 @@ h2 Selecbox
   .col-6
     .code-example
       .demo
-        form.form-customize
+        form.form-custom
           -
             var options = [
               { display: 'Choose...', selected: true},
@@ -47,7 +47,7 @@ h2 Selecbox
           })
       pre
         code
-          |form.form-customize
+          |form.form-custom
           | -
           |   var options = [
           |     { display: 'Choose...', selected: true},
@@ -62,7 +62,7 @@ h2 Selecbox
   .col-6
     .code-example
       .demo
-        form.form-customize
+        form.form-custom
           -
             var options = [
               { display: 'Choose...', selected: true},
@@ -76,7 +76,7 @@ h2 Selecbox
           })
       pre
         code
-          |form.form-customize
+          |form.form-custom
           |  -
           |    var options = [
           |      { display: 'Choose...', selected: true},
@@ -91,7 +91,7 @@ h2 Selecbox
   .col-6
     .code-example
       .demo
-        form.form-customize
+        form.form-custom
           -
             var options = [
               { display: 'Choose...', selected: true},
@@ -106,7 +106,7 @@ h2 Selecbox
           })
       pre
         code
-          |form.form-customize
+          |form.form-custom
           |  -
           |    var options = [
           |      { display: 'Choose...', selected: true},
@@ -122,7 +122,7 @@ h2 Selecbox
   .col-6
     .code-example
       .demo
-        form.form-customize
+        form.form-custom
           -
             var options = [
               { display: 'Choose...', selected: true},
@@ -137,7 +137,7 @@ h2 Selecbox
           })
       pre
         code
-          |form.form-customize
+          |form.form-custom
           |  -
           |    var options = [
           |      { display: 'Choose...', selected: true},
@@ -153,7 +153,7 @@ h2 Selecbox
   .col-6
     .code-example
       .demo
-        form.form-customize
+        form.form-custom
           -
             var options = [
               { display: 'Choose...', selected: true},
@@ -165,12 +165,12 @@ h2 Selecbox
             label: 'Country',
             isInvalid: true,
             noticeError: 'Please select your state.',
-            iconError: 'fa fa-exclamation-circle.fa-fw',
+            iconError: 'fa fa-exclamation-circle fa-fw',
             options: options
           })
       pre
         code
-          |form.form-customize
+          |form.form-custom
           |  -
           |    var options = [
           |      { display: 'Choose...', selected: true},
@@ -182,18 +182,18 @@ h2 Selecbox
           |    label: 'Country',
           |    isInvalid: true,
           |    noticeError: 'Please select your state.',
-          |    iconError: 'fa fa-exclamation-circle.fa-fw',
+          |    iconError: 'fa fa-exclamation-circle fa-fw',
           |    options: options 
           |  })
 h2 Select Size
 -
-  selectSize = ['small', 'large'];
+  selectSize = ['small', 'medium','large'];
 .row
   each item, index in selectSize
     .col-6
       .code-example
         .demo
-          form.form-customize
+          form.form-custom
             -
               var options = [
                 { display: 'Choose...', selected: true},
@@ -207,7 +207,7 @@ h2 Select Size
             })
         pre
           code
-            |form.form-customize
+            |form.form-custom
             |  -
             |    var options = [
             |      { display: 'Choose...', selected: true},
@@ -219,10 +219,12 @@ h2 Select Size
             |    size: #{item},
             |    options: options 
             |  })
+h2 Select floating label
+.row
   .col-6
     .code-example
       .demo
-        form.form-customize
+        form.form-custom
           -
             var options = [
               { display: 'Choose...', selected: true},
@@ -231,11 +233,13 @@ h2 Select Size
             ];
           +group-selectbox({
             id: 'country',
+            label: 'Country',
+            size: item,
             options: options
-          })
+          })(class= 'form-customize--nesting')
       pre
         code
-          |form.form-customize
+          |form.form-custom
           |  -
           |    var options = [
           |      { display: 'Choose...', selected: true},
@@ -244,5 +248,38 @@ h2 Select Size
           |    ];
           |  +group-selectbox({
           |    id: 'country',
+          |    label: 'Country',
+          |    size: #{item},
           |    options: options 
-          |  })
+          |  })(class= 'form-customize--nesting')
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          -
+            var options = [
+              { display: 'Choose...', selected: true},
+              { value: 'United States', display: 'United States' },
+              { value: 'Enland', display: 'England' },
+            ];
+          +group-selectbox({
+            id: 'country',
+            label: 'Country',
+            disabled: 'disabled',
+            options: options
+          })(class= 'form-customize--nesting')
+      pre
+        code
+          |form.form-custom
+          |  -
+          |    var options = [
+          |      { display: 'Choose...', selected: true},
+          |      { value: 'United States', display: 'United States' },
+          |      { value: 'Enland', display: 'England' },
+          |    ];
+          |  +group-selectbox({
+          |    id: 'country',
+          |    label: 'Country',
+          |    disabled: 'disabled',
+          |    options: options 
+          |  })(class= 'form-customize--nesting')
