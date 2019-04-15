@@ -3,4 +3,272 @@
 //-------------------------------------------------------
 
 mixin header()
-  .header Header
+  header.looper-header
+    .looper-header__inner
+      .looper-header__brand
+        a(href="home.html")
+          img(src="images/brand-inverse.png", alt="looper")
+      .looper-header__content
+        .toggle-menu
+          button(
+            type="button"
+            data-toggle="aside"
+            aria-label="toggle menu"
+          )
+        form.looper-header__search(action="#")
+          .input-group
+            .input-group-prepend
+              span.input-group-text
+                span.oi.oi-magnifying-glass
+            input.form-control(
+              type="text"
+              aria-label="Search"
+              placeholder="Search"
+            )
+        .looper-header__options
+          ul.nav
+            li.nav-item
+              a.nav-link(
+                href="#"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false" 
+              )
+                span.oi.oi-pulse
+                .dropdown-arrow
+              .dropdown-menu.dropdown-menu-right(
+                x-placement="top-end"
+              )
+                .dropdown-header
+                  h4 Activities
+                  span (2)
+                .list-group.list-group-flush.user-activities
+                  -
+                    userActivityList = [
+                      {
+                        avatar: "images/avatars/uifaces15.jpg",
+                        title: "Jeffrey Wells created a schedule",
+                        time: "Just now",
+                        unread: true,
+                      },
+                      {
+                        avatar: "images/avatars/uifaces16.jpg",
+                        title: "Anna Vargas logged a chat",
+                        time: "3 hours ago",
+                        unread: true,
+                      },
+                      {
+                        avatar: "images/avatars/uifaces17.jpg",
+                        title: "Sara Carr invited to Stilearn Admin",
+                        time: "5 hours ago"
+                      },
+                      {
+                        avatar: "images/avatars/uifaces18.jpg",
+                        title: "Arthur Carroll updated a project",
+                        time: "1 day ago"
+                      },
+                      {
+                        avatar: "images/avatars/uifaces19.jpg",
+                        title: "Hannah Romero created a task",
+                        time: "1 day ago"
+                      },
+                      {
+                        avatar: "images/avatars/uifaces20.jpg",
+                        title: "Angela Peterson assign a task to you",
+                        time: "2 days ago"
+                      },
+                      {
+                        avatar: "images/avatars/uifaces21.jpg",
+                        title: "Shirley Mason and 3 others followed you",
+                        time: "2 days ago"
+                      }
+                    ];
+                  each item in userActivityList
+                    a.list-group-item(
+                      href="#"
+                      class= item.unread ? "unread" : null
+                    )
+                      if item.avatar
+                        .user-avatar
+                          img(src= item.avatar)
+                      .user-activity
+                        if item.title
+                          h5.user-activity__title= item.title
+                        if item.time
+                          span.user-activity__time= item.time
+                .dropdown-footer
+                  a(href="#") All activities
+                    i.fas.fa-fw.fa-long-arrow-alt-right
+            li.nav-item
+              a.nav-link(
+                href="#"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              )
+                span.oi.oi-envelope-open
+                .dropdown-arrow
+              .dropdown-menu.dropdown-menu-right(
+                x-placement="top-end"
+              )
+                .dropdown-header
+                  h4 Messages
+                  a(href="#") Mark all as read
+                .list-group.list-group-flush.user-messages
+                  -
+                    userMessageList = [
+                      {
+                        avatar: "images/avatars/team1.jpg",
+                        subject: "Stilearning",
+                        title: "Invitation: Joe's Dinner @ Fri Aug 22",
+                        time: "2 hours ago",
+                        unread: true,
+                      },
+                      {
+                        avatar: "images/avatars/team3.jpg",
+                        subject: "Openlane",
+                        title: "Final reminder: Upgrade to Pro",
+                        time: "23 hours ago"
+                      },
+                      {
+                        tileContent: "gz",
+                        tileBackgroundColor: "green",
+                        subject: "Gogo Zoom",
+                        title: "Live healthy with this wireless sensor.",
+                        time: "1 day ago"
+                      },
+                      {
+                        tileContent: "gd",
+                        tileBackgroundColor: "teal",
+                        subject: "Gold Dex",
+                        title: "Invitation: Design Review @ Mon Jul 7",
+                        time: "1 day ago"
+                      },
+                      {
+                        avatar: "images/avatars/team2.jpg",
+                        subject: "Creative Division",
+                        title: "Need some feedback on this please",
+                        time: "2 days ago"
+                      },
+                      {
+                        tileContent: "ld",
+                        tileBackgroundColor: "pink",
+                        subject: "Lab Drill",
+                        title: "Our UX exercise is ready",
+                        time: "6 days ago"
+                      }
+                    ];
+                  each item in userMessageList
+                    a.list-group-item(
+                      href="#"
+                      class= item.unread ? "unread" : null
+                    )
+                      if item.avatar
+                        .user-avatar
+                          img(src= item.avatar)
+                      if item.tileContent
+                        .tile(
+                          class= item.tileBackgroundColor ? `bg--${item.tileBackgroundColor}` : null
+                        )
+                          | #{item.tileContent}
+                      .user-activity
+                        if item.subject
+                          .user-messages__subject= item.subject
+                        if item.title
+                          h5.user-messages__title= item.title
+                        if item.time
+                          .user-messages__time= item.time
+                .dropdown-footer
+                  a(href="#") All activities
+                    i.fas.fa-fw.fa-long-arrow-alt-right
+            li.nav-item
+              a.nav-link(
+                href="#"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              )
+                span.oi.oi-grid-three-up
+                .dropdown-arrow
+              .dropdown-menu.dropdown-menu-right(
+                x-placement="top-end"
+              )
+                .folders
+                  -
+                    var folderList = [
+                      {
+                        tileBackground: "indigo",
+                        tileIcon: "oi oi-people",
+                        name: "Teams",
+                        link: "#"
+                      },
+                      {
+                        tileBackground: "teal",
+                        tileIcon: "oi oi-fork",
+                        name: "Projects",
+                        link: "#"
+                      },
+                      {
+                        tileBackground: "pink",
+                        tileIcon: "fa fa-tasks",
+                        name: "Tasks",
+                        link: "#"
+                      },
+                      {
+                        tileBackground: "yellow",
+                        tileIcon: "oi oi-fire",
+                        name: "Feeds",
+                        link: "#"
+                      },
+                      {
+                        tileBackground: "cyan",
+                        tileIcon: "oi oi-document",
+                        name: "Files",
+                        link: "#"
+                      }
+                    ];
+                  each item in folderList
+                    .folder
+                      a.folder__link(
+                        href= item.link ? item.link : null
+                      )
+                        if item.tileIcon
+                          span.tile(
+                            class= item.tileBackground ? `bg--${item.tileBackground}` : null
+                          )
+                            i(class= item.titleIcon)
+                        if item.name
+                          span.folder__name
+                            | #{item.name}
+        .user-account
+          .dropdown
+            button(
+              type="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            )
+              .user-account__avatar
+                img(src="images/avatars/profile.jpg", alt="avatar")
+              .user-account__summary
+                .user-account__name Beni Arisandi
+                .user-account__position Marketing Manager
+            .dropdown-arrow.dropdown-arrow--left
+            .dropdown-menu(
+              x-placement="bottom-start"
+            )
+              a.dropdown-item(href="#")
+                span.oi.oi-person.user-account__icon
+                | Profile
+              a.dropdown-item(href="#")
+                span.oi.oi-account-logout.user-account__icon
+                | Logout
+              .dropdown-divider
+              a.dropdown-item(href="#") Help Center
+              a.dropdown-item(href="#") Ask Forum
+              a.dropdown-item(href="#") Keyboard Shortcuts
+              
+
+
+
+

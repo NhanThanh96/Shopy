@@ -15877,6 +15877,110 @@ input[type=number]::-webkit-outer-spin-button {
     .input-field input:disabled {
       background-color: #f6f7f9;
       opacity: 1; }
+  .input-field .spinner-border {
+    position: absolute;
+    top: 10px;
+    right: 12px; }
+  .input-field--valid > input {
+    border-color: #00a28a;
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='%2300A28A' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-right: 36px;
+    background-position: calc(100% - .75rem) calc(.375em + .1875rem); }
+    .input-field--valid > input:focus {
+      box-shadow: 0 0 0 1px #00a28a;
+      border-color: #00a28a; }
+  .input-field--invalid > input[type='file']:focus ~ .custom-file-label {
+    border-color: #b76ba3;
+    box-shadow: 0 0 0 1px #b76ba3; }
+  .input-field--invalid > input[type='file']:focus ~ .custom-file-label:after {
+    border-color: #b76ba3; }
+  .input-field--invalid .custom-file-label {
+    border-color: #b76ba3; }
+  .input-field--invalid > input {
+    border-color: #b76ba3;
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' fill='%23B76BA3' viewBox='-2 -2 7 7'><path stroke='%23B76BA3' d='M0 0l3 3m0-3L0 3'/><circle r='.5'/><circle cx='3' r='.5'/><circle cy='3' r='.5'/><circle cx='3' cy='3' r='.5'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-right: 36px;
+    background-position: calc(100% - .75rem) calc(.375em + .1875rem); }
+    .input-field--invalid > input:focus {
+      box-shadow: 0 0 0 1px #b76ba3;
+      border-color: #b76ba3; }
+  .input-field--small > input {
+    height: 29px;
+    font-size: 13px; }
+  .input-field--large > input {
+    height: 46px;
+    font-size: 16px; }
+  .input-field--floating-label.input-field--valid > input {
+    background-position: calc(100% - .75rem) calc(.75em + .1875rem); }
+  .input-field--floating-label.input-field--invalid > input {
+    background-position: calc(100% - .75rem) calc(.75em + .1875rem); }
+  .input-field--floating-label > input {
+    padding-top: 20px;
+    padding-bottom: 4px;
+    height: auto;
+    /* stylelint-disable */
+    /* stylelint-enable */ }
+    .input-field--floating-label > input:-ms-input-placeholder {
+      color: transparent; }
+    .input-field--floating-label > input::placeholder {
+      color: transparent; }
+    .input-field--floating-label > input.show-placeholder {
+      padding-top: 12px;
+      padding-bottom: 12px; }
+      .input-field--floating-label > input.show-placeholder ~ label {
+        padding-top: 13px;
+        padding-bottom: 12px;
+        color: #888c9b;
+        font-size: inherit; }
+  .input-field--floating-label > label {
+    margin-bottom: 0;
+    position: absolute;
+    padding: 4px 12px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    color: #888c9b;
+    pointer-events: none;
+    transition: all .3s ease-in-out; }
+  .input-field--floating-label .spinner-border {
+    top: 16px; }
+
+.form-header {
+  position: relative; }
+  .form-header .toggle-password-button {
+    position: absolute;
+    right: 0;
+    color: #346cb0;
+    text-decoration: none;
+    background-color: transparent;
+    transition: color .3s ease-in; }
+    .form-header .toggle-password-button > i {
+      margin-right: 4px; }
+    .form-header .toggle-password-button:hover {
+      color: #234875; }
+
+.form-label--small {
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 1.5; }
+
+.form-label--large {
+  margin-bottom: 9px;
+  font-size: 16px;
+  line-height: 1.5; }
+
+.form-label > abbr {
+  color: #b76ba3;
+  margin-left: 4px; }
+
+.form-label > .badge {
+  margin-left: 6px; }
 
 .custom-number-controls {
   position: absolute;
@@ -15889,23 +15993,65 @@ input[type=number]::-webkit-outer-spin-button {
     border-left: 1px solid #c6c9d5;
     text-align: center;
     font-size: 6px;
-    height: calc(50%);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
         align-items: center;
     -ms-flex-pack: center;
         justify-content: center;
-    transition: color .2s ease; }
+    transition: color .2s ease;
+    box-sizing: border-box; }
     .custom-number-controls .custom-number-button:hover {
       color: #346cb0; }
+    .custom-number-controls .custom-number-button:active {
+      color: #2e609c;
+      background-color: rgba(52, 108, 176, 0.08); }
     .custom-number-controls .custom-number-button--plus {
+      top: 1px;
+      height: calc(50%);
       border-bottom: 1px solid #c6c9d5; }
+    .custom-number-controls .custom-number-button--minus {
+      bottom: 1px;
+      height: calc(50% - 1px); }
+
+.clearable-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  font-size: 16px;
+  line-height: 1;
+  transform: translateY(-50%);
+  color: #888c9b;
+  cursor: pointer;
+  transition: color .2s ease;
+  display: none; }
+  .clearable-button.show {
+    display: block; }
+  .clearable-button:focus {
+    outline: none; }
+  .clearable-button i {
+    display: block;
+    padding: 10px 12px; }
+
+.custom-file-input:focus ~ .custom-file-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-color: #346cb0;
+  box-shadow: 0 0 0 1px #346cb0; }
+  .custom-file-input:focus ~ .custom-file-label:after {
+    border-color: #346cb0; }
 
 .note-text {
   font-size: 12px;
   color: #888c9b;
   margin-top: 4px; }
+
+.success-notice {
+  margin-top: 4px;
+  margin-bottom: 0;
+  font-size: 85%;
+  color: #00a28a; }
 
 .form-customize--nesting {
   position: relative; }
@@ -16246,5 +16392,11 @@ input[type=number]::-webkit-outer-spin-button {
   .switcher-input:disabled + .switcher-indicator {
     opacity: .38;
     cursor: default; }
+
+.badge {
+  font-size: 80%; }
+  .badge--danger {
+    color: #fff;
+    background-color: #b76ba3; }
 
 /*# sourceMappingURL=main.css.map */

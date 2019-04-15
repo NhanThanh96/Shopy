@@ -9,55 +9,76 @@ mixin input-field({ type, placeholder, value })
     value= value ? value : null
   )&attributes(attributes)
 
-mixin group-input-field({id, type, placeholder, value, isMultiple, minValue, maxValue, size, desc, isValid, isInvalid, noticeError, noticeSuccess, iconError, disabled, readonly, label, abbreviationLabel, badgeLabelType, badgeLabelText, iconToggle, spinnerType})
+mixin group-input-field({id, type, size, placeholder, value, isMultiple, min, max, step, desc, labelFile, buttonFile, isValid, isInvalid, noticeError, noticeSuccess, iconError, disabled, readonly, label, abbreviationLabel, abbreviationTitle, badgeLabelType, badgeLabelText, iconTogglePassword, textTogglePassword,hasSpinner, spinnerType, spinnerSize, clearableIcon})
   .form-group.form-customize()&attributes(attributes)
     .form-header
       if label
-        label(
+        label.form-label(
           for= id ? `${id}` : null
           class= size ? `form-label--${size}` : null
         )
           | #{label}
           if abbreviationLabel
-            abbr(title= 'Required')
+            abbr(title= `${abbreviationTitle}`)
               | #{abbreviationLabel}
           if badgeLabelText
             span.badge(
-              class= badgeLabelText ? `badge--#{badgeLabelType}` : null
+              class= badgeLabelType ? `badge--${badgeLabelType}` : null
             )
               | #{badgeLabelText}
       if type=== 'password'
-        a(
+        a.toggle-password-button.js-toggle-password-button(
           href= '#'
           data-toggle='password'
         )
-          if iconToggle
+          if iconTogglePassword
             i(
-              class= iconToggle ? `${iconToggle}` : null
+              class= iconTogglePassword ? `${iconTogglePassword}` : null
             )
+          if textTogglePassword
+            span.toggle-password-text
+              | #{textTogglePassword}
     .input-field(
       class= size ? `input-field--${size}` : null
+      class= isValid ? `input-field--valid` : null
+      class= isInvalid ? `input-field--invalid` : null
     )
       input.form-control(
         id= id ? `${id}` : null
         type= type ? `${type}` : 'text'
         placeholder= placeholder ? `${placeholder}` : null
-        min= minValue ? `${minValue}` : null
-        max= maxValue ? `${maxValue}` : null
+        min= min ? `${min}` : null
+        max= max ? `${max}` : null
+        step= step ? `${step}` : null
         readonly= readonly ? 'readonly' : null
         value= value ? `${value}` : null
         multiple= isMultiple ? 'multiple' : null
         disabled= disabled ? 'disabled' : null
+        class= (type==='file') ? 'custom-file-input js-custom-file-input' : null
+        class= (type==='password') ? 'js-custom-password-input' : null
+        class= clearableIcon ? 'js-clearable-input' : null
       )
+      if clearableIcon
+        button.clearable-button.js-clearable-button.close(
+          type= 'button'
+          aria-label= 'Close'
+        )
+          span(aria-hidden= 'true')
+            i(class= clearableIcon)
+      if type === 'file'
+        if labelFile
+          label.custom-file-label.js-custom-file-label
+            | #{labelFile}
       if type === 'number'
         .custom-number-controls
-          .custom-number-button.js-custom-number-plus
+          .custom-number-button.custom-number-button--plus.js-custom-number-plus
             i.fas.fa-plus
-          .custom-number-button.js-custom-number-minus
+          .custom-number-button.custom-number-button--minus.js-custom-number-minus
             i.fas.fa-minus
-      if spinnerType
+      if hasSpinner
         .spinner-border(
           class= spinnerType ? `${spinnerType}` : null
+          class= spinnerSize ? `spinner-border-${spinnerSize}` : null
           role= 'status'
         )
           span.sr-only
@@ -69,144 +90,55 @@ mixin group-input-field({id, type, placeholder, value, isMultiple, minValue, max
         p.success-notice
           | #{noticeSuccess}
       if noticeError
-        p.success-notice
+        .error-notice
           if iconError
             i(
               class= iconError ? `${iconError}` : null
             )
           | #{noticeError}
 
-//- Input Field Base has label
-//- mixin group-input-field-base({ label, id, type, placeholder, required, badge, textLabel, iconLabel, size, clearable, spinner, min, max, value, noteText, labelInput})
-
-//-   .form-group.form-customize&attributes(attributes)
-//-     label.label(
-//-       for= id ? id : null
-//-       class= (textLabel || iconLabel) ? 'd-flex justify-content-between' : null
-//-     )= label
-//-       if required
-//-         abbr(title="Required" class= "required") *
-//-       if badge
-//-         span.badge.label__badge(
-//-           class= (badge == "Required") ? 'badge--danger' : 'badge--secondary'
-//-         )= badge
-//-       if textLabel
-//-         span.label__text= textLabel
-//-       if iconLabel
-//-         span.label__icon.label__icon--after.js-toggle-icon
-//-           i(class= iconLabel)
-//-           span Show
-
-//-     .input-field(
-//-       class= size ? `input-field--${size}`: null,
-//-       class= type ? `input-field--${type}`: null,
-//-       class= (type== 'number') ? 'js-input-number': null,
-//-       class= clearable ? 'input-field--clearable' : null
-//-       class= clearable ? 'js-input-clearable' : null,
-//-       class= spinner ? 'input-field--spinner' : null,
-//-       class= spinner ? 'js-input-spinner' : null,
-//-     )
-//-       if clearable
-//-         button.close.show( type= 'button' aria-label= 'Close' )
-//-           span(aria-hidden= "true")
-//-             i(class= 'fa fa-times-circle')
-
-//-       if spinner
-//-         .spinner-border.spinner-border-sm( role= "status" )
-//-           span.sr-only Loading...
-
-//-       +input-field({ type, placeholder, value })(
-//-         id= id ? id : null
-//-         min = min ? min : null
-//-         max = max ? max : null
-//-         value = value ? value : null
-//-         multiple= (type == 'file') ? 'multiple' : null
-//-       )
-//-       if (type == 'file')
-//-         label.input-field__file-label(for= id ? id : null)= labelInput
-
-//-       if (type == 'number')
-//-         .custom-number
-//-           .custom-number__btn.custom-number__up.js-btn-up
-//-             img(src="../images/plus.svg", alt="")
-//-           .custom-number__btn.custom-number__down.js-btn-down
-//-             img(src="../images/minus.svg", alt="")
-
-//-     if noteText
-//-       p.note-text= noteText
-
-//- //- Input Field State has label
-//- mixin group-input-field-states({ label, id, required, badge, iconAfter, labelInput, type, placeholder, isValid, isInvalid, noticeSuccess, noticeError })
-
-//-   .form-group.form-customize(
-//-     class= noticeError ? `form-error` : null
-//-   )&attributes(attributes)
-//-     label(
-//-       for= id ? id : null
-//-     )= label
-    
-//-     .input-field(
-//-       class= size ? `input-field--${size}`: null,
-//-       class= type ? `input-field--${type}` : null,
-//-       class= isValid ? 'input-field--isValid' : null,
-//-       class= isInvalid ? 'input-field--isInvalid' : null
-//-     )
-//-       +input-field({ type, placeholder, value })(
-//-         id= id ? id : null
-//-         multiple= (type == 'file') ? 'multiple' : null
-//-       )
-
-//-     if noticeSuccess
-//-       p.success-notice= noticeSuccess
-
-//-     if noticeError
-//-       p.error-notice
-//-         i.error-notice__icon(class= "fa fa-exclamation-circle fa-fw")
-//-         | #{noticeError}
-
-//- //- Input Field Readonly
-//- mixin group-input-field-readonly({ label, value })
-//-   .form-group.form-customize.form-readonly
-//-     label= label
-//-     +input-field({ type, placeholder, value })(
-//-       readonly
-//-     )
-
-//- //- Input Field disabled
-//- mixin group-input-field-disabled({ label, id, type, placeholder, value, disabled })
-//-   .form-group.form-customize(
-//-     class= "form-control__disabled"
-//-   )&attributes(attributes)
-//-     label(
-//-       for= id ? id : null
-//-     )= label
-
-//-     +input-field({ type, placeholder, value })(
-//-       disabled= disabled ? disabled : null
-//-     )
-
-//- //- Input Field Float label has label
-//- mixin group-input-field-float-label({ label, id, value, placeholder, disabled, isValid, isInvalid, spinner, noticeError})
-//-   .form-group.form-customize&attributes(attributes)
-//-     .input-label(
-//-       class= isValid ? 'input-label--isValid' : null,
-//-       class= isInvalid ? 'input-label--isInvalid' : null
-//-       class= spinner ? 'input-label--spinner' : null
-//-     )
-//-       label(
-//-         for= id ? id : null
-//-       )= label
-
-//-       if spinner
-//-         .spinner-border.spinner-border-sm( role= "status" )
-//-           span.sr-only Loading...
-
-//-       +input-field({ type, placeholder, value })(
-//-         id= id ? id : null
-//-         disabled= disabled ? disabled : null
-//-       )
-
-//-     if noticeError
-//-       p.error-notice
-//-         i.error-notice__icon(class= "fa fa-exclamation-circle fa-fw")
-//-         | #{noticeError}
+mixin group-input-field-floating-label({id, type, size, placeholder, value, isValid, isInvalid, noticeError, noticeSuccess, iconError, disabled, readonly, label, hasSpinner, spinnerType, spinnerSize})
+  .form-group.form-customize
+    .input-field.input-field--floating-label(
+      class= size ? `input-field--${size}` : null
+      class= isValid ? `input-field--valid` : null
+      class= isInvalid ? `input-field--invalid` : null
+    )
+      input.form-control.js-custom-input-floating-label(
+        id= id ? `${id}` : null
+        type= type ? `${type}` : 'text'
+        placeholder= placeholder ? `${placeholder}` : null
+        readonly= readonly ? 'readonly' : null
+        value= value ? `${value}` : null
+        disabled= disabled ? 'disabled' : null
+        class= (type==='file') ? 'custom-file-input js-custom-file-input' : null
+        class= (type==='password') ? 'js-custom-password-input' : null
+      )&attributes(attributes)
+      if label
+        label.form-label(
+          for= id ? `${id}` : null
+          class= size ? `form-label--${size}` : null
+        )
+          | #{label}
+      if type === 'file'
+        if labelFile
+          label.custom-file-label.js-custom-file-label
+            | #{labelFile}
+      if hasSpinner
+        .spinner-border(
+          class= spinnerType ? `${spinnerType}` : null
+          class= spinnerSize ? `spinner-border-${spinnerSize}` : null
+          role= 'status'
+        )
+          span.sr-only
+            | Loading...
+      if noticeSuccess
+        p.success-notice
+          | #{noticeSuccess}
+      if noticeError
+        .error-notice
+          if iconError
+            i(
+              class= iconError ? `${iconError}` : null
+            )
+          | #{noticeError}

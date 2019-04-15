@@ -1,0 +1,130 @@
+{
+  "menu": {
+    "data": [{
+        "name": "Dashboard",
+        "url": "index.html",
+        "icon": "fas fa-home",
+        "active": true
+      }, {
+        "name": "App Pages",
+        "url": "#",
+        "icon": "far fa-file",
+        "badge": {
+          "content": "New",
+          "type": "warning"
+        },
+        "secondLevelMenu": [
+          {
+            "name": "Clients",
+            "url": "#"
+          },
+          {
+            "name": "Teams",
+            "url": "#"
+          },
+          {
+            "name": "Team",
+            "url": "#",
+            "thirdLevelMenu": [
+              {
+                "name": "Overview",
+                "url": "#"
+              },
+              {
+                "name": "Feeds",
+                "url": "#"
+              },
+              {
+                "name": "Projects",
+                "url": "#"
+              },
+              {
+                "name": "Members",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "Project",
+            "url": "#",
+            "thirdLevelMenu": [
+              {
+                "name": "Overview",
+                "url": "#"
+              },
+              {
+                "name": "Board",
+                "url": "#"
+              },
+              {
+                "name": "Gantt View",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "Calendar",
+            "url": "#"
+          },
+          {
+            "name": "Invoices",
+            "url": "#",
+            "thirdLevelMenu": [
+              {
+                "name": "List",
+                "url": "#"
+              },
+              {
+                "name": "Details",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "Teams",
+            "url": "#"
+          },
+          {
+            "name": "Teams",
+            "url": "#"
+          }
+        ]
+      }, {
+        "title": "Form-basic",
+        "url": "form-basic",
+        "categories": "Form Basic",
+        "background": "#006666"
+      }, {
+        "title": "User-profile",
+        "url": "user-profile",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-activities",
+        "url": "user-activities",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-teams",
+        "url": "user-teams",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-projects",
+        "url": "user-projects",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-tasks",
+        "url": "user-tasks",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }, {
+        "title": "User-profile-settings",
+        "url": "user-profile-settings",
+        "categories": "User Profile",
+        "background": "#cd950c"
+      }
+    ]
+  }
+}

@@ -34,7 +34,7 @@ h2 Input field
             id: 'input-2',
             label: 'Email address',
             placeholder: 'e.g. johndoe@looper.com',
-            desc: "We'll never share your email with anyone else."
+            desc: 'We\'ll never share your email with anyone else.'
           })
       pre
         code
@@ -44,7 +44,7 @@ h2 Input field
           |    id: 'input-2',
           |    label: 'Label',
           |    placeholder: 'e.g. johndoe@looper.com',
-          |    desc: "We'll never share your email with anyone else."
+          |    desc: 'We'll never share your email with anyone else.'
           |  })
   .col-6
     .code-example
@@ -99,7 +99,8 @@ h2 Input field
             placeholder: 'Amount (to the nearest dollar)',
             min: '0',
             max: '10',
-            value: '0',
+            step: '1',
+            value: '0'
           })
       pre
         code
@@ -110,6 +111,7 @@ h2 Input field
           |    label: 'Number input',
           |    min: '0',
           |    max: '10',
+          |    step: '1',
           |    value: '0',
           |  })
   .col-6
@@ -120,6 +122,8 @@ h2 Input field
             id: 'input-6',
             type: 'file',
             label: 'File input',
+            labelFile: 'Choose file',
+            isMultiple: true
           })
       pre
         code
@@ -128,6 +132,31 @@ h2 Input field
           |    id: 'input-6',
           |    type: 'file',
           |    label: 'File input',
+          |    labelFile: 'Choose file',
+          |    multiple: true
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({
+            id: 'input-11',
+            type: 'password',
+            value: 'label_with_action',
+            label: 'Password input',
+            iconTogglePassword: 'fa fa-eye fa-fw',
+            textTogglePassword: 'Show',
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field({
+          |    id: 'input-11',
+          |    type: 'password',
+          |    value: 'label_with_action',
+          |    label: 'Password input',
+          |    iconTogglePassword: 'fa fa-eye fa-fw',
+          |    textTogglePassword: 'Show',
           |  })
   .col-6
     .code-example
@@ -136,8 +165,9 @@ h2 Input field
           +group-input-field({
             id: 'input-7',
             type: 'text',
-            label: 'Clearable',
+            label: 'Clearable', 
             value: 'Moonlight',
+            clearableIcon: 'fa fa-times-circle',
             placeholder: 'Type something...'
           })
       pre
@@ -148,6 +178,7 @@ h2 Input field
           |    type: 'text',
           |    label: 'Clearable',
           |    value: 'Moonlight',
+          |    clearableIcon: 'fa fa-times-circle',
           |    placeholder: 'Type something...'
           |  })
 
@@ -159,6 +190,9 @@ h2 Input field
             id: 'input-8',
             label: 'Spinner',
             value: 'Moon',
+            hasSpinner: true,
+            spinnerType: 'text-muted',
+            spinnerSize: 'sm',
             placeholder: 'Type something...'
           })
       pre
@@ -168,6 +202,9 @@ h2 Input field
           |    id: 'input-8',
           |    label: 'Spinner',
           |    value: 'Moon',
+          |    hasSpinner: true,
+          |    spinnerType: 'text-muted',
+          |    spinnerSize: 'sm',
           |    placeholder: 'Type something...'
           |  })
 
@@ -181,7 +218,7 @@ h2 Input field states
             id: 'input-9',
             label: 'Valid input',
             isValid: true,
-            noticeSuccess: "Success! You've done it.",
+            noticeSuccess: 'Success! You\'ve done it.',
           })
       pre
         code
@@ -190,7 +227,7 @@ h2 Input field states
           |    id: 'input-9',
           |    label: 'Valid input',
           |    isValid: true,
-          |    noticeSuccess: "Success! You've done it.",
+          |    noticeSuccess: 'Success! You've done it.',
           |  })
 
   .col-6
@@ -201,8 +238,10 @@ h2 Input field states
             id: 'input-10',
             label: 'Invalid input',
             type: 'file',
+            labelFile: 'Choose file',
+            iconError: 'fa fa-exclamation-circle fa-fw',
             isInvalid: true,
-            noticeError: " Sorry, the image must be at least 300×300.",
+            noticeError: 'Sorry, the image must be at least 300×300.',
           })
       pre
         code
@@ -211,13 +250,15 @@ h2 Input field states
           |    id: 'input-10',
           |    label: 'Invalid input',
           |    type: 'file',
+          |    labelFile: 'Choose file',
+          |    iconError: 'fa fa-exclamation-circle fa-fw',
           |    isInvalid: true,
-          |    noticeError: " Sorry, the image must be at least 300×300.",
+          |    noticeError: 'Sorry, the image must be at least 300×300.',
           |  })
 
 h2 Input size
 -
-  inputSizes = ['small', 'medium', 'large'];
+  inputSizes = ['small', 'large'];
 .row
   each val, index in inputSizes
     .col-4
@@ -228,7 +269,7 @@ h2 Input size
               id: `input-sz${index}`,
               label: `${val} input`,
               size: val,
-              placeholder:'${val} input'
+              placeholder:`${val} placeholder`
             })
         pre
           code
@@ -237,93 +278,231 @@ h2 Input size
             |    id: `input-sz#{index}`,
             |    label: `#{val} input`,
             |    size: val,
-            |    placeholder:'#{val} input'
+            |    placeholder:'#{val} placeholder'
+            |  })
+  .col-4
+      .code-example
+        .demo
+          form.form-custom
+            +group-input-field({
+              id: `input-sz2`,
+              label: 'default input',
+              placeholder: 'default placeholder'
+            })
+        pre
+          code
+            |form.form-custom
+            |  +group-input-field({
+            |    id: `input-sz2`,
+            |    label: 'default input',
+            |    placeholder: 'default placeholder'
             |  })
 
-//- h2 Labels
-
-//- .row
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field({
-//-             label: 'Label',
-//-             id: 'input-12',
-//-             required: true,
-//-             placeholder:'Required asterisks'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-base({
-//-           |     label: 'Label',
-//-           |     id: 'input-12',
-//-           |     required: true,
-//-           |     placeholder: 'Required asterisks'
-//-           |   })
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field-base({
-//-             label: 'Label',
-//-             id: 'input-13',
-//-             badge: 'Required',
-//-             placeholder:'Required label'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-base({
-//-           |     label: 'Label',
-//-           |     id: 'input-13',
-//-           |     badge: 'Required',
-//-           |     placeholder: 'Required label'
-//-           |   })
-
-//- .row
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field-base({
-//-             label: 'Label',
-//-             id: 'input-14',
-//-             textLabel: '0 of 80 characters used',
-//-             placeholder:'Label with description'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-base({
-//-           |     label: 'Label',
-//-           |     id: 'input-14',
-//-           |     textLabel: '0 of 80 characters used',
-//-           |     placeholder:'Label with description'
-//-           |   })
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field-base({
-//-             label: 'Label',
-//-             id: 'input-15',
-//-             type: 'password',
-//-             iconLabel: 'fa fa-eye fa-fw',
-//-             value:'label_with_action'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-base({
-//-           |     label: 'Label',
-//-           |     id: 'input-15',
-//-           |     type: 'password',
-//-           |     iconLabel: 'fa fa-eye fa-fw',
-//-           |     value:'label_with_action'
-//-           |   })
-
+h2 Labels Type
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({
+            label: 'Project name',
+            id: 'input-12',
+            abbreviationLabel: '*',
+            abbreviationTitle: 'Required',
+            placeholder:'Required asterisks'
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field({
+          |    label: 'Project name',
+          |    id: 'input-12',
+          |    abbreviationLabel: '*',
+          |    abbreviationTitle: 'Required',
+          |    placeholder:'Required asterisks'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({
+            label: 'Project name',
+            id: 'input-13',
+            badgeLabelType: 'danger',
+            badgeLabelText: 'Required',        
+            placeholder:'Required label'
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field({
+          |    label: 'Project name',
+          |    id: 'input-13',
+          |    badgeLabelType: 'danger',
+          |    badgeLabelText: 'Required',        
+          |    placeholder:'Required label'
+          |  })
+h2 Input Floating Label
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-floating-label({
+            id: 'input-14',
+            type: 'email',
+            label: 'Email address',
+            value: 'johndoe@looper.com',
+            placeholder:'Email address'
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field-floating-label({
+          |    id: 'input-14',
+          |    type: 'email',
+          |    label: 'Email address',
+          |    value: 'johndoe@looper.com',
+          |    placeholder:'Email address'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-floating-label({
+            id: 'input-15',
+            type: 'password',
+            label: 'Password',
+            placeholder:'Password'
+          })(class='show-placeholder')
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field-floating-label({
+          |    id: 'input-15',
+          |    type: 'password',
+          |    label: 'Password',
+          |    placeholder:'Password'
+          |  })(class='show-placeholder')
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-floating-label({
+            id: 'input-17',
+            type: 'email',
+            label: 'Email address',
+            disabled: 'disabled',
+            placeholder:'Email address'
+          })(class='show-placeholder')
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field-floating-label({
+          |    id: 'input-17',
+          |    type: 'email',
+          |    label: 'Email address',
+          |    disabled: 'disabled',
+          |    placeholder:'Email address'
+          |  })(class='show-placeholder')
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-floating-label({
+            id: 'input-16',
+            type: 'email',
+            label: 'Email address',
+            readonly: 'readonly',
+            value: 'readonly@looper.com',
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field-floating-label({
+          |    id: 'input-16',
+          |    type: 'email',
+          |    label: 'Email address',
+          |    readonly: 'readonly',
+          |    value: 'readonly@looper.com',
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-floating-label({
+            id: 'input-18',
+            type: 'email',
+            label: 'Email address',
+            placeholder: 'Email address',
+            value: 'hasloading@looper.com',
+            hasSpinner: true,
+            spinnerType: 'text-primary',
+            spinnerSize: 'sm'
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field-floating-label({
+          |    id: 'input-18',
+          |    type: 'email',
+          |    label: 'Email address',
+          |    placeholder: 'Email address',
+          |    value: 'hasloading@looper.com',
+          |    hasSpinner: true,
+          |    spinnerType: 'text-primary',
+          |    spinnerSize: 'sm'
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-floating-label({
+            id: 'input-19',
+            type: 'email',
+            label: 'Email address',
+            placeholder: 'Email address',
+            value: 'johndoe@looper.com',
+            isValid: true,
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field-floating-label({
+          |    id: 'input-19',
+          |    type: 'email',
+          |    label: 'Email address',
+          |    placeholder: 'Email address',
+          |    value: 'johndoe@looper.com',
+          |    isValid: true,
+          |  })
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field-floating-label({
+            id: 'input-20',
+            type: 'password',
+            label: 'Password',
+            placeholder: 'Password',
+            value: 'johndoe@looper.com',
+            iconError: 'fa fa-exclamation-circle fa-fw',
+            isInvalid: true,
+            noticeError: 'Sorry, that password isn\'t right.',
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field-floating-label({
+          |    id: 'input-20',
+          |    type: 'password',
+          |    label: 'Password',
+          |    placeholder: 'Password',
+          |    value: 'johndoe@looper.com',
+          |    iconError: 'fa fa-exclamation-circle fa-fw',
+          |    isInvalid: true,
+          |    noticeError: 'Sorry, that password isn't right.',
+          |  })
 //- h2 Floating label
 //- .row
 //-   .col-6
