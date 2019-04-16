@@ -503,114 +503,24 @@ h2 Input Floating Label
           |    isInvalid: true,
           |    noticeError: 'Sorry, that password isn't right.',
           |  })
-//- h2 Floating label
-//- .row
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field-float-label({
-//-             label: 'Label',
-//-             id: 'input-16',
-//-             type: 'email',
-//-             value: 'johndoe@looper.com',
-//-             placeholder:'Email address'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-float-label({
-//-           |     label: 'Label',
-//-           |     id: 'input-16',
-//-           |     type: 'email',
-//-           |     value: 'johndoe@looper.com',
-//-           |     placeholder:'Email address'
-//-           |   })
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field-float-label({
-//-             label: 'Label',
-//-             id: 'input-18',
-//-             type: 'email',
-//-             placeholder:'Email address',
-//-             disabled: 'disabled'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-float-label({
-//-           |     label: 'Label',
-//-           |     id: 'input-18',
-//-           |     type: 'email',
-//-           |     placeholder:'Email address',
-//-           |     disabled: 'disabled'
-//-           |   })
-
-//- .row
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field-float-label({
-//-             label: 'Label',
-//-             id: 'input-19',
-//-             spinner: true,
-//-             placeholder:'Email address',
-//-             value: 'hasloading@looper.com'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-float-label({
-//-           |     label: 'Label',
-//-           |     id: 'input-19',
-//-           |     spinner: true,
-//-           |     placeholder:'Email address',
-//-           |     value: 'hasloading@looper.com'
-//-           |   })
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field-float-label({
-//-             label: 'Label',
-//-             id: 'input-20',
-//-             isValid: true,
-//-             placeholder:'Email address',
-//-             value: 'hasloading@looper.com'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-float-label({
-//-           |     label: 'Label',
-//-           |     id: 'input-20',
-//-           |     isValid: true,
-//-           |     placeholder:'Email address',
-//-           |     value: 'hasloading@looper.com'
-//-           |   })
-//-   .col-6
-//-     .code-example
-//-       .demo
-//-         form.form-custom
-//-           +group-input-field-float-label({
-//-             label: 'Label',
-//-             id: 'input-20',
-//-             isInvalid: true,
-//-             noticeError: "Sorry, that password isn't right.",
-//-             placeholder:'Email address',
-//-             value: 'hasloading@looper.com'
-//-           })
-//-       pre
-//-         code
-//-           |form.form-custom
-//-           |   +group-input-field-float-label({
-//-           |     label: 'Label',
-//-           |     id: 'input-20',
-//-           |     isInvalid: true,
-//-           |     noticeError: "Sorry, that password isn't right.",
-//-           |     placeholder:'Email address',
-//-           |     value: 'hasloading@looper.com'
-//-           |   })
+h2 Input Icon
+.row
+  .col-6
+    .code-example
+      .demo
+        form.form-custom
+          +group-input-field({
+            id: 'input-21',
+            type: 'text',
+            placeholder: 'Search',
+            iconBefore: 'oi oi-magnifying-glass',
+          })
+      pre
+        code
+          |form.form-custom
+          |  +group-input-field({
+          |    id: 'input-21',
+          |    type: 'text',
+          |    placeholder: 'Search',
+          |    iconBefore: 'oi oi-magnifying-glass',
+          |  })

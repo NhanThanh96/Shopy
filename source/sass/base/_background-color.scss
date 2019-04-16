@@ -1,0 +1,23 @@
+// ======================================================
+// Base :: Backgrounds
+// ======================================================
+.bg {
+  &--green {
+    background-color: $bg-light-green;
+  }
+  &--teal {
+    background-color: $cl-green;
+  }
+  &--pink {
+    background-color: $cl-purple;
+  }
+  &--indigo {
+    background-color: $bg-dark-blue;
+  }
+  &--yellow {
+    background-color: $bg-yellow;
+  }
+  &--cyan {
+    background-color: $bg-cyan;
+  }
+}

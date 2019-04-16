@@ -1291,6 +1291,30 @@ font-weight: $font-weight-base</code></pre>
                   </div>
                 </div>
               </div>
+              <h2>Input Icon</h2>
+              <div class="row">
+                <div class="col-6">
+                  <div class="code-example">
+                    <div class="demo">
+                      <form class="form-custom">
+                        <div class="form-group form-customize">
+                          <div class="input-field input-field--icon-before">
+                            <input class="form-control" id="input-21" type="text" placeholder="Search" />
+                            <div class="input-field__icon input-field__icon--before"><i class="oi oi-magnifying-glass"></i></div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <pre><code>form.form-custom
+ +group-input-field({
+   id: 'input-21',
+   type: 'text',
+   placeholder: 'Search',
+   iconBefore: 'oi oi-magnifying-glass',
+ })</code></pre>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="tab-pane fade" role="tabpanel" id="v-pills-selects" aria-labelledby="v-pills-selects-tab">
               <h2>Selecbox</h2>

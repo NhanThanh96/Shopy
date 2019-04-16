@@ -53,6 +53,8 @@
     "stylelint-config-recommended-scss": "^3.0.0",
     "stylelint-config-standard": "^18.0.0",
     "stylelint-order": "^0.8.0",
-    "stylelint-scss": "^2.3.0"
+    "stylelint-scss": "^2.3.0",
+    "open-iconic": "^1.1.1",
+    "perfect-scrollbar": "^1.4.0"
   }
 }

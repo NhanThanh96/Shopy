@@ -9,10 +9,10 @@ mixin input-field({ type, placeholder, value })
     value= value ? value : null
   )&attributes(attributes)
 
-mixin group-input-field({id, type, size, placeholder, value, isMultiple, min, max, step, desc, labelFile, buttonFile, isValid, isInvalid, noticeError, noticeSuccess, iconError, disabled, readonly, label, abbreviationLabel, abbreviationTitle, badgeLabelType, badgeLabelText, iconTogglePassword, textTogglePassword,hasSpinner, spinnerType, spinnerSize, clearableIcon})
+mixin group-input-field({id, type, size, placeholder, value, iconBefore, isMultiple, min, max, step, desc, labelFile, buttonFile, isValid, isInvalid, noticeError, noticeSuccess, iconError, disabled, readonly, label, abbreviationLabel, abbreviationTitle, badgeLabelType, badgeLabelText, iconTogglePassword, textTogglePassword,hasSpinner, spinnerType, spinnerSize, clearableIcon})
   .form-group.form-customize()&attributes(attributes)
-    .form-header
-      if label
+    if label
+      .form-header
         label.form-label(
           for= id ? `${id}` : null
           class= size ? `form-label--${size}` : null
@@ -26,23 +26,24 @@ mixin group-input-field({id, type, size, placeholder, value, isMultiple, min, ma
               class= badgeLabelType ? `badge--${badgeLabelType}` : null
             )
               | #{badgeLabelText}
-      if type=== 'password'
-        a.toggle-password-button.js-toggle-password-button(
-          href= '#'
-          data-toggle='password'
-        )
-          if iconTogglePassword
-            i(
-              class= iconTogglePassword ? `${iconTogglePassword}` : null
-            )
-          if textTogglePassword
-            span.toggle-password-text
-              | #{textTogglePassword}
+        if type=== 'password'
+          a.toggle-password-button.js-toggle-password-button(
+            href= '#'
+            data-toggle='password'
+          )
+            if iconTogglePassword
+              i(
+                class= iconTogglePassword ? `${iconTogglePassword}` : null
+              )
+            if textTogglePassword
+              span.toggle-password-text
+                | #{textTogglePassword}
     .input-field(
       class= size ? `input-field--${size}` : null
       class= isValid ? `input-field--valid` : null
       class= isInvalid ? `input-field--invalid` : null
-    )
+      class= iconBefore ? `input-field--icon-before` : null
+    ) 
       input.form-control(
         id= id ? `${id}` : null
         type= type ? `${type}` : 'text'
@@ -58,6 +59,9 @@ mixin group-input-field({id, type, size, placeholder, value, isMultiple, min, ma
         class= (type==='password') ? 'js-custom-password-input' : null
         class= clearableIcon ? 'js-clearable-input' : null
       )
+      if iconBefore
+        .input-field__icon.input-field__icon--before
+          i(class= iconBefore ? `${iconBefore}` : null)
       if clearableIcon
         button.clearable-button.js-clearable-button.close(
           type= 'button'

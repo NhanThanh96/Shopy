@@ -9,82 +9,76 @@ mixin header()
         a(href="home.html")
           img(src="images/brand-inverse.png", alt="looper")
       .looper-header__content
-        .toggle-menu
+        .toggle-menu.d-none
           button(
             type="button"
             data-toggle="aside"
             aria-label="toggle menu"
           )
         form.looper-header__search(action="#")
-          .input-group
-            .input-group-prepend
-              span.input-group-text
-                span.oi.oi-magnifying-glass
-            input.form-control(
-              type="text"
-              aria-label="Search"
-              placeholder="Search"
-            )
+          +group-input-field({
+            type: 'text',
+            placeholder: 'Search',
+            iconBefore: 'oi oi-magnifying-glass',
+          })(class= 'search')
         .looper-header__options
-          ul.nav
-            li.nav-item
-              a.nav-link(
+          ul.nav.looper-header__nav
+            li.nav-item.dropdown.looper-header__nav-item
+              a.nav-link.looper-header__nav-link(
                 href="#"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false" 
               )
                 span.oi.oi-pulse
-                .dropdown-arrow
-              .dropdown-menu.dropdown-menu-right(
-                x-placement="top-end"
-              )
+              .dropdown-arrow
+              .dropdown-menu.looper-header__dropdown-menu.dropdown-menu-right
                 .dropdown-header
-                  h4 Activities
-                  span (2)
-                .list-group.list-group-flush.user-activities
+                  span Activities
+                    span.activity-count (2)
+                .activities.js-activities-scrollbar
                   -
                     userActivityList = [
                       {
-                        avatar: "images/avatars/uifaces15.jpg",
+                        avatar: "../images/uifaces15.jpg",
                         title: "Jeffrey Wells created a schedule",
                         time: "Just now",
                         unread: true,
                       },
                       {
-                        avatar: "images/avatars/uifaces16.jpg",
+                        avatar: "../images/uifaces16.jpg",
                         title: "Anna Vargas logged a chat",
                         time: "3 hours ago",
                         unread: true,
                       },
                       {
-                        avatar: "images/avatars/uifaces17.jpg",
+                        avatar: "../images/uifaces17.jpg",
                         title: "Sara Carr invited to Stilearn Admin",
                         time: "5 hours ago"
                       },
                       {
-                        avatar: "images/avatars/uifaces18.jpg",
+                        avatar: "../images/uifaces18.jpg",
                         title: "Arthur Carroll updated a project",
                         time: "1 day ago"
                       },
                       {
-                        avatar: "images/avatars/uifaces19.jpg",
+                        avatar: "../images/uifaces19.jpg",
                         title: "Hannah Romero created a task",
                         time: "1 day ago"
                       },
                       {
-                        avatar: "images/avatars/uifaces20.jpg",
+                        avatar: "../images/uifaces20.jpg",
                         title: "Angela Peterson assign a task to you",
                         time: "2 days ago"
                       },
                       {
-                        avatar: "images/avatars/uifaces21.jpg",
+                        avatar: "../images/uifaces21.jpg",
                         title: "Shirley Mason and 3 others followed you",
                         time: "2 days ago"
                       }
                     ];
                   each item in userActivityList
-                    a.list-group-item(
+                    a.dropdown-item(
                       href="#"
                       class= item.unread ? "unread" : null
                     )
@@ -99,130 +93,142 @@ mixin header()
                 .dropdown-footer
                   a(href="#") All activities
                     i.fas.fa-fw.fa-long-arrow-alt-right
-            li.nav-item
-              a.nav-link(
+            li.nav-item.dropdown.looper-header__nav-item
+              a.nav-link.looper-header__nav-link(
                 href="#"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               )
                 span.oi.oi-envelope-open
-                .dropdown-arrow
-              .dropdown-menu.dropdown-menu-right(
-                x-placement="top-end"
-              )
+              .dropdown-arrow
+              .dropdown-menu.looper-header__dropdown-menu.dropdown-menu-right
                 .dropdown-header
-                  h4 Messages
+                  span Messages
                   a(href="#") Mark all as read
-                .list-group.list-group-flush.user-messages
+                .messages.js-messages-scrollbar
                   -
                     userMessageList = [
                       {
-                        avatar: "images/avatars/team1.jpg",
+                        avatar: "../images/team1.jpg",
                         subject: "Stilearning",
                         title: "Invitation: Joe's Dinner @ Fri Aug 22",
                         time: "2 hours ago",
                         unread: true,
                       },
                       {
-                        avatar: "images/avatars/team3.jpg",
+                        avatar: "../images/team3.png",
                         subject: "Openlane",
                         title: "Final reminder: Upgrade to Pro",
                         time: "23 hours ago"
                       },
                       {
-                        tileContent: "gz",
-                        tileBackgroundColor: "green",
+                        tile: {
+                          content: "gz",
+                          backgroundColor: "green",
+                        },
                         subject: "Gogo Zoom",
                         title: "Live healthy with this wireless sensor.",
                         time: "1 day ago"
                       },
                       {
-                        tileContent: "gd",
-                        tileBackgroundColor: "teal",
+                        tile: {
+                          content: "gd",
+                          backgroundColor: "teal",
+                        },
                         subject: "Gold Dex",
                         title: "Invitation: Design Review @ Mon Jul 7",
                         time: "1 day ago"
                       },
                       {
-                        avatar: "images/avatars/team2.jpg",
+                        avatar: "../images/team2.png",
                         subject: "Creative Division",
                         title: "Need some feedback on this please",
                         time: "2 days ago"
                       },
                       {
-                        tileContent: "ld",
-                        tileBackgroundColor: "pink",
+                        tile: {
+                          content: "ld",
+                          backgroundColor: "pink",
+                        },
                         subject: "Lab Drill",
                         title: "Our UX exercise is ready",
                         time: "6 days ago"
                       }
                     ];
                   each item in userMessageList
-                    a.list-group-item(
+                    a.dropdown-item(
                       href="#"
                       class= item.unread ? "unread" : null
                     )
                       if item.avatar
                         .user-avatar
                           img(src= item.avatar)
-                      if item.tileContent
+                      if item.tile
                         .tile(
-                          class= item.tileBackgroundColor ? `bg--${item.tileBackgroundColor}` : null
+                          class= item.tile.backgroundColor ? `bg--${item.tile.backgroundColor}` : null
                         )
-                          | #{item.tileContent}
-                      .user-activity
+                          | #{item.tile.content}
+                      .user-message
                         if item.subject
-                          .user-messages__subject= item.subject
+                          span.user-message__subject= item.subject
                         if item.title
-                          h5.user-messages__title= item.title
+                          h5.user-message__title= item.title
                         if item.time
-                          .user-messages__time= item.time
+                          span.user-message__time= item.time
                 .dropdown-footer
-                  a(href="#") All activities
+                  a(href="#") All messages
                     i.fas.fa-fw.fa-long-arrow-alt-right
-            li.nav-item
-              a.nav-link(
+            li.nav-item.dropdown.looper-header__nav-item
+              a.nav-link.looper-header__nav-link(
                 href="#"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               )
                 span.oi.oi-grid-three-up
-                .dropdown-arrow
-              .dropdown-menu.dropdown-menu-right(
-                x-placement="top-end"
-              )
+              .dropdown-arrow
+              .dropdown-menu.looper-header__dropdown-menu.dropdown-menu-right
                 .folders
                   -
                     var folderList = [
                       {
-                        tileBackground: "indigo",
-                        tileIcon: "oi oi-people",
+                        tile: {
+                          background: "indigo",
+                          icon: "oi oi-people"
+                        },
                         name: "Teams",
                         link: "#"
                       },
                       {
-                        tileBackground: "teal",
-                        tileIcon: "oi oi-fork",
+                        tile: {
+                          background: "teal",
+                          icon: "oi oi-fork"
+                        },
                         name: "Projects",
                         link: "#"
                       },
                       {
-                        tileBackground: "pink",
-                        tileIcon: "fa fa-tasks",
+                        tile: {
+                          background: "pink",
+                          icon: "fa fa-tasks"
+                        },
                         name: "Tasks",
                         link: "#"
                       },
                       {
-                        tileBackground: "yellow",
-                        tileIcon: "oi oi-fire",
+                        tile: {
+                          background: "yellow",
+                          icon: "oi oi-fire"
+                        },
                         name: "Feeds",
                         link: "#"
                       },
                       {
-                        tileBackground: "cyan",
-                        tileIcon: "oi oi-document",
+                        tile: {
+                          background: "cyan",
+                          icon: "oi oi-document"
+                        },
                         name: "Files",
                         link: "#"
                       }
@@ -232,43 +238,38 @@ mixin header()
                       a.folder__link(
                         href= item.link ? item.link : null
                       )
-                        if item.tileIcon
-                          span.tile(
-                            class= item.tileBackground ? `bg--${item.tileBackground}` : null
+                        if item.tile.icon
+                          span.folder__shape(
+                            class= item.tile.background ? `bg--${item.tile.background}` : null
                           )
-                            i(class= item.titleIcon)
+                            i.folder__icon(class= item.tile.icon)
                         if item.name
                           span.folder__name
                             | #{item.name}
-        .user-account
-          .dropdown
-            button(
-              type="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            )
-              .user-account__avatar
-                img(src="images/avatars/profile.jpg", alt="avatar")
-              .user-account__summary
-                .user-account__name Beni Arisandi
-                .user-account__position Marketing Manager
-            .dropdown-arrow.dropdown-arrow--left
-            .dropdown-menu(
-              x-placement="bottom-start"
-            )
-              a.dropdown-item(href="#")
-                span.oi.oi-person.user-account__icon
-                | Profile
-              a.dropdown-item(href="#")
-                span.oi.oi-account-logout.user-account__icon
-                | Logout
-              .dropdown-divider
-              a.dropdown-item(href="#") Help Center
-              a.dropdown-item(href="#") Ask Forum
-              a.dropdown-item(href="#") Keyboard Shortcuts
+        .dropdown.user-account
+          button.user-account__button(
+            type="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          )
+            .user-account__avatar
+              img(src="images/profile.jpg", alt="avatar")
+            .user-account__summary
+              span.user-account__name Beni Arisandi
+              span.user-account__position Marketing Manager
+          .dropdown-arrow.dropdown-arrow--left
+          .dropdown-menu(
+            x-placement="bottom-start"
+          )
+            a.dropdown-item(href="#")
+              span.oi.oi-person.user-account__icon
+              | Profile
+            a.dropdown-item(href="#")
+              span.oi.oi-account-logout.user-account__icon
+              | Logout
+            .dropdown-divider
+            a.dropdown-item(href="#") Help Center
+            a.dropdown-item(href="#") Ask Forum
+            a.dropdown-item(href="#") Keyboard Shortcuts
               
-
-
-
-

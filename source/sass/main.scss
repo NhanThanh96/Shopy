@@ -13,8 +13,10 @@
 @import 'bootstrap/scss/bootstrap-reboot';
 @import 'bootstrap/scss/bootstrap';
 @import 'ionicons/css/ionicons';
+@import 'open-iconic/font/scss/open-iconic-bootstrap';
 
 @import 'extentions/fontawesome/fontawesome';
+@import 'extentions/perfect-scrollbar';
 
 // 2. Abstracts
 // ------------
@@ -27,6 +29,7 @@
 @import 'base/global';
 @import 'base/typography';
 @import 'base/colors';
+@import 'base/background-color';
 @import 'base/images';
 @import 'base/fonts';
 
