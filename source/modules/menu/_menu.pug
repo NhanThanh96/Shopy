@@ -1,0 +1,89 @@
+mixin sidebarTop({data})
+  ul.navbar-nav
+    each val in data
+      li.nav-item
+        if val.secondLevelMenu
+          a.nav-link(
+            href= val.url
+            data-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls= val.url
+            class= val.secondLevelMenu ? "submenu" : ""
+            class= val.active ? "active" : ""
+          )
+            if val.icon
+              i(
+                class= val.icon
+              )
+              |#{val.name}
+            if val.badge
+              span.badge(
+                class= val.badge.type ? `badge--${val.badge.type}` : null
+              )
+          .collapse(
+            class= val.isShow ? "show" : ""
+            id= val.url
+          )
+            ul.nav.flex-column
+              each secondLevel in val.secondLevelMenu
+                li.nav-item
+                  if secondLevel.thirdLevelMenu
+                    a.nav-link(
+                      href= secondLevel.url
+                      data-toggle="collapse"
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls= secondLevel.url
+                    )= secondLevel.name
+                    .collapse(
+                      id= secondLevel.url
+                    )
+                      ul.nav.flex-column
+                        each thirdLevel in secondLevel.thirdLevelMenu
+                          if thirdLevel.fouthLevelMenu
+                            a.nav-link(
+                              href= thirdLevel.url
+                              data-toggle="collapse"
+                              role="button"
+                              aria-expanded="false"
+                              aria-controls= thirdLevel.url
+                            )= thirdLevel.name
+                            .collapse(
+                              id= thirdLevel.url
+                            )
+                              ul.nav.flex-column
+                                each fouthLevel in thirdLevel.fouthLevelMenu
+                                  li.nav-item
+                                    a.nav-link(
+                                      href= fouthLevel.url
+                                    )= fouthLevel.name
+                          else
+                            li.nav-item
+                              a.nav-link(
+                                href= thirdLevel.url
+                              )= thirdLevel.name
+                  else
+                    a.nav-link(
+                      href= secondLevel.url
+                      class= secondLevel.isActive ? "active" : ""
+                    )= secondLevel.name
+                      if secondLevel.badge
+                        span.badge(
+                          class= secondLevel.badge.type ? `badge--${secondLevel.badge.type}` : null
+                        )
+                          | #{secondLevel.badge.content}
+        else
+          a.nav-link(
+            href= "#" + val.url
+          )
+            if val.icon
+              i(
+                class= val.icon
+              )
+              |#{val.name}
+            if val.badge
+              span.badge(
+                class= val.badge.type ? `badge--${val.badge.type}` : null
+              )
+                | #{val.badge.content}

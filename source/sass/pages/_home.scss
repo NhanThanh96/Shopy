@@ -352,6 +352,9 @@
       box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 2px 7px 1px rgba(20, 20, 31, .16);
       pointer-events: none;
     }
+    &--left {
+      left: 36px;
+    }
   }
   &.show {
     .dropdown-arrow {
@@ -402,6 +405,7 @@
   }
 }
 .user-account {
+  $account: &;
   &__button {
     display: flex;
     padding: 0 16px;
@@ -450,7 +454,38 @@
     font-size: 12px;
     opacity: .7;
   }
+  .dropdown-menu {
+    width: 160px;
+    margin-top: 10px;
+    border: 0;
+    font-size: 14px;
+    animation-fill-mode: both;
+    animation-duration: .2s;
+    box-shadow:
+      0 0 0 1px rgba(20, 20, 31, .05),
+      0 2px 7px 1px rgba(20, 20, 31, .16);
+    &.show {
+      animation-name: showDropdown;
+    }
+  }
+  .dropdown-item {
+    padding: 8px 16px;
+    transition: background-color .2s;
+    &:hover {
+      color: #fff;
+      background-color: #346cb0;
+      #{$account}__icon {
+        color: #fff;
+      }
+    }
+  }
+  &__icon {
+    margin-right: 8px;
+    color: #a6abbd;
+    width: 20px;
+  }
 }
+
 /* stylelint-disable */
 .search {
   margin-bottom: 0;
