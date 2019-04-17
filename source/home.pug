@@ -4,4 +4,304 @@ block head
   +head('Dashboard | Looper - Bootstrap 4 Admin Theme')
 
 block main
-  h1 Homeddddf fdfddsff d dd dd
+  section.main-content
+    .main-content__inner
+      .main-content__header
+        .intro
+          span.intro__greeting Hi, Beni
+          p.intro__content Here’s what’s happening with your business today.
+        .dropdown
+          +buttons({
+            text: 'This Week', 
+            type: 'secondary',
+            iconFont: 'fa fa-fw fa-caret-down'
+          })(data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+      section.statistics
+        .row
+          .col-9
+            .statistics__list
+              -
+                var statisticList = [
+                  {
+                    name: 'Teams',
+                    icon: 'oi oi-people',
+                    metric: '8',
+                    link: '#'
+                  },
+                  {
+                    name: 'Projects',
+                    icon: 'oi oi-fork',
+                    metric: '12',
+                    link: '#'
+                  },
+                  {
+                    name: 'Active Tasks',
+                    icon: 'fa fa-tasks',
+                    metric: '64',
+                    link: '#'
+                  }
+                ];
+              each item in statisticList
+                .statistics__item
+                  a.statistics__link(href= item.link ? item.link : '#')
+                    h3.statistics__name
+                      | #{item.name}
+                    .statistics__value
+                      if item.icon
+                        span
+                          i.statistics__icon(class= item.icon)
+                      if item.metric
+                        span.statistics__metric
+                          | #{item.metric}
+          .col-3
+            .ongoing-tasks
+              .ongoing-tasks__link
+                .ongoing-tasks__status
+                  span.pulse.oi.oi-media-record
+                  span.ongoing-tasks__content Ongoing tasks
+                .ongoing-tasks__value
+                  span
+                    i.ongoing-tasks__icon.oi.oi-timer
+                  span.ongoing-tasks__metric 8
+      section.chart-list
+        .row
+          .col-12.col-lg-12.col-xl-4
+            .completion-tasks
+              h3.completion-tasks__title  Completion Tasks
+              -
+                var completionTaskData = [
+                  {
+                    labels: ['21 Mar', '22 Mar', '23 Mar', '24 Mar', '25 Mar', '26 Mar', '27 Mar'],
+                    datasets: [{
+                        backgroundColor: '#346cb0',
+                        borderColor: '#346cb0',
+                        data: [155, 65, 465, 265, 225, 325, 80]
+                      }]
+                  }
+                ];
+              .completion-tasks__content
+                canvas.js-completion-tasks-chart(
+                  width= '304'
+                  height= '292'
+                  data-setdata= completionTaskData
+                )
+          .col-12.col-lg-12.col-xl-4
+            .tasks-performance
+              h3.tasks-performance__title Tasks Performance
+              .tasks-performance__content
+                -
+                  var taskPerformanceData = [
+                    {
+                      percent: '60',
+                      size: '214',
+                      barColor: '#346CB0',
+                      trackColor: false,
+                      scaleColor: false,
+                      rotate: '225',
+                    },
+                    {
+                      percent: '50',
+                      size: '174',
+                      barColor: '#00A28A',
+                      trackColor: false,
+                      scaleColor: false,
+                      rotate: '225',
+                    },
+                    {
+                      percent: '75',
+                      size: '134',
+                      barColor: '#5F4B8B',
+                      trackColor: false,
+                      scaleColor: false,
+                      rotate: '225',
+                    }
+                  ]
+                each item in taskPerformanceData
+                  .tasks-performance__chart.js-tasks-performance-chart(
+                    data-toggle="easypiechart"
+                    data-percent= item.percent
+                    data-size= item.size
+                    data-bar-color= item.barColor
+                    data-track-color= item.trackColor
+                    data-scale-color= item.scaleColor
+                    data-rotate= item.rotate
+                  )
+              .tasks-performance__legends
+                -
+                  var taskPerformanceLegends = [
+                    {
+                      icon: {
+                        name: 'fa fa-fw fa-circle',
+                        color: 'indigo'
+                      },
+                      percent: '100%',
+                      status: 'Assigned'
+                    },
+                    {
+                      icon: {
+                        name: 'fa fa-fw fa-circle',
+                        color: 'purple'
+                      },
+                      percent: '75%',
+                      status: 'Completed '
+                    },
+                    {
+                      icon: {
+                        name: 'fa fa-fw fa-circle',
+                        color: 'teal'
+                      },
+                      percent: '60%',
+                      status: 'Active '
+                    }
+                  ];
+                each item in taskPerformanceLegends
+                  .tasks-performance__legend
+                    .tasks-performance__percent
+                      if item.icon
+                        i(
+                          class= item.icon.name ? item.icon.name : null
+                          class= item.icon.color ? `cl-${item.icon.name}` : null
+                        )
+                      if item.percent
+                        span
+                          | #{item.percent}
+                    .tasks-performance__status
+                      | #{item.status}
+
+          .col-12.col-lg-12.col-xl-4
+            .leaderboard
+              h3.leaderboard__title Leaderboard
+              .leaderboard__legends
+
+              .leaderboard__content
+                -
+                  var leaderData = [
+                    {
+                      progressBar: [
+                        {
+                          valueNow: '73.46140163642832',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'purple'
+                        },
+                        {
+                          valueNow: '8.217716115261473',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'teal'
+                        },
+                        {
+                          valueNow: '1.92102454642476',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'red'
+                        }
+                      ],
+                      user: {
+                        avatar: '../images/avatars/uifaces18.jpg',
+                        name: 'Martha Myers',
+                        link: '#'
+                      },
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle text-purple"></i> 2065<br><i class="fa fa-fw fa-circle text-teal"></i> 231<br><i class="fa fa-fw fa-circle text-red"></i> 54</div>'
+                    },
+                    {
+                      progressBar: [
+                        {
+                          valueNow: '54.180855088914115',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'purple'
+                        },
+                        {
+                          valueNow: '15.361331819901627',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'teal'
+                        },
+                        {
+                          valueNow: '1.853953840332955',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'red'
+                        }
+                      ],
+                      user: {
+                        avatar: '../images/avatars/uifaces15.jpg',
+                        name: 'Tammy Beck',
+                        link: '#'
+                      },
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle text-purple"></i> 1432<br><i class="fa fa-fw fa-circle text-teal"></i> 406<br><i class="fa fa-fw fa-circle text-red"></i> 49</div>'
+                    },
+                    {
+                      progressBar: [
+                        {
+                          valueNow: '52.13289581624282',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'purple'
+                        },
+                        {
+                          valueNow: '3.568498769483183',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'teal'
+                        },
+                        {
+                          valueNow: '3.3634126333059884',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'red'
+                        }
+                      ],
+                      user: {
+                        avatar: '../images/avatars/uifaces17.jpg',
+                        name: 'Susan Kelley',
+                        link: '#'
+                      },
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle text-purple"></i> 1271<br><i class="fa fa-fw fa-circle text-teal"></i> 87<br><i class="fa fa-fw fa-circle text-red"></i> 82</div>'
+                    },
+                    {
+                      progressBar: [
+                        {
+                          valueNow: '75.18463810930577',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'purple'
+                        },
+                        {
+                          valueNow: '10.093549975381585',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'teal'
+                        },
+                        {
+                          valueNow: '7.434761201378631',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'red'
+                        }
+                      ],
+                      user: {
+                        avatar: '../images/avatars/uifaces18.jpg',
+                        name: 'Albert Newman',
+                        link: '#'
+                      },
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle text-purple"></i> 1527<br><i class="fa fa-fw fa-circle text-teal"></i> 205<br><i class="fa fa-fw fa-circle text-red"></i> 151</div>'
+                    }
+                  ];
+                .list-group.list-group-flush
+                  .list-group-item
+                    .leaderboard__avatar
+                      a(href='#').leaderboard__link
+                        img(src="", alt="")
+                    .leaderboard__progress
+                      .progress
+                        .progress-bar(
+                          role='progressbar'
+                          aria-valuenow='0'
+                          aria-valuemin='0'
+                          aria-valuemax='100'
+                        )
+
+
+                

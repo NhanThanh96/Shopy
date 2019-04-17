@@ -1,32 +1,18 @@
-// We architecting this project follow as the "7-1 Pattern" (7 folders, 1 file)
-// For more detail about this pattern
-// (https://sass-guidelin.es/#the-7-1-pattern)
 
-// Font fallback for Windows, Linux
-@import url('http://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
-
-// 1. Vendors
-// ----------
-// https://getbootstrap.com/docs/4.0/getting-started/theming/#sass
-// Need vendors go first because we inherit all of sass files of Bootstrap 4
 @import 'bootstrap/scss/bootstrap-grid';
 @import 'bootstrap/scss/bootstrap-reboot';
 @import 'bootstrap/scss/bootstrap';
+@import 'vendor/bootstrap-override';
 @import 'ionicons/css/ionicons';
-// @import 'open-iconic/font/scss/open-iconic-bootstrap';
 
 @import 'extentions/fontawesome/fontawesome';
 @import 'extentions/perfect-scrollbar';
 @import 'extentions/open-iconic-bootstrap';
 
-// 2. Abstracts
-// ------------
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 @import 'abstracts/functions';
 
-// 3. Base
-// -------
 @import 'base/global';
 @import 'base/typography';
 @import 'base/colors';
@@ -48,6 +34,8 @@
 @import 'components/radios';
 @import 'components/switcher';
 @import 'components/badge';
+@import 'components/header';
+@import 'components/sidebar';
 
 
 // 6. Pages

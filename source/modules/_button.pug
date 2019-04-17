@@ -10,7 +10,7 @@ mixin buttons({ text, type, iconFont, disabled, size, isFull })
     class= isFull ? 'button--full' : null
     class= disabled ? 'button--disabled' : null
     disabled= disabled ? 'disabled' : null
-  )
+  )&attributes(attributes)
     | #{text}
     if iconFont
       i(class= iconFont)

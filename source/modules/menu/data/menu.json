@@ -11,6 +11,7 @@
         "name": "App Pages",
         "url": "#",
         "icon": "far fa-file",
+        "id": "sidebarAppPages",
         "badge": {
           "content": "New",
           "type": "warning"
@@ -27,6 +28,7 @@
           {
             "name": "Team",
             "url": "#",
+            "id": "sidebarTeam",
             "thirdLevelMenu": [
               {
                 "name": "Overview",
@@ -49,6 +51,7 @@
           {
             "name": "Project",
             "url": "#",
+            "id": "sidebarProject",
             "thirdLevelMenu": [
               {
                 "name": "Overview",
@@ -71,6 +74,7 @@
           {
             "name": "Invoices",
             "url": "#",
+            "id": "sidebarInvoices",
             "thirdLevelMenu": [
               {
                 "name": "List",
@@ -96,6 +100,7 @@
         "name": "Auth",
         "url": "#",
         "icon": "oi oi-wrench",
+        "id": "sidebarAuth",
         "secondLevelMenu": [
           {
             "name": "Coming Soon v1",
@@ -167,6 +172,7 @@
         "name": "User",
         "url": "#",
         "icon": "oi oi-person",
+        "id": "sidebarUser",
         "secondLevelMenu": [
           {
             "name": "Profile",
@@ -210,6 +216,7 @@
         "name": "Layouts",
         "url": "#",
         "icon": "oi oi-browser",
+        "id": "sidebarLayouts",
         "badge": {
           "content": "+4",
           "type": "success"
@@ -265,6 +272,7 @@
         "name": "Components",
         "url": "#",
         "icon": "oi oi-puzzle-piece",
+        "id": "sidebarComponents",
         "secondLevelMenu": [
           {
             "name": "General",
@@ -308,6 +316,7 @@
         "name": "Forms",
         "url": "#",
         "icon": "oi oi-pencil",
+        "id": "sidebarForms",
         "secondLevelMenu": [
           {
             "name": "Basic Elements",
@@ -331,6 +340,7 @@
         "name": "Tables",
         "url": "#",
         "icon": "fas fa-table",
+        "id": "sidebarTables",
         "secondLevelMenu": [
           {
             "name": "Basic Table",
@@ -353,11 +363,13 @@
       {
         "name": "Collections",
         "url": "#",
-        "icon": "fas fa-table",
+        "icon": "oi oi-bar-chart",
+        "id": "sidebarCollections",
         "secondLevelMenu": [
           {
             "name": "Chart.js",
             "url": "#",
+            "id": "sidebarChart",
             "thirdLevelMenu": [
               {
                 "name": "Line",
@@ -395,6 +407,7 @@
         "name": "Level Menu",
         "url": "#",
         "icon": "oi oi-list-rich",
+        "id": "sidebarLevelMenu",
         "secondLevelMenu": [
           {
             "name": "Menu item",
@@ -403,6 +416,7 @@
           {
             "name": "Menu item",
             "url": "#",
+            "id": "sidebarMenuItem",
             "thirdLevelMenu": [
               {
                 "name": "Child item",
@@ -415,6 +429,7 @@
               {
                 "name": "Child item",
                 "url": "#",
+                "id": "sidebarChildItem",
                 "fouthLevelMenu": [
                   {
                     "name": "Grand Child item",

@@ -1,11 +1,26 @@
 // ======================================================
 // Components :: Badge
 // ======================================================
+
 .badge {
-  font-size: 80%;
   &--danger {
     color: $cl-white;
     background-color: $cl-purple;
   }
-}
+  &--warning {
+    color: $bg-dark-gray;
+    background-color: $cl-orange;
+  }
 
+  &--success {
+    color: $cl-dark-green;
+    background-color: rgba(0, 162, 138, .08);
+  }
+  &--teal {
+    color: $cl-white;
+    background-color: $cl-green;
+  }
+  &--lg {
+    padding: 6px 8px;
+  }
+}

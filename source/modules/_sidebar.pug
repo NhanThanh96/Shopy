@@ -1,2 +1,18 @@
 mixin sidebar()
-  
+  nav.navbar.navbar__vertical.navbar-expand-md.navbar-light
+    .navbar__content
+      button.navbar-toggle.collapsed.d-md-none(
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      )
+        span.navbar-toggler-icon
+      .navbar__menu#sidebarAccordion.js-navbar-menu-scrollbar
+        +sidebarTop(menuTop.data)
+        h6.navbar__heading interfaces
+        +sidebarTop(menuBottom.data)
+      .navbar__footer
+        +buttons({text: 'Night mode', iconFont: 'fas fa-moon', isFull: 'true'})

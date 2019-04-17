@@ -1,19 +1,20 @@
-mixin sidebarTop({data})
+mixin sidebarTop(data)
   ul.navbar-nav
     each val in data
-      li.nav-item
+      li.nav-item(
+        class= val.secondLevelMenu ? "submenu" : ""
+        class= val.active ? "active" : ""
+      )
         if val.secondLevelMenu
-          a.nav-link(
-            href= val.url
+          a.nav-link.collapsed(
+            href= val.id ? "#" + val.id : null
             data-toggle="collapse"
             role="button"
             aria-expanded="false"
-            aria-controls= val.url
-            class= val.secondLevelMenu ? "submenu" : ""
-            class= val.active ? "active" : ""
+            aria-controls= val.id ? val.id : null
           )
             if val.icon
-              i(
+              span.nav-icon(
                 class= val.icon
               )
               |#{val.name}
@@ -21,48 +22,54 @@ mixin sidebarTop({data})
               span.badge(
                 class= val.badge.type ? `badge--${val.badge.type}` : null
               )
+                | #{val.badge.content}
           .collapse(
-            class= val.isShow ? "show" : ""
-            id= val.url
+            id= val.id ? val.id : null
+            data-parent= "#sidebarAccordion"
           )
             ul.nav.flex-column
               each secondLevel in val.secondLevelMenu
-                li.nav-item
+                li.nav-item(
+                  class= secondLevel.thirdLevelMenu ? "submenu" : ""
+                )
                   if secondLevel.thirdLevelMenu
                     a.nav-link(
-                      href= secondLevel.url
+                      href= secondLevel.id ? "#" + secondLevel.id : null
                       data-toggle="collapse"
                       role="button"
                       aria-expanded="false"
-                      aria-controls= secondLevel.url
+                      aria-controls= secondLevel.id ? secondLevel.id : null
                     )= secondLevel.name
                     .collapse(
-                      id= secondLevel.url
+                      id= secondLevel.id ? secondLevel.id : null
                     )
                       ul.nav.flex-column
                         each thirdLevel in secondLevel.thirdLevelMenu
-                          if thirdLevel.fouthLevelMenu
-                            a.nav-link(
-                              href= thirdLevel.url
-                              data-toggle="collapse"
-                              role="button"
-                              aria-expanded="false"
-                              aria-controls= thirdLevel.url
-                            )= thirdLevel.name
-                            .collapse(
-                              id= thirdLevel.url
-                            )
-                              ul.nav.flex-column
-                                each fouthLevel in thirdLevel.fouthLevelMenu
-                                  li.nav-item
-                                    a.nav-link(
-                                      href= fouthLevel.url
-                                    )= fouthLevel.name
-                          else
-                            li.nav-item
+                          li.nav-item(
+                            class= thirdLevel.fouthLevelMenu ? "submenu" : ""
+                          )
+                            if thirdLevel.fouthLevelMenu
                               a.nav-link(
-                                href= thirdLevel.url
+                                href= thirdLevel.id ? "#" + thirdLevel.id : null
+                                data-toggle="collapse"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls= thirdLevel.id ? thirdLevel.id : null
                               )= thirdLevel.name
+                              .collapse(
+                                id= thirdLevel.id ? thirdLevel.id : null
+                              )
+                                ul.nav.flex-column
+                                  each fouthLevel in thirdLevel.fouthLevelMenu
+                                    li.nav-item
+                                      a.nav-link(
+                                        href= fouthLevel.url
+                                      )= fouthLevel.name
+                            else
+                              li.nav-item
+                                a.nav-link(
+                                  href= thirdLevel.url
+                                )= thirdLevel.name
                   else
                     a.nav-link(
                       href= secondLevel.url
@@ -78,7 +85,7 @@ mixin sidebarTop({data})
             href= "#" + val.url
           )
             if val.icon
-              i(
+              span.nav-icon(
                 class= val.icon
               )
               |#{val.name}
