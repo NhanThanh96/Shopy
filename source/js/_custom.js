@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  $('[data-toggle="tooltip"]').tooltip(); 
+
   new PerfectScrollbar(".js-activities-scrollbar", {
     wheelPropagation: true
   });
@@ -25,7 +27,34 @@ $(document).ready(function() {
         legend: {
           display: false
         },
-        cutoutPercentage: 80,
+        title: {
+          display: false
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              display: true,
+              drawBorder: false,
+              drawOnChartArea: false
+            },
+            ticks: {
+              fontColor: '#888c9b',
+              maxRotation: 0,
+              maxTicksLimit: 4
+            }
+          }],
+          yAxes: [{
+            gridLines: {
+              display: true,
+              drawBorder: false
+            },
+            ticks: {
+              fontColor: '#888c9b',
+              beginAtZero: true,
+              stepSize: 100
+            }
+          }]
+        }
       }
     });
   });
@@ -43,6 +72,5 @@ $(document).ready(function() {
     options.trackColor = options.trackColor == 'false' || options.trackColor == '' ? false : options.trackColor;
     options.scaleColor = options.scaleColor == 'false' || options.scaleColor == '' ? false : options.scaleColor;
     $(selector).easyPieChart(options);
-
   });
 });

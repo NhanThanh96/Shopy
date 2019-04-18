@@ -470,7 +470,7 @@
               <div class="completion-tasks">
                 <h3 class="completion-tasks__title"> Completion Tasks</h3>
                 <div class="completion-tasks__content">
-                  <canvas class="js-completion-tasks-chart" width="304" height="292" data-setdata="[{&quot;labels&quot;:[&quot;21 Mar&quot;,&quot;22 Mar&quot;,&quot;23 Mar&quot;,&quot;24 Mar&quot;,&quot;25 Mar&quot;,&quot;26 Mar&quot;,&quot;27 Mar&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:&quot;#346cb0&quot;,&quot;borderColor&quot;:&quot;#346cb0&quot;,&quot;data&quot;:[155,65,465,265,225,325,80]}]}]"></canvas>
+                  <canvas class="completion-tasks__chart js-completion-tasks-chart" width="304" height="292" data-setdata="[{&quot;labels&quot;:[&quot;21 Mar&quot;,&quot;22 Mar&quot;,&quot;23 Mar&quot;,&quot;24 Mar&quot;,&quot;25 Mar&quot;,&quot;26 Mar&quot;,&quot;27 Mar&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:&quot;#346cb0&quot;,&quot;borderColor&quot;:&quot;#346cb0&quot;,&quot;data&quot;:[155,65,465,265,225,325,80]}]}]"></canvas>
                 </div>
               </div>
             </div>
@@ -478,23 +478,23 @@
               <div class="tasks-performance">
                 <h3 class="tasks-performance__title">Tasks Performance</h3>
                 <div class="tasks-performance__content">
-                  <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="60" data-size="214" data-bar-color="#346CB0" data-rotate="225"></div>
-                  <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="50" data-size="174" data-bar-color="#00A28A" data-rotate="225"></div>
-                  <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="75" data-size="134" data-bar-color="#5F4B8B" data-rotate="225"></div>
+                  <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="60" data-size="214" data-bar-color="#346CB0" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                  <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="50" data-size="174" data-bar-color="#00A28A" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
+                  <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="75" data-size="134" data-bar-color="#5F4B8B" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
                 </div>
                 <div class="tasks-performance__legends">
                   <div class="tasks-performance__legend">
-                    <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl-fa fa-fw fa-circle"></i><span>100%</span>
+                    <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl--indigo"></i><span>100%</span>
                     </div>
                     <div class="tasks-performance__status">Assigned</div>
                   </div>
                   <div class="tasks-performance__legend">
-                    <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl-fa fa-fw fa-circle"></i><span>75%</span>
+                    <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl--purple"></i><span>75%</span>
                     </div>
                     <div class="tasks-performance__status">Completed </div>
                   </div>
                   <div class="tasks-performance__legend">
-                    <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl-fa fa-fw fa-circle"></i><span>60%</span>
+                    <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl--teal"></i><span>60%</span>
                     </div>
                     <div class="tasks-performance__status">Active </div>
                   </div>
@@ -503,15 +503,142 @@
             </div>
             <div class="col-12 col-lg-12 col-xl-4">
               <div class="leaderboard">
-                <h3 class="leaderboard__title">Leaderboard</h3>
-                <div class="leaderboard__legends"></div>
+                <h3 class="leaderboard__title">Leaderboard
+                </h3>
+                <div class="leaderboard__legends">
+                  <div class="leaderboard__legend"><i class="leaderboard__icon fa fa-fw fa-circle cl--light"></i><span class="leaderboard__status">Tasks</span>
+                  </div>
+                  <div class="leaderboard__legend"><i class="leaderboard__icon fa fa-fw fa-circle cl--purple"></i><span class="leaderboard__status">Completed </span>
+                  </div>
+                  <div class="leaderboard__legend"><i class="leaderboard__icon fa fa-fw fa-circle cl--teal"></i><span class="leaderboard__status">Active </span>
+                  </div>
+                  <div class="leaderboard__legend"><i class="leaderboard__icon fa fa-fw fa-circle cl--red"></i><span class="leaderboard__status">Overdue</span>
+                  </div>
+                </div>
                 <div class="leaderboard__content">
                   <div class="list-group list-group-flush">
+                    <div class="list-group-item member">
+                      <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Martha Myers"><img class="member__img" src="../images/uifaces16.jpg" alt="Martha Myers"></a></div>
+                      <div class="member__progresses">
+                        <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="73.46140163642832" aria-valuemin="0" aria-valuemax="100" style="width: 73.46140163642832%"><span class="sr-only">73.46140163642832</span></div>
+                          <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="8.217716115261473" aria-valuemin="0" aria-valuemax="100" style="width: 8.217716115261473%"><span class="sr-only">8.217716115261473</span></div>
+                          <div class="progress-bar bg--red" role="progressbar" aria-valuenow="1.92102454642476" aria-valuemin="0" aria-valuemax="100" style="width: 1.92102454642476%"><span class="sr-only">1.92102454642476</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item member">
+                      <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Tammy Beck"><img class="member__img" src="../images/uifaces15.jpg" alt="Tammy Beck"></a></div>
+                      <div class="member__progresses">
+                        <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="54.180855088914115" aria-valuemin="0" aria-valuemax="100" style="width: 54.180855088914115%"><span class="sr-only">54.180855088914115</span></div>
+                          <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="15.361331819901627" aria-valuemin="0" aria-valuemax="100" style="width: 15.361331819901627%"><span class="sr-only">15.361331819901627</span></div>
+                          <div class="progress-bar bg--red" role="progressbar" aria-valuenow="1.853953840332955" aria-valuemin="0" aria-valuemax="100" style="width: 1.853953840332955%"><span class="sr-only">1.853953840332955</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item member">
+                      <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Susan Kelley"><img class="member__img" src="../images/uifaces17.jpg" alt="Susan Kelley"></a></div>
+                      <div class="member__progresses">
+                        <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="52.13289581624282" aria-valuemin="0" aria-valuemax="100" style="width: 52.13289581624282%"><span class="sr-only">52.13289581624282</span></div>
+                          <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="3.568498769483183" aria-valuemin="0" aria-valuemax="100" style="width: 3.568498769483183%"><span class="sr-only">3.568498769483183</span></div>
+                          <div class="progress-bar bg--red" role="progressbar" aria-valuenow="3.3634126333059884" aria-valuemin="0" aria-valuemax="100" style="width: 3.3634126333059884%"><span class="sr-only">3.3634126333059884</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item member">
+                      <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Albert Newman"><img class="member__img" src="../images/uifaces18.jpg" alt="Albert Newman"></a></div>
+                      <div class="member__progresses">
+                        <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="75.18463810930577" aria-valuemin="0" aria-valuemax="100" style="width: 75.18463810930577%"><span class="sr-only">75.18463810930577</span></div>
+                          <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="10.093549975381585" aria-valuemin="0" aria-valuemax="100" style="width: 10.093549975381585%"><span class="sr-only">10.093549975381585</span></div>
+                          <div class="progress-bar bg--red" role="progressbar" aria-valuenow="7.434761201378631" aria-valuemin="0" aria-valuemax="100" style="width: 7.434761201378631%"><span class="sr-only">7.434761201378631</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item member">
+                      <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Kyle Grant"><img class="member__img" src="../images/uifaces19.jpg" alt="Kyle Grant"></a></div>
+                      <div class="member__progresses">
+                        <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="36.89041881812966" aria-valuemin="0" aria-valuemax="100" style="width: 36.89041881812966%"><span class="sr-only">36.89041881812966</span></div>
+                          <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="15.203671830177854" aria-valuemin="0" aria-valuemax="100" style="width: 15.203671830177854%"><span class="sr-only">15.203671830177854</span></div>
+                          <div class="progress-bar bg--red" role="progressbar" aria-valuenow="7.286288009179575" aria-valuemin="0" aria-valuemax="100" style="width: 7.286288009179575%"><span class="sr-only">7.286288009179575</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="deck">
+          <div class="row">
+            <div class="col-6">
+              <div class="card active-projects">
+                <div class="card-header">
+                  <h3 class="active-projects__heading">Active Projects</h3>
+                </div>
+                <div class="card-body">
+                  <div class="list-group list-group-flush">
                     <div class="list-group-item">
-                      <div class="leaderboard__avatar"><a class="leaderboard__link" href="#"><img src="" alt=""></a></div>
-                      <div class="leaderboard__progress">
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="active-projects__avatar"><a class="tile tile--md tile--color tile--md tile--md" href="#">lt</a>
+                        <div class="user-avatar user-avatar--xs"><img src="user-avatar--../images/team4.jpg" alt="avatar"></div>
+                      </div>
+                      <div class="active-projects__content">
+                        <h5 class="active-projects__title"><a href="#">Looper Admin Theme</a></h5>
+                        <p class="active-projects__subtitle"> Progress in 74% - Last update 1d</p>
+                        <div class="progress active-projects__progress">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="user-avatar--2181" aria-valuemin="user-avatar--0" aria-valuemax="user-avatar--100" style="width: 74%"><span class="sr-only">74%</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="active-projects__avatar"><a class="tile tile--md tile--color tile--md tile--md" href="#">sp</a>
+                        <div class="user-avatar user-avatar--xs"><img src="user-avatar--../images/team1.jpg" alt="avatar"></div>
+                      </div>
+                      <div class="active-projects__content">
+                        <h5 class="active-projects__title"><a href="#">Smart Paper</a></h5>
+                        <p class="active-projects__subtitle"> Progress in 22% - Last update 2h</p>
+                        <div class="progress active-projects__progress">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="user-avatar--867" aria-valuemin="user-avatar--0" aria-valuemax="user-avatar--100" style="width: 22%"><span class="sr-only">22%</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="active-projects__avatar"><a class="tile tile--md tile--color tile--md tile--md" href="#">os</a>
+                        <div class="user-avatar user-avatar--xs"><img src="user-avatar--../images/bootstrap.svg" alt="avatar"></div>
+                      </div>
+                      <div class="active-projects__content">
+                        <h5 class="active-projects__title"><a href="#">Booking App</a></h5>
+                        <p class="active-projects__subtitle"> Progress in 35% - Last update 4h</p>
+                        <div class="progress active-projects__progress">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="user-avatar--112" aria-valuemin="user-avatar--0" aria-valuemax="user-avatar--100" style="width: 99%"><span class="sr-only">99%</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="active-projects__avatar"><a class="tile tile--md tile--color tile--md tile--md" href="#">sb</a>
+                        <div class="user-avatar user-avatar--xs"><img src="user-avatar--../images/sketch.svg" alt="avatar"></div>
+                      </div>
+                      <div class="active-projects__content">
+                        <h5 class="active-projects__title"><a href="#">SVG Icon Bundle</a></h5>
+                        <p class="active-projects__subtitle"> Progress in 32% - Last update 1d</p>
+                        <div class="progress active-projects__progress">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="user-avatar--461" aria-valuemin="user-avatar--0" aria-valuemax="user-avatar--100" style="width: 99%"><span class="sr-only">99%</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="active-projects__avatar"><a class="tile tile--md tile--color tile--md tile--md" href="#">sp</a>
+                        <div class="user-avatar user-avatar--xs"><img src="user-avatar--../images/team4.jpg" alt="avatar"></div>
+                      </div>
+                      <div class="active-projects__content">
+                        <h5 class="active-projects__title"><a href="#">Syrena Project</a></h5>
+                        <p class="active-projects__subtitle"> Progress in 93% - Last update 8h </p>
+                        <div class="progress active-projects__progress">
+                          <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="user-avatar--3981" aria-valuemin="user-avatar--0" aria-valuemax="user-avatar--100" style="width: 99%"><span class="sr-only">99%</span></div>
                         </div>
                       </div>
                     </div>

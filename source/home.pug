@@ -80,7 +80,7 @@ block main
                   }
                 ];
               .completion-tasks__content
-                canvas.js-completion-tasks-chart(
+                canvas.completion-tasks__chart.js-completion-tasks-chart(
                   width= '304'
                   height= '292'
                   data-setdata= completionTaskData
@@ -122,8 +122,8 @@ block main
                     data-percent= item.percent
                     data-size= item.size
                     data-bar-color= item.barColor
-                    data-track-color= item.trackColor
-                    data-scale-color= item.scaleColor
+                    data-track-color= `${item.trackColor}`
+                    data-scale-color= `${item.scaleColor}`
                     data-rotate= item.rotate
                   )
               .tasks-performance__legends
@@ -160,19 +160,60 @@ block main
                       if item.icon
                         i(
                           class= item.icon.name ? item.icon.name : null
-                          class= item.icon.color ? `cl-${item.icon.name}` : null
+                          class= item.icon.color ? `cl--${item.icon.color}` : null
                         )
                       if item.percent
                         span
                           | #{item.percent}
-                    .tasks-performance__status
-                      | #{item.status}
+                    if item.status
+                      .tasks-performance__status
+                        | #{item.status}
 
           .col-12.col-lg-12.col-xl-4
             .leaderboard
               h3.leaderboard__title Leaderboard
+                -
+                  var leaderboardLegends = [
+                    {
+                      icon: {
+                        name: 'fa fa-fw fa-circle',
+                        color: 'light'
+                      },
+                      status: 'Tasks'
+                    },
+                    {
+                      icon: {
+                        name: 'fa fa-fw fa-circle',
+                        color: 'purple'
+                      },
+                      status: 'Completed '
+                    },
+                    {
+                      icon: {
+                        name: 'fa fa-fw fa-circle',
+                        color: 'teal'
+                      },
+                      status: 'Active '
+                    },
+                    {
+                      icon: {
+                        name: 'fa fa-fw fa-circle',
+                        color: 'red'
+                      },
+                      status: 'Overdue'
+                    }
+                  ];
               .leaderboard__legends
-
+                each item in leaderboardLegends
+                  .leaderboard__legend
+                    if item.icon
+                      i.leaderboard__icon(
+                        class= item.icon.name ? item.icon.name : null
+                        class= item.icon.color ? `cl--${item.icon.color}` : null
+                      )
+                    if item.status
+                      span.leaderboard__status
+                        | #{item.status}
               .leaderboard__content
                 -
                   var leaderData = [
@@ -198,11 +239,10 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/avatars/uifaces18.jpg',
-                        name: 'Martha Myers',
-                        link: '#'
+                        avatar: '../images/uifaces16.jpg',
+                        name: 'Martha Myers'
                       },
-                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle text-purple"></i> 2065<br><i class="fa fa-fw fa-circle text-teal"></i> 231<br><i class="fa fa-fw fa-circle text-red"></i> 54</div>'
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
                     },
                     {
                       progressBar: [
@@ -226,11 +266,10 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/avatars/uifaces15.jpg',
-                        name: 'Tammy Beck',
-                        link: '#'
+                        avatar: '../images/uifaces15.jpg',
+                        name: 'Tammy Beck'
                       },
-                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle text-purple"></i> 1432<br><i class="fa fa-fw fa-circle text-teal"></i> 406<br><i class="fa fa-fw fa-circle text-red"></i> 49</div>'
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
                     },
                     {
                       progressBar: [
@@ -254,11 +293,10 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/avatars/uifaces17.jpg',
-                        name: 'Susan Kelley',
-                        link: '#'
+                        avatar: '../images/uifaces17.jpg',
+                        name: 'Susan Kelley'
                       },
-                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle text-purple"></i> 1271<br><i class="fa fa-fw fa-circle text-teal"></i> 87<br><i class="fa fa-fw fa-circle text-red"></i> 82</div>'
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
                     },
                     {
                       progressBar: [
@@ -282,26 +320,216 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/avatars/uifaces18.jpg',
-                        name: 'Albert Newman',
-                        link: '#'
+                        avatar: '../images/uifaces18.jpg',
+                        name: 'Albert Newman'
                       },
-                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle text-purple"></i> 1527<br><i class="fa fa-fw fa-circle text-teal"></i> 205<br><i class="fa fa-fw fa-circle text-red"></i> 151</div>'
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
+                    },
+                    {
+                      progressBar: [
+                        {
+                          valueNow: '36.89041881812966',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'purple'
+                        },
+                        {
+                          valueNow: '15.203671830177854',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'teal'
+                        },
+                        {
+                          valueNow: '7.286288009179575',
+                          valueMin: '0',
+                          valueMax: '100',
+                          type: 'red'
+                        }
+                      ],
+                      user: {
+                        avatar: '../images/uifaces19.jpg',
+                        name: 'Kyle Grant'
+                      },
+                      tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
                     }
                   ];
                 .list-group.list-group-flush
-                  .list-group-item
-                    .leaderboard__avatar
-                      a(href='#').leaderboard__link
-                        img(src="", alt="")
-                    .leaderboard__progress
-                      .progress
-                        .progress-bar(
-                          role='progressbar'
-                          aria-valuenow='0'
-                          aria-valuemin='0'
-                          aria-valuemax='100'
+                    each item in leaderData
+                      .list-group-item.member
+                        if item.user
+                          .member__avatar
+                            a.member__link(
+                              href= '#'
+                              data-toggle= 'tooltip'
+                              title
+                              data-original-title= item.user.name ? item.user.name : null
+                            )
+                              img.member__img(src= item.user.avatar ? item.user.avatar : null , alt= item.user.name ?  item.user.name : null)
+                        if item.progressBar
+                          .member__progresses
+                            .progress.member__progress-group(
+                              data-toggle='tooltip'
+                              title
+                              data-html='true'
+                              data-original-title= item.tooltip ? item.tooltip : null
+                            )
+                              each val in item.progressBar
+                                .progress-bar(
+                                  role='progressbar'
+                                  aria-valuenow= val.valueNow ? val.valueNow : null
+                                  aria-valuemin= val.valueMin ? val.valueMin : null
+                                  aria-valuemax= val.valueMax ? val.valueMax : null
+                                  style= val.valueNow ? `width: ${val.valueNow}%` : null
+                                  class= val.type ? `bg--${val.type}` : null
+                                )
+                                  span.sr-only
+                                    | #{val.valueNow}
+      section.deck
+        .row
+          .col-6
+            .card.active-projects
+              .card-header
+                h3.active-projects__heading Active Projects
+              .card-body
+                .list-group.list-group-flush
+                  -
+                    var activeProjectData = [
+                      {
+                        tile: {
+                          size: 'md',
+                          color: 'purlple',
+                          content: 'lt'
+                        },
+                        avatar: {
+                          size: 'xs',
+                          src: '../images/team4.jpg'
+                        },
+                        progress: {
+                          size: 'xs',
+                          color: 'purple',
+                          valueNow: '2181',
+                          valueMin: '0',
+                          valueMax: '100',
+                          width: '74%'
+                        },
+                        title: 'Looper Admin Theme',
+                        subtitle: 'Progress in 74% - Last update 1d',
+                      },
+                      {
+                        tile: {
+                          size: 'md',
+                          color: 'indigo',
+                          content: 'sp'
+                        },
+                        avatar: {
+                          size: 'xs',
+                          src: '../images/team1.jpg'
+                        },
+                        progress: {
+                          size: 'xs',
+                          color: 'indigo',
+                          valueNow: '867',
+                          valueMin: '0',
+                          valueMax: '100',
+                          width: '22%'
+                        },
+                        title: 'Smart Paper',
+                        subtitle: 'Progress in 22% - Last update 2h',
+                      },
+                      {
+                        tile: {
+                          size: 'md',
+                          color: 'blue',
+                          content: 'os'
+                        },
+                        avatar: {
+                          size: 'xs',
+                          src: '../images/bootstrap.svg'
+                        },
+                        progress: {
+                          size: 'xs',
+                          color: 'blue',
+                          valueNow: '112',
+                          valueMin: '0',
+                          valueMax: '100',
+                          width: '99%'
+                        },
+                        title: 'Booking App',
+                        subtitle: 'Progress in 35% - Last update 4h',
+                      },
+                      {
+                        tile: {
+                          size: 'md',
+                          color: 'teal',
+                          content: 'sb'
+                        },
+                        avatar: {
+                          size: 'xs',
+                          src: '../images/sketch.svg'
+                        },
+                        progress: {
+                          size: 'xs',
+                          color: 'teal',
+                          valueNow: '461',
+                          valueMin: '0',
+                          valueMax: '100',
+                          width: '99%'
+                        },
+                        title: 'SVG Icon Bundle',
+                        subtitle: 'Progress in 32% - Last update 1d',
+                      },
+                      {
+                        tile: {
+                          size: 'md',
+                          color: 'pink',
+                          content: 'sp'
+                        },
+                        avatar: {
+                          size: 'xs',
+                          src: '../images/team4.jpg'
+                        },
+                        progress: {
+                          size: 'xs',
+                          color: 'blue',
+                          valueNow: '3981',
+                          valueMin: '0',
+                          valueMax: '100',
+                          width: '99%'
+                        },
+                        title: 'Syrena Project',
+                        subtitle: 'Progress in 93% - Last update 8h ',
+                      }
+                    ];
+                  each item in activeProjectData
+                    .list-group-item
+                      .active-projects__avatar
+                        a.tile.tile--md.tile--color(
+                          class= item.tile.size ? `tile--${item.tile.size}` : null
+                          class= item.tile.color ? `tile--${item.tile.size}` : null
+                          href='#'
                         )
-
-
-                
+                          | #{item.tile.content}
+                        .user-avatar(
+                          class= item.avatar.size ? `user-avatar--${item.avatar.size}` : null
+                        )
+                          img(
+                            src= item.avatar.src ? `user-avatar--${item.avatar.src}` : null
+                            alt= 'avatar'
+                          )
+                      .active-projects__content
+                        h5.active-projects__title
+                          a(href='#')
+                            | #{item.title}
+                        p.active-projects__subtitle 
+                          | #{item.subtitle}
+                        .progress.active-projects__progress
+                          .progress-bar.bg--purple(
+                            role="progressbar"
+                            aria-valuenow= item.progress.valueNow ? `user-avatar--${item.progress.valueNow}` : null
+                            aria-valuemin= item.progress.valueMin ? `user-avatar--${item.progress.valueMin}` : null
+                            aria-valuemax= item.progress.valueMax ? `user-avatar--${item.progress.valueMax}` : null
+                            style= item.progress.valueMax ? `width: ${item.progress.width}` : null
+                          )
+                            span.sr-only
+                              | #{item.progress.width}
+                            

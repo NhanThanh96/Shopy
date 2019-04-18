@@ -5,24 +5,49 @@
   from {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
+
   to {
     opacity: 1;
+  }
+}
+
+@keyframes chartjs-render-animation {
+  from {
+    opacity: .99;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes progressAnimated {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
   }
 }
 
 .pulse {
   animation: pulse 2.5s ease infinite;
 }
+
 .main-content {
   margin-left: 240px;
   padding-top: 56px;
   width: calc(100% - 240px);
+
   &__inner {
     padding: 24px 32px;
   }
+
   &__header {
     margin-bottom: 24px;
     font-size: 20px;
@@ -30,16 +55,20 @@
     justify-content: space-between;
   }
 }
+
 .intro {
   &__greeting {
-    font-weight: 600;
+    font-weight: $font-weight-bold;
   }
+
   &__content {
-    color: #888c9b;
+    color: $cl-gray;
   }
 }
+
 .statistics {
   margin-top: 32px;
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -47,16 +76,19 @@
     border: 1px solid #d6d8e1;
     border-radius: 4px;
   }
+
   &__item {
     text-align: center;
     flex: 1;
     flex-basis: 0;
     max-width: 100%;
     border-right: 1px solid #d6d8e1;
+
     &:last-of-type {
       border-right: 0;
     }
   }
+
   &__link {
     display: flex;
     flex-direction: column;
@@ -64,35 +96,41 @@
     align-items: center;
     min-height: 136px;
   }
+
   &__name {
     font-size: 14px;
-    font-weight: 500;
-    color: #888c9b;
+    font-weight: calc(#{$font-weight-bold} - 100);
+    color: $cl-gray;
     white-space: nowrap;
     margin-bottom: 8px;
   }
+
   &__value {
     white-space: nowrap;
     display: flex;
     align-items: center;
   }
+
   &__icon {
     font-size: 14px;
-    color: #a6abbd;
+    color: $cl-xlight-gray;
     line-height: 28px;
   }
+
   &__metric {
     margin-left: 8px;
     font-size: 28px;
     line-height: 1;
-    color: #222230;
-    font-weight: 600;
+    color: $bg-light-black;
+    font-weight: $font-weight-bold;
   }
 }
+
 .ongoing-tasks {
   width: 100%;
   border: 1px solid #d6d8e1;
   border-radius: 4px;
+
   &__link {
     display: flex;
     flex-direction: column;
@@ -101,27 +139,31 @@
     padding: 16px;
     min-height: 136px;
   }
+
   &__value {
     white-space: nowrap;
     display: flex;
     align-items: center;
   }
+
   &__icon {
     font-size: 14px;
-    color: #a6abbd;
+    color: $cl-xlight-gray;
     line-height: 28px;
   }
+
   &__metric {
     margin-left: 8px;
     font-size: 28px;
     line-height: 1;
-    color: #222230;
-    font-weight: 600;
+    color: $bg-light-black;
+    font-weight: $font-weight-bold;
   }
+
   &__status {
     white-space: nowrap;
-    color: #fff;
-    background-color: #00a28a;
+    color: $cl-white;
+    background-color: $cl-green;
     padding: 6px 8px;
     text-transform: uppercase;
     font-size: 11px;
@@ -130,20 +172,160 @@
     margin-bottom: 6px;
     border-radius: 4px;
   }
+
   &__content {
     margin-left: 6px;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
   }
 }
+
+.chart-list {
+  margin-top: 32px;
+}
+
+.completion-tasks {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: $cl-white;
+  box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
+
+  &__chart {
+    animation: chartjs-render-animation .1s;
+  }
+
+  &__title {
+    font-size: 16px;
+    margin-bottom: 24px;
+    font-weight: $font-weight-bold;
+  }
+
+  &__content {
+    height: 292px;
+    width: 300px;
+  }
+}
+
 .tasks-performance {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: $cl-white;
+  box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
+
+  &__title {
+    font-size: 16px;
+    margin-bottom: 32px;
+    font-weight: $font-weight-bold;
+  }
+
   &__content {
     position: relative;
     min-height: 131px;
+    height: 214px;
+    margin-bottom: 16px;
   }
+
   &__chart {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  &__legends {
+    margin: 0 -16px;
+    padding: 0 16px;
+    display: flex;
+    align-items: stretch;
+    border-top: 1px solid rgba(20, 20, 31, .12);
+  }
+
+  &__legend {
+    text-align: center;
+    flex: 1;
+    padding: 16px 16px 0 16px;
+  }
+
+  &__percent {
+    i {
+      width: 24px;
+      text-align: center;
+    }
+  }
+
+  &__status {
+    font-size: 80%;
+    color: $cl-gray;
+  }
+}
+
+.leaderboard {
+  padding: 16px 16px 12px 16px;
+  border-radius: 4px;
+  background-color: $cl-white;
+  box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
+
+  &__title {
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-weight: $font-weight-bold;
+  }
+
+  &__legends {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  &__legend {
+    align-items: stretch;
+    text-align: center;
+    font-size: 11px;
+    margin-right: 14px;
+  }
+
+  &__icon {
+    width: 16px;
+    text-align: left;
+  }
+}
+
+.member {
+  display: flex;
+  align-items: stretch;
+  padding: 12px 0;
+  border: 1px solid transparent;
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+  &__avatar {
+    margin-right: 16px;
+  }
+
+  &__link {
+    margin-bottom: 0;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__progresses {
+    flex: 1;
+    align-self: center;
+  }
+
+  &__progress-group {
+    border-radius: 0;
+    background: transparent;
+    animation: progressAnimated 1s;
   }
 }

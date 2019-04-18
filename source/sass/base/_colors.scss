@@ -1,3 +1,20 @@
 // ======================================================
 // Base :: Colors
 // ======================================================
+.cl {
+  &--indigo {
+    color: $bg-dark-blue;
+  }
+  &--purple {
+    color: $bg-dark-purple;
+  }
+  &--teal {
+    color: $cl-green;
+  }
+  &--light {
+    color: $bg-light-gray;
+  }
+  &--red {
+    color: $bg-light-red;
+  }
+}
