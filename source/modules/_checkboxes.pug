@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //- Modules :: Checkbox
 //-------------------------------------------------------
-mixin group-input-checkbox({name, id, label, disabled, isValid, isInValid, isIndeterminate, desc, noticeError, iconError, checked})
+mixin group-input-checkbox({name, id, label, disabled, isValid, isInValid, isIndeterminate, desc, noticeError, iconError, checked, noteText, noteTextColor, noteTextSize})
   .form-group.input-checkbox-custom()&attributes(attributes)
     input.input-checkbox(
       type= 'checkbox'
@@ -15,6 +15,12 @@ mixin group-input-checkbox({name, id, label, disabled, isValid, isInValid, isInd
     )
     label(for= id ? `${id}` : null)
       | #{label}
+      if noteText
+        span(
+          class= noteTextSize ? `text--${noteTextSize}` : null
+          class= noteTextcolor ? `text--${noteTextColor}` : null
+        )
+          | #{noteText}
     if desc
       .input-desc
         | #{desc}

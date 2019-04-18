@@ -3,7 +3,7 @@ extends modules/layout/_page-default
 block head
   +head('Dashboard | Looper - Bootstrap 4 Admin Theme')
 
-block main
+block content
   section.main-content
     .main-content__inner
       .main-content__header
@@ -239,7 +239,7 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/uifaces16.jpg',
+                        avatar: 'images/uifaces16.jpg',
                         name: 'Martha Myers'
                       },
                       tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
@@ -266,7 +266,7 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/uifaces15.jpg',
+                        avatar: 'images/uifaces15.jpg',
                         name: 'Tammy Beck'
                       },
                       tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
@@ -293,7 +293,7 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/uifaces17.jpg',
+                        avatar: 'images/uifaces17.jpg',
                         name: 'Susan Kelley'
                       },
                       tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
@@ -320,7 +320,7 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/uifaces18.jpg',
+                        avatar: 'images/uifaces18.jpg',
                         name: 'Albert Newman'
                       },
                       tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
@@ -347,7 +347,7 @@ block main
                         }
                       ],
                       user: {
-                        avatar: '../images/uifaces19.jpg',
+                        avatar: 'images/uifaces19.jpg',
                         name: 'Kyle Grant'
                       },
                       tooltip: '<div class="text-left small"><i class="fa fa-fw fa-circle cl--purple"></i> 2065<br><i class="fa fa-fw fa-circle cl--teal"></i> 231<br><i class="fa fa-fw fa-circle cl--red"></i> 54</div>'
@@ -384,12 +384,12 @@ block main
                                 )
                                   span.sr-only
                                     | #{val.valueNow}
-      section.deck
+      section.deck-section
         .row
           .col-6
             .card.active-projects
               .card-header
-                h3.active-projects__heading Active Projects
+                | Active Projects
               .card-body
                 .list-group.list-group-flush
                   -
@@ -397,12 +397,12 @@ block main
                       {
                         tile: {
                           size: 'md',
-                          color: 'purlple',
+                          color: 'purple',
                           content: 'lt'
                         },
                         avatar: {
                           size: 'xs',
-                          src: '../images/team4.jpg'
+                          src: 'images/team4.jpg'
                         },
                         progress: {
                           size: 'xs',
@@ -423,7 +423,7 @@ block main
                         },
                         avatar: {
                           size: 'xs',
-                          src: '../images/team1.jpg'
+                          src: 'images/team1.jpg'
                         },
                         progress: {
                           size: 'xs',
@@ -439,12 +439,33 @@ block main
                       {
                         tile: {
                           size: 'md',
-                          color: 'blue',
+                          color: 'yellow',
                           content: 'os'
                         },
                         avatar: {
                           size: 'xs',
-                          src: '../images/bootstrap.svg'
+                          src: 'images/team2.png'
+                        },
+                        progress: {
+                          size: 'xs',
+                          color: 'yellow',
+                          valueNow: '112',
+                          valueMin: '0',
+                          valueMax: '100',
+                          width: '99%'
+                        },
+                        title: 'Online Store',
+                        subtitle: 'Progress in 99% - Last update 2d',
+                      },
+                      {
+                        tile: {
+                          size: 'md',
+                          color: 'blue',
+                          content: 'ba'
+                        },
+                        avatar: {
+                          size: 'xs',
+                          src: 'images/bootstrap.svg'
                         },
                         progress: {
                           size: 'xs',
@@ -452,7 +473,7 @@ block main
                           valueNow: '112',
                           valueMin: '0',
                           valueMax: '100',
-                          width: '99%'
+                          width: '35%'
                         },
                         title: 'Booking App',
                         subtitle: 'Progress in 35% - Last update 4h',
@@ -465,7 +486,7 @@ block main
                         },
                         avatar: {
                           size: 'xs',
-                          src: '../images/sketch.svg'
+                          src: 'images/sketch.svg'
                         },
                         progress: {
                           size: 'xs',
@@ -473,10 +494,10 @@ block main
                           valueNow: '461',
                           valueMin: '0',
                           valueMax: '100',
-                          width: '99%'
+                          width: '32%'
                         },
-                        title: 'SVG Icon Bundle',
-                        subtitle: 'Progress in 32% - Last update 1d',
+                        title: 'Syrena Project',
+                        subtitle: 'Progress in 32% - Last update 1d ',
                       },
                       {
                         tile: {
@@ -486,15 +507,15 @@ block main
                         },
                         avatar: {
                           size: 'xs',
-                          src: '../images/team4.jpg'
+                          src: 'images/team4.jpg'
                         },
                         progress: {
                           size: 'xs',
-                          color: 'blue',
+                          color: 'pink',
                           valueNow: '3981',
                           valueMin: '0',
                           valueMax: '100',
-                          width: '99%'
+                          width: '93%'
                         },
                         title: 'Syrena Project',
                         subtitle: 'Progress in 93% - Last update 8h ',
@@ -502,34 +523,110 @@ block main
                     ];
                   each item in activeProjectData
                     .list-group-item
-                      .active-projects__avatar
-                        a.tile.tile--md.tile--color(
-                          class= item.tile.size ? `tile--${item.tile.size}` : null
-                          class= item.tile.color ? `tile--${item.tile.size}` : null
-                          href='#'
-                        )
-                          | #{item.tile.content}
-                        .user-avatar(
-                          class= item.avatar.size ? `user-avatar--${item.avatar.size}` : null
-                        )
-                          img(
-                            src= item.avatar.src ? `user-avatar--${item.avatar.src}` : null
-                            alt= 'avatar'
-                          )
+                      .active-projects__figure
+                        .avatar-group
+                          if item.tile
+                            a.tile(
+                              class= item.tile.size ? `tile--${item.tile.size}` : null
+                              class= item.tile.color ? `tile--${item.tile.color}` : null
+                              href='#'
+                            )
+                              | #{item.tile.content}
+                          if item.avatar
+                            a.user-avatar(
+                              class= item.avatar.size ? `user-avatar--${item.avatar.size}` : null
+                            )
+                              img(
+                                src= item.avatar.src ? `${item.avatar.src}` : null
+                                alt= 'avatar'
+                              )
                       .active-projects__content
-                        h5.active-projects__title
-                          a(href='#')
-                            | #{item.title}
-                        p.active-projects__subtitle 
-                          | #{item.subtitle}
-                        .progress.active-projects__progress
-                          .progress-bar.bg--purple(
-                            role="progressbar"
-                            aria-valuenow= item.progress.valueNow ? `user-avatar--${item.progress.valueNow}` : null
-                            aria-valuemin= item.progress.valueMin ? `user-avatar--${item.progress.valueMin}` : null
-                            aria-valuemax= item.progress.valueMax ? `user-avatar--${item.progress.valueMax}` : null
-                            style= item.progress.valueMax ? `width: ${item.progress.width}` : null
+                        if item.title
+                          h5.card-title
+                            a(href='#')
+                              | #{item.title}
+                        if item.subtitle
+                          p.card-subtitle
+                            | #{item.subtitle}
+                        if item.progress
+                          .progress.bg-transparent(
+                            class= item.progress.size ? `progress--${item.progress.size}` : null 
                           )
-                            span.sr-only
-                              | #{item.progress.width}
-                            
+                            .progress-bar(
+                              role="progressbar"
+                              aria-valuenow= item.progress.valueNow ? `${item.progress.valueNow}` : null
+                              aria-valuemin= item.progress.valueMin ? `${item.progress.valueMin}` : null
+                              aria-valuemax= item.progress.valueMax ? `${item.progress.valueMax}` : null
+                              style= item.progress.width ? `width: ${item.progress.width}` : null
+                              class= item.progress.color ? `bg--${item.progress.color}` : null
+                            )
+                              span.sr-only
+                                | #{item.progress.width}
+          .col-6
+            .card.active-tasks
+              .card-header
+                | Active Tasks: To-Dos
+              .card-body
+                .todo-list
+                  .todo-header
+                    | Looper Admin Theme (1/3)
+                  .todo
+                    +group-input-checkbox({
+                      name: 'checkbox',
+                      id: 'todo1',
+                      label: 'Eat corn on the cob',
+                    })(class= 'input-checkbox-custom--line-through')
+                  .todo
+                    +group-input-checkbox({
+                      name: 'checkbox',
+                      id: 'todo2',
+                      label: 'Mix up a pitcher of sangria',
+                      checked: true
+                    })(class= 'input-checkbox-custom--line-through')
+                  .todo
+                    +group-input-checkbox({
+                      name: 'checkbox',
+                      id: 'todo3',
+                      label: 'Have a barbecue',
+                    })(class= 'input-checkbox-custom--line-through')
+                  .todo
+                    +group-input-checkbox({
+                      name: 'checkbox',
+                      id: 'todo4',
+                      label: 'Ride a roller coaster — ',
+                      noteText: 'Overdue in 3 days',
+                      noteTextSize: 'small',
+                      noteTextColor: 'red',
+                    })(class= 'input-checkbox-custom--line-through')          
+                  .todo-header
+                    | Smart Paper (0/2)
+                  .todo
+                    +group-input-checkbox({
+                      name: 'checkbox',
+                      id: 'todo5',
+                      label: 'Bring a blanket and lie on the grass at an outdoor concert',
+                    })(class= 'input-checkbox-custom--line-through')
+                  .todo
+                    +group-input-checkbox({
+                      name: 'checkbox',
+                      id: 'todo6',
+                      label: 'Collect seashells at the beach',
+                      checked: true
+                    })(class= 'input-checkbox-custom--line-through')
+                  .todo
+                    +group-input-checkbox({
+                      name: 'checkbox',
+                      id: 'todo7',
+                      label: 'Swim in a lake',
+                    })(class= 'input-checkbox-custom--line-through')
+                  .todo
+                    +group-input-checkbox({
+                      name: 'checkbox',
+                      id: 'todo4',
+                      label: 'Get enough sleep!',
+                    })(class= 'input-checkbox-custom--line-through')
+              .card-footer
+                a(href="#")
+                  span View all
+                  i.fa.fa-fw.fa-angle-right
+                

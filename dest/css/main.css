@@ -18558,4 +18558,168 @@ input[type=number]::-webkit-outer-spin-button {
     background: transparent;
     animation: progressAnimated 1s; }
 
+.active-projects {
+  border: none;
+  box-shadow: 0 0 0 1px rgba(20, 20, 31, 0.05), 0 1px 3px 0 rgba(20, 20, 31, 0.15);
+  margin-bottom: 20px; }
+  .active-projects .card-header {
+    background: transparent;
+    padding: 16px;
+    font-weight: 600; }
+  .active-projects .card-body {
+    padding: 0 0 16px 0; }
+  .active-projects .list-group-item {
+    display: -ms-flexbox;
+    display: flex;
+    border-color: transparent; }
+  .active-projects__figure {
+    margin-right: 16px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+  .active-projects__content {
+    -ms-flex: 1;
+        flex: 1;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-size: 14px; }
+    .active-projects__content .card-title {
+      font-size: 16px; }
+    .active-projects__content .card-title a {
+      color: inherit; }
+    .active-projects__content .card-subtitle {
+      font-size: 12px;
+      color: #888c9b;
+      margin-bottom: 4px; }
+
+.avatar-group {
+  position: relative;
+  display: inline-block; }
+  .avatar-group .user-avatar {
+    line-height: 1.25;
+    border: 3px solid #fff;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate3d(-50%, 0, 0);
+    cursor: pointer; }
+  .avatar-group .tile--indigo:hover {
+    background-color: #285489;
+    color: #fff; }
+  .avatar-group .tile--purple:hover {
+    background-color: #48396a;
+    color: #fff; }
+  .avatar-group .tile--yellow:hover {
+    background-color: #f4b13c;
+    color: #363642; }
+  .avatar-group .tile--blue:hover {
+    background-color: #015475;
+    color: #fff; }
+  .avatar-group .tile--teal:hover {
+    background-color: #006f5f;
+    color: #fff; }
+  .avatar-group .tile--pink:hover {
+    background-color: #a14e8b;
+    color: #fff; }
+
+.tile {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  vertical-align: middle;
+  border-radius: 4px;
+  background-color: #e6e8ed;
+  color: #888c9b;
+  transition: background-color .3s; }
+  .tile--md {
+    width: 36px;
+    height: 36px;
+    line-height: 36px; }
+  .tile--purple {
+    color: #fff;
+    background-color: #5f4b8b; }
+  .tile--indigo {
+    color: #fff;
+    background-color: #346cb0; }
+  .tile--yellow {
+    color: #363642;
+    background-color: #f7c46c; }
+  .tile--blue {
+    color: #fff;
+    background-color: #0179a8; }
+  .tile--teal {
+    color: #fff;
+    background-color: #00a28a; }
+  .tile--pink {
+    color: #fff;
+    background-color: #b76ba3; }
+
+.user-avatar {
+  position: relative;
+  margin-bottom: 0;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  vertical-align: middle;
+  border-radius: 50%; }
+  .user-avatar--xs {
+    width: 20px;
+    height: 20px; }
+  .user-avatar > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; }
+
+.progress--xs {
+  height: 3px; }
+
+.active-tasks {
+  border: none;
+  box-shadow: 0 0 0 1px rgba(20, 20, 31, 0.05), 0 1px 3px 0 rgba(20, 20, 31, 0.15);
+  margin-bottom: 20px; }
+  .active-tasks .card-header {
+    background: transparent;
+    padding: 16px;
+    font-weight: 600; }
+  .active-tasks .card-body {
+    padding: 16px; }
+  .active-tasks .todo-header:first-of-type {
+    padding-top: 0; }
+  .active-tasks .card-footer {
+    padding: 0;
+    background: transparent; }
+    .active-tasks .card-footer a {
+      display: block;
+      padding: 16px;
+      text-align: center;
+      color: #346cb0;
+      line-height: 1.5; }
+
+.todo-header {
+  padding: 16px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888c9b; }
+
+.todo {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 36px;
+  transition: background-color .3s; }
+  .todo:hover {
+    background-color: #f6f7f9; }
+
 /*# sourceMappingURL=main.css.map */

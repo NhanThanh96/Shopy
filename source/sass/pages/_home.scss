@@ -329,3 +329,214 @@
     animation: progressAnimated 1s;
   }
 }
+
+
+.active-projects {
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(20, 20, 31, .05),
+    0 1px 3px 0 rgba(20, 20, 31, .15);
+  margin-bottom: 20px;
+  .card-header {
+    background: transparent;
+    padding: 16px;
+    font-weight: 600;
+  }
+  .card-body {
+    padding: 0 0 16px 0;
+  }
+  .list-group-item {
+    display: flex;
+    border-color: transparent;
+  }
+  &__figure {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    flex: 1;
+    align-self: center;
+    font-size: 14px;
+    .card-title {
+      font-size: 16px;
+    }
+    .card-title a {
+      color: inherit;
+    }
+    .card-subtitle {
+      font-size: 12px;
+      color: #888c9b;
+      margin-bottom: 4px;
+    }
+  }
+}
+.avatar-group {
+  position: relative;
+  display: inline-block;
+  .user-avatar {
+    line-height: 1.25;
+    border: 3px solid #fff;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate3d(-50%, 0, 0);
+    cursor: pointer;
+  }
+  .tile {
+    &--indigo {
+      &:hover {
+        background-color: #285489;
+        color: #fff;
+      }
+    }
+    &--purple {
+      &:hover {
+        background-color: #48396a;
+        color: #fff;
+      }
+    }
+    &--yellow {
+      &:hover {
+        background-color: #f4b13c;
+        color: #363642;
+      }
+    }
+    &--blue {
+      &:hover {
+        background-color: #015475;
+        color: #fff;
+      }
+    }
+    &--teal {
+      &:hover {
+        background-color: #006f5f;
+        color: #fff;
+      }
+    }
+    &--pink {
+      &:hover {
+        background-color: #a14e8b;
+        color: #fff;
+      }
+    }
+  }
+}
+.tile {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  vertical-align: middle;
+  border-radius: 4px;
+  background-color: #e6e8ed;
+  color: #888c9b;
+  transition: background-color .3s;
+  &--md {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+  }
+  &--purple {
+    color: #fff;
+    background-color: #5f4b8b;
+  }
+  &--indigo {
+    color: #fff;
+    background-color: #346cb0;
+  }
+  &--yellow {
+    color: #363642;
+    background-color: #f7c46c;
+  }
+  &--blue {
+    color: #fff;
+    background-color: #0179a8;
+  }
+  &--teal {
+    color: #fff;
+    background-color: #00a28a;
+  }
+  &--pink {
+    color: #fff;
+    background-color: #b76ba3;
+  }
+}
+
+.user-avatar {
+  position: relative;
+  margin-bottom: 0;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  vertical-align: middle;
+  border-radius: 50%;
+  &--xs {
+    width: 20px;
+    height: 20px;
+  }
+  & > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+.progress {
+  &--xs {
+    height: 3px;
+  }
+}
+.active-tasks {
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(20, 20, 31, .05),
+    0 1px 3px 0 rgba(20, 20, 31, .15);
+  margin-bottom: 20px;
+  .card-header {
+    background: transparent;
+    padding: 16px;
+    font-weight: 600;
+  }
+  .card-body {
+    padding: 16px;
+  }
+  .todo-header {
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+  .card-footer {
+    padding: 0;
+    background: transparent;
+    a {
+      display: block;
+      padding: 16px;
+      text-align: center;
+      color: #346cb0;
+      line-height: 1.5;
+    }
+  }
+}
+.todo-header {
+  padding: 16px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888c9b;
+}
+.todo {
+  align-items: center;
+  display: flex;
+  min-height: 36px;
+  transition: background-color .3s;
+  &:hover {
+    background-color: #f6f7f9;
+  }
+}

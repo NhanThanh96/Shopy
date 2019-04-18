@@ -3,4 +3,13 @@
 //-------------------------------------------------------
 
 mixin footer()
-  .footer Footer
+  footer.looper-footer
+    ul.list-inline
+      -
+        var footerMenu = ['Support', 'Help Center', 'Privacy', 'Terms of Service'];
+      each item in footerMenu
+        li.list-inline-item
+          a.text--muted(href= '#')
+            | #{item}
+    .copyright
+      | Copyright © 2018. All right reserved. 
