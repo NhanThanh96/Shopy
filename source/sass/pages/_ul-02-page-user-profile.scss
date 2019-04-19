@@ -1,0 +1,46 @@
+// ======================================================
+// Pages :: user profile
+// ======================================================
+.page-cover {
+  position: relative;
+  padding: 32px 32px 16px 32px;
+  min-height: 256px;
+  display: flex;
+  flex-direction: column;
+  background-color: #e6e8ed;
+  box-shadow: 0 1px 0 rgba(34, 34, 48, .1);
+  &__content {
+    text-align: center;
+    .user-avatar {
+      &:focus {
+        box-shadow: 0 0 0 3px #346cb0;
+        outline: none;
+      }
+    }
+  }
+  &__heading {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  &__controls {
+    position: absolute;
+    right: 16px;
+    bottom: 8px;
+    .button {
+      margin-right: 6px;
+    }
+  }
+}
+.rating {
+  margin: 4px 0;
+  color: #f7c46c;
+  i {
+    margin-right: 4px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
