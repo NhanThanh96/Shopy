@@ -20,11 +20,6 @@
 @import 'base/images';
 @import 'base/fonts';
 
-// 4. Layout
-// ---------
-@import 'layout/header';
-@import 'layout/footer';
-
 // 5. Components
 // -------------
 @import 'components/button';
@@ -34,9 +29,15 @@
 @import 'components/radios';
 @import 'components/switcher';
 @import 'components/badge';
-@import 'components/header';
-@import 'components/sidebar';
+@import 'components/tile';
+@import 'components/avatar';
+@import 'components/_followers-modal';
 
+// 4. Layout
+// ---------
+@import 'layout/header';
+@import 'layout/sidebar';
+@import 'layout/footer';
 
 // 6. Pages
 // --------

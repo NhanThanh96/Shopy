@@ -49,10 +49,12 @@
   }
 
   &__header {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     font-size: 20px;
     display: flex;
-    justify-content: space-between;
+    .dropdown {
+      margin-left: auto;
+    }
   }
 }
 
@@ -67,7 +69,6 @@
 }
 
 .statistics {
-  margin-top: 32px;
 
   &__list {
     display: flex;
@@ -95,6 +96,7 @@
     justify-content: center;
     align-items: center;
     min-height: 136px;
+    padding: 16px;
   }
 
   &__name {
@@ -102,13 +104,16 @@
     font-weight: calc(#{$font-weight-bold} - 100);
     color: $cl-gray;
     white-space: nowrap;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
   }
 
   &__value {
     white-space: nowrap;
     display: flex;
     align-items: center;
+    sub {
+      bottom: 0;
+    }
   }
 
   &__icon {
@@ -118,7 +123,7 @@
   }
 
   &__metric {
-    margin-left: 8px;
+    margin-left: 6px;
     font-size: 28px;
     line-height: 1;
     color: $bg-light-black;
@@ -138,12 +143,14 @@
     align-items: flex-start;
     padding: 16px;
     min-height: 136px;
+    flex-grow: 1;
   }
 
   &__value {
     white-space: nowrap;
     display: flex;
     align-items: center;
+    line-height: 1;
   }
 
   &__icon {
@@ -161,6 +168,7 @@
   }
 
   &__status {
+    position: relative;
     white-space: nowrap;
     color: $cl-white;
     background-color: $cl-green;
@@ -168,8 +176,7 @@
     text-transform: uppercase;
     font-size: 11px;
     line-height: 1;
-    margin-left: 6px;
-    margin-bottom: 6px;
+    top: -8px;
     border-radius: 4px;
   }
 
@@ -180,7 +187,7 @@
 }
 
 .chart-list {
-  margin-top: 32px;
+  margin-top: 28px;
 }
 
 .completion-tasks {
@@ -188,7 +195,7 @@
   border-radius: 4px;
   background-color: $cl-white;
   box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
-
+  margin-bottom: 20px;
   &__chart {
     animation: chartjs-render-animation .1s;
   }
@@ -201,7 +208,6 @@
 
   &__content {
     height: 292px;
-    width: 300px;
   }
 }
 
@@ -343,11 +349,12 @@
     font-weight: 600;
   }
   .card-body {
-    padding: 0 0 16px 0;
+    padding: 0 0 20px 0;
   }
   .list-group-item {
     display: flex;
     border-color: transparent;
+    padding: 12px 16px;
   }
   &__figure {
     margin-right: 16px;
@@ -360,6 +367,7 @@
     font-size: 14px;
     .card-title {
       font-size: 16px;
+      margin-bottom: 10px;
     }
     .card-title a {
       color: inherit;
@@ -423,72 +431,7 @@
     }
   }
 }
-.tile {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 32px;
-  vertical-align: middle;
-  border-radius: 4px;
-  background-color: #e6e8ed;
-  color: #888c9b;
-  transition: background-color .3s;
-  &--md {
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
-  }
-  &--purple {
-    color: #fff;
-    background-color: #5f4b8b;
-  }
-  &--indigo {
-    color: #fff;
-    background-color: #346cb0;
-  }
-  &--yellow {
-    color: #363642;
-    background-color: #f7c46c;
-  }
-  &--blue {
-    color: #fff;
-    background-color: #0179a8;
-  }
-  &--teal {
-    color: #fff;
-    background-color: #00a28a;
-  }
-  &--pink {
-    color: #fff;
-    background-color: #b76ba3;
-  }
-}
 
-.user-avatar {
-  position: relative;
-  margin-bottom: 0;
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  font-size: 32px;
-  vertical-align: middle;
-  border-radius: 50%;
-  &--xs {
-    width: 20px;
-    height: 20px;
-  }
-  & > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-}
 .progress {
   &--xs {
     height: 3px;
@@ -523,6 +466,9 @@
       color: #346cb0;
       line-height: 1.5;
     }
+    .fa {
+      margin-left: 4px;
+    }
   }
 }
 .todo-header {
@@ -536,7 +482,26 @@
   display: flex;
   min-height: 36px;
   transition: background-color .3s;
+  border-radius: 4px;
   &:hover {
     background-color: #f6f7f9;
   }
+  .input-checkbox-custom {
+    padding-left: 32px;
+    flex: 1;
+  }
+  label {
+    display: block;
+    &:before {
+      left: -32px;
+    }
+    &:after {
+      left: -32px;
+    }
+  }
+}
+.looper-footer {
+  margin: 24px 0;
+  padding: 0 16px;
+  text-align: center;
 }

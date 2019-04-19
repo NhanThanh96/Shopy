@@ -41,39 +41,39 @@ mixin header()
                   -
                     userActivityList = [
                       {
-                        avatar: "../images/uifaces15.jpg",
+                        avatar: "images/uifaces15.jpg",
                         title: "Jeffrey Wells created a schedule",
                         time: "Just now",
                         unread: true,
                       },
                       {
-                        avatar: "../images/uifaces16.jpg",
+                        avatar: "images/uifaces16.jpg",
                         title: "Anna Vargas logged a chat",
                         time: "3 hours ago",
                         unread: true,
                       },
                       {
-                        avatar: "../images/uifaces17.jpg",
+                        avatar: "images/uifaces17.jpg",
                         title: "Sara Carr invited to Stilearn Admin",
                         time: "5 hours ago"
                       },
                       {
-                        avatar: "../images/uifaces18.jpg",
+                        avatar: "images/uifaces18.jpg",
                         title: "Arthur Carroll updated a project",
                         time: "1 day ago"
                       },
                       {
-                        avatar: "../images/uifaces19.jpg",
+                        avatar: "images/uifaces19.jpg",
                         title: "Hannah Romero created a task",
                         time: "1 day ago"
                       },
                       {
-                        avatar: "../images/uifaces20.jpg",
+                        avatar: "images/uifaces20.jpg",
                         title: "Angela Peterson assign a task to you",
                         time: "2 days ago"
                       },
                       {
-                        avatar: "../images/uifaces21.jpg",
+                        avatar: "images/uifaces21.jpg",
                         title: "Shirley Mason and 3 others followed you",
                         time: "2 days ago"
                       }
@@ -112,14 +112,14 @@ mixin header()
                   -
                     userMessageList = [
                       {
-                        avatar: "../images/team1.jpg",
+                        avatar: "images/team1.jpg",
                         subject: "Stilearning",
                         title: "Invitation: Joe's Dinner @ Fri Aug 22",
                         time: "2 hours ago",
                         unread: true,
                       },
                       {
-                        avatar: "../images/team3.png",
+                        avatar: "images/team3.png",
                         subject: "Openlane",
                         title: "Final reminder: Upgrade to Pro",
                         time: "23 hours ago"
@@ -127,7 +127,8 @@ mixin header()
                       {
                         tile: {
                           content: "gz",
-                          backgroundColor: "green",
+                          color: "green",
+                          type: "circle"
                         },
                         subject: "Gogo Zoom",
                         title: "Live healthy with this wireless sensor.",
@@ -136,14 +137,15 @@ mixin header()
                       {
                         tile: {
                           content: "gd",
-                          backgroundColor: "teal",
+                          color: "teal",
+                          type: "circle"
                         },
                         subject: "Gold Dex",
                         title: "Invitation: Design Review @ Mon Jul 7",
                         time: "1 day ago"
                       },
                       {
-                        avatar: "../images/team2.png",
+                        avatar: "images/team2.png",
                         subject: "Creative Division",
                         title: "Need some feedback on this please",
                         time: "2 days ago"
@@ -151,7 +153,8 @@ mixin header()
                       {
                         tile: {
                           content: "ld",
-                          backgroundColor: "pink",
+                          color: "pink",
+                          type: "circle"
                         },
                         subject: "Lab Drill",
                         title: "Our UX exercise is ready",
@@ -168,7 +171,8 @@ mixin header()
                           img(src= item.avatar)
                       if item.tile
                         .tile(
-                          class= item.tile.backgroundColor ? `bg--${item.tile.backgroundColor}` : null
+                          class= item.tile.type ? `tile--${item.tile.type}` : null
+                          class= item.tile.color ? `tile--${item.tile.color}` : null
                         )
                           | #{item.tile.content}
                       .user-message
@@ -197,7 +201,8 @@ mixin header()
                     var folderList = [
                       {
                         tile: {
-                          background: "indigo",
+                          color: "indigo",
+                          size: 'lg',
                           icon: "oi oi-people"
                         },
                         name: "Teams",
@@ -205,7 +210,8 @@ mixin header()
                       },
                       {
                         tile: {
-                          background: "teal",
+                          color: "teal",
+                          size: 'lg',
                           icon: "oi oi-fork"
                         },
                         name: "Projects",
@@ -213,7 +219,8 @@ mixin header()
                       },
                       {
                         tile: {
-                          background: "pink",
+                          color: "pink",
+                          size: 'lg',
                           icon: "fa fa-tasks"
                         },
                         name: "Tasks",
@@ -221,7 +228,8 @@ mixin header()
                       },
                       {
                         tile: {
-                          background: "yellow",
+                          color: "yellow",
+                          size: 'lg',
                           icon: "oi oi-fire"
                         },
                         name: "Feeds",
@@ -229,7 +237,8 @@ mixin header()
                       },
                       {
                         tile: {
-                          background: "cyan",
+                          color: "cyan",
+                          size: 'lg',
                           icon: "oi oi-document"
                         },
                         name: "Files",
@@ -241,9 +250,10 @@ mixin header()
                       a.folder__link(
                         href= item.link ? item.link : null
                       )
-                        if item.tile.icon
-                          span.folder__shape(
-                            class= item.tile.background ? `bg--${item.tile.background}` : null
+                        if item.tile
+                          span.tile(
+                            class= item.tile.size ? `tile--${item.tile.size}` : null
+                            class= item.tile.color ? `tile--${item.tile.color}` : null
                           )
                             i.folder__icon(class= item.tile.icon)
                         if item.name

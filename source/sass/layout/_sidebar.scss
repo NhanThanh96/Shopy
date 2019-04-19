@@ -59,8 +59,17 @@
     position: relative;
     flex: 1;
     padding-top: 16px;
-    margin-bottom: 16px;
     width: 100%;
+  }
+  &__menu > .navbar-nav > .nav-item.active {
+    & > .nav-link {
+      color: #222230;
+      font-weight: 400;
+    }
+    & > .nav-link:hover {
+      color: #222230;
+      font-weight: 400;
+    }
   }
 }
 
@@ -114,6 +123,7 @@
         right: 28px;
         margin-top: 2px;
         padding: 4px 6px;
+        font-size: 80%;
       }
     }
     & > .nav-link:hover {

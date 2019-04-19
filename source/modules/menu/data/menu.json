@@ -3,9 +3,8 @@
     "data": [
       {
         "name": "Dashboard",
-        "url": "index.html",
-        "icon": "fas fa-home",
-        "active": true
+        "url": "home.html",
+        "icon": "fas fa-home"
       }, 
       {
         "name": "App Pages",
@@ -176,7 +175,7 @@
         "secondLevelMenu": [
           {
             "name": "Profile",
-            "url": "#"
+            "url": "ul-02-page-user-profile.html"
           },
           {
             "name": "Activities",

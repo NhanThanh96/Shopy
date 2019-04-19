@@ -1,0 +1,65 @@
+// ======================================================
+// Base :: Tile
+// ======================================================
+.tile {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  vertical-align: middle;
+  border-radius: 4px;
+  background-color: #e6e8ed;
+  color: $cl-white;
+  transition: background-color .3s;
+  text-transform: uppercase;
+  text-align: center;
+  &--circle {
+    border-radius: 50%;
+  }
+  &--md {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+  }
+  &--lg {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  &--purple {
+    color: #fff;
+    background-color: #5f4b8b;
+  }
+  &--green {
+    color: #363642;
+    background-color: #a7c796;
+  }
+  &--indigo {
+    color: #fff;
+    background-color: #346cb0;
+  }
+  &--yellow {
+    color: #363642;
+    background-color: #f7c46c;
+  }
+  &--blue {
+    color: #fff;
+    background-color: #0179a8;
+  }
+  &--teal {
+    color: #fff;
+    background-color: #00a28a;
+  }
+  &--pink {
+    color: #fff;
+    background-color: #b76ba3;
+  }
+  &--cyan {
+    color: #fff;
+    background-color: #3686a0;
+  }
+}

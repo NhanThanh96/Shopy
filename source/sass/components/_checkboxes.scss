@@ -12,13 +12,13 @@
     margin-bottom: 0;
     &:before {
       position: absolute;
-      top: 2px;
+      top: 1px;
       left: -24px;
       display: block;
       width: 16px;
       height: 16px;
       content: '';
-      background: lighten($cl-light-gray, 8%);
+      background: linear-gradient(180deg, #fff, #f6f7f9);
       border: 1px solid $border-gray;
       box-shadow: 0 1px 0 0 rgba(34, 34, 48, .05);
       pointer-events: auto;
@@ -27,7 +27,7 @@
     }
     &:after {
       position: absolute;
-      top: 2px;
+      top: 1px;
       left: -24px;
       display: block;
       width: 16px;

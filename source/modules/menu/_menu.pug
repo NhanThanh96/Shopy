@@ -1,9 +1,9 @@
-mixin sidebarTop(data)
+mixin sidebarTop(data, category, currentPage)
   ul.navbar-nav
     each val in data
       li.nav-item(
         class= val.secondLevelMenu ? "submenu" : ""
-        class= val.active ? "active" : ""
+        class= (val.name == category) ? "active" : ""
       )
         if val.secondLevelMenu
           a.nav-link.collapsed(
@@ -26,6 +26,7 @@ mixin sidebarTop(data)
           .collapse(
             id= val.id ? val.id : null
             data-parent= "#sidebarAccordion"
+            class= (val.name == category) ? 'show' : null
           )
             ul.nav.flex-column
               each secondLevel in val.secondLevelMenu
@@ -64,16 +65,19 @@ mixin sidebarTop(data)
                                     li.nav-item
                                       a.nav-link(
                                         href= fouthLevel.url
+                                        class= (fouthLevel.url==currentPage) ? 'active' : null
                                       )= fouthLevel.name
                             else
                               li.nav-item
                                 a.nav-link(
                                   href= thirdLevel.url
+                                  class= (thirdLevel.url==currentPage) ? 'active' : null
                                 )= thirdLevel.name
                   else
                     a.nav-link(
                       href= secondLevel.url
                       class= secondLevel.isActive ? "active" : ""
+                      class= (secondLevel.url==currentPage) ? 'active' : null
                     )= secondLevel.name
                       if secondLevel.badge
                         span.badge(
@@ -83,6 +87,7 @@ mixin sidebarTop(data)
         else
           a.nav-link(
             href= "#" + val.url
+            class= (val.url==currentPage) ? 'active' : null
           )
             if val.icon
               span.nav-icon(

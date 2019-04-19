@@ -1,0 +1,187 @@
+//-------------------------------------------------------
+//- Modal :: Follower Modal 
+//-------------------------------------------------------
+mixin followerModal()
+  .modal.fade.followers#followersModal(
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="followersModalLabel"
+    aria-modal="true"
+  )
+    .modal-dialog(role="document")
+      .modal-content
+        .modal-header
+          h5.modal-title Followers 
+        .modal-body
+          .list-group.list-group-flush.list-group-divider
+            -
+              var followers = [
+                {
+                  user: {
+                    avatar: 'images/uifaces2.jpg',
+                    name: 'Johnny Day',
+                  },
+                  job: 'Computer Hardware Engineer',
+                  follow: false 
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces3.jpg',
+                    name: 'Sarah Bishop',
+                  },
+                  job: 'Designer',
+                  follow: false 
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces5.jpg',
+                    name: 'Craig Hansen',
+                  },
+                  job: 'Software Developer',
+                  follow: false 
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces9.jpg',
+                    name: 'Jane Barnes',
+                  },
+                  job: 'Social Worker',
+                  follow: true
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces4.jpg',
+                    name: 'Nicole Barnett',
+                  },
+                  job: 'Marketing Manager',
+                  follow: false 
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces6.jpg',
+                    name: 'Michael Ward',
+                  },
+                  job: 'Lawyer',
+                  follow: true
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces7.jpg',
+                    name: 'Julia Silva',
+                  },
+                  job: 'Photographer',
+                  follow: false
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces10.jpg',
+                    name: 'Joe Hanson',
+                  },
+                  job: 'Logistician',
+                  follow: true
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces11.jpg',
+                    name: 'Brenda Griffin',
+                  },
+                  job: 'Medical Assistant',
+                  follow: false
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces12.jpg',
+                    name: 'Ryan Jimenez',
+                  },
+                  job: 'Photographer',
+                  follow: false
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces13.jpg',
+                    name: 'Bryan Hayes',
+                  },
+                  job: 'Computer Systems Analyst',
+                  follow: false
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces14.jpg',
+                    name: 'Cynthia Clark',
+                  },
+                  job: 'Web Developer',
+                  follow: false
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces16.jpg',
+                    name: 'Martha Myers',
+                  },
+                  job: 'Writer',
+                  follow: false
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces15.jpg',
+                    name: 'Tammy Beck',
+                  },
+                  job: 'Designer',
+                  follow: false
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces17.jpg',
+                    name: 'Susan Kelley',
+                  },
+                  job: 'Web Developer',
+                  follow: true
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces18.jpg',
+                    name: 'Albert Newman',
+                  },
+                  job: 'Web Developer',
+                  follow: false
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces19.jpg',
+                    name: 'Kyle Grant',
+                  },
+                  job: 'Designer',
+                  follow: false
+                },
+              ];
+            each item in followers
+              .list-group-item
+                .followers__figure
+                  if item.user
+                    a.user-avatar(href="#")
+                      img(
+                        src= item.user.avatar
+                        alt= item.user.name
+                      )
+                .followers__content
+                  if item.user.name
+                    h6.followers__title
+                      a(href="#")
+                        | #{item.user.name}
+                  if item.job
+                    p= item.job
+                .followers__state
+                  if item.follow
+                    +buttons({
+                      text: 'Following',
+                      type: 'secondary',
+                      size: 'small' 
+                    })
+                  else
+                    +buttons({
+                      text: 'Follow',
+                      type: 'primary',
+                      size: 'small' 
+                    })
+
+
+  

@@ -147,53 +147,61 @@ $(document).ready(function() {
     wheelPropagation: true
   });
 
-  $(".js-completion-tasks-chart").each(function(){
-    var dataSet =  $(this).attr("data-setdata");
-    var parsedDataSet = JSON.parse(dataSet); 
-    new Chart($(this), {
-      type: 'bar',
-      data: {
-        datasets: parsedDataSet[0].datasets,
-        labels: parsedDataSet[0].labels,
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-          display: false
-        },
-        title: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            gridLines: {
-              display: true,
-              drawBorder: false,
-              drawOnChartArea: false
-            },
-            ticks: {
-              fontColor: '#888c9b',
-              maxRotation: 0,
-              maxTicksLimit: 4
-            }
-          }],
-          yAxes: [{
-            gridLines: {
-              display: true,
-              drawBorder: false
-            },
-            ticks: {
-              fontColor: '#888c9b',
-              beginAtZero: true,
-              stepSize: 100
-            }
-          }]
-        }
-      }
-    });
-  });
 
+  function barChart(element){
+    $(element).each(function(){
+      var dataSet =  $(this).attr("data-setdata");
+      var parsedDataSet = JSON.parse(dataSet); 
+      new Chart($(this), {
+        type: 'bar',
+        data: {
+          datasets: parsedDataSet[0].datasets,
+          labels: parsedDataSet[0].labels,
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            display: false
+          },
+          title: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              gridLines: {
+                display: true,
+                drawBorder: false,
+                drawOnChartArea: false
+              },
+              ticks: {
+                fontColor: '#888c9b',
+                maxRotation: 0,
+                maxTicksLimit: 4
+              }
+            }],
+            yAxes: [{
+              gridLines: {
+                display: true,
+                drawBorder: false
+              },
+              ticks: {
+                fontColor: '#888c9b',
+                beginAtZero: true,
+                stepSize: 100
+              }
+            }]
+          }
+        }
+      });
+    });
+  }
+
+
+  $(window).on('load', function () { 
+    barChart(".js-completion-tasks-chart");
+  });
+  
   $(".js-tasks-performance-chart").each(function(){
     var selector = this;
     var options = $(selector).data();
@@ -207,6 +215,9 @@ $(document).ready(function() {
     options.trackColor = options.trackColor == 'false' || options.trackColor == '' ? false : options.trackColor;
     options.scaleColor = options.scaleColor == 'false' || options.scaleColor == '' ? false : options.scaleColor;
     $(selector).easyPieChart(options);
+    // $(selector).easyPieChart({
+    //   barColor : 
+    // });
   });
 });
 

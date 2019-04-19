@@ -2,23 +2,24 @@ extends modules/layout/_page-default
 
 block head
   +head('Dashboard | Looper - Bootstrap 4 Admin Theme')
-
-block content
+block sidebar
+  +sidebar('Dashboard', 'home.html')
+block main
   section.main-content
     .main-content__inner
       .main-content__header
         .intro
-          span.intro__greeting Hi, Beni
+          span.intro__greeting Hi, Beni.
           p.intro__content Here’s what’s happening with your business today.
         .dropdown
           +buttons({
-            text: 'This Week', 
+            text: 'This Week',
             type: 'secondary',
             iconFont: 'fa fa-fw fa-caret-down'
           })(data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
       section.statistics
         .row
-          .col-9
+          .col-lg-9
             .statistics__list
               -
                 var statisticList = [
@@ -48,12 +49,12 @@ block content
                       | #{item.name}
                     .statistics__value
                       if item.icon
-                        span
+                        sub
                           i.statistics__icon(class= item.icon)
                       if item.metric
                         span.statistics__metric
                           | #{item.metric}
-          .col-3
+          .col-lg-3
             .ongoing-tasks
               .ongoing-tasks__link
                 .ongoing-tasks__status
@@ -81,8 +82,8 @@ block content
                 ];
               .completion-tasks__content
                 canvas.completion-tasks__chart.js-completion-tasks-chart(
-                  width= '304'
-                  height= '292'
+                  width= '282px'
+                  height= '292px'
                   data-setdata= completionTaskData
                 )
           .col-12.col-lg-12.col-xl-4
@@ -386,7 +387,7 @@ block content
                                     | #{val.valueNow}
       section.deck-section
         .row
-          .col-6
+          .col-12.col-xl-6
             .card.active-projects
               .card-header
                 | Active Projects
@@ -455,7 +456,7 @@ block content
                           width: '99%'
                         },
                         title: 'Online Store',
-                        subtitle: 'Progress in 99% - Last update 2d',
+                        subtitle: 'Progress in 99% - Last update 2d'
                       },
                       {
                         tile: {
@@ -496,7 +497,7 @@ block content
                           valueMax: '100',
                           width: '32%'
                         },
-                        title: 'Syrena Project',
+                        title: 'SVG Icon Bundle',
                         subtitle: 'Progress in 32% - Last update 1d ',
                       },
                       {
@@ -562,7 +563,7 @@ block content
                             )
                               span.sr-only
                                 | #{item.progress.width}
-          .col-6
+          .col-12.col-xl-6
             .card.active-tasks
               .card-header
                 | Active Tasks: To-Dos
@@ -611,7 +612,6 @@ block content
                       name: 'checkbox',
                       id: 'todo6',
                       label: 'Collect seashells at the beach',
-                      checked: true
                     })(class= 'input-checkbox-custom--line-through')
                   .todo
                     +group-input-checkbox({
@@ -622,11 +622,11 @@ block content
                   .todo
                     +group-input-checkbox({
                       name: 'checkbox',
-                      id: 'todo4',
+                      id: 'todo8',
                       label: 'Get enough sleep!',
                     })(class= 'input-checkbox-custom--line-through')
               .card-footer
                 a(href="#")
                   span View all
                   i.fa.fa-fw.fa-angle-right
-                
+    +footer()
