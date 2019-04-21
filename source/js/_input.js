@@ -68,10 +68,10 @@ $(document).ready(function() {
   var toggleClearableButton = function(input){
     var inputValue = $(input).val();
     if(!inputValue){
-      $(input).next('.js-clearable-button').removeClass('show');
+      $(input).parent().find('.js-clearable-button').removeClass('show');
     }
     else {
-      $(input).next('.js-clearable-button').addClass('show');
+      $(input).parent().find('.js-clearable-button').addClass('show');
     }
   }
   $('.js-clearable-button').on('click', function(){

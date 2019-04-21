@@ -14,7 +14,6 @@
 @import 'abstracts/functions';
 
 @import 'base/global';
-@import 'base/typography';
 @import 'base/colors';
 @import 'base/background-color';
 @import 'base/images';
@@ -31,8 +30,11 @@
 @import 'components/badge';
 @import 'components/tile';
 @import 'components/avatar';
-@import 'components/_followers-modal';
+@import 'components/followers-modal';
+@import 'components/following-modal';
+@import 'components/member-modal';
 
+@import 'base/typography';
 // 4. Layout
 // ---------
 @import 'layout/header';
@@ -43,8 +45,12 @@
 // --------
 @import 'pages/home';
 @import 'pages/form-basic';
+@import 'pages/ul-02-page-user-profile';
+@import 'pages/ul-03-page-user-activities';
+@import 'pages/ul-04-page-user-teams';
+@import 'pages/ul-05-page-user-projects';
 
-
+@import 'responsive/responsive';
 // 7. Themes
 // ---------
 // We just have only 1 theme in this project

@@ -9,12 +9,13 @@ mixin header()
         a(href="home.html")
           img(src="images/brand-inverse.png", alt="looper")
       .looper-header__content
-        .toggle-menu.d-none
-          button(
+        .toggle-menu.d-md-none.d-lg-none.d-xl-none
+          button.hamburger.js-toggle-sidebar(
             type="button"
             data-toggle="aside"
             aria-label="toggle menu"
           )
+            i.fas.fa-bars
         form.looper-header__search(action="#")
           +group-input-field({
             type: 'text',
@@ -265,6 +266,7 @@ mixin header()
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
+            data-display="static"
           )
             .user-account__avatar
               img(src="images/profile.jpg", alt="avatar")
@@ -273,6 +275,7 @@ mixin header()
               span.user-account__position Marketing Manager
           .dropdown-arrow.dropdown-arrow--left
           .dropdown-menu
+            h6.dropdown-header.d-none.d-md-block.d-lg-none Beni Arisandi 
             a.dropdown-item(href="#")
               span.oi.oi-person.user-account__icon
               span Profile

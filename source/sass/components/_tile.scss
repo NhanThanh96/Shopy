@@ -15,8 +15,11 @@
   transition: background-color .3s;
   text-transform: uppercase;
   text-align: center;
-  &--circle {
-    border-radius: 50%;
+  &--sm {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
   }
   &--md {
     width: 36px;
@@ -29,6 +32,9 @@
     line-height: 48px;
     font-size: 20px;
     border-radius: 5px;
+  }
+  &--circle {
+    border-radius: 50%;
   }
   &--purple {
     color: #fff;
@@ -61,5 +67,71 @@
   &--cyan {
     color: #fff;
     background-color: #3686a0;
+  }
+  &--red {
+    color: #fff;
+    background-color: #ea6759;
+  }
+  &--orange {
+    color: #363642;
+    background-color: #ec935e;
+  }
+}
+.avatar-group {
+  .tile {
+    &--indigo {
+      &:hover {
+        background-color: #285489;
+        color: #fff;
+      }
+    }
+    &--purple {
+      &:hover {
+        background-color: #48396a;
+        color: #fff;
+      }
+    }
+    &--yellow {
+      &:hover {
+        background-color: #f4b13c;
+        color: #363642;
+      }
+    }
+    &--blue {
+      &:hover {
+        background-color: #015475;
+        color: #fff;
+      }
+    }
+    &--teal {
+      &:hover {
+        background-color: #006f5f;
+        color: #fff;
+      }
+    }
+    &--pink {
+      &:hover {
+        background-color: #a14e8b;
+        color: #fff;
+      }
+    }
+    &--green {
+      &:hover {
+        background-color: #8bb575;
+        color: #363642;
+      }
+    }
+    &--red {
+      &:hover {
+        background-color: #e43e2c;
+        color: #fff;
+      }
+    }
+    &--orange {
+      &:hover {
+        background-color: #e77430;
+        color: #363642;
+      }
+    }
   }
 }

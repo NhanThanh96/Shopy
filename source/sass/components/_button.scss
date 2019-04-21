@@ -9,6 +9,20 @@
   height: 36px;
   border-radius: $border-radius-base;
   white-space: nowrap;
+  display: inline-block;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  line-height: 1.5;
+  transition:
+    color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
   &:hover {
     outline: none;
     box-shadow: none;
@@ -21,8 +35,6 @@
     margin-left: 4px;
   }
   &--link {
-    display: inline-block;
-    padding: 6px 12px;
     color: $cl-gray;
     background-color: transparent;
     border-color: transparent;
@@ -67,15 +79,15 @@
   }
   &--secondary {
     color: $cl-dark-gray;
-    background: linear-gradient(180deg, $cl-white, lighten($cl-light-gray, 6%));
-    border-color: $cl-light-gray;
+    background: linear-gradient(180deg, $cl-white, $bg-light-gray);
+    border-color: $bd-gray;
     box-shadow: 0 1px 0 0 rgba(20, 20, 31, .05);
     &:hover {
-      background: linear-gradient(180deg, lighten($cl-light-gray, 5%), lighten($cl-light-gray, 5%));
-      border-color: $cl-light-gray;
+      background: linear-gradient(180deg, $bg-light-gray, $bg-light-gray);
+      border-color: $bd-gray;
     }
     &:focus {
-      background: linear-gradient(180deg, $cl-white, $cl-light-gray);
+      background: linear-gradient(180deg, $cl-white, $bg-light-gray);
       border-color: $cl-dark-blue;
       box-shadow: 0 0 0 1px $cl-dark-blue;
     }

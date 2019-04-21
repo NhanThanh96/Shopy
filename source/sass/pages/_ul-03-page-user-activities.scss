@@ -1,0 +1,131 @@
+// ======================================================
+// Pages :: user activities
+// ======================================================
+.user-activities {
+  &__heading {
+    padding: 16px 0;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+}
+.timeline {
+  $timeline: &;
+
+  padding: 0 16px;
+  margin-bottom: 0;
+  &__item {
+    position: relative;
+    display: flex;
+    &:first-child {
+      margin-top: 8px;
+      #{$timeline}__body {
+        padding-top: 0;
+      }
+      #{$timeline}__figure {
+        padding-top: 0;
+      }
+    }
+    &:last-child {
+      #{$timeline}__figure {
+        margin-bottom: 20px;
+      }
+      #{$timeline}__body {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__figure {
+    position: relative;
+    padding: 8px 0;
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 100%;
+      top: 1rem;
+      left: 50%;
+      margin-left: -1px;
+      border-left: 2px solid rgba(34, 34, 48, .1);
+    }
+    .tile {
+      position: relative;
+      box-shadow: 0 0 0 2px #f6f7f9;
+      z-index: 2;
+    }
+    .tile > i {
+      font-size: 16px;
+      color: #888c9b;
+      position: relative;
+      top: 1px;
+      line-height: 1;
+    }
+  }
+  &__body {
+    width: 100%;
+    margin-left: 20px;
+    padding: 8px 0;
+    display: flex;
+  }
+  &__content {
+    flex: 1;
+    .avatar-team {
+      margin-bottom: 8px;
+    }
+    .avatar-team .user-avatar {
+      &:hover {
+        box-shadow: 0 0 0 3px #346cb0;
+      }
+    }
+    .avatar-team .user-avatar + .user-avatar {
+      display: inline-block;
+      margin-left: -8px;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    .input-checkbox-custom {
+      margin-right: calc(7px / 2);
+    }
+    & > a {
+      color: #346cb0;
+      &:hover {
+        color: #234875;
+        text-decoration: underline;
+      }
+      &:focus {
+        color: #234875;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__notify {
+    margin-bottom: 0;
+    span {
+      margin-right: 4px;
+    }
+    strong {
+      margin-right: 4px;
+    }
+  }
+  &__user {
+    color: #346cb0;
+    margin-right: 4px;
+    &:hover {
+      color: #234875;
+      text-decoration: underline;
+    }
+    &:focus {
+      color: #234875;
+      text-decoration: underline;
+    }
+  }
+  &__date {
+    font-size: 12px;
+    color: #888c9b;
+  }
+}

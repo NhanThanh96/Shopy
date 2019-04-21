@@ -1,8 +1,8 @@
 // ======================================================
-// Components :: Fllowers Modal
+// Components :: Following Modal
 // ======================================================
-.followers {
-  $followers : &;
+.following {
+  $following : &;
 
   .modal-header {
     box-shadow: none;
@@ -25,10 +25,10 @@
     border: none;
   }
   .list-group-item:first-child() {
-    #{$followers}__content {
+    #{$following}__content {
       border-top: 0;
     }
-    #{$followers}__state {
+    #{$following}__state {
       border-top: 0;
     }
   }
@@ -70,4 +70,9 @@
       font-size: 13px;
     }
   }
+  &__spinner {
+    text-align: center;
+    padding: 16px;
+  }
 }
+

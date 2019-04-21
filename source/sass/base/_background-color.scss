@@ -2,6 +2,9 @@
 // Base :: Backgrounds
 // ======================================================
 .bg {
+  &--muted {
+    background-color: $bg-gray;
+  }
   &--green {
     background-color: $bg-light-green;
   }

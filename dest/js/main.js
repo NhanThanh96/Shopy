@@ -107,10 +107,10 @@ $(document).ready(function() {
   var toggleClearableButton = function(input){
     var inputValue = $(input).val();
     if(!inputValue){
-      $(input).next('.js-clearable-button').removeClass('show');
+      $(input).parent().find('.js-clearable-button').removeClass('show');
     }
     else {
-      $(input).next('.js-clearable-button').addClass('show');
+      $(input).parent().find('.js-clearable-button').addClass('show');
     }
   }
   $('.js-clearable-button').on('click', function(){
@@ -218,6 +218,81 @@ $(document).ready(function() {
     // $(selector).easyPieChart({
     //   barColor : 
     // });
+  });
+
+  var achievementCanvas = $('#js-achievement-chart')[0].getContext('2d');
+  var achievementDataSet =  $('#js-achievement-chart').attr("data-setdata");
+  var parsedAchievementDataSet = JSON.parse(achievementDataSet);
+  var achievementChart = new Chart(achievementCanvas, {
+    type: 'bar',
+    data: parsedAchievementDataSet[0],
+    options: {
+      tooltips: {
+        mode: 'index',
+        intersect: true
+      },
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          gridLines: {
+            display: true,
+            drawBorder: false,
+            drawOnChartArea: false,
+            fontStyle: 400
+          },
+          ticks: {
+            fontColor: '#888c9b',
+          }
+        }],
+        yAxes: [{
+          gridLines: {
+            display: true,
+            borderDash: [8, 4],
+            fontStyle: 400
+          },
+          ticks: {
+            stepSize: 20,
+            fontColor: '#888c9b',
+          }
+        }]
+      }
+    }
+  });
+  // button sidebar toggle
+  function resizeHandler() {
+    var win = $(this); 
+    var sidebarCollapseWidth = "-240px";
+      if (win.width() < 769) {
+        $('.overlay').on('click', function(){        
+          $(".overlay").removeClass("hide");
+          $(".sidebar__collaspe").animate({
+            left : sidebarCollapseWidth
+          });
+        });
+      } else{
+        $(window).unbind('scroll');
+      }
+    }
+  resizeHandler();
+
+  $(window).resize(resizeHandler);
+
+  $(".js-toggle-sidebar").on("click", function(){
+    var sidebarCollapse = $(".sidebar__collaspe");
+    var sidebarCollapseWidth = "-240px";
+    $(".overlay").toggleClass("hide");
+    if(sidebarCollapse.css("left") == sidebarCollapseWidth) {
+      $(".sidebar__collaspe").animate({
+        left : 0
+      }, 350);
+    }
+    else {
+      $(".sidebar__collaspe").animate({
+        left : sidebarCollapseWidth
+      }, 350);
+    }
   });
 });
 

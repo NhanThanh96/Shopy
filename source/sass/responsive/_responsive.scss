@@ -1,0 +1,29 @@
+// ======================================================
+// responsive :: Responsive
+// ======================================================
+@media (max-width: 991.98px) {
+  // start header
+  .looper-header {
+    &__content {
+      padding-left: 16px;
+    }
+  }
+  .user-account {
+    &__summary {
+      display: none;
+    }
+    .dropdown-menu {
+      right: 5px;
+      left: auto;
+    }
+    .dropdown-header {
+      padding: .5rem 1rem;
+    }
+  }
+  .main-content {
+    &__inner {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
+}

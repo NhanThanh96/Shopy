@@ -15,8 +15,8 @@
         <div class="looper-header__inner">
           <div class="looper-header__brand"><a href="home.html"><img src="images/brand-inverse.png" alt="looper" /></a></div>
           <div class="looper-header__content">
-            <div class="toggle-menu d-none">
-              <button type="button" data-toggle="aside" aria-label="toggle menu"></button>
+            <div class="toggle-menu d-md-none d-lg-none d-xl-none">
+              <button class="hamburger js-toggle-sidebar" type="button" data-toggle="aside" aria-label="toggle menu"><i class="fas fa-bars"></i></button>
             </div>
             <form class="looper-header__search" action="#">
               <div class="form-group form-customize search">
@@ -126,12 +126,13 @@
               </ul>
             </div>
             <div class="dropdown user-account">
-              <button class="user-account__button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="user-account__button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                 <div class="user-account__avatar"><img src="images/profile.jpg" alt="avatar" /></div>
                 <div class="user-account__summary"><span class="user-account__name">Beni Arisandi</span><span class="user-account__position">Marketing Manager</span></div>
               </button>
               <div class="dropdown-arrow dropdown-arrow--left"></div>
-              <div class="dropdown-menu"><a class="dropdown-item" href="#"><span class="oi oi-person user-account__icon"></span><span>Profile</span></a><a class="dropdown-item" href="#"><span class="oi oi-account-logout user-account__icon"></span><span>Logout</span></a>
+              <div class="dropdown-menu">
+                <h6 class="dropdown-header d-none d-md-block d-lg-none">Beni Arisandi </h6><a class="dropdown-item" href="#"><span class="oi oi-person user-account__icon"></span><span>Profile</span></a><a class="dropdown-item" href="#"><span class="oi oi-account-logout user-account__icon"></span><span>Logout</span></a>
                 <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Help Center</a><a class="dropdown-item" href="#">Ask Forum</a><a class="dropdown-item" href="#">Keyboard Shortcuts</a>
               </div>
             </div>
@@ -140,7 +141,6 @@
       </header>
       <nav class="navbar navbar__vertical navbar-expand-md navbar-light">
         <div class="navbar__content">
-          <button class="navbar-toggle collapsed d-md-none" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="navbar__menu js-navbar-menu-scrollbar" id="sidebarAccordion">
             <ul class="navbar-nav">
               <li class="nav-item active"><a class="nav-link active" href="#home.html"><span class="nav-icon fas fa-home"></span>Dashboard</a>
@@ -417,11 +417,12 @@
     </ul>
     </div>
     <div class="navbar__footer">
-      <button class="btn button button--full" type="button">Night mode<i class="fas fa-moon"></i>
+      <button class="button button--full" type="button">Night mode<i class="fas fa-moon"></i>
       </button>
     </div>
     </div>
     </nav>
+    <div class="overlay"></div>
     <section class="main-content">
       <div class="main-content__inner">
         <div class="main-content__header">
@@ -429,7 +430,7 @@
             <p class="intro__content">Here’s what’s happening with your business today.</p>
           </div>
           <div class="dropdown">
-            <button class="btn button button--secondary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">This Week<i class="fa fa-fw fa-caret-down"></i>
+            <button class="button button--secondary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">This Week<i class="fa fa-fw fa-caret-down"></i>
             </button>
           </div>
         </div>
@@ -439,17 +440,17 @@
               <div class="statistics__list">
                 <div class="statistics__item"><a class="statistics__link" href="#">
                     <h3 class="statistics__name">Teams</h3>
-                    <div class="statistics__value"><sub><i class="statistics__icon oi oi-people"></i></sub><span class="statistics__metric">8</span>
+                    <div class="statistics__value"><i class="statistics__icon oi oi-people"></i><span class="statistics__metric">8</span>
                     </div>
                   </a></div>
                 <div class="statistics__item"><a class="statistics__link" href="#">
                     <h3 class="statistics__name">Projects</h3>
-                    <div class="statistics__value"><sub><i class="statistics__icon oi oi-fork"></i></sub><span class="statistics__metric">12</span>
+                    <div class="statistics__value"><i class="statistics__icon oi oi-fork"></i><span class="statistics__metric">12</span>
                     </div>
                   </a></div>
                 <div class="statistics__item"><a class="statistics__link" href="#">
                     <h3 class="statistics__name">Active Tasks</h3>
-                    <div class="statistics__value"><sub><i class="statistics__icon fa fa-tasks"></i></sub><span class="statistics__metric">64</span>
+                    <div class="statistics__value"><i class="statistics__icon fa fa-tasks"></i><span class="statistics__metric">64</span>
                     </div>
                   </a></div>
               </div>
@@ -664,7 +665,7 @@
             </div>
             <div class="col-12 col-xl-6">
               <div class="card active-tasks">
-                <div class="card-header">Active Tasks: To-Dos</div>
+                <div class="card-header">Active Tasks: To-Dos </div>
                 <div class="card-body">
                   <div class="todo-list">
                     <div class="todo-header">Looper Admin Theme (1/3)</div>

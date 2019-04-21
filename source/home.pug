@@ -5,6 +5,7 @@ block head
 block sidebar
   +sidebar('Dashboard', 'home.html')
 block main
+  .overlay
   section.main-content
     .main-content__inner
       .main-content__header
@@ -49,11 +50,20 @@ block main
                       | #{item.name}
                     .statistics__value
                       if item.icon
-                        sub
-                          i.statistics__icon(class= item.icon)
+                        i.statistics__icon(class= item.icon)
                       if item.metric
                         span.statistics__metric
                           | #{item.metric}
+              //- each item in statisticList
+              //-   .col
+              //-     .metric
+              //-       a(href="#")
+              //-         h3.metric__label
+              //-           | #{item.name}
+              //-         .metric__value
+              //-           span.metric__icon
+              //-             i(class= item.icon)
+              //-           span.metric__number= item.metric
           .col-lg-3
             .ongoing-tasks
               .ongoing-tasks__link
@@ -566,7 +576,7 @@ block main
           .col-12.col-xl-6
             .card.active-tasks
               .card-header
-                | Active Tasks: To-Dos
+                | Active Tasks: To-Dos 
               .card-body
                 .todo-list
                   .todo-header

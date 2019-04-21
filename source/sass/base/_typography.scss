@@ -3,13 +3,18 @@
 // ======================================================
 .text {
   &--muted {
-    color: #888c9b;
+    color: $cl-gray;
   }
 
   &--red {
-    color: #ea6759;
+    color: $cl-light-red;
   }
-
+  &--gray {
+    color: $cl-light-gray;
+  }
+  &--primary {
+    color: $cl-dark-blue;
+  }
   &--small {
     font-size: 80%;
     font-weight: 400;

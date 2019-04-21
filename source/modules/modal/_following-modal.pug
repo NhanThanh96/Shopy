@@ -1,28 +1,28 @@
 //-------------------------------------------------------
-//- Modal :: Follower Modal 
+//- Modal :: Following Modal 
 //-------------------------------------------------------
-mixin followerModal()
-  .modal.fade.followers#followersModal(
+mixin followingModal()
+  .modal.fade.following#followingModal(
     tabindex="-1"
     role="dialog"
-    aria-labelledby="followersModalLabel"
+    aria-labelledby="followingModalLabel"
     aria-modal="true"
   )
     .modal-dialog(role="document")
       .modal-content
         .modal-header
-          h5.modal-title Followers 
+          h5.modal-title Following 
         .modal-body
           .list-group.list-group-flush.list-group-divider
             -
-              var followers = [
+              var following = [
                 {
                   user: {
                     avatar: 'images/uifaces2.jpg',
                     name: 'Johnny Day',
                   },
                   job: 'Computer Hardware Engineer',
-                  follow: false 
+                  follow: true 
                 },
                 {
                   user: {
@@ -30,7 +30,7 @@ mixin followerModal()
                     name: 'Sarah Bishop',
                   },
                   job: 'Designer',
-                  follow: false 
+                  follow: true 
                 },
                 {
                   user: {
@@ -38,7 +38,7 @@ mixin followerModal()
                     name: 'Craig Hansen',
                   },
                   job: 'Software Developer',
-                  follow: false 
+                  follow: true 
                 },
                 {
                   user: {
@@ -54,7 +54,7 @@ mixin followerModal()
                     name: 'Nicole Barnett',
                   },
                   job: 'Marketing Manager',
-                  follow: false 
+                  follow: true 
                 },
                 {
                   user: {
@@ -70,7 +70,7 @@ mixin followerModal()
                     name: 'Julia Silva',
                   },
                   job: 'Photographer',
-                  follow: false
+                  follow: true
                 },
                 {
                   user: {
@@ -86,7 +86,7 @@ mixin followerModal()
                     name: 'Brenda Griffin',
                   },
                   job: 'Medical Assistant',
-                  follow: false
+                  follow: true
                 },
                 {
                   user: {
@@ -94,7 +94,7 @@ mixin followerModal()
                     name: 'Ryan Jimenez',
                   },
                   job: 'Photographer',
-                  follow: false
+                  follow: true
                 },
                 {
                   user: {
@@ -102,7 +102,7 @@ mixin followerModal()
                     name: 'Bryan Hayes',
                   },
                   job: 'Computer Systems Analyst',
-                  follow: false
+                  follow: true
                 },
                 {
                   user: {
@@ -110,7 +110,7 @@ mixin followerModal()
                     name: 'Cynthia Clark',
                   },
                   job: 'Web Developer',
-                  follow: false
+                  follow: true
                 },
                 {
                   user: {
@@ -118,7 +118,7 @@ mixin followerModal()
                     name: 'Martha Myers',
                   },
                   job: 'Writer',
-                  follow: false
+                  follow: true
                 },
                 {
                   user: {
@@ -126,7 +126,7 @@ mixin followerModal()
                     name: 'Tammy Beck',
                   },
                   job: 'Designer',
-                  follow: false
+                  follow: true
                 },
                 {
                   user: {
@@ -142,7 +142,7 @@ mixin followerModal()
                     name: 'Albert Newman',
                   },
                   job: 'Web Developer',
-                  follow: false
+                  follow: true
                 },
                 {
                   user: {
@@ -150,26 +150,26 @@ mixin followerModal()
                     name: 'Kyle Grant',
                   },
                   job: 'Designer',
-                  follow: false
+                  follow: true
                 },
               ];
-            each item in followers
+            each item in following
               .list-group-item
-                .followers__figure
+                .following__figure
                   if item.user
                     a.user-avatar(href="#")
                       img(
                         src= item.user.avatar
                         alt= item.user.name
                       )
-                .followers__content
+                .following__content
                   if item.user.name
-                    h6.followers__title
+                    h6.following__title
                       a(href="#")
                         | #{item.user.name}
                   if item.job
                     p= item.job
-                .followers__state
+                .following__state
                   if item.follow
                     +buttons({
                       text: 'Following',

@@ -3,6 +3,8 @@
 // ======================================================
 
 .badge {
+  padding: 4px 6px;
+  font-size: 80%;
   &--danger {
     color: $cl-white;
     background-color: $cl-purple;
@@ -19,6 +21,22 @@
   &--teal {
     color: $cl-white;
     background-color: $cl-green;
+  }
+  &--pink {
+    color: $cl-white;
+    background-color: #b76ba3;
+  }
+  &--green {
+    color: $cl-white;
+    background-color: #a7c796;
+  }
+  &--red {
+    color: $cl-white;
+    background-color: #ea6759;
+  }
+  &--blue {
+    color: $cl-white;
+    background-color: #0179a8;
   }
   &--lg {
     padding: 6px 8px;

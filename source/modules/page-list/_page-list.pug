@@ -16,7 +16,10 @@ mixin page-list(data)
               - if(ent.url == '')
                 a('#').page-list__link= ent.title
               - else
-                a(href=`${ent.url}.html`).page-list__link= ent.title
+                a(
+                  target='_blank'
+                  href=`${ent.url}.html`
+                ).page-list__link= ent.title
             td
               - if(ent.categories != '')
                 span.page-list__categories= ent.categories

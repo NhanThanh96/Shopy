@@ -1,37 +1,27 @@
 //-------------------------------------------------------
-//- Modal :: Follower Modal 
+//- Modal :: Member Modal 
 //-------------------------------------------------------
-mixin followerModal()
-  .modal.fade.followers#followersModal(
+mixin membersModal()
+  .modal.fade.members-modal#membersModal(
     tabindex="-1"
     role="dialog"
-    aria-labelledby="followersModalLabel"
     aria-modal="true"
   )
     .modal-dialog(role="document")
       .modal-content
         .modal-header
-          h5.modal-title Followers 
+          +group-input-field({
+            id: 'search-members',
+            type: 'text',
+            value: '',
+            placeholder: 'Search Members',
+            iconBefore: 'oi oi-magnifying-glass',
+            clearableIcon: 'fa fa-times-circle'
+          })
         .modal-body
           .list-group.list-group-flush.list-group-divider
             -
-              var followers = [
-                {
-                  user: {
-                    avatar: 'images/uifaces2.jpg',
-                    name: 'Johnny Day',
-                  },
-                  job: 'Computer Hardware Engineer',
-                  follow: false 
-                },
-                {
-                  user: {
-                    avatar: 'images/uifaces3.jpg',
-                    name: 'Sarah Bishop',
-                  },
-                  job: 'Designer',
-                  follow: false 
-                },
+              var membersData = [
                 {
                   user: {
                     avatar: 'images/uifaces5.jpg',
@@ -62,6 +52,14 @@ mixin followerModal()
                     name: 'Michael Ward',
                   },
                   job: 'Lawyer',
+                  follow: true
+                },
+                {
+                  user: {
+                    avatar: 'images/uifaces8.jpg',
+                    name: 'Juan Fuller',
+                  },
+                  job: 'Budget analyst',
                   follow: true
                 },
                 {
@@ -103,92 +101,41 @@ mixin followerModal()
                   },
                   job: 'Computer Systems Analyst',
                   follow: false
-                },
-                {
-                  user: {
-                    avatar: 'images/uifaces14.jpg',
-                    name: 'Cynthia Clark',
-                  },
-                  job: 'Web Developer',
-                  follow: false
-                },
-                {
-                  user: {
-                    avatar: 'images/uifaces16.jpg',
-                    name: 'Martha Myers',
-                  },
-                  job: 'Writer',
-                  follow: false
-                },
-                {
-                  user: {
-                    avatar: 'images/uifaces15.jpg',
-                    name: 'Tammy Beck',
-                  },
-                  job: 'Designer',
-                  follow: false
-                },
-                {
-                  user: {
-                    avatar: 'images/uifaces17.jpg',
-                    name: 'Susan Kelley',
-                  },
-                  job: 'Web Developer',
-                  follow: true
-                },
-                {
-                  user: {
-                    avatar: 'images/uifaces18.jpg',
-                    name: 'Albert Newman',
-                  },
-                  job: 'Web Developer',
-                  follow: false
-                },
-                {
-                  user: {
-                    avatar: 'images/uifaces19.jpg',
-                    name: 'Kyle Grant',
-                  },
-                  job: 'Designer',
-                  follow: false
-                },
+                }
               ];
-            each item in followers
+            each item in membersData
               .list-group-item
-                .followers__figure
+                .members-modal__figure
                   if item.user
                     a.user-avatar(href="#")
                       img(
                         src= item.user.avatar
                         alt= item.user.name
                       )
-                .followers__content
+                .members-modal__content
                   if item.user.name
-                    h6.followers__title
+                    h6.members-modal__title
                       a(href="#")
                         | #{item.user.name}
                   if item.job
                     p= item.job
-                .followers__state
-                  if item.follow
-                    +buttons({
-                      text: 'Following',
-                      type: 'secondary',
-                      size: 'small' 
-                    })
-                  else
-                    +buttons({
-                      text: 'Follow',
-                      type: 'primary',
-                      size: 'small' 
-                    })
-          .following__spinner
-            .spinner-border.spinner-border-sm.text--primary
-              span.sr-only Loading...
+                .dropdown.members-modal__more
+                  a.button.user-team__chat.button--link(
+                    href="#"
+                    data-toggle="dropdown"
+                    aria-expanded="true"
+                    data-display="static"
+                  )
+                    i.fa.fa-fw.fa-ellipsis-v
+                  .dropdown-arrow.dropdown-arrow--left
+                  .dropdown-menu.dropdown-menu-right
+                    a.dropdown-item(href="#") Message
+                    a.dropdown-item(href="#") Invite to a team
+                    a.dropdown-item(href="#") Copy member ID
+                    .dropdown-divider
+                    a.dropdown-item(href="#") Remove
         .modal-footer
           +buttons({
             text: 'Close',
             type: 'link' 
           })(data-dismiss="modal")
-
-  

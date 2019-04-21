@@ -4,6 +4,7 @@ block head
   +head('Profile | Looper - Bootstrap 4 Admin Theme')
 block modal
   +followerModal()
+  +followingModal()
 block sidebar
   +sidebar('User', 'ul-02-page-user-profile.html')
 block main
@@ -38,4 +39,353 @@ block main
             data-target="#followingModal"
           )
             | 136 Following
-            
+      nav.page-navs
+        .page-navs__inner
+          .nav.nav-center.nav-tabs
+            -
+              var navList = [
+                {
+                  link: 'ul-02-page-user-profile.html',
+                  name: 'Overview',
+                  isActive: true
+                },
+                {
+                  link: 'ul-03-page-user-activities.html',
+                  name: 'Activities',
+                  badge: 16
+                },
+                {
+                  link: 'ul-04-page-user-teams.html',
+                  name: 'Teams'
+                },
+                {
+                  link: 'ul-05-page-user-projects.html',
+                  name: 'Projects'
+                },
+                {
+                  link: 'ul-06-page-user-tasks.html',
+                  name: 'Tasks'
+                },
+                {
+                  link: 'ul-07-page-user-profile-settings.html',
+                  name: 'Settings'
+                }
+              ];
+            each item in navList
+              a.nav-link(
+                href= item.link
+                class= item.isActive ? 'active' : null
+              )
+                | #{item.name}
+                if item.badge
+                  span.badge
+                    | #{item.badge}
+      .page-inner
+        .metrics
+          .row
+            -
+              var metrics = [
+                {
+                  icon: 'oi oi-people',
+                  number: 12,
+                  label: 'Teams'
+                },
+                {
+                  icon: 'oi oi-fork',
+                  number: 47,
+                  label: 'Projects'
+                },
+                {
+                  icon: 'fa fa-tasks',
+                  number: 64,
+                  label: 'Active Tasks'
+                },
+                {
+                  icon: 'oi oi-timer',
+                  number: 8,
+                  label: 'Ongoing Tasks'
+                }
+              ];
+            each item in metrics
+              .col-12.col-sm-6.col-lg-3
+                .metric
+                  .metric__value
+                    span.metric__icon
+                      i(class= item.icon)
+                    span.metric__number= item.number
+                  h3.metric__label
+                    | #{item.label}
+        .achievement
+          .achievement__header
+            h2.achievement__title Achievement
+            .dropdown
+              +buttons({
+                text: 'This Month', 
+                type: 'secondary',
+                iconFont: 'fa fa-fw fa-caret-down'
+              })
+          .achievement__content
+            .row
+              .col-xl-8
+                .card.achievement-chart
+                  .card-body
+                    .list-inline.text--small.achievement-chart__legend
+                      .list-inline-item
+                        i.fa.fa-fw.fa-circle.cl--teal
+                        span Assigned tasks
+                      .list-inline-item
+                        i.fa.fa-fw.fa-circle.cl--purple
+                        span Completed tasks
+                    .achievement-chart__content
+                      -
+                        var achievementData = [
+                          {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                            datasets: [
+                              {
+                                label: 'Assigned Tasks',
+                                borderColor: '#00a28a',
+                                backgroundColor: '#00a28a',
+                                data: [41, 20, 68, 17, 100, 83, 53]
+                              },
+                              {
+                                label: 'Completed Tasks',
+                                borderColor: '#5f4b8b',
+                                backgroundColor: '#5f4b8b',
+                                data: [51, 14, 51, 63, 59, 83, 34]
+                              }
+                            ]
+                          }
+                        ];
+                      canvas#js-achievement-chart(
+                        width= '656'
+                        height= '256'
+                        data-setdata= achievementData
+                      )
+              .col-xl-4
+                .card.overview
+                  .card-header
+                    | Overview
+                  .card-body
+                    ul.list-group.list-group-flush
+                      li.list-group-item
+                        .overview__item
+                          .overview__name
+                            span Revenue
+                            span.percent.percent--incre 87%
+                          .overview__value
+                            span 17,400
+                            span.overview__currency USD
+                        .overview__item
+                          .overview__name
+                            span Projects
+                            span.percent.percent--incre 24%
+                          .overview__value
+                            span.overview__matric 5
+                      li.list-group-item
+                        .overview__item
+                          .overview__name
+                            span Expenses
+                            span.percent.percent--desc 12%
+                          .overview__value
+                            span 1,600
+                            span.overview__currency USD
+                      li.list-group-item
+                        .summary
+                          .summary__name
+                            span Earnings
+                            span.percent.percent--incre 24%
+                          .summary__value
+                            span.summary__matric 15,800
+                            span.summary__currency USD
+            .row
+              .col-xl-6
+                .card.project
+                  .card-header
+                    span Time Spent: Projects
+                    .dropdown
+                      button
+                  .card-body
+                    .table-responsive
+                      table.table
+                        thead
+                          tr
+                            th Project
+                            th.text-center Progress
+                            th Hours Spent
+                        tbody
+                          -
+                            var projectTimeList = [
+                              {
+                                tile: {
+                                  type: 'blue',
+                                  content: 'ba'
+                                },
+                                badge: {
+                                  type: 'blue',
+                                  content: '35%'
+                                },
+                                projectName: 'Booking App',
+                                time: '35:28'
+                              },
+                              {
+                                tile: {
+                                  type: 'teal',
+                                  content: 'sb'
+                                },
+                                badge: {
+                                  type: 'teal',
+                                  content: '32%'
+                                },
+                                projectName: 'SVG Icon Bundle',
+                                time: '20:39'
+                              },
+                              {
+                                tile: {
+                                  type: 'pink',
+                                  content: 'sp'
+                                },
+                                badge: {
+                                  type: 'pink',
+                                  content: '93%'
+                                },
+                                projectName: 'Syrena Project',
+                                time: '35:28'
+                              },
+                              {
+                                tile: {
+                                  type: 'green',
+                                  content: 'mg'
+                                },
+                                badge: {
+                                  type: 'green',
+                                  content: '100%'
+                                },
+                                projectName: 'Mobile App Gex',
+                                time: '35:10'
+                              },
+                              {
+                                tile: {
+                                  type: 'red',
+                                  content: 'lb'
+                                },
+                                badge: {
+                                  type: 'red',
+                                  content: '100%'
+                                },
+                                projectName: 'Landing Page Booster',
+                                time: '21:21'
+                              }
+                            ];
+                          each item in projectTimeList
+                            tr
+                              td
+                                a.tile(
+                                  href='#'
+                                  class= item.tile.type ? `tile--${item.tile.type}` : null
+                                  class= 'text--gray'
+                                )
+                                  | #{item.tile.content}
+                                a.project__name(href='#')
+                                  | #{item.projectName}
+                              td.text-center
+                                span.badge(
+                                  class= item.badge.type ? `badge--${item.badge.type}` : null
+                                  class= 'text--gray'
+                                )
+                                  | #{item.badge.content}
+                              td.text-center
+                                | #{item.time}
+                  .card-footer
+                    a(href='#') View report
+                      i.fa.fa-fw.fa-angle-right
+              .col-xl-6
+                .card.task
+                  .card-header
+                    span Time Spent: Tasks
+                    .dropdown
+                      button
+                  .card-body
+                    .table-responsive
+                      table.table
+                        thead
+                          tr
+                            th Task
+                            th Due Date
+                            th Estimate
+                            th Worked 
+                        tbody
+                          -
+                            var taskTimeList = [
+                              {
+                                tile: {
+                                  type: 'indigo',
+                                  content: 'sp'
+                                },
+                                projectName: 'Make lemonade from scratch',
+                                dueDate: 'Apr 02',
+                                estimate: '24:00',
+                                worked: '16:36'
+                              },
+                              {
+                                tile: {
+                                  type: 'blue',
+                                  content: 'lt'
+                                },
+                                projectName: 'Mix up a pitcher of sangria',
+                                dueDate: 'In 3 days',
+                                estimate: '04:00',
+                                worked: '03:36'
+                              },
+                              {
+                                tile: {
+                                  type: 'yellow',
+                                  content: 'os'
+                                },
+                                projectName: 'Ride a roller coaster',
+                                dueDate: 'Tomorrow',
+                                estimate: '48:00',
+                                worked: '50:02'
+                              },
+                              {
+                                tile: {
+                                  type: 'pink',
+                                  content: 'sp'
+                                },
+                                projectName: 'Dangle your feet off a dock',
+                                dueDate: 'Apr 07',
+                                estimate: '6:00',
+                                worked: '	03:11'
+                              },
+                              {
+                                tile: {
+                                  type: 'yellow',
+                                  content: 'os'
+                                },
+                                projectName: 'Have a picnic in the park',
+                                dueDate: 'In 2 days',
+                                estimate: '12:00',
+                                worked: '08:36'
+                              }
+                            ];
+                          each item in taskTimeList
+                            tr
+                              td
+                                a.tile.tile--circle(
+                                  href='#'
+                                  class= item.tile.type ? `tile--${item.tile.type}` : null
+                                  class= 'text--gray'
+                                )
+                                  | #{item.tile.content}
+                                a.task__name(href='#')
+                                  | #{item.projectName}
+                              td
+                                | #{item.dueDate}
+                              td
+                                | #{item.estimate}
+                              td
+                                | #{item.worked}
+                  .card-footer
+                    a(href='#') View report f
+                      i.fa.fa-fw.fa-angle-right
+    +footer()

@@ -1,15 +1,6 @@
 mixin sidebar(category, currentPage)
   nav.navbar.navbar__vertical.navbar-expand-md.navbar-light
     .navbar__content
-      button.navbar-toggle.collapsed.d-md-none(
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarContent"
-        aria-controls="navbarContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      )
-        span.navbar-toggler-icon
       .navbar__menu#sidebarAccordion.js-navbar-menu-scrollbar
         +sidebarTop(menuTop.data, category, currentPage)
         h6.navbar__heading interfaces

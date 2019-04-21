@@ -30,7 +30,10 @@
     right: 16px;
     bottom: 8px;
     .button {
-      margin-right: 6px;
+      margin-right: 4px;
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -41,6 +44,457 @@
     margin-right: 4px;
     &:last-of-type {
       margin-right: 0;
+    }
+  }
+  &--sm {
+    font-size: 16px;
+  }
+}
+.page-navs {
+  padding: 0 32px;
+  height: 56px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 0 rgba(34, 34, 48, .1);
+  z-index: 5;
+  position: relative;
+  &__inner {
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    overflow-y: hidden;
+    height: 56px;
+    .nav {
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      display: flex;
+      justify-content: center;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 16px;
+      border: 1px solid transparent;
+      border-width: 0 0 3px;
+      outline: 0;
+      color: #888c9b;
+      transition: all .2s;
+      margin-right: 4px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      .badge {
+        margin-left: 4px;
+        padding: 4px 6px;
+      }
+      &:hover {
+        color: #222230;
+        border-color: #e6e8ed #e6e8ed rgba(34, 34, 48, .1);
+      }
+      &:focus {
+        color: #222230;
+        border-color: #e6e8ed #e6e8ed rgba(34, 34, 48, .1);
+      }
+      &.active {
+        color: #222230;
+        background-color: transparent;
+        border-color: #346cb0;
+      }
+    }
+  }
+}
+.page-inner {
+  padding: 24px 32px;
+}
+.metrics {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.metric {
+  margin: 8px 0;
+  min-height: 136px;
+  position: relative;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  max-width: 100%;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
+  &__value {
+    white-space: nowrap;
+    line-height: 1.1;
+  }
+  &__icon {
+    color: #a6abbd;
+    font-size: 14px;
+    position: relative;
+    bottom: 2px;
+    margin-right: 7px;
+  }
+  &__number {
+    font-size: 28px;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #888c9b;
+    white-space: nowrap;
+    margin-bottom: 0;
+    margin-top: 7px;
+  }
+}
+.achievement {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  &__title {
+    margin-bottom: 0;
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.achievement-chart {
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
+  .card-body {
+    padding: 16px;
+  }
+  &__legend {
+    font-size: 80%;
+    font-weight: 400;
+    margin-bottom: 16px;
+    i {
+      margin-right: 3px;
+    }
+  }
+  &__content {
+    height: 253px;
+    canvas {
+      padding-right: 7px;
+    }
+  }
+}
+.overview {
+  $overview: &;
+
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(20, 20, 31, .05),
+    0 1px 3px 0 rgba(20, 20, 31, .15);
+  .card-header {
+    font-weight: 600;
+    padding: 16px;
+    background-color: transparent;
+  }
+  .card-body {
+    padding: 0;
+  }
+  .list-group-item {
+    padding: 16px;
+  }
+  .list-group-item:first-of-type {
+    #{$overview}__item {
+      &:first-of-type {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  .list-group-item:last-of-type {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+  }
+  &__name {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  &__value {
+    white-space: nowrap;
+  }
+  &__currency {
+    font-size: 80%;
+    font-weight: 400;
+    color: #888c9b;
+    margin-left: 4px;
+  }
+}
+.summary {
+  font-weight: 600;
+  &__value {
+    margin: 12px 0 11px 0;
+    text-align: center;
+  }
+  &__matric {
+    font-size: 28px;
+  }
+  &__currency {
+    color: #888c9b;
+    font-weight: 400;
+    margin-left: 4px;
+  }
+}
+.percent {
+  font-size: 80%;
+  font-weight: 400;
+  white-space: nowrap;
+  margin-left: 12px;
+  &--incre {
+    color: #00a28a;
+    &:before {
+      content: '\f0d8';
+      font-family: $font-family-awesome;
+      font-weight: 900;
+      margin-right: 3px;
+    }
+  }
+  &--desc {
+    color: #b76ba3;
+    &:before {
+      content: '\f0d7';
+      font-family: $font-family-awesome;
+      font-weight: 900;
+      margin-right: 3px;
+    }
+  }
+}
+
+.project {
+  border: none;
+  margin-bottom: 20px;
+  box-shadow:
+    0 0 0 1px rgba(20, 20, 31, .05),
+    0 1px 3px 0 rgba(20, 20, 31, .15);
+  .card-header {
+    padding: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    border-bottom: 0;
+  }
+  .card-body {
+    padding: 0;
+  }
+  .card-footer {
+    padding: 0;
+    background-color: #fff;
+    a {
+      display: block;
+      text-align: center;
+      padding: 16px;
+      color: #346cb0;
+      &:hover {
+        color: #234875;
+      }
+    }
+    a > i {
+      margin-left: 4px;
+    }
+  }
+  .table {
+    margin-bottom: 0;
+  }
+  .table thead th {
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .table th {
+    &:first-child {
+      min-width: 260px;
+      padding-left: 16px;
+    }
+    &:last-child {
+      min-width: 142px;
+      padding-right: 16px;
+      text-align: right;
+    }
+  }
+  .table td {
+    vertical-align: middle;
+
+    &:first-child {
+      min-width: 260px;
+      padding-left: 16px;
+    }
+
+    &:last-child {
+      padding-right: 16px;
+    }
+  }
+  &__name {
+    color: #346cb0;
+    text-decoration: none;
+    margin-left: 12px;
+    &:hover {
+      color: #234875;
+      text-decoration: underline;
+    }
+  }
+}
+.project .tile {
+  &--blue {
+    &:hover {
+      background-color: #015475;
+      color: #babfcd;
+    }
+  }
+  &--teal {
+    &:hover {
+      background-color: #006f5f;
+      color: #babfcd;
+    }
+  }
+  &--pink {
+    &:hover {
+      background-color: #a14e8b;
+      color: #babfcd;
+    }
+  }
+  &--green {
+    &:hover {
+      background-color: #8bb575;
+      color: #babfcd;
+    }
+  }
+  &--red {
+    &:hover {
+      background-color: #e43e2c;
+      color: #babfcd;
+    }
+  }
+}
+
+.task {
+  margin-bottom: 20px;
+  border: none;
+  box-shadow:
+    0 0 0 1px rgba(20, 20, 31, .05),
+    0 1px 3px 0 rgba(20, 20, 31, .15);
+  .card-header {
+    padding: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    border-bottom: 0;
+  }
+  .card-body {
+    padding: 0;
+  }
+  .card-footer {
+    padding: 0;
+    background-color: #fff;
+    a {
+      display: block;
+      text-align: center;
+      padding: 16px;
+      color: #346cb0;
+      &:hover {
+        color: #234875;
+      }
+    }
+    a > i {
+      margin-left: 4px;
+    }
+  }
+  .table {
+    margin-bottom: 0;
+  }
+  .table thead th {
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .table th {
+
+    &:first-child {
+      min-width: 259px;
+      padding-left: 16px;
+    }
+
+    &:last-child {
+      padding-right: 16px;
+      text-align: right;
+    }
+  }
+  .table td {
+    vertical-align: middle;
+    &:first-child {
+      min-width: 259px;
+      padding-left: 16px;
+    }
+
+    &:last-child {
+      padding-right: 16px;
+    }
+  }
+  &__name {
+    color: #346cb0;
+    text-decoration: none;
+    margin-left: 8px;
+    &:hover {
+      color: #234875;
+      text-decoration: underline;
+    }
+  }
+}
+.task .tile {
+  &--blue {
+    &:hover {
+      background-color: #015475;
+      color: #babfcd;
+    }
+  }
+  &--teal {
+    &:hover {
+      background-color: #006f5f;
+      color: #babfcd;
+    }
+  }
+  &--indigo {
+    &:hover {
+      background-color: #285489;
+      color: #babfcd;
+    }
+  }
+  &--yellow {
+    &:hover {
+      background-color: #f4b13c;
+      color: #babfcd;
+    }
+  }
+  &--pink {
+    &:hover {
+      background-color: #a14e8b;
+      color: #babfcd;
+    }
+  }
+  &--green {
+    &:hover {
+      background-color: #8bb575;
+      color: #babfcd;
+    }
+  }
+  &--red {
+    &:hover {
+      background-color: #e43e2c;
+      color: #babfcd;
     }
   }
 }

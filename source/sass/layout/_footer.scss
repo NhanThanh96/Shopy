@@ -6,3 +6,13 @@
 .l-footer {
   color: green;
 }
+.looper-footer {
+  .list-inline-item {
+    & > a {
+      &:hover {
+        text-decoration: underline;
+        color: $cl-gray;
+      }
+    }
+  }
+}
