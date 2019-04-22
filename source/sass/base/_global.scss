@@ -9,6 +9,10 @@ body {
   line-height: 1.5;
   color: $cl-dark-gray;
   background-color: $bg-light-gray;
+
+  @include breakpoint-down(phone) {
+    font-size: $font-size-medium;
+  }
 }
 
 img {

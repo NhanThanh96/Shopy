@@ -278,6 +278,12 @@
   }
 
   .nav .nav-item {
+    &.active {
+      .nav-link {
+        color: $cl-dark-blue;
+        font-weight: $font-weight-bold;
+      }
+    }
     .nav-link {
       padding: 6px 16px 6px 52px;
       line-height: 20px;
@@ -297,11 +303,6 @@
     }
 
     .nav-link:hover {
-      color: $cl-dark-blue;
-    }
-
-    .nav-link.active {
-      font-weight: $font-weight-bold;
       color: $cl-dark-blue;
     }
   }
@@ -324,3 +325,4 @@
     }
   }
 }
+

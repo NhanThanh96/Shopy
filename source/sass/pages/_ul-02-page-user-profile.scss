@@ -40,6 +40,10 @@
         text-align: center;
         margin-right: 4px;
       }
+
+      @include breakpoint-down(phone) {
+        font-size: 16px;
+      }
     }
 
     @include breakpoint-down(tablet) {
@@ -211,6 +215,10 @@
     height: 253px;
     canvas {
       padding-right: 7px;
+    }
+
+    @include breakpoint-down(tablet) {
+      height: auto;
     }
   }
 }

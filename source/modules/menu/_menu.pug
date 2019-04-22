@@ -1,101 +1,51 @@
 mixin sidebarTop(data, category, currentPage)
   ul.navbar-nav
-    each val in data
+    each item in data
       li.nav-item(
-        class= val.secondLevelMenu ? "submenu" : ""
-        class= (val.name == category) ? "active" : ""
+        class=item.secondLevelMenu ? 'submenu' : '', 
+        class=(item.name == category) ? 'active' : ''
       )
-        if val.secondLevelMenu
-          a.nav-link.collapsed(
-            href= val.id ? "#" + val.id : null
-            data-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls= val.id ? val.id : null
-          )
-            if val.icon
-              span.nav-icon(
-                class= val.icon
-              )
-              |#{val.name}
-            if val.badge
-              span.badge(
-                class= val.badge.type ? `badge--${val.badge.type}` : null
-              )
-                | #{val.badge.content}
+        a.nav-link(
+          href = item.secondLevelMenu ? (item.id ? `#${item.id}` : "javascript:void(0)") : (item.url ? item.url : "javascript:void(0)")
+          data-toggle = item.secondLevelMenu ? "collapse" : null
+          aria-expanded = (item.secondLevelMenu && item.name == category) ? "true" : "false"
+          aria-controls = item.secondLevelMenu ? item.id : null
+          role= item.secondLevelMenu ? "button" : null
+        )
+          if item.icon
+            i.nav-icon(class= item.icon)
+          if item.name
+            span.nav-text= item.name
+          if item.badge
+            span.badge.ml-auto(class= `badge--${item.badge.type}`)= item.badge.content
+        if item.secondLevelMenu
           .collapse(
-            id= val.id ? val.id : null
-            data-parent= "#sidebarAccordion"
-            class= (val.name == category) ? 'show' : null
+            id= item.id,
+            class=(item.name == category) ? "show" : "",
+            data-parent="#sidebarAccordion"
           )
             ul.nav.flex-column
-              each secondLevel in val.secondLevelMenu
+              each sub in item.secondLevelMenu
                 li.nav-item(
-                  class= secondLevel.thirdLevelMenu ? "submenu" : ""
+                  class=sub.thirdLevelMenu ? 'submenu' : '',
+                  class= (sub.url === currentPage) ? 'active' : ''
                 )
-                  if secondLevel.thirdLevelMenu
-                    a.nav-link(
-                      href= secondLevel.id ? "#" + secondLevel.id : null
-                      data-toggle="collapse"
-                      role="button"
-                      aria-expanded="false"
-                      aria-controls= secondLevel.id ? secondLevel.id : null
-                    )= secondLevel.name
+                  a.nav-link(
+                    href = sub.thirdLevelMenu ?  (sub.id ? `#${sub.id}` : "javascript:void(0)") : (sub.url ? sub.url : "javascript:void(0)")
+                    data-toggle = sub.thirdLevelMenu ? "collapse" : null
+                    aria-expanded = sub.thirdLevelMenu ? "false" : null
+                    aria-controls = sub.thirdLevelMenu ? sub.id : null
+                    role= sub.thirdLevelMenu ? "button" : null
+                  )
+                    | #{sub.name}
+                  if sub.thirdLevelMenu
                     .collapse(
-                      id= secondLevel.id ? secondLevel.id : null
+                      id= sub.id
+                      class=(sub.name == currentPage) ? "show" : "",
                     )
                       ul.nav.flex-column
-                        each thirdLevel in secondLevel.thirdLevelMenu
-                          li.nav-item(
-                            class= thirdLevel.fouthLevelMenu ? "submenu" : ""
-                          )
-                            if thirdLevel.fouthLevelMenu
-                              a.nav-link(
-                                href= thirdLevel.id ? "#" + thirdLevel.id : null
-                                data-toggle="collapse"
-                                role="button"
-                                aria-expanded="false"
-                                aria-controls= thirdLevel.id ? thirdLevel.id : null
-                              )= thirdLevel.name
-                              .collapse(
-                                id= thirdLevel.id ? thirdLevel.id : null
-                              )
-                                ul.nav.flex-column
-                                  each fouthLevel in thirdLevel.fouthLevelMenu
-                                    li.nav-item
-                                      a.nav-link(
-                                        href= fouthLevel.url
-                                        class= (fouthLevel.url==currentPage) ? 'active' : null
-                                      )= fouthLevel.name
-                            else
-                              li.nav-item
-                                a.nav-link(
-                                  href= thirdLevel.url
-                                  class= (thirdLevel.url==currentPage) ? 'active' : null
-                                )= thirdLevel.name
-                  else
-                    a.nav-link(
-                      href= secondLevel.url
-                      class= secondLevel.isActive ? "active" : ""
-                      class= (secondLevel.url==currentPage) ? 'active' : null
-                    )= secondLevel.name
-                      if secondLevel.badge
-                        span.badge(
-                          class= secondLevel.badge.type ? `badge--${secondLevel.badge.type}` : null
-                        )
-                          | #{secondLevel.badge.content}
-        else
-          a.nav-link(
-            href= val.url
-            class= (val.url==currentPage) ? 'active' : null
-          )
-            if val.icon
-              span.nav-icon(
-                class= val.icon
-              )
-              |#{val.name}
-            if val.badge
-              span.badge(
-                class= val.badge.type ? `badge--${val.badge.type}` : null
-              )
-                | #{val.badge.content}
+                        each child in sub.thirdLevelMenu
+                          li.nav-item
+                            a.nav-link(
+                              href= child.url ? child.url : '#'
+                            )= child.name

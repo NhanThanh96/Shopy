@@ -604,515 +604,510 @@
           </div>
           <div class="navbar__menu js-navbar-menu-scrollbar" id="sidebarAccordion">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="home.html"><span class="nav-icon fas fa-home"></span>Dashboard</a>
+              <li class="nav-item"><a class="nav-link" href="home.html" aria-expanded="false"><i class="nav-icon fas fa-home"></i><span class="nav-text">Dashboard</span></a>
               </li>
-              <li class="nav-item submenu"><a class="nav-link collapsed" href="#sidebarAppPages" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAppPages"><span class="nav-icon far fa-file"></span>App Pages<span class="badge badge--warning">New</span></a>
+              <li class="nav-item submenu"><a class="nav-link" href="#sidebarAppPages" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarAppPages" role="button"><i class="nav-icon far fa-file"></i><span class="nav-text">App Pages</span><span class="badge ml-auto badge--warning">New</span></a>
                 <div class="collapse" id="sidebarAppPages" data-parent="#sidebarAccordion">
                   <ul class="nav flex-column">
                     <li class="nav-item"><a class="nav-link" href="#">Clients</a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">Teams</a>
                     </li>
-                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarTeam" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTeam">Team</a>
+                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarTeam" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarTeam" role="button">Team</a>
                       <div class="collapse" id="sidebarTeam">
                         <ul class="nav flex-column">
-                          <li class="nav-item">
                           <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Feeds</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Members</a></li>
+                        </ul>
+                      </div>
                     </li>
-                    <li class="nav-item">
-                    <li class="nav-item"><a class="nav-link" href="#">Feeds</a></li>
+                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarProject" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarProject" role="button">Project</a>
+                      <div class="collapse" id="sidebarProject">
+                        <ul class="nav flex-column">
+                          <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Gantt View</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Calendar</a>
+                    </li>
+                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarInvoices" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarInvoices" role="button">Invoices</a>
+                      <div class="collapse" id="sidebarInvoices">
+                        <ul class="nav flex-column">
+                          <li class="nav-item"><a class="nav-link" href="#">List</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Details</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Messages</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Conversations</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
-              <li class="nav-item">
-              <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+              <li class="nav-item submenu"><a class="nav-link" href="#sidebarAuth" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarAuth" role="button"><i class="nav-icon oi oi-wrench"></i><span class="nav-text">Auth</span></a>
+                <div class="collapse" id="sidebarAuth" data-parent="#sidebarAccordion">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">Coming Soon v1</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Coming Soon v2</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cookie Consent</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Empty State</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Error Page v1</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Error Page v2</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Error Page v3</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Maintenance</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Page Message</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Session Timeout</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sign In v1</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sign In v2</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Recovery Username</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Recovery Password</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Screen Locked</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
-              <li class="nav-item">
-              <li class="nav-item"><a class="nav-link" href="#">Members</a></li>
+              <li class="nav-item submenu active"><a class="nav-link" href="#sidebarUser" data-toggle="collapse" aria-expanded="true" aria-controls="sidebarUser" role="button"><i class="nav-icon oi oi-person"></i><span class="nav-text">User</span></a>
+                <div class="collapse show" id="sidebarUser" data-parent="#sidebarAccordion">
+                  <ul class="nav flex-column">
+                    <li class="nav-item active"><a class="nav-link" href="ul-02-page-user-profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="ul-03-page-user-activities.html">Activities</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="ul-04-page-user-teams.html">Teams</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="ul-05-page-user-projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="ul-06-page-user-tasks.html">Tasks</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="ul-07-page-user-setting.html">Profile Settings</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Account Settings</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Billing Settings</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Notification Settings</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item submenu"><a class="nav-link" href="#sidebarLayouts" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarLayouts" role="button"><i class="nav-icon oi oi-browser"></i><span class="nav-text">Layouts</span><span class="badge ml-auto badge--success">+4</span></a>
+                <div class="collapse" id="sidebarLayouts" data-parent="#sidebarAccordion">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">Blank Page</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Header no Search</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Full Width</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Page Navs</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Page Cover</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cover Image</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Page Sidebar</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sidebar Fluid</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sidebar Hidden</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Custom</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <h6 class="navbar__heading">interfaces</h6>
+            <ul class="navbar-nav">
+              <li class="nav-item submenu"><a class="nav-link" href="#sidebarComponents" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarComponents" role="button"><i class="nav-icon oi oi-puzzle-piece"></i><span class="nav-text">Components</span></a>
+                <div class="collapse" id="sidebarComponents" data-parent="#sidebarAccordion">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">General</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Icons</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Rich Media</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">List Views</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sortable &amp; Nestable</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Activity</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Steps</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tasks</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Metrics</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item submenu"><a class="nav-link" href="#sidebarForms" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarForms" role="button"><i class="nav-icon oi oi-pencil"></i><span class="nav-text">Forms</span></a>
+                <div class="collapse" id="sidebarForms" data-parent="#sidebarAccordion">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">Basic Elements</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Autocompletes</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pickers</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Editors</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item submenu"><a class="nav-link" href="#sidebarTables" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarTables" role="button"><i class="nav-icon fas fa-table"></i><span class="nav-text">Tables</span></a>
+                <div class="collapse" id="sidebarTables" data-parent="#sidebarAccordion">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">Basic Table</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Datatables</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Responsive Datatables</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Filter Columns</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item submenu"><a class="nav-link" href="#sidebarCollections" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarCollections" role="button"><i class="nav-icon oi oi-bar-chart"></i><span class="nav-text">Collections</span></a>
+                <div class="collapse" id="sidebarCollections" data-parent="#sidebarAccordion">
+                  <ul class="nav flex-column">
+                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarChart" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarChart" role="button">Chart.js</a>
+                      <div class="collapse" id="sidebarChart">
+                        <ul class="nav flex-column">
+                          <li class="nav-item"><a class="nav-link" href="#">Line</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Bar</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Radar &amp; Scatter</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Others</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Flot</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Inline Charts</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Vector Map</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item submenu"><a class="nav-link" href="#sidebarLevelMenu" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarLevelMenu" role="button"><i class="nav-icon oi oi-list-rich"></i><span class="nav-text">Level Menu</span></a>
+                <div class="collapse" id="sidebarLevelMenu" data-parent="#sidebarAccordion">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">Menu item</a>
+                    </li>
+                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarMenuItem" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarMenuItem" role="button">Menu item</a>
+                      <div class="collapse" id="sidebarMenuItem">
+                        <ul class="nav flex-column">
+                          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Menu item</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
-          </li>
-          <li class="nav-item submenu"><a class="nav-link" href="#sidebarProject" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProject">Project</a>
-            <div class="collapse" id="sidebarProject">
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
-          </li>
-          <li class="nav-item">
-          <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-          </li>
-          <li class="nav-item">
-          <li class="nav-item"><a class="nav-link" href="#">Gantt View</a></li>
-          </li>
-          </ul>
-        </div>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#">Calendar</a>
-        </li>
-        <li class="nav-item submenu"><a class="nav-link" href="#sidebarInvoices" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarInvoices">Invoices</a>
-          <div class="collapse" id="sidebarInvoices">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-              <li class="nav-item"><a class="nav-link" href="#">List</a></li>
-        </li>
-        <li class="nav-item">
-        <li class="nav-item"><a class="nav-link" href="#">Details</a></li>
-        </li>
-        </ul>
-    </div>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="#">Messages</a>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="#">Conversations</a>
-    </li>
-    </ul>
-    </div>
-    </li>
-    <li class="nav-item submenu"><a class="nav-link collapsed" href="#sidebarAuth" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth"><span class="nav-icon oi oi-wrench"></span>Auth</a>
-      <div class="collapse" id="sidebarAuth" data-parent="#sidebarAccordion">
-        <ul class="nav flex-column">
-          <li class="nav-item"><a class="nav-link" href="#">Coming Soon v1</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Coming Soon v2</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Cookie Consent</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Empty State</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Error Page v1</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Error Page v2</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Error Page v3</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Maintenance</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Page Message</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Session Timeout</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Sign In v1</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Sign In v2</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Sign Up</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Recovery Username</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Recovery Password</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Screen Locked</a>
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item submenu active"><a class="nav-link collapsed" href="#sidebarUser" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarUser"><span class="nav-icon oi oi-person"></span>User</a>
-      <div class="collapse show" id="sidebarUser" data-parent="#sidebarAccordion">
-        <ul class="nav flex-column">
-          <li class="nav-item"><a class="nav-link active" href="ul-02-page-user-profile.html">Profile</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="ul-03-page-user-activities.html">Activities</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="ul-04-page-user-teams.html">Teams</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="ul-05-page-user-projects.html">Projects</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="ul-06-page-user-tasks.html">Tasks</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="ul-07-page-user-setting.html">Profile Settings</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Account Settings</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Billing Settings</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Notification Settings</a>
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item submenu"><a class="nav-link collapsed" href="#sidebarLayouts" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLayouts"><span class="nav-icon oi oi-browser"></span>Layouts<span class="badge badge--success">+4</span></a>
-      <div class="collapse" id="sidebarLayouts" data-parent="#sidebarAccordion">
-        <ul class="nav flex-column">
-          <li class="nav-item"><a class="nav-link" href="#">Blank Page</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Header no Search</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Full Width</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Page Navs</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Page Cover</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Cover Image</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Page Sidebar</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Sidebar Fluid</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Sidebar Hidden</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Custom</a>
-          </li>
-        </ul>
-      </div>
-    </li>
-    </ul>
-    <h6 class="navbar__heading">interfaces</h6>
-    <ul class="navbar-nav">
-      <li class="nav-item submenu"><a class="nav-link collapsed" href="#sidebarComponents" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarComponents"><span class="nav-icon oi oi-puzzle-piece"></span>Components</a>
-        <div class="collapse" id="sidebarComponents" data-parent="#sidebarAccordion">
-          <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#">General</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Icons</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Rich Media</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">List Views</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Sortable &amp; Nestable</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Activity</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Steps</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Tasks</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Metrics</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="nav-item submenu"><a class="nav-link collapsed" href="#sidebarForms" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms"><span class="nav-icon oi oi-pencil"></span>Forms</a>
-        <div class="collapse" id="sidebarForms" data-parent="#sidebarAccordion">
-          <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#">Basic Elements</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Autocompletes</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Pickers</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Editors</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="nav-item submenu"><a class="nav-link collapsed" href="#sidebarTables" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables"><span class="nav-icon fas fa-table"></span>Tables</a>
-        <div class="collapse" id="sidebarTables" data-parent="#sidebarAccordion">
-          <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#">Basic Table</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Datatables</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Responsive Datatables</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Filter Columns</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="nav-item submenu"><a class="nav-link collapsed" href="#sidebarCollections" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCollections"><span class="nav-icon oi oi-bar-chart"></span>Collections</a>
-        <div class="collapse" id="sidebarCollections" data-parent="#sidebarAccordion">
-          <ul class="nav flex-column">
-            <li class="nav-item submenu"><a class="nav-link" href="#sidebarChart" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarChart">Chart.js</a>
-              <div class="collapse" id="sidebarChart">
-                <ul class="nav flex-column">
-                  <li class="nav-item">
-                  <li class="nav-item"><a class="nav-link" href="#">Line</a></li>
-            </li>
-            <li class="nav-item">
-            <li class="nav-item"><a class="nav-link" href="#">Bar</a></li>
-      </li>
-      <li class="nav-item">
-      <li class="nav-item"><a class="nav-link" href="#">Radar &amp; Scatter</a></li>
-      </li>
-      <li class="nav-item">
-      <li class="nav-item"><a class="nav-link" href="#">Others</a></li>
-      </li>
-    </ul>
-    </div>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="#">Flot</a>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="#">Inline Charts</a>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="#">Vector Map</a>
-    </li>
-    </ul>
-    </div>
-    </li>
-    <li class="nav-item submenu"><a class="nav-link collapsed" href="#sidebarLevelMenu" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLevelMenu"><span class="nav-icon oi oi-list-rich"></span>Level Menu</a>
-      <div class="collapse" id="sidebarLevelMenu" data-parent="#sidebarAccordion">
-        <ul class="nav flex-column">
-          <li class="nav-item"><a class="nav-link" href="#">Menu item</a>
-          </li>
-          <li class="nav-item submenu"><a class="nav-link" href="#sidebarMenuItem" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMenuItem">Menu item</a>
-            <div class="collapse" id="sidebarMenuItem">
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
-          </li>
-          <li class="nav-item">
-          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
-    </li>
-    <li class="nav-item submenu"><a class="nav-link" href="#sidebarChildItem" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarChildItem">Child item</a>
-      <div class="collapse" id="sidebarChildItem">
-        <ul class="nav flex-column">
-          <li class="nav-item"><a class="nav-link" href="#">Grand Child item</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Grand Child item</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Grand Child item</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Grand Child item</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-    <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
-    </li>
-    </ul>
-    </div>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="#">Menu item</a>
-    </li>
-    </ul>
-    </div>
-    </li>
-    </ul>
-    </div>
-    <div class="navbar__footer">
-      <button class="button button--full" type="button">Night mode<i class="fas fa-moon"></i>
-      </button>
-    </div>
-    </div>
-    </nav>
-    <section class="main-content">
-      <section class="main-content__inner--fluid">
-        <div class="page-cover">
-          <div class="page-cover__content"><a class="user-avatar user-avatar--xl" href="ul-02-page-user-profile.html"><img src="images/profile.jpg" alt="avatar"></a>
-            <h2 class="page-cover__heading">Beni Arisandi</h2>
-            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i>
-            </div>
-            <p class="text--muted">Project Manager @CreativeDivision</p>
-            <p>Huge fan of HTML, CSS and Javascript. Web design and open source lover.</p>
+          <div class="navbar__footer">
+            <button class="button button--full" type="button">Night mode<i class="fas fa-moon"></i>
+            </button>
           </div>
-          <div class="page-cover__controls"><a class="button button--link" href="#" data-toggle="modal" data-target="#followersModal">2,159 Followers</a><a class="button button--link" href="#" data-toggle="modal" data-target="#followingModal">136 Following</a></div>
         </div>
-        <nav class="page-navs">
-          <div class="page-navs__inner">
-            <div class="nav nav-center nav-tabs"><a class="nav-link js-profile-tab active" href="ul-02-page-user-profile.html">Overview</a><a class="nav-link js-profile-tab" href="ul-03-page-user-activities.html">Activities<span class="badge">16</span></a><a class="nav-link js-profile-tab" href="ul-04-page-user-teams.html">Teams</a><a class="nav-link js-profile-tab" href="ul-05-page-user-projects.html">Projects</a><a class="nav-link js-profile-tab" href="ul-06-page-user-tasks.html">Tasks</a><a class="nav-link js-profile-tab" href="ul-07-page-user-profile-setting.html">Settings</a>
+      </nav>
+      <section class="main-content">
+        <section class="main-content__inner--fluid">
+          <div class="page-cover">
+            <div class="page-cover__content"><a class="user-avatar user-avatar--xl" href="ul-02-page-user-profile.html"><img src="images/profile.jpg" alt="avatar"></a>
+              <h2 class="page-cover__heading">Beni Arisandi</h2>
+              <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i>
+              </div>
+              <p class="text--muted">Project Manager @CreativeDivision</p>
+              <p>Huge fan of HTML, CSS and Javascript. Web design and open source lover.</p>
             </div>
+            <div class="page-cover__controls"><a class="button button--link" href="#" data-toggle="modal" data-target="#followersModal">2,159 Followers</a><a class="button button--link" href="#" data-toggle="modal" data-target="#followingModal">136 Following</a></div>
           </div>
-        </nav>
-        <div class="page-inner">
-          <div class="metrics">
-            <div class="row">
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="metric">
-                  <div class="metric__value"><span class="metric__icon"><i class="oi oi-people"></i></span><span class="metric__number">12</span></div>
-                  <h3 class="metric__label">Teams</h3>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="metric">
-                  <div class="metric__value"><span class="metric__icon"><i class="oi oi-fork"></i></span><span class="metric__number">47</span></div>
-                  <h3 class="metric__label">Projects</h3>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="metric">
-                  <div class="metric__value"><span class="metric__icon"><i class="fa fa-tasks"></i></span><span class="metric__number">64</span></div>
-                  <h3 class="metric__label">Active Tasks</h3>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="metric">
-                  <div class="metric__value"><span class="metric__icon"><i class="oi oi-timer"></i></span><span class="metric__number">8</span></div>
-                  <h3 class="metric__label">Ongoing Tasks</h3>
-                </div>
+          <nav class="page-navs">
+            <div class="page-navs__inner">
+              <div class="nav nav-center nav-tabs"><a class="nav-link js-profile-tab active" href="ul-02-page-user-profile.html">Overview</a><a class="nav-link js-profile-tab" href="ul-03-page-user-activities.html">Activities<span class="badge">16</span></a><a class="nav-link js-profile-tab" href="ul-04-page-user-teams.html">Teams</a><a class="nav-link js-profile-tab" href="ul-05-page-user-projects.html">Projects</a><a class="nav-link js-profile-tab" href="ul-06-page-user-tasks.html">Tasks</a><a class="nav-link js-profile-tab" href="ul-07-page-user-profile-setting.html">Settings</a>
               </div>
             </div>
-          </div>
-          <div class="achievement">
-            <div class="achievement__header">
-              <h2 class="achievement__title">Achievement</h2>
-              <div class="dropdown">
-                <button class="button button--secondary" type="button">This Month<i class="fa fa-fw fa-caret-down"></i>
-                </button>
-              </div>
-            </div>
-            <div class="achievement__content">
+          </nav>
+          <div class="page-inner">
+            <div class="metrics">
               <div class="row">
-                <div class="col-xl-8">
-                  <div class="card achievement-chart">
-                    <div class="card-body">
-                      <div class="list-inline text--small achievement-chart__legend">
-                        <div class="list-inline-item"><i class="fa fa-fw fa-circle cl--teal"></i><span>Assigned tasks</span></div>
-                        <div class="list-inline-item"><i class="fa fa-fw fa-circle cl--purple"></i><span>Completed tasks</span></div>
-                      </div>
-                      <div class="achievement-chart__content">
-                        <canvas id="js-achievement-chart" width="656" height="256" data-setdata="[{&quot;labels&quot;:[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Assigned Tasks&quot;,&quot;borderColor&quot;:&quot;#00a28a&quot;,&quot;backgroundColor&quot;:&quot;#00a28a&quot;,&quot;data&quot;:[41,20,68,17,100,83,53]},{&quot;label&quot;:&quot;Completed Tasks&quot;,&quot;borderColor&quot;:&quot;#5f4b8b&quot;,&quot;backgroundColor&quot;:&quot;#5f4b8b&quot;,&quot;data&quot;:[51,14,51,63,59,83,34]}]}]"></canvas>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="metric">
+                    <div class="metric__value"><span class="metric__icon"><i class="oi oi-people"></i></span><span class="metric__number">12</span></div>
+                    <h3 class="metric__label">Teams</h3>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="metric">
+                    <div class="metric__value"><span class="metric__icon"><i class="oi oi-fork"></i></span><span class="metric__number">47</span></div>
+                    <h3 class="metric__label">Projects</h3>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="metric">
+                    <div class="metric__value"><span class="metric__icon"><i class="fa fa-tasks"></i></span><span class="metric__number">64</span></div>
+                    <h3 class="metric__label">Active Tasks</h3>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="metric">
+                    <div class="metric__value"><span class="metric__icon"><i class="oi oi-timer"></i></span><span class="metric__number">8</span></div>
+                    <h3 class="metric__label">Ongoing Tasks</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="achievement__header">
+                <h2 class="achievement__title">Achievement</h2>
+                <div class="dropdown time-filter">
+                  <button class="button button--secondary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">This Month<i class="fa fa-fw fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-arrow dropdown-arrow-right"></div>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-md" x-placement="top-end">
+                    <div class="form-group input-radio-dropdown">
+                      <input class="input-radio" type="radio" name="dpFilter" value="0" id="dpToday" />
+                      <label class="label-radio" for="dpToday"><span class="label-radio__date">Today</span><span class="label-radio__time">Mar 27</span>
+                      </label>
+                    </div>
+                    <div class="form-group input-radio-dropdown">
+                      <input class="input-radio" type="radio" name="dpFilter" value="1" id="dpYesterday" />
+                      <label class="label-radio" for="dpYesterday"><span class="label-radio__date">Yesterday</span><span class="label-radio__time">Mar 26</span>
+                      </label>
+                    </div>
+                    <div class="form-group input-radio-dropdown">
+                      <input class="input-radio" type="radio" name="dpFilter" value="2" id="dpWeek" />
+                      <label class="label-radio" for="dpWeek"><span class="label-radio__date">This Week</span><span class="label-radio__time">Mar 21-27</span>
+                      </label>
+                    </div>
+                    <div class="form-group input-radio-dropdown">
+                      <input class="input-radio" type="radio" name="dpFilter" value="3" id="dpMonth" checked="checked" />
+                      <label class="label-radio" for="dpMonth"><span class="label-radio__date">This Month</span><span class="label-radio__time">Mar 1-31</span>
+                      </label>
+                    </div>
+                    <div class="form-group input-radio-dropdown">
+                      <input class="input-radio" type="radio" name="dpFilter" value="4" id="dpYear" />
+                      <label class="label-radio" for="dpYear"><span class="label-radio__date">This Year</span><span class="label-radio__time">2018</span>
+                      </label>
+                    </div>
+                    <div class="form-group input-radio-dropdown">
+                      <input class="input-radio" type="radio" name="dpFilter" value="5" id="dpCustom" />
+                      <label class="label-radio" for="dpCustom"><span class="label-radio__date">Custom</span>
+                      </label>
+                      <div class="form-group form-customize form-readonly">
+                        <input class="form-control flatpickr-input js-flatpickr" type="text" data-toggle="flatpickr" data-mode="range" data-disable-mobile="true" data-date-format="Y-m-d" readonly="readonly" />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-4">
-                  <div class="card overview">
-                    <div class="card-header">Overview</div>
-                    <div class="card-body">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <div class="overview__item">
-                            <div class="overview__name"><span>Revenue</span><span class="percent percent--incre">87%</span></div>
-                            <div class="overview__value"><span>17,400</span><span class="overview__currency">USD</span></div>
-                          </div>
-                          <div class="overview__item">
-                            <div class="overview__name"><span>Projects</span><span class="percent percent--incre">24%</span></div>
-                            <div class="overview__value"><span class="overview__matric">5</span></div>
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="overview__item">
-                            <div class="overview__name"><span>Expenses</span><span class="percent percent--desc">12%</span></div>
-                            <div class="overview__value"><span>1,600</span><span class="overview__currency">USD</span></div>
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="summary">
-                            <div class="summary__name"><span>Earnings</span><span class="percent percent--incre">24%</span></div>
-                            <div class="summary__value"><span class="summary__matric">15,800</span><span class="summary__currency">USD</span></div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div class="row">
-                <div class="col-xl-6">
-                  <div class="card project">
-                    <div class="card-header"><span>Time Spent: Projects</span>
-                      <div class="dropdown more-info">
-                        <button class="button button--link" data-toggle="dropdown" aria-expanded="false" data-display="static"><i class="fa fa-fw fa-ellipsis-v"></i></button>
-                        <div class="dropdown-arrow"></div>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Goes here</a><a class="dropdown-item" href="#">Remove</a>
+              <div class="achievement__content">
+                <div class="row">
+                  <div class="col-xl-8">
+                    <div class="card achievement-chart">
+                      <div class="card-body">
+                        <div class="list-inline text--small achievement-chart__legend">
+                          <div class="list-inline-item"><i class="fa fa-fw fa-circle cl--teal"></i><span>Assigned tasks</span></div>
+                          <div class="list-inline-item"><i class="fa fa-fw fa-circle cl--purple"></i><span>Completed tasks</span></div>
+                        </div>
+                        <div class="achievement-chart__content">
+                          <canvas id="js-achievement-chart" width="656" height="256" data-setdata="[{&quot;labels&quot;:[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Assigned Tasks&quot;,&quot;borderColor&quot;:&quot;#00a28a&quot;,&quot;backgroundColor&quot;:&quot;#00a28a&quot;,&quot;data&quot;:[41,20,68,17,100,83,53]},{&quot;label&quot;:&quot;Completed Tasks&quot;,&quot;borderColor&quot;:&quot;#5f4b8b&quot;,&quot;backgroundColor&quot;:&quot;#5f4b8b&quot;,&quot;data&quot;:[51,14,51,63,59,83,34]}]}]"></canvas>
                         </div>
                       </div>
                     </div>
-                    <div class="card-body">
-                      <div class="table-responsive">
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th>Project</th>
-                              <th class="text-center">Progress</th>
-                              <th>Hours Spent</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><a class="tile tile--blue text--gray" href="#">ba</a><a class="project__name" href="#">Booking App</a></td>
-                              <td class="text-center"><span class="badge badge--blue text--gray">35%</span></td>
-                              <td class="text-center">35:28</td>
-                            </tr>
-                            <tr>
-                              <td><a class="tile tile--teal text--gray" href="#">sb</a><a class="project__name" href="#">SVG Icon Bundle</a></td>
-                              <td class="text-center"><span class="badge badge--teal text--gray">32%</span></td>
-                              <td class="text-center">20:39</td>
-                            </tr>
-                            <tr>
-                              <td><a class="tile tile--pink text--gray" href="#">sp</a><a class="project__name" href="#">Syrena Project</a></td>
-                              <td class="text-center"><span class="badge badge--pink text--gray">93%</span></td>
-                              <td class="text-center">35:28</td>
-                            </tr>
-                            <tr>
-                              <td><a class="tile tile--green text--gray" href="#">mg</a><a class="project__name" href="#">Mobile App Gex</a></td>
-                              <td class="text-center"><span class="badge badge--green text--gray">100%</span></td>
-                              <td class="text-center">35:10</td>
-                            </tr>
-                            <tr>
-                              <td><a class="tile tile--red text--gray" href="#">lb</a><a class="project__name" href="#">Landing Page Booster</a></td>
-                              <td class="text-center"><span class="badge badge--red text--gray">100%</span></td>
-                              <td class="text-center">21:21</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                  </div>
+                  <div class="col-xl-4">
+                    <div class="card overview">
+                      <div class="card-header">Overview</div>
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            <div class="overview__item">
+                              <div class="overview__name"><span>Revenue</span><span class="percent percent--incre">87%</span></div>
+                              <div class="overview__value"><span>17,400</span><span class="overview__currency">USD</span></div>
+                            </div>
+                            <div class="overview__item">
+                              <div class="overview__name"><span>Projects</span><span class="percent percent--incre">24%</span></div>
+                              <div class="overview__value"><span class="overview__matric">5</span></div>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            <div class="overview__item">
+                              <div class="overview__name"><span>Expenses</span><span class="percent percent--desc">12%</span></div>
+                              <div class="overview__value"><span>1,600</span><span class="overview__currency">USD</span></div>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            <div class="summary">
+                              <div class="summary__name"><span>Earnings</span><span class="percent percent--incre">24%</span></div>
+                              <div class="summary__value"><span class="summary__matric">15,800</span><span class="summary__currency">USD</span></div>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
                     </div>
-                    <div class="card-footer"><a href="#">View report<i class="fa fa-fw fa-angle-right"></i></a></div>
                   </div>
                 </div>
-                <div class="col-xl-6">
-                  <div class="card task">
-                    <div class="card-header"><span>Time Spent: Tasks</span>
-                      <div class="dropdown more-info">
-                        <button class="button button--link" data-toggle="dropdown" aria-expanded="false" data-display="static"><i class="fa fa-fw fa-ellipsis-v"></i></button>
-                        <div class="dropdown-arrow"></div>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Goes here</a><a class="dropdown-item" href="#">Remove</a>
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="card project">
+                      <div class="card-header"><span>Time Spent: Projects</span>
+                        <div class="dropdown more-info">
+                          <button class="button button--link" data-toggle="dropdown" aria-expanded="false" data-display="static"><i class="fa fa-fw fa-ellipsis-v"></i></button>
+                          <div class="dropdown-arrow"></div>
+                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Goes here</a><a class="dropdown-item" href="#">Remove</a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="table-responsive">
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th>Task</th>
-                              <th>Due Date</th>
-                              <th>Estimate</th>
-                              <th>Worked </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><a class="tile tile--circle tile--indigo text--gray" href="#">sp</a><a class="task__name" href="#">Make lemonade from scratch</a></td>
-                              <td>Apr 02</td>
-                              <td>24:00</td>
-                              <td>16:36</td>
-                            </tr>
-                            <tr>
-                              <td><a class="tile tile--circle tile--blue text--gray" href="#">lt</a><a class="task__name" href="#">Mix up a pitcher of sangria</a></td>
-                              <td>In 3 days</td>
-                              <td>04:00</td>
-                              <td>03:36</td>
-                            </tr>
-                            <tr>
-                              <td><a class="tile tile--circle tile--yellow text--gray" href="#">os</a><a class="task__name" href="#">Ride a roller coaster</a></td>
-                              <td>Tomorrow</td>
-                              <td>48:00</td>
-                              <td>50:02</td>
-                            </tr>
-                            <tr>
-                              <td><a class="tile tile--circle tile--pink text--gray" href="#">sp</a><a class="task__name" href="#">Dangle your feet off a dock</a></td>
-                              <td>Apr 07</td>
-                              <td>6:00</td>
-                              <td> 03:11</td>
-                            </tr>
-                            <tr>
-                              <td><a class="tile tile--circle tile--yellow text--gray" href="#">os</a><a class="task__name" href="#">Have a picnic in the park</a></td>
-                              <td>In 2 days</td>
-                              <td>12:00</td>
-                              <td>08:36</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Project</th>
+                                <th class="text-center">Progress</th>
+                                <th>Hours Spent</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a class="tile tile--blue text--gray" href="#">ba</a><a class="project__name" href="#">Booking App</a></td>
+                                <td class="text-center"><span class="badge badge--blue text--gray">35%</span></td>
+                                <td class="text-center">35:28</td>
+                              </tr>
+                              <tr>
+                                <td><a class="tile tile--teal text--gray" href="#">sb</a><a class="project__name" href="#">SVG Icon Bundle</a></td>
+                                <td class="text-center"><span class="badge badge--teal text--gray">32%</span></td>
+                                <td class="text-center">20:39</td>
+                              </tr>
+                              <tr>
+                                <td><a class="tile tile--pink text--gray" href="#">sp</a><a class="project__name" href="#">Syrena Project</a></td>
+                                <td class="text-center"><span class="badge badge--pink text--gray">93%</span></td>
+                                <td class="text-center">35:28</td>
+                              </tr>
+                              <tr>
+                                <td><a class="tile tile--green text--gray" href="#">mg</a><a class="project__name" href="#">Mobile App Gex</a></td>
+                                <td class="text-center"><span class="badge badge--green text--gray">100%</span></td>
+                                <td class="text-center">35:10</td>
+                              </tr>
+                              <tr>
+                                <td><a class="tile tile--red text--gray" href="#">lb</a><a class="project__name" href="#">Landing Page Booster</a></td>
+                                <td class="text-center"><span class="badge badge--red text--gray">100%</span></td>
+                                <td class="text-center">21:21</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
+                      <div class="card-footer"><a href="#">View report<i class="fa fa-fw fa-angle-right"></i></a></div>
                     </div>
-                    <div class="card-footer"><a href="#">View report f<i class="fa fa-fw fa-angle-right"></i></a></div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card task">
+                      <div class="card-header"><span>Time Spent: Tasks</span>
+                        <div class="dropdown more-info">
+                          <button class="button button--link" data-toggle="dropdown" aria-expanded="false" data-display="static"><i class="fa fa-fw fa-ellipsis-v"></i></button>
+                          <div class="dropdown-arrow"></div>
+                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Goes here</a><a class="dropdown-item" href="#">Remove</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Task</th>
+                                <th>Due Date</th>
+                                <th>Estimate</th>
+                                <th>Worked </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a class="tile tile--circle tile--indigo text--gray" href="#">sp</a><a class="task__name" href="#">Make lemonade from scratch</a></td>
+                                <td>Apr 02</td>
+                                <td>24:00</td>
+                                <td>16:36</td>
+                              </tr>
+                              <tr>
+                                <td><a class="tile tile--circle tile--blue text--gray" href="#">lt</a><a class="task__name" href="#">Mix up a pitcher of sangria</a></td>
+                                <td>In 3 days</td>
+                                <td>04:00</td>
+                                <td>03:36</td>
+                              </tr>
+                              <tr>
+                                <td><a class="tile tile--circle tile--yellow text--gray" href="#">os</a><a class="task__name" href="#">Ride a roller coaster</a></td>
+                                <td>Tomorrow</td>
+                                <td>48:00</td>
+                                <td>50:02</td>
+                              </tr>
+                              <tr>
+                                <td><a class="tile tile--circle tile--pink text--gray" href="#">sp</a><a class="task__name" href="#">Dangle your feet off a dock</a></td>
+                                <td>Apr 07</td>
+                                <td>6:00</td>
+                                <td> 03:11</td>
+                              </tr>
+                              <tr>
+                                <td><a class="tile tile--circle tile--yellow text--gray" href="#">os</a><a class="task__name" href="#">Have a picnic in the park</a></td>
+                                <td>In 2 days</td>
+                                <td>12:00</td>
+                                <td>08:36</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="card-footer"><a href="#">View report f<i class="fa fa-fw fa-angle-right"></i></a></div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+        <footer class="looper-footer">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="text--muted" href="#">Support</a></li>
+            <li class="list-inline-item"><a class="text--muted" href="#">Help Center</a></li>
+            <li class="list-inline-item"><a class="text--muted" href="#">Privacy</a></li>
+            <li class="list-inline-item"><a class="text--muted" href="#">Terms of Service</a></li>
+          </ul>
+          <div class="copyright">Copyright © 2018. All right reserved. </div>
+        </footer>
       </section>
-      <footer class="looper-footer">
-        <ul class="list-inline">
-          <li class="list-inline-item"><a class="text--muted" href="#">Support</a></li>
-          <li class="list-inline-item"><a class="text--muted" href="#">Help Center</a></li>
-          <li class="list-inline-item"><a class="text--muted" href="#">Privacy</a></li>
-          <li class="list-inline-item"><a class="text--muted" href="#">Terms of Service</a></li>
-        </ul>
-        <div class="copyright">Copyright © 2018. All right reserved. </div>
-      </footer>
-    </section>
     </div>
     <script src="js/main.js"></script>
   </body>

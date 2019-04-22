@@ -151,8 +151,9 @@
 .input-radio-dropdown {
   .input-radio {
     &:checked {
-      & ~ .label-radio:after {
+      & ~ .label-radio:before {
         transform: scale(1.2);
+        background-color: #346cb0;
       }
       & ~ .form-readonly {
         display: block;
@@ -163,16 +164,21 @@
     display: flex;
     justify-content: space-between;
     vertical-align: top;
+    position: relative;
 
     &__time {
       color: $cl-dark-gray;
     }
     &:before {
-      pointer-events: none;
-      border: none;
-      background: transparent;
-      box-shadow: none;
-      transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      position: absolute;
+      display: block;
+      width: 8px;
+      height: 8px;
+      content: '';
+      border-radius: 50%;
+      left: -16px;
+      top: 6px;
+      transform: scale(0);
     }
     &:after {
       left: -20px;

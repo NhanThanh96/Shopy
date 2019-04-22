@@ -98,6 +98,10 @@
   }
   &__nav {
     padding: 0 8px;
+
+    @include breakpoint-down(smallphone) {
+      display: none;
+    }
   }
   &__nav-item {
     position: relative;

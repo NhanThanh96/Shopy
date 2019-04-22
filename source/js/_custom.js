@@ -1,70 +1,64 @@
 $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip(); 
 
-  new PerfectScrollbar(".js-activities-scrollbar", {
-    wheelPropagation: false
-  });
-  new PerfectScrollbar(".js-messages-scrollbar", {
-    wheelPropagation: false
-  });
-  new PerfectScrollbar(".js-navbar-menu-scrollbar", {
-    wheelPropagation: false
-  });
-
-
-  function barChart(element){
-    $(element).each(function(){
-      var dataSet =  $(this).attr("data-setdata");
-      var parsedDataSet = JSON.parse(dataSet); 
-      new Chart($(this), {
-        type: 'bar',
-        data: {
-          datasets: parsedDataSet[0].datasets,
-          labels: parsedDataSet[0].labels,
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-            display: false
-          },
-          title: {
-            display: false
-          },
-          scales: {
-            xAxes: [{
-              gridLines: {
-                display: true,
-                drawBorder: false,
-                drawOnChartArea: false
-              },
-              ticks: {
-                fontColor: '#888c9b',
-                maxRotation: 0,
-                maxTicksLimit: 4
-              }
-            }],
-            yAxes: [{
-              gridLines: {
-                display: true,
-                drawBorder: false
-              },
-              ticks: {
-                fontColor: '#888c9b',
-                beginAtZero: true,
-                stepSize: 100
-              }
-            }]
-          }
-        }
+  function makeScrollbar(element){
+    if($(element).length > 0) {
+      new PerfectScrollbar(element, {
+        wheelPropagation: false
       });
+    }
+  }
+  makeScrollbar(".js-activities-scrollbar");
+  makeScrollbar(".js-messages-scrollbar");
+  makeScrollbar(".js-navbar-menu-scrollbar");
+
+  var completionTaskCanvas = $('#js-completion-tasks-chart').length && $('#js-completion-tasks-chart')[0].getContext('2d');
+  if ($('#js-completion-tasks-chart').length > 0) {
+    var dataSet =  $('#js-completion-tasks-chart').attr("data-setdata");
+    var parsedDataSet = JSON.parse(dataSet); 
+    var completionTaskChart = new Chart(completionTaskCanvas, {
+      type: 'bar',
+      data: {
+        datasets: parsedDataSet[0].datasets,
+        labels: parsedDataSet[0].labels,
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        },
+        title: {
+          display: false
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              display: true,
+              drawBorder: false,
+              drawOnChartArea: false
+            },
+            ticks: {
+              fontColor: '#888c9b',
+              maxRotation: 0,
+              maxTicksLimit: 4
+            }
+          }],
+          yAxes: [{
+            gridLines: {
+              display: true,
+              drawBorder: false
+            },
+            ticks: {
+              fontColor: '#888c9b',
+              beginAtZero: true,
+              stepSize: 100
+            }
+          }]
+        }
+      }
     });
   }
-
-
-  $(window).on('load', function () { 
-    barChart(".js-completion-tasks-chart");
-  });
   
   $(".js-tasks-performance-chart").each(function(){
     var selector = this;
@@ -154,7 +148,5 @@ $(document).ready(function() {
     });
   }
   modalScrollable();
-
-  // show nav item active
  
 });

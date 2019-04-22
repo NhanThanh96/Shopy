@@ -116,26 +116,27 @@ block main
       section.chart-list
         .row
           .col-12.col-lg-12.col-xl-4
-            .completion-tasks
-              h3.completion-tasks__title  Completion Taskss
-              -
-                var completionTaskData = [
-                  {
-                    labels: ['21 Mar', '22 Mar', '23 Mar', '24 Mar', '25 Mar', '26 Mar', '27 Mar'],
-                    datasets: [{
-                        backgroundColor: '#346cb0',
-                        borderColor: '#346cb0',
-                        data: [155, 65, 465, 265, 225, 325, 80]
-                      }]
-                  }
-                ];
-              .completion-tasks__content
-                canvas.completion-tasks__chart.js-completion-tasks-chart(
-                  width= '282px'
-                  height= '292px'
-                  data-setdata= completionTaskData
-                )
-          .col-12.col-lg-12.col-xl-4
+            -
+              var completionTaskData = [
+                {
+                  labels: ['21 Mar', '22 Mar', '23 Mar', '24 Mar', '25 Mar', '26 Mar', '27 Mar'],
+                  datasets: [{
+                      backgroundColor: '#346cb0',
+                      borderColor: '#346cb0',
+                      data: [155, 65, 465, 265, 225, 325, 80]
+                    }]
+                }
+              ];
+            .card.completion-tasks
+              .card-body
+                h3.card-title Completion Tasks 
+                .completion-tasks__content
+                  canvas.completion-tasks__chart#js-completion-tasks-chart(
+                    width= '303px'
+                    height= '292px'
+                    data-setdata= completionTaskData
+                  )
+          .col-12.col-lg-6.col-xl-4
             .tasks-performance
               h3.tasks-performance__title Tasks Performance
               .tasks-performance__content
@@ -219,7 +220,7 @@ block main
                       .tasks-performance__status
                         | #{item.status}
 
-          .col-12.col-lg-12.col-xl-4
+          .col-12.col-lg-6.col-xl-4
             .leaderboard
               h3.leaderboard__title Leaderboard
                 -
