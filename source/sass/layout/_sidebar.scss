@@ -34,6 +34,10 @@
         border-color: $cl-light-gray;
         box-shadow: none;
       }
+
+      @include breakpoint-down(phone) {
+        font-size: 16px;
+      }
     }
   }
   &__vertical {
@@ -44,8 +48,22 @@
     border-right: 1px solid rgba(20, 20, 31, .05);
     top: 56px;
     width: 240px;
-    z-index: 5;
+    max-width: 264px;
+    z-index: 1020;
     padding: 0;
+
+    @include breakpoint-down(phone) {
+      left: -264px;
+      top: 0;
+      transition: left .3s;
+      &.show {
+        left: 0;
+      }
+    }
+
+    @include breakpoint-down(phone) {
+      width: 264px;
+    }
   }
 
   &__content {
@@ -61,14 +79,115 @@
     padding-top: 16px;
     width: 100%;
   }
-  &__menu > .navbar-nav > .nav-item.active {
-    & > .nav-link {
-      color: #222230;
-      font-weight: 400;
+  .account-collapse {
+    $account-collapse: &;
+
+    background-color: #fff;
+    position: relative;
+    display: block;
+    box-shadow:
+      0 0 0 1px rgba(20, 20, 31, .05),
+      0 1px 3px 0 rgba(20, 20, 31, .15);
+    z-index: 3;
+    &__button {
+      padding: 1rem;
+      width: 100%;
+      display: flex;
+      position: relative;
+      margin: 0;
+      border: 0;
+      align-items: center;
+      justify-content: flex-start;
+      background: none;
+      transition: background-color .15s;
+      &:focus {
+        outline: 0;
+      }
     }
-    & > .nav-link:hover {
-      color: #222230;
+    .user-avatar {
+      margin-right: 12px;
+    }
+    &__summary {
+      margin-right: .75rem;
+      display: block;
+      text-align: left;
+      flex: 1;
+      overflow: hidden;
+      flex-direction: column;
+      text-overflow: clip;
+      white-space: nowrap;
+    }
+    &__name {
+      font-size: 18px;
+      line-height: 24px;
+      margin: 0;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 500;
+      opacity: .8;
+    }
+    &__position {
+      font-size: 14px;
+      line-height: 16px;
       font-weight: 400;
+      opacity: .6;
+      margin: 0;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &__dropdown-icon {
+      position: absolute;
+      right: 15px;
+      top: 47%;
+      transform: translateY(-50%);
+      opacity: .5;
+      font-size: 19px;
+      line-height: 14px;
+      & > span {
+        transition:
+          transform .2s ease-in-out,
+          -webkit-transform .2s ease-in-out;
+      }
+    }
+    &__button[aria-expanded='true'] {
+      #{$account-collapse}__dropdown-icon {
+        transform: rotate(-180deg);
+      }
+    }
+    &__dropdown {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      background-color: #fff;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e9ecef;
+      &.show {
+        max-height: calc(100vh - 4.5rem);
+        overflow: auto;
+      }
+      .dropdown-item {
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        padding: .5rem 1rem;
+        clear: both;
+        font-weight: 400;
+        color: #191927;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+      }
+    }
+    &__icon {
+      text-align: center;
+      width: 1.5rem;
+      margin-right: 12px;
+      color: #a6abbd;
     }
   }
 }
@@ -76,6 +195,9 @@
 .navbar-nav {
   .nav-item {
     &.submenu {
+      & > .nav-link {
+        position: relative;
+      }
       & > .nav-link:after {
         position: absolute;
         content: '';
@@ -93,25 +215,24 @@
         transform: rotate(90deg);
       }
     }
+  }
+  & > .nav-item {
 
-    &.active {
+    &.active:not(.submenu) {
       & > .nav-link {
         color: $cl-dark-blue;
         font-weight: $font-weight-bold;
       }
-
+    }
+    &.active {
       .nav-icon {
         color: $cl-dark-blue;
       }
 
-      & > .nav-link:hover {
-        color: $cl-dark-blue;
-      }
       & > .nav-link:hover .nav-icon {
         color: $cl-dark-blue;
       }
     }
-
     & > .nav-link {
       position: relative;
       display: block;
@@ -124,6 +245,13 @@
         margin-top: 2px;
         padding: 4px 6px;
         font-size: 80%;
+      }
+
+      @include breakpoint-down(phone) {
+        font-size: 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        line-height: 28px;
       }
     }
     & > .nav-link:hover {
@@ -155,6 +283,13 @@
       line-height: 20px;
       transition: color .3s;
       color: $cl-gray;
+
+      @include breakpoint-down(phone) {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        line-height: 28px;
+        font-size: 16px;
+      }
     }
 
     .nav-link[data-toggle='collapse'][aria-expanded='true'] {

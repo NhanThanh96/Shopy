@@ -4,20 +4,69 @@ block head
   +head('Dashboard | Looper - Bootstrap 4 Admin Theme')
 block sidebar
   +sidebar('Dashboard', 'home.html')
-block main
-  .overlay
+block main 
   section.main-content
     .main-content__inner
       .main-content__header
         .intro
-          span.intro__greeting Hi, Beni.
-          p.intro__content Here’s what’s happening with your business today.
-        .dropdown
+          span.intro__greeting Hi, Beni. 
+          p.intro__content Here’s what’s happening with your business today. 
+        .dropdown.time-filter
           +buttons({
             text: 'This Week',
             type: 'secondary',
             iconFont: 'fa fa-fw fa-caret-down'
-          })(data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          })(
+            data-toggle='dropdown'
+            aria-haspopup='true'
+            aria-expanded='false'
+            data-display="static"
+          )
+          .dropdown-arrow.dropdown-arrow-right
+          .dropdown-menu.dropdown-menu-right.dropdown-menu-md(x-placement="top-end")
+            +group-input-radio-dropdown({
+              name: 'dpFilter',
+              id: 'dpToday',
+              value: '0',
+              date: 'Today',
+              time: 'Mar 27'
+            })
+            +group-input-radio-dropdown({
+              name: 'dpFilter',
+              id: 'dpYesterday',
+              value: '1',
+              date: 'Yesterday',
+              time: 'Mar 26'
+            })
+            +group-input-radio-dropdown({
+              name: 'dpFilter',
+              id: 'dpWeek',
+              value: '2',
+              date: 'This Week',
+              time: 'Mar 21-27',
+              checked: true
+            })
+            +group-input-radio-dropdown({
+              name: 'dpFilter',
+              id: 'dpMonth',
+              value: '3',
+              date: 'This Month',
+              time: 'Mar 1-31'
+            })
+            +group-input-radio-dropdown({
+              name: 'dpFilter',
+              id: 'dpYear',
+              value: '4',
+              date: 'This Year',
+              time: '2018'
+            })
+            +group-input-radio-dropdown({
+              name: 'dpFilter',
+              id: 'dpCustom',
+              value: '5',
+              date: 'Custom',
+              flatpickr: true
+            })
       section.statistics
         .row
           .col-lg-9
@@ -54,16 +103,6 @@ block main
                       if item.metric
                         span.statistics__metric
                           | #{item.metric}
-              //- each item in statisticList
-              //-   .col
-              //-     .metric
-              //-       a(href="#")
-              //-         h3.metric__label
-              //-           | #{item.name}
-              //-         .metric__value
-              //-           span.metric__icon
-              //-             i(class= item.icon)
-              //-           span.metric__number= item.metric
           .col-lg-3
             .ongoing-tasks
               .ongoing-tasks__link
@@ -78,7 +117,7 @@ block main
         .row
           .col-12.col-lg-12.col-xl-4
             .completion-tasks
-              h3.completion-tasks__title  Completion Tasks
+              h3.completion-tasks__title  Completion Taskss
               -
                 var completionTaskData = [
                   {

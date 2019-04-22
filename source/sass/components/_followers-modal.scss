@@ -4,9 +4,27 @@
 .followers {
   $followers : &;
 
+  .modal-dialog-scrollable {
+    .modal-header {
+      box-shadow: 0 2px 0 0 rgba(20, 20, 31, .125);
+      border-bottom: 0;
+      z-index: 2;
+    }
+    .modal-footer {
+      box-shadow: 0 -2px 0 0 rgba(20, 20, 31, .125);
+      border-top: 0;
+      z-index: 2;
+    }
+    .modal-body-scrolled {
+      box-shadow: none;
+    }
+  }
   .modal-header {
     box-shadow: none;
     border-bottom: 0;
+  }
+  .modal-footer {
+    border: 0;
   }
   .modal-title {
     margin-bottom: 0;

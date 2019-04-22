@@ -86,7 +86,7 @@ mixin sidebarTop(data, category, currentPage)
                           | #{secondLevel.badge.content}
         else
           a.nav-link(
-            href= "#" + val.url
+            href= val.url
             class= (val.url==currentPage) ? 'active' : null
           )
             if val.icon

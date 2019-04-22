@@ -10,10 +10,8 @@ mixin header()
           img(src="images/brand-inverse.png", alt="looper")
       .looper-header__content
         .toggle-menu.d-md-none.d-lg-none.d-xl-none
-          button.hamburger.js-toggle-sidebar(
+          button.hamburger#js-toggle-sidebar(
             type="button"
-            data-toggle="aside"
-            aria-label="toggle menu"
           )
             i.fas.fa-bars
         form.looper-header__search(action="#")

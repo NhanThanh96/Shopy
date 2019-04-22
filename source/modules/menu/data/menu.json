@@ -179,23 +179,23 @@
           },
           {
             "name": "Activities",
-            "url": "#"
+            "url": "ul-03-page-user-activities.html"
           },
           {
             "name": "Teams",
-            "url": "#"
+            "url": "ul-04-page-user-teams.html"
           },
           {
             "name": "Projects",
-            "url": "#"
+            "url": "ul-05-page-user-projects.html"
           },
           {
             "name": "Tasks",
-            "url": "#"
+            "url": "ul-06-page-user-tasks.html"
           },
           {
             "name": "Profile Settings",
-            "url": "#"
+            "url": "ul-07-page-user-setting.html"
           },
           {
             "name": "Account Settings",

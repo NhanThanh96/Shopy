@@ -11,11 +11,6 @@
         "categories": "Home",
         "background": "#1984c6"
       }, {
-        "title": "Form-basic",
-        "url": "form-basic",
-        "categories": "Form Basic",
-        "background": "#006666"
-      }, {
         "title": "User-profile",
         "url": "ul-02-page-user-profile",
         "categories": "User Profile",
@@ -42,7 +37,7 @@
         "background": "#cd950c"
       }, {
         "title": "User-profile-settings",
-        "url": "ul-07-page-user-profile-settings",
+        "url": "ul-07-page-user-profile-setting",
         "categories": "User Profile",
         "background": "#cd950c"
       }

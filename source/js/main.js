@@ -4,5 +4,6 @@
 //=require perfect-scrollbar/dist/perfect-scrollbar.min.js
 //=require chart.js/dist/Chart.min.js
 //=require easy-pie-chart/dist/jquery.easypiechart.min.js
+//=require pace-js/pace.min.js
 //=require _input.js
 //=require _custom.js

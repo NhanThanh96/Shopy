@@ -1,15 +1,14 @@
 $(document).ready(function() {
-
   $('[data-toggle="tooltip"]').tooltip(); 
 
   new PerfectScrollbar(".js-activities-scrollbar", {
-    wheelPropagation: true
+    wheelPropagation: false
   });
   new PerfectScrollbar(".js-messages-scrollbar", {
-    wheelPropagation: true
+    wheelPropagation: false
   });
   new PerfectScrollbar(".js-navbar-menu-scrollbar", {
-    wheelPropagation: true
+    wheelPropagation: false
   });
 
 
@@ -80,83 +79,82 @@ $(document).ready(function() {
     options.trackColor = options.trackColor == 'false' || options.trackColor == '' ? false : options.trackColor;
     options.scaleColor = options.scaleColor == 'false' || options.scaleColor == '' ? false : options.scaleColor;
     $(selector).easyPieChart(options);
-    // $(selector).easyPieChart({
-    //   barColor : 
-    // });
   });
 
-  var achievementCanvas = $('#js-achievement-chart')[0].getContext('2d');
-  var achievementDataSet =  $('#js-achievement-chart').attr("data-setdata");
-  var parsedAchievementDataSet = JSON.parse(achievementDataSet);
-  var achievementChart = new Chart(achievementCanvas, {
-    type: 'bar',
-    data: parsedAchievementDataSet[0],
-    options: {
-      tooltips: {
-        mode: 'index',
-        intersect: true
-      },
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display: true,
-            drawBorder: false,
-            drawOnChartArea: false,
-            fontStyle: 400
-          },
-          ticks: {
-            fontColor: '#888c9b',
-          }
-        }],
-        yAxes: [{
-          gridLines: {
-            display: true,
-            borderDash: [8, 4],
-            fontStyle: 400
-          },
-          ticks: {
-            stepSize: 20,
-            fontColor: '#888c9b',
-          }
-        }]
+  var achievementCanvas = $('#js-achievement-chart').length && $('#js-achievement-chart')[0].getContext('2d');
+  if ($('#js-achievement-chart').length > 0) {
+    var achievementDataSet =  $('#js-achievement-chart').attr("data-setdata");
+    var parsedAchievementDataSet = JSON.parse(achievementDataSet);
+    var achievementChart = new Chart(achievementCanvas, {
+      type: 'bar',
+      data: parsedAchievementDataSet[0],
+      options: {
+        tooltips: {
+          mode: 'index',
+          intersect: true
+        },
+        legend: {
+          display: false
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              display: true,
+              drawBorder: false,
+              drawOnChartArea: false,
+              fontStyle: 400
+            },
+            ticks: {
+              fontColor: '#888c9b',
+            }
+          }],
+          yAxes: [{
+            gridLines: {
+              display: true,
+              borderDash: [8, 4],
+              fontStyle: 400
+            },
+            ticks: {
+              stepSize: 20,
+              fontColor: '#888c9b',
+            }
+          }]
+        }
       }
-    }
-  });
-  // button sidebar toggle
-  function resizeHandler() {
-    var win = $(this); 
-    var sidebarCollapseWidth = "-240px";
-      if (win.width() < 769) {
-        $('.overlay').on('click', function(){        
-          $(".overlay").removeClass("hide");
-          $(".sidebar__collaspe").animate({
-            left : sidebarCollapseWidth
-          });
-        });
-      } else{
-        $(window).unbind('scroll');
-      }
-    }
-  resizeHandler();
+    });
+  }
 
-  $(window).resize(resizeHandler);
+  // sidebar collapse
+  function sidebarCollapse(){
+    $('#js-toggle-sidebar').on('click', function(){
+      $('.js-sidebar-collapse').toggleClass('show');
+  
+      $('.overlay').fadeToggle('200');
+  
+      $('.overlay').on('click', function(){         
+        $('.js-sidebar-collapse').removeClass('show');
+        $(this).fadeOut();
+      });
+    })
+  }
+  sidebarCollapse();
 
-  $(".js-toggle-sidebar").on("click", function(){
-    var sidebarCollapse = $(".sidebar__collaspe");
-    var sidebarCollapseWidth = "-240px";
-    $(".overlay").toggleClass("hide");
-    if(sidebarCollapse.css("left") == sidebarCollapseWidth) {
-      $(".sidebar__collaspe").animate({
-        left : 0
-      }, 350);
-    }
-    else {
-      $(".sidebar__collaspe").animate({
-        left : sidebarCollapseWidth
-      }, 350);
-    }
-  });
+  // modal scrollable
+  function modalScrollable(){
+    $('.modal').on('shown.bs.modal', function () {
+      $(this).addClass('has-shown').find('.modal-body').trigger('scroll');
+    });
+    $('.js-modal-dialog-scrollable .modal-body').on('scroll', function () {
+      var $elem = $(this);
+      var elem = $elem[0];
+      var isTop = $elem.scrollTop() === 0;
+      var isBottom = elem.scrollHeight - $elem.scrollTop() === $elem.outerHeight();
+      $elem.prev().toggleClass('modal-body-scrolled', isTop);
+      $elem.next().toggleClass('modal-body-scrolled', isBottom);
+    });
+  }
+  modalScrollable();
+
+  // show nav item active
+ 
 });

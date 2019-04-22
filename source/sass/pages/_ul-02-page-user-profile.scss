@@ -34,7 +34,25 @@
       &:last-of-type {
         margin-right: 0;
       }
+
+      @include breakpoint-down(tablet) {
+        flex: 1;
+        text-align: center;
+        margin-right: 4px;
+      }
     }
+
+    @include breakpoint-down(tablet) {
+      display: flex;
+      position: relative;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  @include breakpoint-down(tablet) {
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
 .rating {
@@ -104,9 +122,18 @@
       }
     }
   }
+
+  @include breakpoint-down(tablet) {
+    padding: 0 16px;
+  }
 }
 .page-inner {
   padding: 24px 32px;
+
+  @include breakpoint-down(tablet) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 }
 .metrics {
   margin-top: 16px;
@@ -194,6 +221,7 @@
   box-shadow:
     0 0 0 1px rgba(20, 20, 31, .05),
     0 1px 3px 0 rgba(20, 20, 31, .15);
+  margin-bottom: 20px;
   .card-header {
     font-weight: 600;
     padding: 16px;

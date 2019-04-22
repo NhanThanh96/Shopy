@@ -59,17 +59,42 @@
       height: 32px;
       width: auto;
     }
+
+    @include breakpoint-down(phone) {
+      display: none;
+    }
   }
   &__content {
     padding-left: 32px;
     display: flex;
     flex: 1;
     align-items: center;
+
+    @include breakpoint-down(tablet) {
+      padding-left: 16px;
+    }
+
+    @include breakpoint-down(phone) {
+      padding-left: 0;
+    }
   }
   &__search {
     flex: 1;
     width: 100%;
     margin-right: 16px;
+
+    @include breakpoint-down(phone) {
+      margin-left: 8px;
+      .form-control {
+        height: 38px;
+        padding-left: 43px;
+      }
+      .form-control::placeholder {
+        font-size: 16px;
+        position: relative;
+        top: 1px;
+      }
+    }
   }
   &__nav {
     padding: 0 8px;
@@ -110,6 +135,11 @@
     &:hover {
       color: $cl-white;
       background-color: hsla(0, 0, 100%, .12);
+    }
+
+    @include breakpoint-down(phone) {
+      font-size: 16px;
+      height: 38px;
     }
   }
   &__dropdown-menu {
@@ -176,6 +206,9 @@
     &.show {
       animation-name: showDropdown;
     }
+  }
+  .dropdown-header {
+    padding: .5rem 1rem;
   }
 }
 
@@ -390,6 +423,10 @@
     padding-right: 36px;
     text-overflow: clip;
     white-space: nowrap;
+
+    @include breakpoint-down(tablet) {
+      display: none;
+    }
   }
   &__name {
     display: block;
@@ -417,6 +454,11 @@
     &.show {
       animation-name: showDropdown;
     }
+
+    @include breakpoint-down(tablet) {
+      right: 5px;
+      left: auto;
+    }
   }
   .dropdown-item {
     padding: 8px 16px;
@@ -434,6 +476,10 @@
     color: $cl-xlight-gray;
     width: 20px;
   }
+
+  @include breakpoint-down(phone) {
+    display: none;
+  }
 }
 
 
@@ -443,6 +489,12 @@
     &__icon {
       & > i {
         color: hsla(0, 0, 100%, .6);
+      }
+
+      @include breakpoint-down(phone) {
+        line-height: 43px;
+        left: 1px;
+        font-size: 16px;
       }
     }
   }
@@ -482,9 +534,12 @@
     outline: 0;
   }
   & > i {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
     position: relative;
-    top: -2px;
+  }
+
+  @include breakpoint-down(phone) {
+    margin: 0 8px;
   }
 }

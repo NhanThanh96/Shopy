@@ -147,3 +147,39 @@
     }
   }
 }
+
+.input-radio-dropdown {
+  .input-radio {
+    &:checked {
+      & ~ .label-radio:after {
+        transform: scale(1.2);
+      }
+      & ~ .form-readonly {
+        display: block;
+      }
+    }
+  }
+  .label-radio {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: top;
+
+    &__time {
+      color: $cl-dark-gray;
+    }
+    &:before {
+      pointer-events: none;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+    &:after {
+      left: -20px;
+    }
+  }
+  .form-readonly {
+    margin: 4px 0;
+    display: none;
+  }
+}

@@ -67,12 +67,12 @@ block main
                   name: 'Tasks'
                 },
                 {
-                  link: 'ul-07-page-user-profile-settings.html',
+                  link: 'ul-07-page-user-profile-setting.html',
                   name: 'Settings'
                 }
               ];
             each item in navList
-              a.nav-link(
+              a.nav-link.js-profile-tab(
                 href= item.link
                 class= item.isActive ? 'active' : null
               )
@@ -203,8 +203,18 @@ block main
                 .card.project
                   .card-header
                     span Time Spent: Projects
-                    .dropdown
-                      button
+                    .dropdown.more-info
+                      button.button.button--link(
+                        data-toggle="dropdown"
+                        aria-expanded="false"
+                        data-display="static"
+                      )
+                        i.fa.fa-fw.fa-ellipsis-v
+                      .dropdown-arrow
+                      .dropdown-menu.dropdown-menu-right
+                        each val, index in ['Action', 'Goes here', 'Remove']
+                          a.dropdown-item(href="#")
+                            | #{val}
                   .card-body
                     .table-responsive
                       table.table
@@ -303,8 +313,18 @@ block main
                 .card.task
                   .card-header
                     span Time Spent: Tasks
-                    .dropdown
-                      button
+                    .dropdown.more-info
+                      button.button.button--link(
+                        data-toggle="dropdown"
+                        aria-expanded="false"
+                        data-display="static"
+                      )
+                        i.fa.fa-fw.fa-ellipsis-v
+                      .dropdown-arrow
+                      .dropdown-menu.dropdown-menu-right
+                        each val, index in ['Action', 'Goes here', 'Remove']
+                          a.dropdown-item(href="#")
+                            | #{val}
                   .card-body
                     .table-responsive
                       table.table

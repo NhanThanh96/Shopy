@@ -7,7 +7,7 @@ block modal
   +followingModal()
   +membersModal()
 block sidebar
-  +sidebar('User', 'ul-02-page-user-profile.html')
+  +sidebar('User', 'ul-05-page-user-projects.html')
 block main
   section.main-content
     section.main-content__inner--fluid
@@ -48,7 +48,6 @@ block main
                 {
                   link: 'ul-02-page-user-profile.html',
                   name: 'Overview',
-                  isActive: true
                 },
                 {
                   link: 'ul-03-page-user-activities.html',
@@ -61,19 +60,20 @@ block main
                 },
                 {
                   link: 'ul-05-page-user-projects.html',
-                  name: 'Projects'
+                  name: 'Projects',
+                  isActive: true
                 },
                 {
                   link: 'ul-06-page-user-tasks.html',
                   name: 'Tasks'
                 },
                 {
-                  link: 'ul-07-page-user-profile-settings.html',
+                  link: 'ul-07-page-user-profile-setting.html',
                   name: 'Settings'
                 }
               ];
             each item in navList
-              a.nav-link(
+              a.nav-link.js-profile-tab(
                 href= item.link
                 class= item.isActive ? 'active' : null
               )
