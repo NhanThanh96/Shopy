@@ -36,7 +36,7 @@
       }
 
       @include breakpoint-down(phone) {
-        font-size: 16px;
+        font-size: $font-size-medium;
       }
     }
   }
@@ -82,7 +82,7 @@
   .account-collapse {
     $account-collapse: &;
 
-    background-color: #fff;
+    background-color: $cl-white;
     position: relative;
     display: block;
     box-shadow:
@@ -90,7 +90,7 @@
       0 1px 3px 0 rgba(20, 20, 31, .15);
     z-index: 3;
     &__button {
-      padding: 1rem;
+      padding: 16px;
       width: 100%;
       display: flex;
       position: relative;
@@ -108,7 +108,7 @@
       margin-right: 12px;
     }
     &__summary {
-      margin-right: .75rem;
+      margin-right: 12px;
       display: block;
       text-align: left;
       flex: 1;
@@ -129,9 +129,9 @@
       opacity: .8;
     }
     &__position {
-      font-size: 14px;
+      font-size: $font-size-base;
       line-height: 16px;
-      font-weight: 400;
+      font-weight: $font-weight-base;
       opacity: .6;
       margin: 0;
       display: block;
@@ -162,21 +162,21 @@
       position: absolute;
       width: 100%;
       z-index: 1;
-      background-color: #fff;
+      background-color: $cl-white;
       padding-bottom: 16px;
-      border-bottom: 1px solid #e9ecef;
+      border-bottom: 1px solid $bd-light-gray;
       &.show {
         max-height: calc(100vh - 4.5rem);
         overflow: auto;
       }
       .dropdown-item {
-        font-size: 16px;
+        font-size: $font-size-medium;
         display: block;
         width: 100%;
-        padding: .5rem 1rem;
+        padding: 8px 16px;
         clear: both;
-        font-weight: 400;
-        color: #191927;
+        font-weight: $font-weight-base;
+        color: $bg-dark-black;
         text-align: inherit;
         white-space: nowrap;
         background-color: transparent;
@@ -185,9 +185,9 @@
     }
     &__icon {
       text-align: center;
-      width: 1.5rem;
+      width: 24px;
       margin-right: 12px;
-      color: #a6abbd;
+      color: $cl-xlight-gray;
     }
   }
 }
@@ -203,7 +203,7 @@
         content: '';
         top: 50%;
         right: 12px;
-        margin-top: -.375rem;
+        margin-top: -6px;
         opacity: .4;
         height: 14px;
         width: 14px;
@@ -224,6 +224,7 @@
         font-weight: $font-weight-bold;
       }
     }
+
     &.active {
       .nav-icon {
         color: $cl-dark-blue;
@@ -248,7 +249,7 @@
       }
 
       @include breakpoint-down(phone) {
-        font-size: 16px;
+        font-size: $font-size-medium;
         padding-top: 8px;
         padding-bottom: 8px;
         line-height: 28px;
@@ -294,7 +295,7 @@
         padding-top: 8px;
         padding-bottom: 8px;
         line-height: 28px;
-        font-size: 16px;
+        font-size: $font-size-medium;
       }
     }
 
@@ -325,4 +326,3 @@
     }
   }
 }
-

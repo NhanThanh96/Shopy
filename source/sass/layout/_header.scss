@@ -90,7 +90,7 @@
         padding-left: 43px;
       }
       .form-control::placeholder {
-        font-size: 16px;
+        font-size: $font-size-medium;
         position: relative;
         top: 1px;
       }
@@ -142,7 +142,7 @@
     }
 
     @include breakpoint-down(phone) {
-      font-size: 16px;
+      font-size: $font-size-medium;
       height: 38px;
     }
   }
@@ -155,13 +155,13 @@
     border: 0;
     box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 2px 7px 1px rgba(20, 20, 31, .16);
     margin-top: 10px;
-    font-weight: 400;
+    font-weight: $font-weight-base;
     animation-duration: .2s;
     animation-fill-mode: both;
     .dropdown-header {
       padding: 12px 16px;
       border-bottom: 1px solid rgba(34, 34, 48, .1);
-      font-weight: 600;
+      font-weight: $font-weight-bold;
       color: $cl-gray;
       display: flex;
       align-items: center;
@@ -179,8 +179,8 @@
         margin-left: 4px;
       }
       a {
-        font-weight: 400;
-        font-size: 12px;
+        font-weight: $font-weight-base;
+        font-size: $font-size-small;
         color: $cl-gray;
       }
       a:hover {
@@ -192,7 +192,7 @@
         display: block;
         margin: 0;
         padding: 12px 16px;
-        font-size: 14px;
+        font-size: $font-size-base;
         text-align: center;
         border-top: 1px solid rgba(34, 34, 48, .1);
         border-bottom-right-radius: 4px;
@@ -212,7 +212,7 @@
     }
   }
   .dropdown-header {
-    padding: .5rem 1rem;
+    padding: 8px 16px;
   }
 }
 
@@ -242,15 +242,15 @@
 .unread {
   .user-activity {
     &__title {
-      font-weight: 600;
+      font-weight: $font-weight-bold;
     }
   }
   .user-message {
     &__subject {
-      font-weight: 600;
+      font-weight: $font-weight-bold;
     }
     &__title {
-      font-weight: 600;
+      font-weight: $font-weight-bold;
     }
   }
 }
@@ -258,15 +258,15 @@
 .user-activity {
   padding-left: 16px;
   &__title {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
     color: $bg-light-black;
     line-height: 1.4;
     margin-bottom: 2px;
     white-space: normal;
   }
   &__time {
-    font-size: 12px;
+    font-size: $font-size-small;
     color: $cl-gray;
     display: block;
   }
@@ -300,21 +300,21 @@
 .user-message {
   padding-left: 16px;
   &__subject {
-    font-size: 12px;
+    font-size: $font-size-small;
     color: $bg-light-black;
     margin-bottom: 0;
     display: block;
     line-height: 1.4;
   }
   &__title {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
     color: $bg-light-black;
     line-height: 1.4;
     margin-bottom: 2px;
   }
   &__time {
-    font-size: 12px;
+    font-size: $font-size-small;
     color: $cl-gray;
     display: block;
   }
@@ -326,8 +326,8 @@
     top: 100%;
     left: 50%;
     overflow: hidden;
-    height: 1.25rem;
-    width: 1.25rem;
+    height: 20px;
+    width: 20px;
     margin-top: -10px;
     margin-left: -10px;
     pointer-events: none;
@@ -335,12 +335,12 @@
     &:before {
       content: '';
       position: absolute;
-      bottom: -.375rem;
+      bottom: -6px;
       left: 50%;
       transform: rotate(45deg);
       display: block;
-      height: .75rem;
-      width: .75rem;
+      height: 12px;
+      width: 12px;
       margin-left: -5px;
       background-color: hsla(0, 0, 100%, .98);
       box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 2px 7px 1px rgba(20, 20, 31, .16);
@@ -385,7 +385,7 @@
   &__name {
     color: $cl-gray;
     display: block;
-    font-size: 14px;
+    font-size: $font-size-base;
     transition: color .3s;
   }
 }
@@ -441,7 +441,7 @@
   }
   &__position {
     display: block;
-    font-size: 12px;
+    font-size: $font-size-small;
     opacity: .7;
     line-height: 16px;
   }
@@ -449,7 +449,7 @@
     width: 160px;
     margin-top: 10px;
     border: 0;
-    font-size: 14px;
+    font-size: $font-size-base;
     animation-fill-mode: both;
     animation-duration: .2s;
     box-shadow:
@@ -498,7 +498,7 @@
       @include breakpoint-down(phone) {
         line-height: 43px;
         left: 1px;
-        font-size: 16px;
+        font-size: $font-size-medium;
       }
     }
   }
@@ -522,9 +522,9 @@
   }
 }
 .hamburger {
-  height: 2.25rem;
-  width: 2.25rem;
-  padding: .5rem;
+  height: 36px;
+  width: 36px;
+  padding: 8px;
   background-color: transparent;
   border: 0;
   transition: background-color .3s linear;

@@ -2,7 +2,7 @@
 // Components :: Member Modal
 // ======================================================
 .members-modal {
-  $members : &;
+  $members: &;
 
   .clearable-button {
     padding: 0;
@@ -15,86 +15,104 @@
   .modal-header {
     box-shadow: none;
     border-bottom: 0;
+
     .form-customize {
       width: 100%;
       margin-bottom: 0;
     }
+
     .input-field input {
       padding-left: 40px;
     }
   }
+
   .modal-footer {
     border-top: 0;
   }
+
   .modal-title {
     margin-bottom: 0;
     line-height: 1.5;
     font-size: 16px;
     font-weight: 700;
   }
+
   .modal-body {
     padding: 2px 0;
     overflow-y: auto;
   }
+
   .list-group-item {
     display: flex;
     align-items: stretch;
     padding: 12px 16px;
     border: none;
   }
+
   .list-group-item:first-child() {
     #{$members}__content {
       border-top: 0;
       border-bottom: 1px solid transparent;
     }
+
     #{$members}__more {
       border-top: 0;
       border-bottom: 1px solid transparent;
     }
   }
+
   &__figure {
     padding-right: 16px;
     display: flex;
     align-items: center;
+
     .user-avatar {
       &:focus {
-        box-shadow: 0 0 0 3px #346cb0;
+        box-shadow: 0 0 0 3px $cl-dark-blue;
       }
     }
   }
+
   &__content {
     flex: 1;
     align-self: center;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
+
     p {
       margin-bottom: 0;
       line-height: 20px;
-      color: #888c9b;
+      color: $cl-gray;
     }
   }
+
   &__title {
     margin: 0;
     line-height: 20px;
     font-weight: 400;
+
     a {
-      color: #363642;
+      color: $cl-dark-gray;
     }
   }
+
   &__more {
     display: flex;
     align-items: center;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
+
     .button {
       font-size: 14px;
       width: 29px;
       height: 29px;
       line-height: 29px;
     }
+
     .button i {
       margin-left: 0;
     }
+
     .dropdown-menu {
       font-size: 14px;
       margin-top: 9px;
@@ -104,29 +122,33 @@
         0 0 0 1px rgba(20, 20, 31, .05),
         0 2px 7px 1px rgba(20, 20, 31, .16);
     }
+
     .dropdown-item {
       font-size: 14px;
       padding: 8px 16px;
+
       &:hover {
         color: #fff;
         text-decoration: none;
-        background-color: #346cb0;
+        background-color: $cl-dark-blue;
       }
+
       &:focus {
         color: #fff;
         text-decoration: none;
-        background-color: #346cb0;
+        background-color: $cl-dark-blue;
       }
     }
   }
+
   .dropdown {
     & > .dropdown-arrow--left {
       left: 16px;
     }
   }
+
   &__spinner {
     text-align: center;
     padding: 16px;
   }
 }
-

@@ -12,6 +12,17 @@ $(document).ready(function() {
   makeScrollbar(".js-messages-scrollbar");
   makeScrollbar(".js-navbar-menu-scrollbar");
 
+  // sidebar: keep open current submenu
+  $('[data-parent="#sidebarAccordion"]').on('hide.bs.collapse', function (e) {
+    if ($(this).find('.active').length > 0) {
+      e.preventDefault();
+    }
+  });
+  // dropdown: keep open dropdown
+  $(document).on('click', '.js-time-filter .dropdown-menu', function (e) {
+    e.stopPropagation();
+  });
+
   var completionTaskCanvas = $('#js-completion-tasks-chart').length && $('#js-completion-tasks-chart')[0].getContext('2d');
   if ($('#js-completion-tasks-chart').length > 0) {
     var dataSet =  $('#js-completion-tasks-chart').attr("data-setdata");
@@ -149,4 +160,9 @@ $(document).ready(function() {
   }
   modalScrollable();
  
+  // flatpickr.min.js
+  $(".js-flatpickr").flatpickr({
+    mode: "range",
+    dateFormat: "Y-m-d"
+  });
 });

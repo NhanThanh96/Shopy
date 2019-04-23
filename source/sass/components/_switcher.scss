@@ -10,6 +10,7 @@
   font-weight: 700;
   width: 34px;
   cursor: pointer;
+
   &--success {
     .switcher-input:checked {
       & + .switcher-indicator {
@@ -50,11 +51,13 @@
         right: 28px;
       }
     }
+
     .switcher-label {
       &--on {
         width: calc(100% - 20px);
         line-height: 24px;
       }
+
       &--off {
         width: calc(100% - 18px);
         line-height: 24px;
@@ -62,6 +65,7 @@
     }
   }
 }
+
 .switcher-label {
   &--on {
     position: absolute;
@@ -74,6 +78,7 @@
     display: none;
     color: $cl-white;
   }
+
   &--off {
     position: absolute;
     top: 0;
@@ -142,6 +147,7 @@
       &--on {
         display: block;
       }
+
       &--off {
         display: none;
       }

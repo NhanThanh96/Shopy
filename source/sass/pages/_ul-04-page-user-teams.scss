@@ -9,7 +9,7 @@
 .breadcrumb-item {
   &.active {
     a {
-      color: #888c9b;
+      color: $cl-gray;
     }
   }
   a {
@@ -32,13 +32,13 @@
   &__title {
     font-size: 28px;
     margin-bottom: 24px;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
   }
   &__totals {
-    font-size: 14px;
-    color: #888c9b;
+    font-size: $font-size-base;
+    color: $cl-gray;
     margin-left: 13px;
-    font-weight: 600;
+    font-weight: $font-weight-bold;
   }
 }
 .user-team {
@@ -59,14 +59,14 @@
     margin-right: 16px;
     .user-avatar {
       &:focus {
-        box-shadow: 0 0 0 3px #346cb0;
+        box-shadow: 0 0 0 3px $bg-dark-blue;
         outline: 0;
       }
     }
     .tile--teal {
       &:hover {
-        background-color: #006f5f;
-        color: #fff;
+        background-color: $cl-xdark-green;
+        color: $cl-white;
       }
     }
   }
@@ -75,17 +75,17 @@
     .card-title {
       margin-bottom: 16px;
       line-height: 1.2;
-      font-size: 16px;
+      font-size: $font-size-medium;
     }
     .card-title a {
       margin-bottom: 8px;
       color: inherit;
-      font-weight: 600;
+      font-weight: $font-weight-bold;
     }
     .card-subtitle {
-      color: #888c9b;
-      font-size: 12px;
-      font-weight: 400;
+      color: $cl-gray;
+      font-size: $font-size-small;
+      font-weight: $font-weight-base;
       margin-top: -12px;
     }
   }
@@ -96,15 +96,15 @@
     padding: 0;
     border-radius: 50%;
     &:hover {
-      background-color: #e6e8ed;
-      color: #363642;
-      border-color: #e6e8ed;
+      background-color: $cl-light-gray;
+      color: $cl-dark-gray;
+      border-color: $cl-light-gray;
       box-shadow: none;
     }
     &:focus {
-      background-color: #e6e8ed;
-      color: #363642;
-      border-color: #e6e8ed;
+      background-color: $cl-light-gray;
+      color: $cl-dark-gray;
+      border-color: $cl-light-gray;
       box-shadow: none;
     }
   }
@@ -132,7 +132,7 @@
     padding: 0;
   }
   &__item {
-    color: #888c9b;
+    color: $cl-gray;
     padding: 16px;
     flex: 1;
     text-align: center;
@@ -146,17 +146,17 @@
     }
 
     &:hover {
-      color: #222230;
+      color: $bg-light-black;
     }
 
     &:focus {
-      color: #222230;
+      color: $bg-light-black;
     }
   }
 }
 .avatar-team {
   .user-avatar {
-    box-shadow: 0 0 0 2px #fff;
+    box-shadow: 0 0 0 2px $cl-white;
     margin-left: 3px;
 
     &:first-child {
@@ -168,7 +168,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0 3px #346cb0;
+      box-shadow: 0 0 0 3px $bg-dark-blue;
       z-index: 4;
     }
   }
@@ -177,14 +177,14 @@
     margin-left: -12px;
   }
   .tile {
-    color: #888c9b;
+    color: $cl-gray;
     background-color: #d7dae2;
     margin-left: 4px;
     &:hover {
-      color: #363642;
+      color: $cl-dark-gray;
     }
     &:focus {
-      color: #363642;
+      color: $cl-dark-gray;
     }
   }
 }

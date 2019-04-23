@@ -171,7 +171,7 @@ block main
                     a(href="#") Someone assigned you to a task
                   p.timeline__notify
                     a.timeline__user(href="#") Angela Peterson
-                    span assign 
+                    span assign
                     a.timeline__user(href="#") Make lemonade from scratch
                     span to you
                   span.timeline__date.d-sm-none 5:21pm
@@ -213,4 +213,10 @@ block main
                   span.timeline__date.d-sm-none 10:32pm
                 .d-none.d-sm-block
                   span.timeline__date 10:32pm
+        p.text-center.mt-3
+          +buttons({
+            text: ' Load more', 
+            type: 'link',
+            iconBefore: 'fa fa-fw fa-angle-double-down'
+          })
     +footer()

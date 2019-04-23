@@ -2,7 +2,7 @@
 //- Modules :: Button
 //-------------------------------------------------------
 
-mixin buttons({ text, type, iconFont, disabled, size, isFull })
+mixin buttons({ text, type, iconFont, iconBefore, disabled, size, isFull })
   button.button(
     type= 'button'
     class= type ? `button--${type}` : null
@@ -11,6 +11,8 @@ mixin buttons({ text, type, iconFont, disabled, size, isFull })
     class= disabled ? 'button--disabled' : null
     disabled= disabled ? 'disabled' : null
   )&attributes(attributes)
+    if iconBefore
+      i(class= iconBefore)
     | #{text}
     if iconFont
       i(class= iconFont)

@@ -4,7 +4,7 @@
 .user-activities {
   &__heading {
     padding: 16px 0;
-    font-size: 16px;
+    font-size: $font-size-medium;
     margin-bottom: 8px;
     font-weight: 700;
   }
@@ -43,19 +43,19 @@
       position: absolute;
       display: block;
       height: 100%;
-      top: 1rem;
+      top: 16px;
       left: 50%;
       margin-left: -1px;
       border-left: 2px solid rgba(34, 34, 48, .1);
     }
     .tile {
       position: relative;
-      box-shadow: 0 0 0 2px #f6f7f9;
+      box-shadow: 0 0 0 2px $bg-light-gray;
       z-index: 2;
     }
     .tile > i {
-      font-size: 16px;
-      color: #888c9b;
+      font-size: $font-size-medium;
+      color: $cl-gray;
       position: relative;
       top: 1px;
       line-height: 1;
@@ -74,7 +74,7 @@
     }
     .avatar-team .user-avatar {
       &:hover {
-        box-shadow: 0 0 0 3px #346cb0;
+        box-shadow: 0 0 0 3px $cl-dark-blue;
       }
     }
     .avatar-team .user-avatar + .user-avatar {
@@ -86,25 +86,25 @@
     display: flex;
     align-items: center;
     margin-top: 4px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
     .input-checkbox-custom {
       margin-right: calc(7px / 2);
     }
     & > a {
-      color: #346cb0;
+      color: $cl-dark-blue;
       &:hover {
-        color: #234875;
+        color: $cl-xxdark-blue;
         text-decoration: underline;
       }
       &:focus {
-        color: #234875;
+        color: $cl-xxdark-blue;
         text-decoration: underline;
       }
     }
 
     @include breakpoint-down(phone) {
-      font-size: 16px;
+      font-size: $font-size-medium;
     }
   }
   &__notify {
@@ -117,20 +117,20 @@
     }
   }
   &__user {
-    color: #346cb0;
+    color: $cl-dark-blue;
     margin-right: 4px;
     &:hover {
-      color: #234875;
+      color: $cl-xxdark-blue;
       text-decoration: underline;
     }
     &:focus {
-      color: #234875;
+      color: $cl-xxdark-blue;
       text-decoration: underline;
     }
   }
   &__date {
-    font-size: 12px;
-    color: #888c9b;
+    font-size: $font-size-small;
+    color: $cl-gray;
   }
 
   @include breakpoint-down(phone) {

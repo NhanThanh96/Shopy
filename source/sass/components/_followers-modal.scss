@@ -2,7 +2,7 @@
 // Components :: Fllowers Modal
 // ======================================================
 .followers {
-  $followers : &;
+  $followers: &;
 
   .modal-dialog-scrollable {
     .modal-header {
@@ -10,80 +10,97 @@
       border-bottom: 0;
       z-index: 2;
     }
+
     .modal-footer {
       box-shadow: 0 -2px 0 0 rgba(20, 20, 31, .125);
       border-top: 0;
       z-index: 2;
     }
+
     .modal-body-scrolled {
       box-shadow: none;
     }
   }
+
   .modal-header {
     box-shadow: none;
     border-bottom: 0;
   }
+
   .modal-footer {
     border: 0;
   }
+
   .modal-title {
     margin-bottom: 0;
     line-height: 1.5;
     font-size: 16px;
     font-weight: 700;
   }
+
   .modal-body {
     padding: 2px 0;
     overflow-y: auto;
   }
+
   .list-group-item {
     display: flex;
     align-items: stretch;
     padding: 0;
     border: none;
   }
+
   .list-group-item:first-child() {
     #{$followers}__content {
       border-top: 0;
     }
+
     #{$followers}__state {
       border-top: 0;
     }
   }
+
   &__figure {
     padding: 12px 16px;
     display: flex;
     align-items: center;
+
     .user-avatar {
       &:focus {
-        box-shadow: 0 0 0 3px #346cb0;
+        box-shadow: 0 0 0 3px $cl-dark-blue;
       }
     }
   }
+
   &__content {
     padding: 12px 0;
     flex: 1;
     align-self: center;
     border-top: 1px solid #ecedf1;
+
     p {
       margin-bottom: 0;
       line-height: 20px;
-      color: #888c9b;
+      color: $cl-gray;
     }
   }
+
   &__title {
     margin: 0;
     line-height: 20px;
     font-weight: 400;
+
     a {
-      color: #363642;
+      color: $cl-dark-gray;
     }
   }
+
   &__state {
     padding: 12px 16px;
     display: flex;
     align-items: center;
     border-top: 1px solid #ecedf1;
+
     .button {
       font-size: 13px;
     }

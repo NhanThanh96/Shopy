@@ -5,10 +5,12 @@
 .badge {
   padding: 4px 6px;
   font-size: 80%;
+
   &--danger {
     color: $cl-white;
     background-color: $cl-purple;
   }
+
   &--warning {
     color: $bg-dark-gray;
     background-color: $cl-orange;
@@ -18,26 +20,32 @@
     color: $cl-dark-green;
     background-color: rgba(0, 162, 138, .08);
   }
+
   &--teal {
     color: $cl-white;
     background-color: $cl-green;
   }
+
   &--pink {
     color: $cl-white;
-    background-color: #b76ba3;
+    background-color: $cl-purple;
   }
+
   &--green {
     color: $cl-white;
-    background-color: #a7c796;
+    background-color: $cl-light-green;
   }
+
   &--red {
     color: $cl-white;
-    background-color: #ea6759;
+    background-color: $cl-light-red;
   }
+
   &--blue {
     color: $cl-white;
-    background-color: #0179a8;
+    background-color: $cl-light-blue;
   }
+
   &--lg {
     padding: 6px 8px;
   }

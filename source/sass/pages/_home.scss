@@ -56,7 +56,7 @@
     margin-bottom: 24px;
     font-size: 20px;
     display: flex;
-    .dropdown {
+    .time-filter {
       margin-left: auto;
     }
 
@@ -103,12 +103,12 @@
   }
   &__item:first-of-type {
     #{$statistics}__link {
-      border-left: 1px solid #d6d8e1;
+      border-left: 1px solid $bd-xlight-gray;
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
 
       @include breakpoint-down(smallphone) {
-        border-top: 1px solid #d6d8e1;
+        border-top: 1px solid $bd-xlight-gray;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
         border-bottom-left-radius: 0;
@@ -131,26 +131,26 @@
     display: flex;
     min-height: 8.5rem;
     position: relative;
-    padding: 1rem;
+    padding: 16px;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     max-width: 100%;
-    border-top: 1px solid #d6d8e1;
-    border-right: 1px solid #d6d8e1;
-    border-bottom: 1px solid #d6d8e1;
+    border-top: 1px solid $bd-xlight-gray;
+    border-right: 1px solid $bd-xlight-gray;
+    border-bottom: 1px solid $bd-xlight-gray;
 
     @include breakpoint-down(smallphone) {
-      border-right: 1px solid #d6d8e1;
-      border-left: 1px solid #d6d8e1;
-      border-bottom: 1px solid #d6d8e1;
+      border-right: 1px solid $bd-xlight-gray;
+      border-left: 1px solid $bd-xlight-gray;
+      border-bottom: 1px solid $bd-xlight-gray;
       border-top: 0;
     }
   }
   &__name {
-    font-size: .875rem;
+    font-size: $font-size-base;
     font-weight: 500;
-    color: #888c9b;
+    color: $cl-gray;
     white-space: nowrap;
     line-height: 1.2;
     margin-bottom: 10px;
@@ -161,8 +161,8 @@
     white-space: nowrap;
   }
   &__icon {
-    color: #a6abbd;
-    font-size: 14px;
+    color: $cl-xlight-gray;
+    font-size: $font-size-base;
     margin-right: 7px;
     position: relative;
     top: 4px;
@@ -171,7 +171,7 @@
     vertical-align: middle;
     font-size: 28px;
     font-weight: 600;
-    color: #363642;
+    color: $cl-dark-gray;
   }
 }
 .ongoing-tasks {
@@ -186,7 +186,7 @@
     padding: 16px;
     min-height: 136px;
     flex-grow: 1;
-    border: 1px solid #d6d8e1;
+    border: 1px solid $bd-xlight-gray;
     border-radius: 4px;
   }
 
@@ -198,7 +198,7 @@
   }
 
   &__icon {
-    font-size: 14px;
+    font-size: $font-size-base;
     color: $cl-xlight-gray;
     line-height: 28px;
   }
@@ -229,7 +229,7 @@
     font-weight: $font-weight-bold;
 
     @include breakpoint-down(phone) {
-      font-size: 12px;
+      font-size: $font-size-small;
     }
   }
 }
@@ -242,7 +242,7 @@
     padding: 16px;
   }
   .card-title {
-    font-size: 16px;
+    font-size: $font-size-medium;
     margin-bottom: 24px;
   }
 
@@ -258,7 +258,7 @@
   box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
   margin-bottom: 20px;
   &__title {
-    font-size: 16px;
+    font-size: $font-size-medium;
     margin-bottom: 32px;
     font-weight: $font-weight-bold;
   }
@@ -311,7 +311,7 @@
   box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
   margin-bottom: 20px;
   &__title {
-    font-size: 16px;
+    font-size: $font-size-medium;
     margin-bottom: 16px;
     font-weight: $font-weight-bold;
   }
@@ -409,9 +409,9 @@
   &__content {
     flex: 1;
     align-self: center;
-    font-size: 14px;
+    font-size: $font-size-base;
     .card-title {
-      font-size: 16px;
+      font-size: $font-size-medium;
       margin-bottom: 10px;
       font-weight: 600;
     }
@@ -419,12 +419,12 @@
       color: inherit;
     }
     .card-subtitle {
-      font-size: 12px;
-      color: #888c9b;
+      font-size: $font-size-small;
+      color: $cl-gray;
       margin-bottom: 4px;
 
       @include breakpoint-down(phone) {
-        font-size: 14px;
+        font-size: $font-size-base;
         font-weight: 400;
       }
     }
@@ -435,7 +435,7 @@
   display: inline-block;
   .user-avatar {
     line-height: 1.25;
-    border: 3px solid #fff;
+    border: 3px solid $cl-white;
     box-shadow: none;
     position: absolute;
     top: 0;
@@ -476,7 +476,7 @@
       display: block;
       padding: 16px;
       text-align: center;
-      color: #346cb0;
+      color: $cl-dark-blue;
       line-height: 1.5;
     }
     .fa {
@@ -486,9 +486,9 @@
 }
 .todo-header {
   padding: 16px 0;
-  font-size: 12px;
+  font-size: $font-size-small;
   font-weight: 600;
-  color: #888c9b;
+  color: $cl-gray;
 }
 .todo {
   align-items: center;
@@ -497,7 +497,7 @@
   transition: background-color .3s;
   border-radius: 4px;
   &:hover {
-    background-color: #f6f7f9;
+    background-color: $bg-light-gray;
   }
   .input-checkbox-custom {
     padding-left: 32px;
@@ -523,14 +523,16 @@
   position: relative;
   .dropdown-arrow-right {
     left: auto;
-    right: 1rem;
+    right: 16px;
     top: auto;
+    z-index: 4;
   }
   .dropdown-menu {
+    z-index: 2;
     top: auto;
     right: 0;
     left: auto;
-    margin-top: 9px;
+    margin-top: 10px;
     min-width: 18rem;
     border: 0;
     font-weight: 400;
@@ -539,15 +541,16 @@
       0 2px 7px 1px rgba(20, 20, 31, .16);
     animation-duration: .2s;
     animation-fill-mode: both;
-    font-size: .875rem;
+    font-size: $font-size-base;
+    animation-name: showDropdown;
     & > .input-radio-dropdown {
       margin-bottom: 0;
-      padding: .5rem 1rem .5rem 1.5rem;
+      padding: 8px 16px 8px 24px;
     }
     .label-radio {
       margin: 0;
       &__time {
-        color: #888c9b;
+        color: $cl-gray;
       }
     }
   }
