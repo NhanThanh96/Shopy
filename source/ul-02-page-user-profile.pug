@@ -118,62 +118,63 @@ block main
         .achievement
           .achievement__header
             h2.achievement__title Achievement
-            .dropdown.time-filter
-              +buttons({
-                text: 'This Month',
-                type: 'secondary',
-                iconFont: 'fa fa-fw fa-caret-down'
-              })(
-                data-toggle='dropdown'
-                aria-haspopup='true'
-                aria-expanded='false'
-                data-display="static"
-              )
-              .dropdown-arrow.dropdown-arrow-right
-              .dropdown-menu.dropdown-menu-right.dropdown-menu-md(x-placement="top-end")
-                +group-input-radio-dropdown({
-                  name: 'dpFilter',
-                  id: 'dpToday',
-                  value: '0',
-                  date: 'Today',
-                  time: 'Mar 27'
-                })
-                +group-input-radio-dropdown({
-                  name: 'dpFilter',
-                  id: 'dpYesterday',
-                  value: '1',
-                  date: 'Yesterday',
-                  time: 'Mar 26'
-                })
-                +group-input-radio-dropdown({
-                  name: 'dpFilter',
-                  id: 'dpWeek',
-                  value: '2',
-                  date: 'This Week',
-                  time: 'Mar 21-27'
-                })
-                +group-input-radio-dropdown({
-                  name: 'dpFilter',
-                  id: 'dpMonth',
-                  value: '3',
-                  date: 'This Month',
-                  time: 'Mar 1-31',
-                  checked: true
-                })
-                +group-input-radio-dropdown({
-                  name: 'dpFilter',
-                  id: 'dpYear',
-                  value: '4',
-                  date: 'This Year',
-                  time: '2018'
-                })
-                +group-input-radio-dropdown({
-                  name: 'dpFilter',
-                  id: 'dpCustom',
-                  value: '5',
-                  date: 'Custom',
-                  flatpickr: true
-                })
+            .time-filter
+              .dropdown.time-filter__inner.js-time-filter
+                +buttons({
+                  text: 'This Month',
+                  type: 'secondary',
+                  iconFont: 'fa fa-fw fa-caret-down'
+                })(
+                  data-toggle='dropdown'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  data-display="static"
+                )
+                .dropdown-arrow.dropdown-arrow-right
+                .dropdown-menu.dropdown-menu-right.dropdown-menu-md(x-placement="top-end")
+                  +group-input-radio-dropdown({
+                    name: 'dpFilter',
+                    id: 'dpToday',
+                    value: '0',
+                    date: 'Today',
+                    time: 'Mar 27'
+                  })
+                  +group-input-radio-dropdown({
+                    name: 'dpFilter',
+                    id: 'dpYesterday',
+                    value: '1',
+                    date: 'Yesterday',
+                    time: 'Mar 26'
+                  })
+                  +group-input-radio-dropdown({
+                    name: 'dpFilter',
+                    id: 'dpWeek',
+                    value: '2',
+                    date: 'This Week',
+                    time: 'Mar 21-27'
+                  })
+                  +group-input-radio-dropdown({
+                    name: 'dpFilter',
+                    id: 'dpMonth',
+                    value: '3',
+                    date: 'This Month',
+                    time: 'Mar 1-31',
+                    checked: true
+                  })
+                  +group-input-radio-dropdown({
+                    name: 'dpFilter',
+                    id: 'dpYear',
+                    value: '4',
+                    date: 'This Year',
+                    time: '2018'
+                  })
+                  +group-input-radio-dropdown({
+                    name: 'dpFilter',
+                    id: 'dpCustom',
+                    value: '5',
+                    date: 'Custom',
+                    flatpickr: true
+                  })
           .achievement__content
             .row
               .col-xl-8
@@ -209,7 +210,7 @@ block main
                         ];
                       canvas#js-achievement-chart(
                         width= '656'
-                        height= '256'
+                        height= '253'
                         data-setdata= achievementData
                       )
               .col-xl-4
@@ -262,7 +263,7 @@ block main
                         i.fa.fa-fw.fa-ellipsis-v
                       .dropdown-arrow
                       .dropdown-menu.dropdown-menu-right
-                        each val, index in ['Action', 'Goes here', 'Remove']
+                        each val, index in ['Actions', 'Goes here', 'Remove']
                           a.dropdown-item(href="#")
                             | #{val}
                   .card-body
@@ -372,7 +373,7 @@ block main
                         i.fa.fa-fw.fa-ellipsis-v
                       .dropdown-arrow
                       .dropdown-menu.dropdown-menu-right
-                        each val, index in ['Action', 'Goes here', 'Remove']
+                        each val, index in ['Actions', 'Goes here', 'Remove']
                           a.dropdown-item(href="#")
                             | #{val}
                   .card-body

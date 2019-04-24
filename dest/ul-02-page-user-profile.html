@@ -892,42 +892,44 @@
             <div class="achievement">
               <div class="achievement__header">
                 <h2 class="achievement__title">Achievement</h2>
-                <div class="dropdown time-filter">
-                  <button class="button button--secondary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">This Month<i class="fa fa-fw fa-caret-down"></i>
-                  </button>
-                  <div class="dropdown-arrow dropdown-arrow-right"></div>
-                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-md" x-placement="top-end">
-                    <div class="form-group input-radio-dropdown">
-                      <input class="input-radio" type="radio" name="dpFilter" value="0" id="dpToday" />
-                      <label class="label-radio" for="dpToday"><span class="label-radio__date">Today</span><span class="label-radio__time">Mar 27</span>
-                      </label>
-                    </div>
-                    <div class="form-group input-radio-dropdown">
-                      <input class="input-radio" type="radio" name="dpFilter" value="1" id="dpYesterday" />
-                      <label class="label-radio" for="dpYesterday"><span class="label-radio__date">Yesterday</span><span class="label-radio__time">Mar 26</span>
-                      </label>
-                    </div>
-                    <div class="form-group input-radio-dropdown">
-                      <input class="input-radio" type="radio" name="dpFilter" value="2" id="dpWeek" />
-                      <label class="label-radio" for="dpWeek"><span class="label-radio__date">This Week</span><span class="label-radio__time">Mar 21-27</span>
-                      </label>
-                    </div>
-                    <div class="form-group input-radio-dropdown">
-                      <input class="input-radio" type="radio" name="dpFilter" value="3" id="dpMonth" checked="checked" />
-                      <label class="label-radio" for="dpMonth"><span class="label-radio__date">This Month</span><span class="label-radio__time">Mar 1-31</span>
-                      </label>
-                    </div>
-                    <div class="form-group input-radio-dropdown">
-                      <input class="input-radio" type="radio" name="dpFilter" value="4" id="dpYear" />
-                      <label class="label-radio" for="dpYear"><span class="label-radio__date">This Year</span><span class="label-radio__time">2018</span>
-                      </label>
-                    </div>
-                    <div class="form-group input-radio-dropdown">
-                      <input class="input-radio" type="radio" name="dpFilter" value="5" id="dpCustom" />
-                      <label class="label-radio" for="dpCustom"><span class="label-radio__date">Custom</span>
-                      </label>
-                      <div class="form-group form-customize form-readonly">
-                        <input class="form-control flatpickr-input js-flatpickr" type="text" data-toggle="flatpickr" data-mode="range" data-disable-mobile="true" data-date-format="Y-m-d" readonly="readonly" />
+                <div class="time-filter">
+                  <div class="dropdown time-filter__inner js-time-filter">
+                    <button class="button button--secondary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">This Month<i class="fa fa-fw fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-arrow dropdown-arrow-right"></div>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-md" x-placement="top-end">
+                      <div class="form-group input-radio-dropdown">
+                        <input class="input-radio" type="radio" name="dpFilter" value="0" id="dpToday" />
+                        <label class="label-radio" for="dpToday"><span class="label-radio__date">Today</span><span class="label-radio__time">Mar 27</span>
+                        </label>
+                      </div>
+                      <div class="form-group input-radio-dropdown">
+                        <input class="input-radio" type="radio" name="dpFilter" value="1" id="dpYesterday" />
+                        <label class="label-radio" for="dpYesterday"><span class="label-radio__date">Yesterday</span><span class="label-radio__time">Mar 26</span>
+                        </label>
+                      </div>
+                      <div class="form-group input-radio-dropdown">
+                        <input class="input-radio" type="radio" name="dpFilter" value="2" id="dpWeek" />
+                        <label class="label-radio" for="dpWeek"><span class="label-radio__date">This Week</span><span class="label-radio__time">Mar 21-27</span>
+                        </label>
+                      </div>
+                      <div class="form-group input-radio-dropdown">
+                        <input class="input-radio" type="radio" name="dpFilter" value="3" id="dpMonth" checked="checked" />
+                        <label class="label-radio" for="dpMonth"><span class="label-radio__date">This Month</span><span class="label-radio__time">Mar 1-31</span>
+                        </label>
+                      </div>
+                      <div class="form-group input-radio-dropdown">
+                        <input class="input-radio" type="radio" name="dpFilter" value="4" id="dpYear" />
+                        <label class="label-radio" for="dpYear"><span class="label-radio__date">This Year</span><span class="label-radio__time">2018</span>
+                        </label>
+                      </div>
+                      <div class="form-group input-radio-dropdown">
+                        <input class="input-radio" type="radio" name="dpFilter" value="5" id="dpCustom" />
+                        <label class="label-radio" for="dpCustom"><span class="label-radio__date">Custom</span>
+                        </label>
+                        <div class="form-group form-customize form-readonly">
+                          <input class="form-control flatpickr-input js-flatpickr" type="text" data-toggle="flatpickr" data-mode="range" data-disable-mobile="true" data-date-format="Y-m-d" readonly="readonly" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -943,7 +945,7 @@
                           <div class="list-inline-item"><i class="fa fa-fw fa-circle cl--purple"></i><span>Completed tasks</span></div>
                         </div>
                         <div class="achievement-chart__content">
-                          <canvas id="js-achievement-chart" width="656" height="256" data-setdata="[{&quot;labels&quot;:[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Assigned Tasks&quot;,&quot;borderColor&quot;:&quot;#00a28a&quot;,&quot;backgroundColor&quot;:&quot;#00a28a&quot;,&quot;data&quot;:[41,20,68,17,100,83,53]},{&quot;label&quot;:&quot;Completed Tasks&quot;,&quot;borderColor&quot;:&quot;#5f4b8b&quot;,&quot;backgroundColor&quot;:&quot;#5f4b8b&quot;,&quot;data&quot;:[51,14,51,63,59,83,34]}]}]"></canvas>
+                          <canvas id="js-achievement-chart" width="656" height="253" data-setdata="[{&quot;labels&quot;:[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Assigned Tasks&quot;,&quot;borderColor&quot;:&quot;#00a28a&quot;,&quot;backgroundColor&quot;:&quot;#00a28a&quot;,&quot;data&quot;:[41,20,68,17,100,83,53]},{&quot;label&quot;:&quot;Completed Tasks&quot;,&quot;borderColor&quot;:&quot;#5f4b8b&quot;,&quot;backgroundColor&quot;:&quot;#5f4b8b&quot;,&quot;data&quot;:[51,14,51,63,59,83,34]}]}]"></canvas>
                         </div>
                       </div>
                     </div>
@@ -987,7 +989,7 @@
                         <div class="dropdown more-info">
                           <button class="button button--link" data-toggle="dropdown" aria-expanded="false" data-display="static"><i class="fa fa-fw fa-ellipsis-v"></i></button>
                           <div class="dropdown-arrow"></div>
-                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Goes here</a><a class="dropdown-item" href="#">Remove</a>
+                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Actions</a><a class="dropdown-item" href="#">Goes here</a><a class="dropdown-item" href="#">Remove</a>
                           </div>
                         </div>
                       </div>
@@ -1040,7 +1042,7 @@
                         <div class="dropdown more-info">
                           <button class="button button--link" data-toggle="dropdown" aria-expanded="false" data-display="static"><i class="fa fa-fw fa-ellipsis-v"></i></button>
                           <div class="dropdown-arrow"></div>
-                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Goes here</a><a class="dropdown-item" href="#">Remove</a>
+                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Actions</a><a class="dropdown-item" href="#">Goes here</a><a class="dropdown-item" href="#">Remove</a>
                           </div>
                         </div>
                       </div>

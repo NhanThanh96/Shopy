@@ -19101,7 +19101,7 @@ input[type=number]::-webkit-outer-spin-button {
     .looper-header__dropdown-menu.show {
       animation-name: showDropdown; }
   .looper-header .dropdown-header {
-    padding: 8px 16px; }
+    padding: 12px 16px; }
 
 .activities {
   position: relative;
@@ -19114,6 +19114,8 @@ input[type=number]::-webkit-outer-spin-button {
         align-items: flex-start;
     border-bottom: 1px solid rgba(34, 34, 48, 0.1);
     transition: background-color .2s; }
+    .activities .dropdown-item:last-of-type {
+      border-bottom: 0; }
   .activities .dropdown-item:hover {
     color: #fff;
     background-color: #346cb0; }
@@ -19156,6 +19158,8 @@ input[type=number]::-webkit-outer-spin-button {
         align-items: flex-start;
     border-bottom: 1px solid rgba(34, 34, 48, 0.1);
     transition: background-color .3s; }
+    .messages .dropdown-item:last-of-type {
+      border-bottom: 0; }
   .messages .dropdown-item:hover {
     color: #fff;
     background-color: #346cb0; }
@@ -19442,13 +19446,13 @@ input[type=number]::-webkit-outer-spin-button {
   padding-top: 16px;
   width: 100%; }
 
-.navbar .account-collapse {
+.account-collapse {
   background-color: #fff;
   position: relative;
   display: block;
   box-shadow: 0 0 0 1px rgba(20, 20, 31, 0.05), 0 1px 3px 0 rgba(20, 20, 31, 0.15);
   z-index: 3; }
-  .navbar .account-collapse__button {
+  .account-collapse__button {
     padding: 16px;
     width: 100%;
     display: -ms-flexbox;
@@ -19461,12 +19465,16 @@ input[type=number]::-webkit-outer-spin-button {
     -ms-flex-pack: start;
         justify-content: flex-start;
     background: none;
-    transition: background-color .15s; }
-    .navbar .account-collapse__button:focus {
+    transition: background-color .25s; }
+    .account-collapse__button:focus {
       outline: 0; }
-  .navbar .account-collapse .user-avatar {
+    .account-collapse__button:active {
+      color: #363642;
+      outline: 0;
+      background-color: rgba(52, 108, 176, 0.08); }
+  .account-collapse .user-avatar {
     margin-right: 12px; }
-  .navbar .account-collapse__summary {
+  .account-collapse__summary {
     margin-right: 12px;
     display: block;
     text-align: left;
@@ -19477,7 +19485,7 @@ input[type=number]::-webkit-outer-spin-button {
         flex-direction: column;
     text-overflow: clip;
     white-space: nowrap; }
-  .navbar .account-collapse__name {
+  .account-collapse__name {
     font-size: 18px;
     line-height: 24px;
     margin: 0;
@@ -19487,7 +19495,7 @@ input[type=number]::-webkit-outer-spin-button {
     white-space: nowrap;
     font-weight: 500;
     opacity: .8; }
-  .navbar .account-collapse__position {
+  .account-collapse__position {
     font-size: 14px;
     line-height: 16px;
     font-weight: 400;
@@ -19497,7 +19505,7 @@ input[type=number]::-webkit-outer-spin-button {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
-  .navbar .account-collapse__dropdown-icon {
+  .account-collapse__dropdown-icon {
     position: absolute;
     right: 15px;
     top: 47%;
@@ -19505,21 +19513,21 @@ input[type=number]::-webkit-outer-spin-button {
     opacity: .5;
     font-size: 19px;
     line-height: 14px; }
-    .navbar .account-collapse__dropdown-icon > span {
+    .account-collapse__dropdown-icon > span {
       transition: transform .2s ease-in-out; }
-  .navbar .account-collapse__button[aria-expanded='true'] .navbar .account-collapse__dropdown-icon {
+  .account-collapse__button[aria-expanded='true'] .account-collapse__dropdown-icon > span {
     transform: rotate(-180deg); }
-  .navbar .account-collapse__dropdown {
+  .account-collapse__dropdown {
     position: absolute;
     width: 100%;
     z-index: 1;
     background-color: #fff;
     padding-bottom: 16px;
     border-bottom: 1px solid #e9ecef; }
-    .navbar .account-collapse__dropdown.show {
+    .account-collapse__dropdown.show {
       max-height: calc(100vh - 4.5rem);
       overflow: auto; }
-    .navbar .account-collapse__dropdown .dropdown-item {
+    .account-collapse__dropdown .dropdown-item {
       font-size: 16px;
       display: block;
       width: 100%;
@@ -19531,7 +19539,15 @@ input[type=number]::-webkit-outer-spin-button {
       white-space: nowrap;
       background-color: transparent;
       border: 0; }
-  .navbar .account-collapse__icon {
+      .account-collapse__dropdown .dropdown-item:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #346cb0; }
+      .account-collapse__dropdown .dropdown-item:focus {
+        color: #fff;
+        text-decoration: none;
+        background-color: #346cb0; }
+  .account-collapse__icon {
     text-align: center;
     width: 24px;
     margin-right: 12px;
@@ -19570,18 +19586,22 @@ input[type=number]::-webkit-outer-spin-button {
   display: block;
   padding: 6px 16px;
   color: #222230; }
-  .navbar-nav > .nav-item > .nav-link > .badge {
-    position: absolute;
-    right: 28px;
-    margin-top: 2px;
-    padding: 4px 6px;
-    font-size: 80%; }
   @media (max-width: 767.98px) {
     .navbar-nav > .nav-item > .nav-link {
       font-size: 16px;
       padding-top: 8px;
       padding-bottom: 8px;
       line-height: 28px; } }
+
+.navbar-nav > .nav-item .badge {
+  position: absolute;
+  right: 28px;
+  margin-top: 2px;
+  padding: 4px 6px;
+  font-size: 80%; }
+  @media (max-width: 767.98px) {
+    .navbar-nav > .nav-item .badge {
+      margin-top: 4px; } }
 
 .navbar-nav > .nav-item > .nav-link:hover {
   color: #222230; }
@@ -20375,12 +20395,14 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom: 20px;
   box-shadow: 0 0 0 1px rgba(20, 20, 31, 0.05), 0 1px 3px 0 rgba(20, 20, 31, 0.15); }
   .project .card-header {
-    padding: 16px;
+    padding: 8px 16px;
     font-weight: 600;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
         justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
     background: #fff;
     border-bottom: 0; }
   .project .card-body {
@@ -20449,12 +20471,14 @@ input[type=number]::-webkit-outer-spin-button {
   border: none;
   box-shadow: 0 0 0 1px rgba(20, 20, 31, 0.05), 0 1px 3px 0 rgba(20, 20, 31, 0.15); }
   .task .card-header {
-    padding: 16px;
+    padding: 8px 16px;
     font-weight: 600;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
         justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
     background: #fff;
     border-bottom: 0; }
   .task .card-body {
@@ -20859,7 +20883,11 @@ input[type=number]::-webkit-outer-spin-button {
     border-color: #e6e8ed;
     box-shadow: none; }
 
+.more-info .dropdown-arrow {
+  z-index: 5; }
+
 .more-info .dropdown-menu {
+  z-index: 4;
   margin-top: 10px;
   border: 0;
   font-weight: 400;

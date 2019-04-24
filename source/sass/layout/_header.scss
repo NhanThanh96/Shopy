@@ -212,7 +212,7 @@
     }
   }
   .dropdown-header {
-    padding: 8px 16px;
+    padding: 12px 16px;
   }
 }
 
@@ -225,6 +225,10 @@
     align-items: flex-start;
     border-bottom: 1px solid rgba(34, 34, 48, .1);
     transition: background-color .2s;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
   }
   .dropdown-item:hover {
     color: $cl-white;
@@ -280,6 +284,10 @@
     align-items: flex-start;
     border-bottom: 1px solid rgba(34, 34, 48, .1);
     transition: background-color .3s;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
   }
   .dropdown-item:hover {
     color: $cl-white;
