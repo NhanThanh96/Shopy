@@ -266,7 +266,8 @@ $(document).ready(function() {
               fontColor: '#888c9b',
             }
           }]
-        }
+        },
+        maintainAspectRatio: false
       }
     });
   }
