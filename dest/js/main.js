@@ -157,21 +157,21 @@ $(document).ready(function() {
       e.preventDefault();
     }
   });
+
+  //sidebar: collapse all submenu inner
+  $('.submenu').on('hidden.bs.collapse', function () {
+    $(this).find('.collapse').collapse('hide');
+  })
+
   // dropdown: keep open dropdown
   $(document).on('click', '.js-time-filter .dropdown-menu', function (e) {
     e.stopPropagation();
   });
 
-  var completionTaskCanvas = $('#js-completion-tasks-chart').length && $('#js-completion-tasks-chart')[0].getContext('2d');
-  if ($('#js-completion-tasks-chart').length > 0) {
-    var dataSet =  $('#js-completion-tasks-chart').attr("data-setdata");
-    var parsedDataSet = JSON.parse(dataSet); 
-    var completionTaskChart = new Chart(completionTaskCanvas, {
+  function drawSingleBarChart(element, _data){
+    var _singleBarChart = new Chart(document.getElementById(element), {
       type: 'bar',
-      data: {
-        datasets: parsedDataSet[0].datasets,
-        labels: parsedDataSet[0].labels,
-      },
+      data: _data,
       options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -207,9 +207,15 @@ $(document).ready(function() {
           }]
         }
       }
-    });
+    }); 
   }
-  
+
+  var completionTaskCanvas = $('#js-completion-tasks-chart').length && $('#js-completion-tasks-chart')[0].getContext('2d');
+  if ($('#js-completion-tasks-chart').length > 0) {
+    var _dataCompletionSet = $('#js-completion-tasks-chart').data("setdata");
+    drawSingleBarChart('js-completion-tasks-chart', _dataCompletionSet);
+  }
+
   $(".js-tasks-performance-chart").each(function(){
     var selector = this;
     var options = $(selector).data();
@@ -225,13 +231,10 @@ $(document).ready(function() {
     $(selector).easyPieChart(options);
   });
 
-  var achievementCanvas = $('#js-achievement-chart').length && $('#js-achievement-chart')[0].getContext('2d');
-  if ($('#js-achievement-chart').length > 0) {
-    var achievementDataSet =  $('#js-achievement-chart').attr("data-setdata");
-    var parsedAchievementDataSet = JSON.parse(achievementDataSet);
-    var achievementChart = new Chart(achievementCanvas, {
+  function drawMultiBarChart(element, _data){
+    var barChart = new Chart(element, {
       type: 'bar',
-      data: parsedAchievementDataSet[0],
+      data: _data,
       options: {
         tooltips: {
           mode: 'index',
@@ -267,6 +270,12 @@ $(document).ready(function() {
       }
     });
   }
+
+  $(".js-achievement-chart").each(function () {
+    var _ele = $(this);
+    var _achievementDataSet =  $(this).data('setdata');
+    drawMultiBarChart(_ele, _achievementDataSet);
+  });
 
   // sidebar collapse
   function sidebarCollapse(){

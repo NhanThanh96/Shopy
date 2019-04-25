@@ -119,21 +119,18 @@ mixin membersModal()
                         | #{item.user.name}
                   if item.job
                     p= item.job
-                .dropdown.members-modal__more
-                  a.button.user-team__chat.button--link(
-                    href="#"
-                    data-toggle="dropdown"
-                    aria-expanded="true"
-                    data-display="static"
-                  )
-                    i.fa.fa-fw.fa-ellipsis-v
-                  .dropdown-arrow.dropdown-arrow--left
-                  .dropdown-menu.dropdown-menu-right
-                    a.dropdown-item(href="#") Message
-                    a.dropdown-item(href="#") Invite to a team
-                    a.dropdown-item(href="#") Copy member ID
-                    .dropdown-divider
-                    a.dropdown-item(href="#") Remove
+                .dropdown.more-info
+                    button.button.button--link(
+                      data-toggle="dropdown"
+                      aria-expanded="false"
+                      data-display="static"
+                    )
+                      i.fa.fa-fw.fa-ellipsis-v
+                    .dropdown-arrow
+                    .dropdown-menu.dropdown-menu-right
+                      each val, index in ['View Project', 'Add Member', 'Edit', 'Remove']
+                        a.dropdown-item(href="#")
+                          | #{val}
         .modal-footer
           +buttons({
             text: 'Close',

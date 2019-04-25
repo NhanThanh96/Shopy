@@ -189,7 +189,7 @@ block main
                         span Completed tasks
                     .achievement-chart__content
                       -
-                        var achievementData = [
+                        var achievementData =
                           {
                             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
                             datasets: [
@@ -207,8 +207,7 @@ block main
                               }
                             ]
                           }
-                        ];
-                      canvas#js-achievement-chart(
+                      canvas.js-achievement-chart(
                         width= '656'
                         height= '253'
                         data-setdata= achievementData
