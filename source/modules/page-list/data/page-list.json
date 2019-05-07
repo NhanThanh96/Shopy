@@ -11,34 +11,9 @@
         "categories": "Home",
         "background": "#1984c6"
       }, {
-        "title": "User-profile",
-        "url": "ul-02-page-user-profile",
-        "categories": "User Profile",
-        "background": "#cd950c"
-      }, {
-        "title": "User-activities",
-        "url": "ul-03-page-user-activities",
-        "categories": "User Profile",
-        "background": "#cd950c"
-      }, {
-        "title": "User-teams",
-        "url": "ul-04-page-user-teams",
-        "categories": "User Profile",
-        "background": "#cd950c"
-      }, {
-        "title": "User-projects",
-        "url": "ul-05-page-user-projects",
-        "categories": "User Profile",
-        "background": "#cd950c"
-      }, {
-        "title": "User-tasks",
-        "url": "ul-06-page-user-tasks",
-        "categories": "User Profile",
-        "background": "#cd950c"
-      }, {
-        "title": "User-profile-settings",
-        "url": "ul-07-page-user-profile-setting",
-        "categories": "User Profile",
+        "title": "Product Show",
+        "url": "SP-02-product-show",
+        "categories": "Product Show",
         "background": "#cd950c"
       }
     ]

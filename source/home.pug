@@ -149,13 +149,13 @@ block main
               span.circle(
                 class= `circle--sm circle--orange`
               )
-  section.advertisment
+  section.advertisment-section
     .container
-      .advertisment__list
-        .advertisment__item
+      .row
+        .col-12.col-md-6.banner
           img(src="images/hot-deal.jpg", alt="hot deal")
-        .advertisment__item
-          img(src="images/advertisment.jpg", alt="advertisment")
+        .col-12.col-md-6.banner
+          img(src="images/hot-deal.jpg", alt="advertisment")
   section.best-sales
     .container
       .best-sales__header
@@ -205,7 +205,15 @@ block main
                         i.fas.fa-shopping-cart.product-sales__icon
                         span add to cart
   section.news-letter
-
+    .container
+      .news-letter__inner
+        .row.align-items-center
+          .col-12.col-md-6
+            .news-letter__content
+              h3.news-letter__title News letter
+              .news-letter__desc join us now to get all news and special offers
+          .col-12.col-sm-6
+            button.button.button--orange(type="button") join us
 
 
 

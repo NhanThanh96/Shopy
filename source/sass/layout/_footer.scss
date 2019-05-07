@@ -6,13 +6,64 @@
 .l-footer {
   color: green;
 }
-.looper-footer {
-  .list-inline-item {
-    & > a {
-      &:hover {
-        text-decoration: underline;
-        color: $cl-gray;
+
+.footer {
+  background-color: $cl-white;
+  padding: 90px 0;
+
+  .logo {
+    margin-bottom: 25px;
+    a {
+      display: block;
+    }
+  }
+
+  .info-list {
+    li {
+      pointer-events: none;
+
+      &:before {
+        content: '\2022';
+        color: $cl-light-black;
+        font-weight: $font-weight-bold;
+        display: inline-block;
+        width: 14px;
+        margin-left: -14px;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+
+      a {
+        pointer-events: auto;
+      }
+
+      a:hover {
+        color: $cl-orange;
+      }
+    }
+
+    li:hover:before {
+      color: $cl-orange;
+    }
+  }
+}
+
+.payment-method {
+  &__title {
+    font-size: $font-size-medium;
+    color: $cl-orange;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    .list-inline-item {
+      &:not(:last-of-type) {
+        margin-right: 2px;
       }
     }
   }
 }
+

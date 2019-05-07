@@ -32,10 +32,45 @@ a {
   }
 }
 
+button {
+  &:focus,
+  &:active {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
 ul,
 ol {
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
+}
+
+.button {
+  display: inline-block;
+  font-weight: $font-weight-base;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 1.4;
+  padding: 15px 25px;
+  font-size: $font-size-base;
+  color: $cl-white;
+  border: 0;
+  transition: color ease .3s;
+
+  &:hover {
+    color: $cl-black;
+  }
+
+  &--orange {
+    background-color: $cl-orange;
+  }
+
+  &--border-radius {
+    border-radius: 999px;
+  }
 }
 
 .circle {

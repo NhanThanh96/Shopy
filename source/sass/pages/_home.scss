@@ -197,21 +197,11 @@
   }
 }
 
-.advertisment {
-  &__list {
-    display: flex;
-  }
-
-  &__item {
-    flex: 1;
-    max-width: 50%;
-    &:first-child {
-      margin-right: 30px;
-    }
-
+.advertisment-section {
+  .banner {
     img {
-      width: 100%;
-      height: 100px;
+      display: block;
+      max-width: 100%;
     }
   }
 }
@@ -326,3 +316,32 @@
     }
   }
 }
+
+.news-letter {
+  margin-bottom: 120px;
+
+  &__inner {
+    background-color: $cl-white;
+    padding: 35px 40px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold + 100;
+    color: $cl-orange;
+    margin-bottom: 0;
+    margin-right: 25px;
+  }
+
+  &__desc {
+    color: $cl-black;
+    font-style: italic;
+  }
+}
+

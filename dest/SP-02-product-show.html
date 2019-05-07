@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Shopy</title>
+    <title>Shopy Product Show</title>
     <meta charset="utf-8" />
-    <meta name="description" content="Shopy" />
-    <meta name="keywords" content="Shopy" />
+    <meta name="description" content="Shopy Product Show" />
+    <meta name="keywords" content="Shopy Product Show" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="css/main.css" />
@@ -64,36 +64,41 @@
           </div>
         </div>
       </header>
-      <section class="hero">
-        <div class="carousel slide" id="heroCarousel" data-ride="carousel">
-          <ul class="carousel-indicators">
-            <li class="active" data-target="#heroCarousel" data-slide-to="0"></li>
-            <li data-target="#heroCarousel" data-slide-to="1"></li>
-            <li data-target="#heroCarousel" data-slide-to="2"></li>
-          </ul>
-          <div class="carousel-inner">
-            <div class="carousel-item active"><img src="images/banner.jpg" alt="Full winter kit">
-              <div class="hero__caption">
-                <h3 class="hero__title">Full Winter Kit</h3>
-                <p class="hero__product">Half Jacket + Skiny Trousers + Boot leather</p>
-                <p class="hero__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                <div class="hero__inner"><span>Price: 120$</span><a class="hero__order" href="#"><i class="fas fa-shopping-cart"></i>Order Now</a></div>
+      <section class="product-show">
+        <div class="container">
+          <div class="product-detail">
+            <div class="row">
+              <div class="col-md-5">
+                <h1>hello</h1>
               </div>
-            </div>
-            <div class="carousel-item"><img src="images/banner.jpg" alt="Full winter kit">
-              <div class="hero__caption">
-                <h3 class="hero__title">Full Summer Kit</h3>
-                <p class="hero__product">Half Jacket + Skiny Trousers + Boot leather</p>
-                <p class="hero__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                <div class="hero__inner"><span>Price: 120$</span><a class="hero__order" href="#"><i class="fas fa-shopping-cart"></i>Order Now</a></div>
-              </div>
-            </div>
-            <div class="carousel-item"><img src="images/banner.jpg" alt="Full winter kit">
-              <div class="hero__caption">
-                <h3 class="hero__title">Full Spring Kit</h3>
-                <p class="hero__product">Half Jacket + Skiny Trousers + Boot leather</p>
-                <p class="hero__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                <div class="hero__inner"><span>Price: 120$</span><a class="hero__order" href="#"><i class="fas fa-shopping-cart"></i>Order Now</a></div>
+              <div class="col-md-7">
+                <h3 class="product-detail__title">full winter kit</h3>
+                <div class="product-detail__subtitle">Half Jacket + Skiny Trousers + Boot leather</div>
+                <p class="product-detail__desc">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry<br> Lorem Ipsum is simply dummy text of the printing
+                  <br> and typesetting industry
+                </p>
+                <div class="product-detail__option">
+                  <div class="product-detail__size-choose"><span>Choose Size</span>
+                    <div class="product-detail__sizes"><a class="product-detail__size" href="#">X</a><a class="product-detail__size" href="#">M</a><a class="product-detail__size" href="#">L</a><a class="product-detail__size" href="#">XL</a>
+                    </div>
+                  </div>
+                  <div class="product-detail__quantity-choose"><span>Choose Quantity</span>
+                    <div class="quantity">
+                      <button class="quantity__button">+</button>
+                      <input class="quantity__input" type="text" min="1" value="3">
+                      <button class="quantity__button">-</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-detail__inner"><span class="product-detail__price">Price : 120$</span>
+                  <ul class="list-inline product-detail__action">
+                    <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
+                    <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
+                  </ul>
+                  <button class="button button--orange button--border-radius">Order Now</button>
+                </div>
               </div>
             </div>
           </div>
@@ -102,11 +107,35 @@
       <section class="new-arrivals">
         <div class="container">
           <div class="new-arrivals__header">
-            <h3 class="new-arrivals__heading"><span class="cl-orange">New </span>Arrivals</h3>
+            <h3 class="new-arrivals__heading"><span class="cl-orange">Related </span>Product</h3>
             <p class="new-arrivals__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
           </div>
           <div class="new-arrivals__inner">
             <div class="row new-arrivals__product-list">
+              <div class="col-md-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals"></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                  </div>
+                  <div class="product__summary">
+                    <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                    <ul class="list-inline product__color">
+                      <li class="list-inline-item"><span class="circle circle--red"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--black"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--blue"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--green"></span></li>
+                    </ul>
+                    <hr class="product__devider">
+                    <ul class="list-inline product__action">
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               <div class="col-md-3">
                 <div class="card product">
                   <div class="product__image"><a href="#"><img class="card-img-top" src="images/product1.png" alt="product new arrivals"></a></div>
@@ -176,99 +205,6 @@
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
                     </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card product">
-                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals"></a></div>
-                  <div class="card-body">
-                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
-                    <div class="product__price">100$</div>
-                  </div>
-                  <div class="product__summary">
-                    <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
-                    <ul class="list-inline product__color">
-                      <li class="list-inline-item"><span class="circle circle--red"></span></li>
-                      <li class="list-inline-item"><span class="circle circle--black"></span></li>
-                      <li class="list-inline-item"><span class="circle circle--blue"></span></li>
-                      <li class="list-inline-item"><span class="circle circle--green"></span></li>
-                    </ul>
-                    <hr class="product__devider">
-                    <ul class="list-inline product__action">
-                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
-                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="load-more">
-              <ul class="list-inline">
-                <li class="list-inline-item"><span class="circle circle--sm circle--orange"></span></li>
-                <li class="list-inline-item"><span class="circle circle--sm circle--orange"></span></li>
-                <li class="list-inline-item"><span class="circle circle--sm circle--orange"></span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="advertisment-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6 banner"><img src="images/hot-deal.jpg" alt="hot deal"></div>
-            <div class="col-12 col-md-6 banner"><img src="images/hot-deal.jpg" alt="advertisment"></div>
-          </div>
-        </div>
-      </section>
-      <section class="best-sales">
-        <div class="container">
-          <div class="best-sales__header">
-            <h3 class="best-sales__heading"><span class="cl-orange">New </span>Arrivals</h3>
-            <p class="best-sales__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-          </div>
-          <div class="best-sales__inner">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="card product-sales">
-                  <div class="product-sales__inner">
-                    <div class="product-sales__image"><a href="#"><img src="images/product-sm1.png" alt="best sale"></a></div>
-                    <div class="product-sales__content">
-                      <h5 class="product-sales__title"><a href="#">Reebok Track Jacket</a></h5>
-                      <div class="product-sales__info">
-                        <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span class="product-sales__price">100$</span>
-                      </div>
-                      <div class="product-sales__add-cart"><a href="#"><i class="fas fa-shopping-cart product-sales__icon"></i><span>add to cart</span></a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card product-sales">
-                  <div class="product-sales__inner">
-                    <div class="product-sales__image"><a href="#"><img src="images/product-sm1.png" alt="best sale"></a></div>
-                    <div class="product-sales__content">
-                      <h5 class="product-sales__title"><a href="#">Reebok Track Jacket</a></h5>
-                      <div class="product-sales__info">
-                        <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span class="product-sales__price">100$</span>
-                      </div>
-                      <div class="product-sales__add-cart"><a href="#"><i class="fas fa-shopping-cart product-sales__icon"></i><span>add to cart</span></a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card product-sales">
-                  <div class="product-sales__inner">
-                    <div class="product-sales__image"><a href="#"><img src="images/product-sm1.png" alt="best sale"></a></div>
-                    <div class="product-sales__content">
-                      <h5 class="product-sales__title"><a href="#">Reebok Track Jacket</a></h5>
-                      <div class="product-sales__info">
-                        <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span class="product-sales__price">100$</span>
-                      </div>
-                      <div class="product-sales__add-cart"><a href="#"><i class="fas fa-shopping-cart product-sales__icon"></i><span>add to cart</span></a></div>
-                    </div>
                   </div>
                 </div>
               </div>

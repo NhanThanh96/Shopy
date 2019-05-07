@@ -3,13 +3,44 @@
 //-------------------------------------------------------
 
 mixin footer()
-  footer.looper-footer
-    ul.list-inline
-      -
-        var footerMenu = ['Support', 'Help Center', 'Privacy', 'Terms of Service'];
-      each item in footerMenu
-        li.list-inline-item
-          a.text--muted(href= '#')
-            | #{item}
-    .copyright
-      | Copyright © 2018. All right reserved. 
+  footer.footer
+    .container
+      .row
+        .col-sm-4
+          .logo
+            a(href="#")
+              img(src="images/logoo.png", alt="logo")
+          .copyright shopy c 2015 . your copy right here
+        .col-md-2
+          ul.info-list
+            li
+              a(href="#") about us
+            li
+              a(href="#") contact us
+            li
+              a(href="#") support
+        .col-md-2
+          ul.info-list
+            li
+              a(href="#") our feed
+            li
+              a(href="#") term and conditions
+            li
+              a(href="#") our privacy
+        .col-md-2
+          ul.info-list
+            li
+              a(href="#") join us
+            li
+              a(href="#") live support
+        .col-md-2
+          .payment-method
+            .payment-method__title Payment Methods
+            ul.list-inline.payment-method__list
+              each item, index in ["amex.jpg", "card.jpg", "visa.jpg", "paypent.jpg", "cash.jpg"]
+                li.list-inline-item
+                  a(href="#")
+                    img(src=`images/${item}`, alt="payment method")
+
+                
+
