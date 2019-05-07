@@ -1,761 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Dashboard | Looper - Bootstrap 4 Admin Theme</title>
+    <title>Shopy</title>
     <meta charset="utf-8" />
-    <meta name="description" content="Dashboard | Looper - Bootstrap 4 Admin Theme" />
-    <meta name="keywords" content="Dashboard | Looper - Bootstrap 4 Admin Theme" />
+    <meta name="description" content="Shopy" />
+    <meta name="keywords" content="Shopy" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <div class="overlay"></div>
-    <div class="app">
-      <header class="looper-header">
-        <div class="looper-header__inner">
-          <div class="looper-header__brand"><a href="home.html"><img src="images/brand-inverse.png" alt="looper" /></a></div>
-          <div class="looper-header__content">
-            <div class="toggle-menu d-md-none d-lg-none d-xl-none">
-              <button class="hamburger" id="js-toggle-sidebar" type="button"><i class="fas fa-bars"></i></button>
-            </div>
-            <form class="looper-header__search" action="#">
-              <div class="form-group form-customize search">
-                <div class="input-field input-field--icon-before">
-                  <input class="form-control" type="text" placeholder="Search" />
-                  <div class="input-field__icon input-field__icon--before"><i class="oi oi-magnifying-glass"></i></div>
-                </div>
-              </div>
-            </form>
-            <div class="looper-header__options">
-              <ul class="nav looper-header__nav">
-                <li class="nav-item dropdown looper-header__nav-item"><a class="nav-link looper-header__nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"><span class="oi oi-pulse"></span></a>
-                  <div class="dropdown-arrow"></div>
-                  <div class="dropdown-menu looper-header__dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header"><span>Activities<span class="activity-count">(2)</span></span></div>
-                    <div class="activities js-activities-scrollbar"><a class="dropdown-item unread" href="#">
-                        <div class="user-avatar"><img src="images/uifaces15.jpg" /></div>
-                        <div class="user-activity">
-                          <h5 class="user-activity__title">Jeffrey Wells created a schedule</h5><span class="user-activity__time">Just now</span>
-                        </div>
-                      </a><a class="dropdown-item unread" href="#">
-                        <div class="user-avatar"><img src="images/uifaces16.jpg" /></div>
-                        <div class="user-activity">
-                          <h5 class="user-activity__title">Anna Vargas logged a chat</h5><span class="user-activity__time">3 hours ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="user-avatar"><img src="images/uifaces17.jpg" /></div>
-                        <div class="user-activity">
-                          <h5 class="user-activity__title">Sara Carr invited to Stilearn Admin</h5><span class="user-activity__time">5 hours ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="user-avatar"><img src="images/uifaces18.jpg" /></div>
-                        <div class="user-activity">
-                          <h5 class="user-activity__title">Arthur Carroll updated a project</h5><span class="user-activity__time">1 day ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="user-avatar"><img src="images/uifaces19.jpg" /></div>
-                        <div class="user-activity">
-                          <h5 class="user-activity__title">Hannah Romero created a task</h5><span class="user-activity__time">1 day ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="user-avatar"><img src="images/uifaces20.jpg" /></div>
-                        <div class="user-activity">
-                          <h5 class="user-activity__title">Angela Peterson assign a task to you</h5><span class="user-activity__time">2 days ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="user-avatar"><img src="images/uifaces21.jpg" /></div>
-                        <div class="user-activity">
-                          <h5 class="user-activity__title">Shirley Mason and 3 others followed you</h5><span class="user-activity__time">2 days ago</span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="dropdown-footer"><a href="#">All activities<i class="fas fa-fw fa-long-arrow-alt-right"></i></a></div>
-                  </div>
-                </li>
-                <li class="nav-item dropdown looper-header__nav-item"><a class="nav-link looper-header__nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"><span class="oi oi-envelope-open"></span></a>
-                  <div class="dropdown-arrow"></div>
-                  <div class="dropdown-menu looper-header__dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header"><span>Messages</span><a href="#">Mark all as read</a></div>
-                    <div class="messages js-messages-scrollbar"><a class="dropdown-item unread" href="#">
-                        <div class="user-avatar"><img src="images/team1.jpg" /></div>
-                        <div class="user-message"><span class="user-message__subject">Stilearning</span>
-                          <h5 class="user-message__title">Invitation: Joe's Dinner @ Fri Aug 22</h5><span class="user-message__time">2 hours ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="user-avatar"><img src="images/team3.png" /></div>
-                        <div class="user-message"><span class="user-message__subject">Openlane</span>
-                          <h5 class="user-message__title">Final reminder: Upgrade to Pro</h5><span class="user-message__time">23 hours ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="tile tile--circle tile--green">gz</div>
-                        <div class="user-message"><span class="user-message__subject">Gogo Zoom</span>
-                          <h5 class="user-message__title">Live healthy with this wireless sensor.</h5><span class="user-message__time">1 day ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="tile tile--circle tile--teal">gd</div>
-                        <div class="user-message"><span class="user-message__subject">Gold Dex</span>
-                          <h5 class="user-message__title">Invitation: Design Review @ Mon Jul 7</h5><span class="user-message__time">1 day ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="user-avatar"><img src="images/team2.png" /></div>
-                        <div class="user-message"><span class="user-message__subject">Creative Division</span>
-                          <h5 class="user-message__title">Need some feedback on this please</h5><span class="user-message__time">2 days ago</span>
-                        </div>
-                      </a><a class="dropdown-item" href="#">
-                        <div class="tile tile--circle tile--pink">ld</div>
-                        <div class="user-message"><span class="user-message__subject">Lab Drill</span>
-                          <h5 class="user-message__title">Our UX exercise is ready</h5><span class="user-message__time">6 days ago</span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="dropdown-footer"><a href="#">All messages<i class="fas fa-fw fa-long-arrow-alt-right"></i></a></div>
-                  </div>
-                </li>
-                <li class="nav-item dropdown looper-header__nav-item"><a class="nav-link looper-header__nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"><span class="oi oi-grid-three-up"></span></a>
-                  <div class="dropdown-arrow"></div>
-                  <div class="dropdown-menu looper-header__dropdown-menu dropdown-menu-right">
-                    <div class="folders">
-                      <div class="folder"><a class="folder__link" href="#"><span class="tile tile--lg tile--indigo"><i class="folder__icon oi oi-people"></i></span><span class="folder__name">Teams</span></a></div>
-                      <div class="folder"><a class="folder__link" href="#"><span class="tile tile--lg tile--teal"><i class="folder__icon oi oi-fork"></i></span><span class="folder__name">Projects</span></a></div>
-                      <div class="folder"><a class="folder__link" href="#"><span class="tile tile--lg tile--pink"><i class="folder__icon fa fa-tasks"></i></span><span class="folder__name">Tasks</span></a></div>
-                      <div class="folder"><a class="folder__link" href="#"><span class="tile tile--lg tile--yellow"><i class="folder__icon oi oi-fire"></i></span><span class="folder__name">Feeds</span></a></div>
-                      <div class="folder"><a class="folder__link" href="#"><span class="tile tile--lg tile--cyan"><i class="folder__icon oi oi-document"></i></span><span class="folder__name">Files</span></a></div>
+    <section class="shopy">
+      <header class="header">
+        <div class="container">
+          <div class="small-header">
+            <ul class="list-inline small-header__contact">
+              <li class="list-inline-item"><span class="small-header__icon"><i class="far fa-envelope"></i></span><span class="small-header__text">info@shopy.com</span></li>
+              <li class="list-inline-item"><span class="small-header__icon"><i class="fas fa-phone-volume"></i></span><span class="small-header__text">453 - 5553 - 996</span></li>
+            </ul>
+            <ul class="list-inline small-header__social-network">
+              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          <div class="big-header">
+            <div class="row">
+              <div class="col-md-2"><a class="navbar-brand" href="#"><img src="images/logoo.png" alt="shopy" /></a></div>
+              <div class="col-md-10">
+                <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="avbar-toggler-icon"></span></button>
+                <nav class="navbar navbar-expand-lg">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">Hot Deals</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                    <div class="big-header__action">
+                      <ul class="list-inline">
+                        <li class="list-inline-item">
+                          <form class="form-inline my-2 my-lg-0 search">
+                            <input class="form-control mr-sm-2 d-none" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn search__button" type="submit"><i class="fas fa-search"></i></button>
+                          </form>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="dropdown show profile"><a class="btn dropdown-toggle profile__button" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i></a>
+                            <div class="dropdown-menu profile__dropdown-menu" aria-labelledby="profile"><a class="dropdown-item" href="#">Profile</a><a class="dropdown-item" href="#">Logout</a></div>
+                          </div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="cart"><a class="cart__link" href="#"><i class="fas fa-shopping-cart"></i><span class="cart__amount">5</span></a></div>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                </li>
-              </ul>
-            </div>
-            <div class="dropdown user-account">
-              <button class="user-account__button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                <div class="user-account__avatar"><img src="images/profile.jpg" alt="avatar" /></div>
-                <div class="user-account__summary"><span class="user-account__name">Beni Arisandi</span><span class="user-account__position">Marketing Manager</span></div>
-              </button>
-              <div class="dropdown-arrow dropdown-arrow--left"></div>
-              <div class="dropdown-menu">
-                <h6 class="dropdown-header d-none d-md-block d-lg-none">Beni Arisandi </h6><a class="dropdown-item" href="#"><span class="oi oi-person user-account__icon"></span><span>Profile</span></a><a class="dropdown-item" href="#"><span class="oi oi-account-logout user-account__icon"></span><span>Logout</span></a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Help Center</a><a class="dropdown-item" href="#">Ask Forum</a><a class="dropdown-item" href="#">Keyboard Shortcuts</a>
+                </nav>
               </div>
             </div>
           </div>
         </div>
       </header>
-      <nav class="navbar navbar__vertical navbar-expand-md navbar-light js-sidebar-collapse">
-        <div class="navbar__content">
-          <div class="account-collapse d-block d-md-none">
-            <button class="account-collapse__button collapsed" type="button" data-toggle="collapse" data-target="#account-collapse-dropdown" aria-expanded="false">
-              <div class="user-avatar user-avatar--lg"><img src="images/profile.jpg" alt="user-account" /></div>
-              <div class="account-collapse__summary"><span class="account-collapse__name">Beni Arisandi</span><span class="account-collapse__position">Marketing Manager</span></div>
-              <div class="account-collapse__dropdown-icon"><span class="fa fa-caret-down"></span></div>
-            </button>
-            <div class="account-collapse__dropdown collapse" id="account-collapse-dropdown"><a class="dropdown-item" href="#"><span class="oi oi-person account-collapse__icon"></span><span>Profile</span></a><a class="dropdown-item" href="#">
-                <spanoi class="oi oi-account-logout account-collapse__icon"></spanoi><span>Logout</span>
-              </a>
-              <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Help Center</a><a class="dropdown-item" href="#">Ask Forum</a><a class="dropdown-item" href="#">Keyboard Shortcuts</a>
-            </div>
-          </div>
-          <div class="navbar__menu js-navbar-menu-scrollbar" id="sidebarAccordion">
-            <ul class="navbar-nav">
-              <li class="nav-item active"><a class="nav-link" href="home.html" aria-expanded="false"><i class="nav-icon fas fa-home"></i><span class="nav-text">Dashboard</span></a>
-              </li>
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarAppPages" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarAppPages" role="button"><i class="nav-icon far fa-file"></i><span class="nav-text">App Pages</span><span class="badge ml-auto badge--warning">New</span></a>
-                <div class="collapse" id="sidebarAppPages" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">Clients</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Teams</a>
-                    </li>
-                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarTeam" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarTeam" role="button">Team</a>
-                      <div class="collapse" id="sidebarTeam">
-                        <ul class="nav flex-column">
-                          <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Feeds</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Members</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarProject" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarProject" role="button">Project</a>
-                      <div class="collapse" id="sidebarProject">
-                        <ul class="nav flex-column">
-                          <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Gantt View</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Calendar</a>
-                    </li>
-                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarInvoices" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarInvoices" role="button">Invoices</a>
-                      <div class="collapse" id="sidebarInvoices">
-                        <ul class="nav flex-column">
-                          <li class="nav-item"><a class="nav-link" href="#">List</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Details</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Messages</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Conversations</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarAuth" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarAuth" role="button"><i class="nav-icon oi oi-wrench"></i><span class="nav-text">Auth</span></a>
-                <div class="collapse" id="sidebarAuth" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">Coming Soon v1</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Coming Soon v2</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Cookie Consent</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Empty State</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Error Page v1</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Error Page v2</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Error Page v3</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Maintenance</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Page Message</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Session Timeout</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sign In v1</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sign In v2</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sign Up</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Recovery Username</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Recovery Password</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Screen Locked</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarUser" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarUser" role="button"><i class="nav-icon oi oi-person"></i><span class="nav-text">User</span></a>
-                <div class="collapse" id="sidebarUser" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="ul-02-page-user-profile.html">Profile</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="ul-03-page-user-activities.html">Activities</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="ul-04-page-user-teams.html">Teams</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="ul-05-page-user-projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="ul-06-page-user-tasks.html">Tasks</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="ul-07-page-user-setting.html">Profile Settings</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Account Settings</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Billing Settings</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Notification Settings</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarLayouts" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarLayouts" role="button"><i class="nav-icon oi oi-browser"></i><span class="nav-text">Layouts</span><span class="badge ml-auto badge--success">+4</span></a>
-                <div class="collapse" id="sidebarLayouts" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">Blank Page</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Header no Search</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Full Width</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Page Navs</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Page Cover</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Cover Image</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Page Sidebar</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sidebar Fluid</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sidebar Hidden</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Custom</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-            <h6 class="navbar__heading">interfaces</h6>
-            <ul class="navbar-nav">
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarComponents" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarComponents" role="button"><i class="nav-icon oi oi-puzzle-piece"></i><span class="nav-text">Components</span></a>
-                <div class="collapse" id="sidebarComponents" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">General</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Icons</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Rich Media</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">List Views</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sortable &amp; Nestable</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Activity</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Steps</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Tasks</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Metrics</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarForms" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarForms" role="button"><i class="nav-icon oi oi-pencil"></i><span class="nav-text">Forms</span></a>
-                <div class="collapse" id="sidebarForms" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">Basic Elements</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Autocompletes</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pickers</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Editors</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarTables" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarTables" role="button"><i class="nav-icon fas fa-table"></i><span class="nav-text">Tables</span></a>
-                <div class="collapse" id="sidebarTables" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">Basic Table</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Datatables</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Responsive Datatables</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Filter Columns</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarCollections" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarCollections" role="button"><i class="nav-icon oi oi-bar-chart"></i><span class="nav-text">Collections</span></a>
-                <div class="collapse" id="sidebarCollections" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarChart" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarChart" role="button">Chart.js</a>
-                      <div class="collapse" id="sidebarChart">
-                        <ul class="nav flex-column">
-                          <li class="nav-item"><a class="nav-link" href="#">Line</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Bar</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Radar &amp; Scatter</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Others</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Flot</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Inline Charts</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Vector Map</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item submenu"><a class="nav-link" href="#sidebarLevelMenu" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarLevelMenu" role="button"><i class="nav-icon oi oi-list-rich"></i><span class="nav-text">Level Menu</span></a>
-                <div class="collapse" id="sidebarLevelMenu" data-parent="#sidebarAccordion">
-                  <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="#">Menu item</a>
-                    </li>
-                    <li class="nav-item submenu"><a class="nav-link" href="#sidebarMenuItem" data-toggle="collapse" aria-expanded="false" aria-controls="sidebarMenuItem" role="button">Menu item</a>
-                      <div class="collapse" id="sidebarMenuItem">
-                        <ul class="nav flex-column">
-                          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Child item</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Menu item</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="navbar__footer">
-            <button class="button button--full" type="button">Night mode<i class="fas fa-moon"></i>
-            </button>
-          </div>
-        </div>
-      </nav>
-      <section class="main-content">
-        <div class="main-content__inner">
-          <div class="main-content__header">
-            <div class="intro"><span class="intro__greeting">Hi, Beni. </span>
-              <p class="intro__content">Here’s what’s happening with your business today. </p>
-            </div>
-            <div class="time-filter">
-              <div class="dropdown time-filter__inner js-time-filter">
-                <button class="button button--secondary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">This Week<i class="fa fa-fw fa-caret-down"></i>
-                </button>
-                <div class="dropdown-arrow dropdown-arrow-right"></div>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-md" x-placement="top-end">
-                  <div class="form-group input-radio-dropdown">
-                    <input class="input-radio" type="radio" name="dpFilter" value="0" id="dpToday" />
-                    <label class="label-radio" for="dpToday"><span class="label-radio__date">Today</span><span class="label-radio__time">Mar 27</span>
-                    </label>
-                  </div>
-                  <div class="form-group input-radio-dropdown">
-                    <input class="input-radio" type="radio" name="dpFilter" value="1" id="dpYesterday" />
-                    <label class="label-radio" for="dpYesterday"><span class="label-radio__date">Yesterday</span><span class="label-radio__time">Mar 26</span>
-                    </label>
-                  </div>
-                  <div class="form-group input-radio-dropdown">
-                    <input class="input-radio" type="radio" name="dpFilter" value="2" id="dpWeek" checked="checked" />
-                    <label class="label-radio" for="dpWeek"><span class="label-radio__date">This Week</span><span class="label-radio__time">Mar 21-27</span>
-                    </label>
-                  </div>
-                  <div class="form-group input-radio-dropdown">
-                    <input class="input-radio" type="radio" name="dpFilter" value="3" id="dpMonth" />
-                    <label class="label-radio" for="dpMonth"><span class="label-radio__date">This Month</span><span class="label-radio__time">Mar 1-31</span>
-                    </label>
-                  </div>
-                  <div class="form-group input-radio-dropdown">
-                    <input class="input-radio" type="radio" name="dpFilter" value="4" id="dpYear" />
-                    <label class="label-radio" for="dpYear"><span class="label-radio__date">This Year</span><span class="label-radio__time">2018</span>
-                    </label>
-                  </div>
-                  <div class="form-group input-radio-dropdown">
-                    <input class="input-radio" type="radio" name="dpFilter" value="5" id="dpCustom" />
-                    <label class="label-radio" for="dpCustom"><span class="label-radio__date">Custom</span>
-                    </label>
-                    <div class="form-group form-customize form-readonly">
-                      <input class="form-control flatpickr-input js-flatpickr" type="text" data-toggle="flatpickr" data-mode="range" data-disable-mobile="true" data-date-format="Y-m-d" readonly="readonly" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <section class="statistics">
-            <div class="row">
-              <div class="col-lg-9">
-                <div class="statistics__list">
-                  <div class="statistics__item"><a class="statistics__link" href="#">
-                      <h3 class="statistics__name">Teams</h3>
-                      <div class="statistics__value"><i class="statistics__icon oi oi-people"></i><span class="statistics__metric">8</span>
-                      </div>
-                    </a></div>
-                  <div class="statistics__item"><a class="statistics__link" href="#">
-                      <h3 class="statistics__name">Projects</h3>
-                      <div class="statistics__value"><i class="statistics__icon oi oi-fork"></i><span class="statistics__metric">12</span>
-                      </div>
-                    </a></div>
-                  <div class="statistics__item"><a class="statistics__link" href="#">
-                      <h3 class="statistics__name">Active Tasks</h3>
-                      <div class="statistics__value"><i class="statistics__icon fa fa-tasks"></i><span class="statistics__metric">64</span>
-                      </div>
-                    </a></div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="ongoing-tasks">
-                  <div class="ongoing-tasks__link">
-                    <div class="ongoing-tasks__status"><span class="pulse oi oi-media-record"></span><span class="ongoing-tasks__content">Ongoing tasks</span></div>
-                    <div class="ongoing-tasks__value"><span><i class="ongoing-tasks__icon oi oi-timer"></i></span><span class="ongoing-tasks__metric">8</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="chart-list">
-            <div class="row">
-              <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card completion-tasks">
-                  <div class="card-body">
-                    <h3 class="card-title">Completion Tasks </h3>
-                    <div class="completion-tasks__content">
-                      <canvas class="completion-tasks__chart" id="js-completion-tasks-chart" width="303px" height="292px" data-setdata="{&quot;labels&quot;:[&quot;21 Mar&quot;,&quot;22 Mar&quot;,&quot;23 Mar&quot;,&quot;24 Mar&quot;,&quot;25 Mar&quot;,&quot;26 Mar&quot;,&quot;27 Mar&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:&quot;#346cb0&quot;,&quot;borderColor&quot;:&quot;#346cb0&quot;,&quot;data&quot;:[155,65,465,265,225,325,80]}]}"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-lg-6 col-xl-4">
-                <div class="tasks-performance">
-                  <h3 class="tasks-performance__title">Tasks Performance</h3>
-                  <div class="tasks-performance__content">
-                    <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="60" data-size="214" data-bar-color="#346CB0" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
-                    <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="50" data-size="174" data-bar-color="#00A28A" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
-                    <div class="tasks-performance__chart js-tasks-performance-chart" data-toggle="easypiechart" data-percent="75" data-size="134" data-bar-color="#5F4B8B" data-track-color="false" data-scale-color="false" data-rotate="225"></div>
-                  </div>
-                  <div class="tasks-performance__legends">
-                    <div class="tasks-performance__legend">
-                      <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl--indigo"></i><span>100%</span>
-                      </div>
-                      <div class="tasks-performance__status">Assigned</div>
-                    </div>
-                    <div class="tasks-performance__legend">
-                      <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl--purple"></i><span>75%</span>
-                      </div>
-                      <div class="tasks-performance__status">Completed </div>
-                    </div>
-                    <div class="tasks-performance__legend">
-                      <div class="tasks-performance__percent"><i class="fa fa-fw fa-circle cl--teal"></i><span>60%</span>
-                      </div>
-                      <div class="tasks-performance__status">Active </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-lg-6 col-xl-4">
-                <div class="leaderboard">
-                  <h3 class="leaderboard__title">Leaderboard
-                  </h3>
-                  <div class="leaderboard__legends">
-                    <div class="leaderboard__legend"><i class="leaderboard__icon fa fa-fw fa-circle cl--light"></i><span class="leaderboard__status">Tasks</span>
-                    </div>
-                    <div class="leaderboard__legend"><i class="leaderboard__icon fa fa-fw fa-circle cl--purple"></i><span class="leaderboard__status">Completed </span>
-                    </div>
-                    <div class="leaderboard__legend"><i class="leaderboard__icon fa fa-fw fa-circle cl--teal"></i><span class="leaderboard__status">Active </span>
-                    </div>
-                    <div class="leaderboard__legend"><i class="leaderboard__icon fa fa-fw fa-circle cl--red"></i><span class="leaderboard__status">Overdue</span>
-                    </div>
-                  </div>
-                  <div class="leaderboard__content">
-                    <div class="list-group list-group-flush">
-                      <div class="list-group-item member">
-                        <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Martha Myers"><img class="member__img" src="images/uifaces16.jpg" alt="Martha Myers"></a></div>
-                        <div class="member__progresses">
-                          <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
-                            <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="73.46140163642832" aria-valuemin="0" aria-valuemax="100" style="width: 73.46140163642832%"><span class="sr-only">73.46140163642832</span></div>
-                            <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="8.217716115261473" aria-valuemin="0" aria-valuemax="100" style="width: 8.217716115261473%"><span class="sr-only">8.217716115261473</span></div>
-                            <div class="progress-bar bg--red" role="progressbar" aria-valuenow="1.92102454642476" aria-valuemin="0" aria-valuemax="100" style="width: 1.92102454642476%"><span class="sr-only">1.92102454642476</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item member">
-                        <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Tammy Beck"><img class="member__img" src="images/uifaces15.jpg" alt="Tammy Beck"></a></div>
-                        <div class="member__progresses">
-                          <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
-                            <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="54.180855088914115" aria-valuemin="0" aria-valuemax="100" style="width: 54.180855088914115%"><span class="sr-only">54.180855088914115</span></div>
-                            <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="15.361331819901627" aria-valuemin="0" aria-valuemax="100" style="width: 15.361331819901627%"><span class="sr-only">15.361331819901627</span></div>
-                            <div class="progress-bar bg--red" role="progressbar" aria-valuenow="1.853953840332955" aria-valuemin="0" aria-valuemax="100" style="width: 1.853953840332955%"><span class="sr-only">1.853953840332955</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item member">
-                        <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Susan Kelley"><img class="member__img" src="images/uifaces17.jpg" alt="Susan Kelley"></a></div>
-                        <div class="member__progresses">
-                          <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
-                            <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="52.13289581624282" aria-valuemin="0" aria-valuemax="100" style="width: 52.13289581624282%"><span class="sr-only">52.13289581624282</span></div>
-                            <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="3.568498769483183" aria-valuemin="0" aria-valuemax="100" style="width: 3.568498769483183%"><span class="sr-only">3.568498769483183</span></div>
-                            <div class="progress-bar bg--red" role="progressbar" aria-valuenow="3.3634126333059884" aria-valuemin="0" aria-valuemax="100" style="width: 3.3634126333059884%"><span class="sr-only">3.3634126333059884</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item member">
-                        <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Albert Newman"><img class="member__img" src="images/uifaces18.jpg" alt="Albert Newman"></a></div>
-                        <div class="member__progresses">
-                          <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
-                            <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="75.18463810930577" aria-valuemin="0" aria-valuemax="100" style="width: 75.18463810930577%"><span class="sr-only">75.18463810930577</span></div>
-                            <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="10.093549975381585" aria-valuemin="0" aria-valuemax="100" style="width: 10.093549975381585%"><span class="sr-only">10.093549975381585</span></div>
-                            <div class="progress-bar bg--red" role="progressbar" aria-valuenow="7.434761201378631" aria-valuemin="0" aria-valuemax="100" style="width: 7.434761201378631%"><span class="sr-only">7.434761201378631</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item member">
-                        <div class="member__avatar"><a class="member__link" href="#" data-toggle="tooltip" title data-original-title="Kyle Grant"><img class="member__img" src="images/uifaces19.jpg" alt="Kyle Grant"></a></div>
-                        <div class="member__progresses">
-                          <div class="progress member__progress-group" data-toggle="tooltip" title data-html="true" data-original-title="&lt;div class=&quot;text-left small&quot;&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--purple&quot;&gt;&lt;/i&gt; 2065&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--teal&quot;&gt;&lt;/i&gt; 231&lt;br&gt;&lt;i class=&quot;fa fa-fw fa-circle cl--red&quot;&gt;&lt;/i&gt; 54&lt;/div&gt;">
-                            <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="36.89041881812966" aria-valuemin="0" aria-valuemax="100" style="width: 36.89041881812966%"><span class="sr-only">36.89041881812966</span></div>
-                            <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="15.203671830177854" aria-valuemin="0" aria-valuemax="100" style="width: 15.203671830177854%"><span class="sr-only">15.203671830177854</span></div>
-                            <div class="progress-bar bg--red" role="progressbar" aria-valuenow="7.286288009179575" aria-valuemin="0" aria-valuemax="100" style="width: 7.286288009179575%"><span class="sr-only">7.286288009179575</span></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="deck-section">
-            <div class="row">
-              <div class="col-12 col-xl-6">
-                <div class="card active-projects">
-                  <div class="card-header">Active Projects</div>
-                  <div class="card-body">
-                    <div class="list-group list-group-flush">
-                      <div class="list-group-item">
-                        <div class="active-projects__figure">
-                          <div class="avatar-group"><a class="tile tile--md tile--purple" href="#">lt</a><a class="user-avatar user-avatar--xs"><img src="images/team4.jpg" alt="avatar"></a>
-                          </div>
-                        </div>
-                        <div class="active-projects__content">
-                          <h5 class="card-title"><a href="#">Looper Admin Theme</a></h5>
-                          <p class="card-subtitle">Progress in 74% - Last update 1d</p>
-                          <div class="progress bg-transparent progress--xs">
-                            <div class="progress-bar bg--purple" role="progressbar" aria-valuenow="2181" aria-valuemin="0" aria-valuemax="100" style="width: 74%"><span class="sr-only">74%</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item">
-                        <div class="active-projects__figure">
-                          <div class="avatar-group"><a class="tile tile--md tile--indigo" href="#">sp</a><a class="user-avatar user-avatar--xs"><img src="images/team1.jpg" alt="avatar"></a>
-                          </div>
-                        </div>
-                        <div class="active-projects__content">
-                          <h5 class="card-title"><a href="#">Smart Paper</a></h5>
-                          <p class="card-subtitle">Progress in 22% - Last update 2h</p>
-                          <div class="progress bg-transparent progress--xs">
-                            <div class="progress-bar bg--indigo" role="progressbar" aria-valuenow="867" aria-valuemin="0" aria-valuemax="100" style="width: 22%"><span class="sr-only">22%</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item">
-                        <div class="active-projects__figure">
-                          <div class="avatar-group"><a class="tile tile--md tile--yellow" href="#">os</a><a class="user-avatar user-avatar--xs"><img src="images/team2.png" alt="avatar"></a>
-                          </div>
-                        </div>
-                        <div class="active-projects__content">
-                          <h5 class="card-title"><a href="#">Online Store</a></h5>
-                          <p class="card-subtitle">Progress in 99% - Last update 2d</p>
-                          <div class="progress bg-transparent progress--xs">
-                            <div class="progress-bar bg--yellow" role="progressbar" aria-valuenow="112" aria-valuemin="0" aria-valuemax="100" style="width: 99%"><span class="sr-only">99%</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item">
-                        <div class="active-projects__figure">
-                          <div class="avatar-group"><a class="tile tile--md tile--blue" href="#">ba</a><a class="user-avatar user-avatar--xs"><img src="images/bootstrap.svg" alt="avatar"></a>
-                          </div>
-                        </div>
-                        <div class="active-projects__content">
-                          <h5 class="card-title"><a href="#">Booking App</a></h5>
-                          <p class="card-subtitle">Progress in 35% - Last update 4h</p>
-                          <div class="progress bg-transparent progress--xs">
-                            <div class="progress-bar bg--blue" role="progressbar" aria-valuenow="112" aria-valuemin="0" aria-valuemax="100" style="width: 35%"><span class="sr-only">35%</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item">
-                        <div class="active-projects__figure">
-                          <div class="avatar-group"><a class="tile tile--md tile--teal" href="#">sb</a><a class="user-avatar user-avatar--xs"><img src="images/sketch.svg" alt="avatar"></a>
-                          </div>
-                        </div>
-                        <div class="active-projects__content">
-                          <h5 class="card-title"><a href="#">SVG Icon Bundle</a></h5>
-                          <p class="card-subtitle">Progress in 32% - Last update 1d </p>
-                          <div class="progress bg-transparent progress--xs">
-                            <div class="progress-bar bg--teal" role="progressbar" aria-valuenow="461" aria-valuemin="0" aria-valuemax="100" style="width: 32%"><span class="sr-only">32%</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="list-group-item">
-                        <div class="active-projects__figure">
-                          <div class="avatar-group"><a class="tile tile--md tile--pink" href="#">sp</a><a class="user-avatar user-avatar--xs"><img src="images/team4.jpg" alt="avatar"></a>
-                          </div>
-                        </div>
-                        <div class="active-projects__content">
-                          <h5 class="card-title"><a href="#">Syrena Project</a></h5>
-                          <p class="card-subtitle">Progress in 93% - Last update 8h </p>
-                          <div class="progress bg-transparent progress--xs">
-                            <div class="progress-bar bg--pink" role="progressbar" aria-valuenow="3981" aria-valuemin="0" aria-valuemax="100" style="width: 93%"><span class="sr-only">93%</span></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-xl-6">
-                <div class="card active-tasks">
-                  <div class="card-header">Active Tasks: To-Dos </div>
-                  <div class="card-body">
-                    <div class="todo-list">
-                      <div class="todo-header">Looper Admin Theme (1/3)</div>
-                      <div class="todo">
-                        <div class="form-group input-checkbox-custom input-checkbox-custom--line-through">
-                          <input class="input-checkbox" type="checkbox" name="checkbox" id="todo1" />
-                          <label for="todo1">Eat corn on the cob
-                          </label>
-                        </div>
-                      </div>
-                      <div class="todo">
-                        <div class="form-group input-checkbox-custom input-checkbox-custom--line-through">
-                          <input class="input-checkbox" type="checkbox" name="checkbox" id="todo2" checked="checked" />
-                          <label for="todo2">Mix up a pitcher of sangria
-                          </label>
-                        </div>
-                      </div>
-                      <div class="todo">
-                        <div class="form-group input-checkbox-custom input-checkbox-custom--line-through">
-                          <input class="input-checkbox" type="checkbox" name="checkbox" id="todo3" />
-                          <label for="todo3">Have a barbecue
-                          </label>
-                        </div>
-                      </div>
-                      <div class="todo">
-                        <div class="form-group input-checkbox-custom input-checkbox-custom--line-through">
-                          <input class="input-checkbox" type="checkbox" name="checkbox" id="todo4" />
-                          <label for="todo4">Ride a roller coaster — <span class="text--small text--red">Overdue in 3 days</span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="todo-header">Smart Paper (0/2)</div>
-                      <div class="todo">
-                        <div class="form-group input-checkbox-custom input-checkbox-custom--line-through">
-                          <input class="input-checkbox" type="checkbox" name="checkbox" id="todo5" />
-                          <label for="todo5">Bring a blanket and lie on the grass at an outdoor concert
-                          </label>
-                        </div>
-                      </div>
-                      <div class="todo">
-                        <div class="form-group input-checkbox-custom input-checkbox-custom--line-through">
-                          <input class="input-checkbox" type="checkbox" name="checkbox" id="todo6" />
-                          <label for="todo6">Collect seashells at the beach
-                          </label>
-                        </div>
-                      </div>
-                      <div class="todo">
-                        <div class="form-group input-checkbox-custom input-checkbox-custom--line-through">
-                          <input class="input-checkbox" type="checkbox" name="checkbox" id="todo7" />
-                          <label for="todo7">Swim in a lake
-                          </label>
-                        </div>
-                      </div>
-                      <div class="todo">
-                        <div class="form-group input-checkbox-custom input-checkbox-custom--line-through">
-                          <input class="input-checkbox" type="checkbox" name="checkbox" id="todo8" />
-                          <label for="todo8">Get enough sleep!
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer"><a href="#"><span>View all</span><i class="fa fa-fw fa-angle-right"></i></a></div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <footer class="looper-footer">
-          <ul class="list-inline">
-            <li class="list-inline-item"><a class="text--muted" href="#">Support</a></li>
-            <li class="list-inline-item"><a class="text--muted" href="#">Help Center</a></li>
-            <li class="list-inline-item"><a class="text--muted" href="#">Privacy</a></li>
-            <li class="list-inline-item"><a class="text--muted" href="#">Terms of Service</a></li>
+      <section class="hero">
+        <div class="carousel slide" id="heroCarousel" data-ride="carousel">
+          <ul class="carousel-indicators">
+            <li class="active" data-target="#heroCarousel" data-slide-to="0"></li>
+            <li data-target="#heroCarousel" data-slide-to="1"></li>
+            <li data-target="#heroCarousel" data-slide-to="2"></li>
           </ul>
-          <div class="copyright">Copyright © 2018. All right reserved. </div>
-        </footer>
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="images/banner.jpg" alt="Full winter kit">
+              <div class="hero__caption">
+                <h3 class="hero__title">Full Winter Kit</h3>
+                <p class="hero__product">Half Jacket + Skiny Trousers + Boot leather</p>
+                <p class="hero__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="hero__inner"><span>Price: 120$</span><a class="hero__order" href="#"><i class="fas fa-shopping-cart"></i>Order Now</a></div>
+              </div>
+            </div>
+            <div class="carousel-item"><img src="images/banner.jpg" alt="Full winter kit">
+              <div class="hero__caption">
+                <h3 class="hero__title">Full Summer Kit</h3>
+                <p class="hero__product">Half Jacket + Skiny Trousers + Boot leather</p>
+                <p class="hero__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="hero__inner"><span>Price: 120$</span><a class="hero__order" href="#"><i class="fas fa-shopping-cart"></i>Order Now</a></div>
+              </div>
+            </div>
+            <div class="carousel-item"><img src="images/banner.jpg" alt="Full winter kit">
+              <div class="hero__caption">
+                <h3 class="hero__title">Full Spring Kit</h3>
+                <p class="hero__product">Half Jacket + Skiny Trousers + Boot leather</p>
+                <p class="hero__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="hero__inner"><span>Price: 120$</span><a class="hero__order" href="#"><i class="fas fa-shopping-cart"></i>Order Now</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-    </div>
+      <section class="new-arrivals">
+        <div class="container">
+          <div class="new-arrivals__header">
+            <h3 class="new-arrivals__heading"><span class="cl-orange">New </span>Arrivals</h3>
+            <p class="new-arrivals__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+          </div>
+          <div class="new-arrivals__inner">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product1.png" alt="product new arrivals"></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                    <div class="product__summary">
+                      <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                      <ul class="list-inline product__color">
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                      </ul>
+                      <ul class="list-inline product__action">
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="far fa-heart"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product2.png" alt="product new arrivals"></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                    <div class="product__summary">
+                      <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                      <ul class="list-inline product__color">
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                      </ul>
+                      <ul class="list-inline product__action">
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="far fa-heart"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals"></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                    <div class="product__summary">
+                      <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                      <ul class="list-inline product__color">
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                      </ul>
+                      <ul class="list-inline product__action">
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="far fa-heart"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals"></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                    <div class="product__summary">
+                      <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                      <ul class="list-inline product__color">
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                        <li class="list-inline-item">
+                          <div class="far fa-circle circle circle--#{val}"></div>
+                        </li>
+                      </ul>
+                      <ul class="list-inline product__action">
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="far fa-heart"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="looper-footer">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text--muted" href="#">Support</a></li>
+          <li class="list-inline-item"><a class="text--muted" href="#">Help Center</a></li>
+          <li class="list-inline-item"><a class="text--muted" href="#">Privacy</a></li>
+          <li class="list-inline-item"><a class="text--muted" href="#">Terms of Service</a></li>
+        </ul>
+        <div class="copyright">Copyright © 2018. All right reserved. </div>
+      </footer>
+    </section>
     <script src="js/main.js"></script>
   </body>
 </html>

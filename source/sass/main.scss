@@ -2,14 +2,9 @@
 @import 'bootstrap/scss/bootstrap-grid';
 @import 'bootstrap/scss/bootstrap-reboot';
 @import 'bootstrap/scss/bootstrap';
-@import 'vendor/bootstrap-override';
 @import 'ionicons/css/ionicons';
-@import 'vendor/pace-custom';
-@import 'vendor/flatpickr';
 
 @import 'extentions/fontawesome/fontawesome';
-@import 'extentions/perfect-scrollbar';
-@import 'extentions/open-iconic-bootstrap';
 
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
@@ -30,12 +25,6 @@
 @import 'components/radios';
 @import 'components/switcher';
 @import 'components/badge';
-@import 'components/tile';
-@import 'components/avatar';
-@import 'components/followers-modal';
-@import 'components/following-modal';
-@import 'components/member-modal';
-
 @import 'base/typography';
 // 4. Layout
 // ---------
@@ -46,11 +35,6 @@
 // 6. Pages
 // --------
 @import 'pages/home';
-@import 'pages/form-basic';
-@import 'pages/ul-02-page-user-profile';
-@import 'pages/ul-03-page-user-activities';
-@import 'pages/ul-04-page-user-teams';
-@import 'pages/ul-05-page-user-projects';
 
 // 7. Themes
 // ---------

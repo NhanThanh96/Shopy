@@ -3,285 +3,90 @@
 //-------------------------------------------------------
 
 mixin header()
-  header.looper-header
-    .looper-header__inner
-      .looper-header__brand
-        a(href="home.html")
-          img(src="images/brand-inverse.png", alt="looper")
-      .looper-header__content
-        .toggle-menu.d-md-none.d-lg-none.d-xl-none
-          button.hamburger#js-toggle-sidebar(
-            type="button"
-          )
-            i.fas.fa-bars
-        form.looper-header__search(action="#")
-          +group-input-field({
-            type: 'text',
-            placeholder: 'Search',
-            iconBefore: 'oi oi-magnifying-glass',
-          })(class= 'search')
-        .looper-header__options
-          ul.nav.looper-header__nav
-            li.nav-item.dropdown.looper-header__nav-item
-              a.nav-link.looper-header__nav-link(
-                href="#"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                data-display="static"
-              )
-                span.oi.oi-pulse
-              .dropdown-arrow
-              .dropdown-menu.looper-header__dropdown-menu.dropdown-menu-right
-                .dropdown-header
-                  span Activities
-                    span.activity-count (2)
-                .activities.js-activities-scrollbar
+  header.header
+    .container
+      .small-header
+        ul.list-inline.small-header__contact
+          li.list-inline-item
+            span.small-header__icon
+              i.far.fa-envelope
+            span.small-header__text info@shopy.com
+          li.list-inline-item
+            span.small-header__icon
+              i.fas.fa-phone-volume
+            span.small-header__text 453 - 5553 - 996
+        ul.list-inline.small-header__social-network
+          each item, index in ['fab fa-facebook-f', 'fab fa-twitter', 'fab fa-google-plus-g', 'fab fa-instagram']
+            li.list-inline-item
+              a.small-header__link(href="#")
+                i(class= item)
+      .big-header
+        .row
+          .col-md-2
+            a.navbar-brand(href="#")
+              img(src="images/logoo.png", alt="shopy")
+          .col-md-10
+            button.navbar-toggler.d-none(
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            )
+              span.avbar-toggler-icon
+            nav.navbar.navbar-expand-lg
+              .collapse.navbar-collapse#navbarSupportedContent
+                ul.navbar-nav.mr-auto
                   -
-                    userActivityList = [
+                    var navData = [
                       {
-                        avatar: "images/uifaces15.jpg",
-                        title: "Jeffrey Wells created a schedule",
-                        time: "Just now",
-                        unread: true,
+                        name: 'Home',
+                        active: true
                       },
                       {
-                        avatar: "images/uifaces16.jpg",
-                        title: "Anna Vargas logged a chat",
-                        time: "3 hours ago",
-                        unread: true,
+                        name: 'Products'
                       },
                       {
-                        avatar: "images/uifaces17.jpg",
-                        title: "Sara Carr invited to Stilearn Admin",
-                        time: "5 hours ago"
+                        name: 'Hot Deals'
                       },
                       {
-                        avatar: "images/uifaces18.jpg",
-                        title: "Arthur Carroll updated a project",
-                        time: "1 day ago"
+                        name: 'About'
                       },
                       {
-                        avatar: "images/uifaces19.jpg",
-                        title: "Hannah Romero created a task",
-                        time: "1 day ago"
-                      },
-                      {
-                        avatar: "images/uifaces20.jpg",
-                        title: "Angela Peterson assign a task to you",
-                        time: "2 days ago"
-                      },
-                      {
-                        avatar: "images/uifaces21.jpg",
-                        title: "Shirley Mason and 3 others followed you",
-                        time: "2 days ago"
+                        name: 'Contact'
                       }
-                    ];
-                  each item in userActivityList
-                    a.dropdown-item(
-                      href="#"
-                      class= item.unread ? "unread" : null
-                    )
-                      if item.avatar
-                        .user-avatar
-                          img(src= item.avatar)
-                      .user-activity
-                        if item.title
-                          h5.user-activity__title= item.title
-                        if item.time
-                          span.user-activity__time= item.time
-                .dropdown-footer
-                  a(href="#") All activities
-                    i.fas.fa-fw.fa-long-arrow-alt-right
-            li.nav-item.dropdown.looper-header__nav-item
-              a.nav-link.looper-header__nav-link(
-                href="#"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                data-display="static"
-              )
-                span.oi.oi-envelope-open
-              .dropdown-arrow
-              .dropdown-menu.looper-header__dropdown-menu.dropdown-menu-right
-                .dropdown-header
-                  span Messages
-                  a(href="#") Mark all as read
-                .messages.js-messages-scrollbar
-                  -
-                    userMessageList = [
-                      {
-                        avatar: "images/team1.jpg",
-                        subject: "Stilearning",
-                        title: "Invitation: Joe's Dinner @ Fri Aug 22",
-                        time: "2 hours ago",
-                        unread: true,
-                      },
-                      {
-                        avatar: "images/team3.png",
-                        subject: "Openlane",
-                        title: "Final reminder: Upgrade to Pro",
-                        time: "23 hours ago"
-                      },
-                      {
-                        tile: {
-                          content: "gz",
-                          color: "green",
-                          type: "circle"
-                        },
-                        subject: "Gogo Zoom",
-                        title: "Live healthy with this wireless sensor.",
-                        time: "1 day ago"
-                      },
-                      {
-                        tile: {
-                          content: "gd",
-                          color: "teal",
-                          type: "circle"
-                        },
-                        subject: "Gold Dex",
-                        title: "Invitation: Design Review @ Mon Jul 7",
-                        time: "1 day ago"
-                      },
-                      {
-                        avatar: "images/team2.png",
-                        subject: "Creative Division",
-                        title: "Need some feedback on this please",
-                        time: "2 days ago"
-                      },
-                      {
-                        tile: {
-                          content: "ld",
-                          color: "pink",
-                          type: "circle"
-                        },
-                        subject: "Lab Drill",
-                        title: "Our UX exercise is ready",
-                        time: "6 days ago"
-                      }
-                    ];
-                  each item in userMessageList
-                    a.dropdown-item(
-                      href="#"
-                      class= item.unread ? "unread" : null
-                    )
-                      if item.avatar
-                        .user-avatar
-                          img(src= item.avatar)
-                      if item.tile
-                        .tile(
-                          class= item.tile.type ? `tile--${item.tile.type}` : null
-                          class= item.tile.color ? `tile--${item.tile.color}` : null
+                    ]
+                  each item in navData
+                    li.nav-item(class= item.active ? 'active' : null)
+                      a.nav-link(href="#")= item.name
+                .big-header__action
+                  ul.list-inline
+                    li.list-inline-item
+                      form.form-inline.my-2.my-lg-0.search
+                        input.form-control.mr-sm-2.d-none(
+                          type="search"
+                          placeholder="Search"
+                          aria-label="Search"
                         )
-                          | #{item.tile.content}
-                      .user-message
-                        if item.subject
-                          span.user-message__subject= item.subject
-                        if item.title
-                          h5.user-message__title= item.title
-                        if item.time
-                          span.user-message__time= item.time
-                .dropdown-footer
-                  a(href="#") All messages
-                    i.fas.fa-fw.fa-long-arrow-alt-right
-            li.nav-item.dropdown.looper-header__nav-item
-              a.nav-link.looper-header__nav-link(
-                href="#"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                data-display="static"
-              )
-                span.oi.oi-grid-three-up
-              .dropdown-arrow
-              .dropdown-menu.looper-header__dropdown-menu.dropdown-menu-right
-                .folders
-                  -
-                    var folderList = [
-                      {
-                        tile: {
-                          color: "indigo",
-                          size: 'lg',
-                          icon: "oi oi-people"
-                        },
-                        name: "Teams",
-                        link: "#"
-                      },
-                      {
-                        tile: {
-                          color: "teal",
-                          size: 'lg',
-                          icon: "oi oi-fork"
-                        },
-                        name: "Projects",
-                        link: "#"
-                      },
-                      {
-                        tile: {
-                          color: "pink",
-                          size: 'lg',
-                          icon: "fa fa-tasks"
-                        },
-                        name: "Tasks",
-                        link: "#"
-                      },
-                      {
-                        tile: {
-                          color: "yellow",
-                          size: 'lg',
-                          icon: "oi oi-fire"
-                        },
-                        name: "Feeds",
-                        link: "#"
-                      },
-                      {
-                        tile: {
-                          color: "cyan",
-                          size: 'lg',
-                          icon: "oi oi-document"
-                        },
-                        name: "Files",
-                        link: "#"
-                      }
-                    ];
-                  each item in folderList
-                    .folder
-                      a.folder__link(
-                        href= item.link ? item.link : null
-                      )
-                        if item.tile
-                          span.tile(
-                            class= item.tile.size ? `tile--${item.tile.size}` : null
-                            class= item.tile.color ? `tile--${item.tile.color}` : null
-                          )
-                            i.folder__icon(class= item.tile.icon)
-                        if item.name
-                          span.folder__name
-                            | #{item.name}
-        .dropdown.user-account
-          button.user-account__button(
-            type="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            data-display="static"
-          )
-            .user-account__avatar
-              img(src="images/profile.jpg", alt="avatar")
-            .user-account__summary
-              span.user-account__name Beni Arisandi
-              span.user-account__position Marketing Manager
-          .dropdown-arrow.dropdown-arrow--left
-          .dropdown-menu
-            h6.dropdown-header.d-none.d-md-block.d-lg-none Beni Arisandi 
-            a.dropdown-item(href="#")
-              span.oi.oi-person.user-account__icon
-              span Profile
-            a.dropdown-item(href="#")
-              span.oi.oi-account-logout.user-account__icon
-              span Logout
-            .dropdown-divider
-            a.dropdown-item(href="#") Help Center
-            a.dropdown-item(href="#") Ask Forum
-            a.dropdown-item(href="#") Keyboard Shortcuts
-              
+                        button.btn.search__button(type="submit")
+                          i.fas.fa-search
+                    li.list-inline-item
+                      .dropdown.show.profile
+                        a.btn.dropdown-toggle.profile__button(
+                          href="#"
+                          role="button"
+                          id="profile"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        )
+                          i.far.fa-user
+                        .dropdown-menu.profile__dropdown-menu(aria-labelledby="profile")
+                          a.dropdown-item(href="#") Profile
+                          a.dropdown-item(href="#") Logout
+                    li.list-inline-item
+                      .cart
+                        a.cart__link(href="#")
+                          i.fas.fa-shopping-cart
+                          span.cart__amount 5

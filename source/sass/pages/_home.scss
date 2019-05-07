@@ -1,557 +1,90 @@
-// ======================================================
-// Pages :: Home
-// ======================================================
-@keyframes pulse {
-  from {
-    opacity: 1;
+// // ======================================================
+// // Pages :: Home
+// // ======================================================
+
+.hero {
+  &__caption {
+    position: absolute;
+    top: 55%;
+    left: 20%;
+    bottom: 20px;
+    z-index: 10;
+    transform: translate(0, -50%);
   }
 
-  50% {
-    opacity: 0;
+  &__title {
+    font-size: 52px;
+    font-weight: 700;
+    color: $cl-orange;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    line-height: .8;
   }
 
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes chartjs-render-animation {
-  from {
-    opacity: .99;
+  &__product {
+    font-size: 18px;
+    line-height: .6;
+    margin-bottom: 16px;
   }
 
-  to {
-    opacity: 1;
+  &__desc {
+    margin-bottom: 60px;
   }
-}
-
-@keyframes progressAnimated {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-.pulse {
-  animation: pulse 2.5s ease infinite;
-}
-.main-content {
-  margin-left: 240px;
-  padding-top: 56px;
-  width: calc(100% - 240px);
 
   &__inner {
-    padding: 24px 32px;
-
-    @include breakpoint-down(tablet) {
-      padding-right: 16px;
-      padding-left: 16px;
-    }
+    font-size: 18px;
   }
 
-  &__header {
-    margin-bottom: 24px;
-    font-size: 20px;
-    display: flex;
-    .time-filter {
-      margin-left: auto;
-    }
+  &__order {
+    margin-left: 30px;
+    color: $cl-orange;
 
-    @include breakpoint-down(phone) {
-      flex-direction: column;
-    }
-  }
-
-  @include breakpoint-down(phone) {
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
-.intro {
-  &__greeting {
-    font-weight: $font-weight-bold;
-  }
-
-  &__content {
-    color: $cl-gray;
-  }
-}
-
-.statistics {
-  $statistics: &;
-
-  margin-bottom: 20px;
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    border-radius: 4px;
-    margin: 8px 0;
-
-    @include breakpoint-down(smallphone) {
-      flex-direction: column;
-    }
-  }
-
-  &__item {
-    max-width: 100%;
-    flex: 1;
-  }
-  &__item:first-of-type {
-    #{$statistics}__link {
-      border-left: 1px solid $bd-xlight-gray;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-
-      @include breakpoint-down(smallphone) {
-        border-top: 1px solid $bd-xlight-gray;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        border-bottom-left-radius: 0;
-      }
-    }
-  }
-  &__item:last-of-type {
-    #{$statistics}__link {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-
-      @include breakpoint-down(smallphone) {
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        border-top-right-radius: 0;
-      }
-    }
-  }
-  &__link {
-    display: flex;
-    min-height: 8.5rem;
-    position: relative;
-    padding: 16px;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    max-width: 100%;
-    border-top: 1px solid $bd-xlight-gray;
-    border-right: 1px solid $bd-xlight-gray;
-    border-bottom: 1px solid $bd-xlight-gray;
-
-    @include breakpoint-down(smallphone) {
-      border-right: 1px solid $bd-xlight-gray;
-      border-left: 1px solid $bd-xlight-gray;
-      border-bottom: 1px solid $bd-xlight-gray;
-      border-top: 0;
-    }
-  }
-  &__name {
-    font-size: $font-size-base;
-    font-weight: 500;
-    color: $cl-gray;
-    white-space: nowrap;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
-  &__value {
-    margin-bottom: 0;
-    line-height: 1;
-    white-space: nowrap;
-  }
-  &__icon {
-    color: $cl-xlight-gray;
-    font-size: $font-size-base;
-    margin-right: 7px;
-    position: relative;
-    top: 4px;
-  }
-  &__metric {
-    vertical-align: middle;
-    font-size: 28px;
-    font-weight: 600;
-    color: $cl-dark-gray;
-  }
-}
-.ongoing-tasks {
-  width: 100%;
-  margin: 8px 0;
-
-  &__link {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 16px;
-    min-height: 136px;
-    flex-grow: 1;
-    border: 1px solid $bd-xlight-gray;
-    border-radius: 4px;
-  }
-
-  &__value {
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    line-height: 1;
-  }
-
-  &__icon {
-    font-size: $font-size-base;
-    color: $cl-xlight-gray;
-    line-height: 28px;
-  }
-
-  &__metric {
-    margin-left: 8px;
-    font-size: 28px;
-    line-height: 1;
-    color: $bg-light-black;
-    font-weight: $font-weight-bold;
-  }
-
-  &__status {
-    position: relative;
-    white-space: nowrap;
-    color: $cl-white;
-    background-color: $cl-green;
-    padding: 6px 8px;
-    text-transform: uppercase;
-    font-size: 11px;
-    line-height: 1;
-    top: -8px;
-    border-radius: 4px;
-  }
-
-  &__content {
-    margin-left: 6px;
-    font-weight: $font-weight-bold;
-
-    @include breakpoint-down(phone) {
-      font-size: $font-size-small;
-    }
-  }
-}
-
-.completion-tasks {
-  padding: 0;
-  margin-bottom: 20px;
-  .card-body {
-    flex: 1 1 auto;
-    padding: 16px;
-  }
-  .card-title {
-    font-size: $font-size-medium;
-    margin-bottom: 24px;
-  }
-
-  &__content {
-    height: 292px;
-  }
-}
-
-.tasks-performance {
-  padding: 16px;
-  border-radius: 4px;
-  background-color: $cl-white;
-  box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
-  margin-bottom: 20px;
-  &__title {
-    font-size: $font-size-medium;
-    margin-bottom: 32px;
-    font-weight: $font-weight-bold;
-  }
-
-  &__content {
-    position: relative;
-    min-height: 131px;
-    height: 214px;
-    margin-bottom: 16px;
-  }
-
-  &__chart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &__legends {
-    margin: 0 -16px;
-    padding: 0 16px;
-    display: flex;
-    align-items: stretch;
-    border-top: 1px solid rgba(20, 20, 31, .12);
-  }
-
-  &__legend {
-    text-align: center;
-    flex: 1;
-    padding: 16px 16px 0 16px;
-  }
-
-  &__percent {
     i {
-      width: 24px;
-      text-align: center;
+      margin-right: 8px;
     }
-  }
-
-  &__status {
-    font-size: 80%;
-    color: $cl-gray;
   }
 }
 
-.leaderboard {
-  padding: 16px 16px 12px 16px;
-  border-radius: 4px;
-  background-color: $cl-white;
-  box-shadow: 0 0 0 1px rgba(20, 20, 31, .05), 0 1px 3px 0 rgba(20, 20, 31, .15);
-  margin-bottom: 20px;
-  &__title {
-    font-size: $font-size-medium;
-    margin-bottom: 16px;
-    font-weight: $font-weight-bold;
-  }
-
-  &__legends {
-    display: flex;
-    margin-bottom: 16px;
-  }
-
-  &__legend {
-    white-space: nowrap;
-    align-items: stretch;
+.cl-orange {
+  color: $cl-orange;
+}
+.new-arrivals {
+  padding: 120px;
+  &__header {
     text-align: center;
-    font-size: 11px;
-    margin-right: 14px;
-
-    @include breakpoint-down(phone) {
-      font-size: 13px;
-    }
   }
-
-  &__icon {
-    width: 16px;
-    text-align: left;
+  &__heading {
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: $cl-black;
   }
-}
-
-.member {
-  display: flex;
-  align-items: stretch;
-  padding: 12px 0;
-  border: 1px solid transparent;
-
-  &:last-of-type {
-    padding-bottom: 0;
-  }
-
-  &__avatar {
-    margin-right: 16px;
-  }
-
-  &__link {
-    margin-bottom: 0;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
-  }
-
-  &__img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  &__progresses {
-    flex: 1;
-    align-self: center;
-  }
-
-  &__progress-group {
-    border-radius: 0;
-    background: transparent;
-    animation: progressAnimated 1s;
+  &__desc {
+    margin-bottom: 80px;
   }
 }
-
-
-.active-projects {
-  border: none;
-  box-shadow:
-    0 0 0 1px rgba(20, 20, 31, .05),
-    0 1px 3px 0 rgba(20, 20, 31, .15);
-  margin-bottom: 20px;
-  .card-header {
-    background: transparent;
-    padding: 16px;
-    font-weight: 600;
-  }
-  .card-body {
-    padding: 0 0 20px 0;
-  }
-  .list-group-item {
-    display: flex;
-    border-color: transparent;
-    padding: 12px 16px;
-  }
-  &__figure {
-    margin-right: 16px;
-    display: flex;
-    align-items: center;
-  }
-  &__content {
-    flex: 1;
-    align-self: center;
-    font-size: $font-size-base;
-    .card-title {
-      font-size: $font-size-medium;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    .card-title a {
-      color: inherit;
-    }
-    .card-subtitle {
-      font-size: $font-size-small;
-      color: $cl-gray;
-      margin-bottom: 4px;
-
-      @include breakpoint-down(phone) {
-        font-size: $font-size-base;
-        font-weight: 400;
-      }
-    }
-  }
-}
-.avatar-group {
-  position: relative;
-  display: inline-block;
-  .user-avatar {
-    line-height: 1.25;
-    border: 3px solid $cl-white;
-    box-shadow: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    transform: translate3d(-50%, 0, 0);
-    cursor: pointer;
-  }
-}
-
-.progress {
-  &--xs {
-    height: 3px;
-  }
-}
-.active-tasks {
-  border: none;
-  box-shadow:
-    0 0 0 1px rgba(20, 20, 31, .05),
-    0 1px 3px 0 rgba(20, 20, 31, .15);
-  margin-bottom: 20px;
-  .card-header {
-    background: transparent;
-    padding: 16px;
-    font-weight: 600;
-  }
-  .card-body {
-    padding: 16px;
-  }
-  .todo-header {
-    &:first-of-type {
-      padding-top: 0;
-    }
-  }
-  .card-footer {
-    padding: 0;
-    background: transparent;
-    a {
-      display: block;
-      padding: 16px;
-      text-align: center;
-      color: $cl-dark-blue;
-      line-height: 1.5;
-    }
-    .fa {
-      margin-left: 4px;
-    }
-  }
-}
-.todo-header {
-  padding: 16px 0;
-  font-size: $font-size-small;
-  font-weight: 600;
-  color: $cl-gray;
-}
-.todo {
-  align-items: center;
-  display: flex;
-  min-height: 36px;
-  transition: background-color .3s;
-  border-radius: 4px;
-  &:hover {
-    background-color: $bg-light-gray;
-  }
-  .input-checkbox-custom {
-    padding-left: 32px;
-    flex: 1;
-  }
-  label {
-    display: block;
-    &:before {
-      left: -32px;
-    }
-    &:after {
-      left: -32px;
-    }
-  }
-}
-.looper-footer {
-  margin: 24px 0;
-  padding: 0 16px;
+.product {
+  padding: 30px 20px;
   text-align: center;
-}
-
-.time-filter {
-  position: relative;
-  .dropdown-arrow-right {
-    left: auto;
-    right: 16px;
-    top: auto;
-    z-index: 4;
+  &__image {
+    margin-bottom: 30px;
+    padding: 0 30px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
-  .dropdown-menu {
-    z-index: 2;
-    top: auto;
-    right: 0;
-    left: auto;
-    margin-top: 10px;
-    min-width: 18rem;
-    border: 0;
-    font-weight: 400;
-    box-shadow:
-      0 0 0 1px rgba(20, 20, 31, .05),
-      0 2px 7px 1px rgba(20, 20, 31, .16);
-    animation-duration: .2s;
-    animation-fill-mode: both;
-    font-size: $font-size-base;
-    animation-name: showDropdown;
-    & > .input-radio-dropdown {
-      margin-bottom: 0;
-      padding: 8px 16px 8px 24px;
+  &__title {
+    margin-bottom: 30px;
+    a {
+      font-size: 18px;
+      color: $cl-black;
     }
-    .label-radio {
-      margin: 0;
-      &__time {
-        color: $cl-gray;
-      }
-    }
+  }
+  &__price {
+    font-size: 18px;
+    color: $cl-orange;
   }
 }

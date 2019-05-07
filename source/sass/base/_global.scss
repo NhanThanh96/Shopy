@@ -7,8 +7,8 @@ body {
   font-family: $font-family-base;
   font-weight: $font-weight-base;
   line-height: 1.5;
-  color: $cl-dark-gray;
-  background-color: $bg-light-gray;
+  color: $cl-light-black;
+  background-color: $bg-body;
 
   @include breakpoint-down(phone) {
     font-size: $font-size-medium;

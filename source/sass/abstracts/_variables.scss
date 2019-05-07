@@ -11,6 +11,10 @@ $path-fonts: '../fonts';
 $font-family-base : 'Fira Sans', sans-serif;
 $font-family-awesome : 'Font Awesome 5 Free';
 // >> Color
+$cl-orange        : #ff5912;
+$cl-black         : #34404b;
+$cl-light-black   : #495662;
+
 $cl-white       : #fff;
 
 $cl-dark-blue   : #346cb0;
@@ -29,7 +33,6 @@ $cl-red         : #f05151;
 $cl-light-red   : #ea6759;
 $cl-dark-red    : #e43e2c;
 
-$cl-orange      : #f7c46c;
 $cl-dark-orange : #f4b13c;
 
 $cl-purple      : #b76ba3;
@@ -42,8 +45,9 @@ $cl-dark-gray   : #363642;
 $cl-xdark-gray  : #babfcd;
 
 //Background
-$bg-white       : #fff;
 
+$bg-body       : #f4f6f8;
+$bg-white       : #fff;
 $bg-black       : #000;
 $bg-dark-black  : #191927;
 $bg-light-black : #222230;
