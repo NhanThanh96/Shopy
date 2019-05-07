@@ -2,19 +2,22 @@
 // Base :: Colors
 // ======================================================
 .cl {
+  &--orange {
+    color: $cl-orange;
+  }
   &--indigo {
-    color: $bg-dark-blue;
+    color: $cl-green;
   }
   &--purple {
-    color: $bg-dark-purple;
+    color: $cl-green;
   }
   &--teal {
     color: $cl-green;
   }
   &--light {
-    color: $bg-light-gray;
+    color: $cl-green;
   }
   &--red {
-    color: $bg-light-red;
+    color: $cl-green;
   }
 }

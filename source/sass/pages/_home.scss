@@ -49,7 +49,175 @@
   color: $cl-orange;
 }
 .new-arrivals {
-  padding: 120px;
+  padding: 120px 0;
+  &__header {
+    text-align: center;
+  }
+  &__heading {
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: $cl-black;
+  }
+  &__desc {
+    margin-bottom: 80px;
+  }
+
+  &__product-list {
+    margin-bottom: 45px;
+  }
+}
+.product {
+  $product: &;
+
+  padding: 30px 20px;
+  text-align: center;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  &__image {
+    margin-bottom: 30px;
+    padding: 0 30px;
+    width: 100%;
+    height: 220px;
+    transition: transform ease .3s;
+
+    a {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform ease .3s;
+    }
+  }
+  .card-body {
+    padding: 0;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    a {
+      font-size: 18px;
+      color: $cl-black;
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+    color: $cl-orange;
+  }
+
+  &__summary {
+    position: absolute;
+    width: 100%;
+    padding-bottom: 30px;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform ease .3s;
+  }
+
+  &__size {
+    font-size: $font-size-base;
+    margin-bottom: 30px;
+  }
+
+  &__color {
+    margin-bottom: 0;
+  }
+
+  &__devider {
+    margin: 30px 0;
+    border-color: $cl-gray;
+  }
+
+  &__action {
+    margin-bottom: 0;
+    .list-inline-item {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__icon-link {
+    color: $cl-light-black;
+    transition: color ease .3s;
+    font-size: $font-size-medium;
+    &:hover {
+      color: $cl-orange;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .1);
+    #{$product}__image {
+      img {
+        transform: scale(.5, .5) translateY(-50%);
+      }
+    }
+
+    #{$product}__title {
+      a {
+        color: $cl-orange;
+      }
+    }
+
+    #{$product}__price {
+      opacity: 0;
+    }
+
+    #{$product}__summary {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.load-more {
+  height: 60px;
+  line-height: 60px;
+  background-color: $cl-white;
+  display: flex;
+  justify-content: center;
+
+  .list-inline-item {
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+}
+
+.advertisment {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    flex: 1;
+    max-width: 50%;
+    &:first-child {
+      margin-right: 30px;
+    }
+
+    img {
+      width: 100%;
+      height: 100px;
+    }
+  }
+}
+
+.best-sales {
+  padding: 120px 0;
   &__header {
     text-align: center;
   }
@@ -65,26 +233,96 @@
     margin-bottom: 80px;
   }
 }
-.product {
-  padding: 30px 20px;
-  text-align: center;
+
+.product-sales {
+  $sales: &;
+
+  border: none;
+  padding: 35px 30px;
+  border-radius: 0;
+  transition: all ease .3s;
+
+  &:hover {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .1);
+
+    #{$sales}__info {
+      opacity: 0;
+    }
+
+    #{$sales}__add-cart {
+      transform: translateY(0);
+    }
+  }
+  .card-body {
+    padding: 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
   &__image {
-    margin-bottom: 30px;
-    padding: 0 30px;
+    width: 90px;
+    height: 90px;
+    margin-right: 30px;
+
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
+
   &__title {
+    font-size: 18px;
     margin-bottom: 30px;
+  }
+
+  &__content {
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__info {
+    display: flex;
+    transition: all ease .1s;
+  }
+
+  &__price {
+    margin-left: auto;
+    color: $cl-orange;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+  }
+
+  &__add-cart {
+    width: 100%;
+    transform: translateY(100%);
+    transition: all ease .1s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
     a {
-      font-size: 18px;
-      color: $cl-black;
+      display: block;
+      color: $cl-orange;
+      text-align: center;
     }
   }
-  &__price {
-    font-size: 18px;
-    color: $cl-orange;
+
+  &__icon {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}
+
+.rating {
+  color: $cl-orange;
+  i {
+    margin-right: 4px;
+    &:last-child {
+      color: $cl-gray;
+    }
   }
 }

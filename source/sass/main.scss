@@ -12,20 +12,12 @@
 
 @import 'base/global';
 @import 'base/colors';
-@import 'base/background-color';
 @import 'base/images';
 @import 'base/fonts';
 
 // 5. Components
 // -------------
-@import 'components/button';
-@import 'components/input';
-@import 'components/selects';
-@import 'components/checkboxes';
-@import 'components/radios';
-@import 'components/switcher';
-@import 'components/badge';
-@import 'base/typography';
+
 // 4. Layout
 // ---------
 @import 'layout/header';

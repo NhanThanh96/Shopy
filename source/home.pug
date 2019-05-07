@@ -69,7 +69,7 @@ block main
           | Arrivals
         p.new-arrivals__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
       .new-arrivals__inner
-        .row
+        .row.new-arrivals__product-list
           -
             var newArrivalsData = [
               {
@@ -114,23 +114,104 @@ block main
                   h5.product__title
                     a(href="#")= item.name
                   .product__price= item.price
-                  .product__summary
-                    .product__size
-                      span sizes : 
-                      span= item.size
-                    ul.list-inline.product__color
-                      each val, index in item.color
-                        li.list-inline-item
-                          .far.fa-circle.circle(
-                            class= "circle--#{val}"
-                          )
-                    ul.list-inline.product__action
+                .product__summary
+                  .product__size
+                    span sizes : 
+                    span= item.size
+                  ul.list-inline.product__color
+                    each val, index in item.color
                       li.list-inline-item
-                        a(href="#")
-                          i.fas.fa-share-alt
-                      li.list-inline-item
-                        a(href="#")
-                          i.fas.fa-shopping-cart
-                      li.list-inline-item
-                        a(href="#")
-                          i.far.fa-heart
+                        span.circle(
+                          class= `circle--${val}`
+                        )
+                  hr.product__devider
+                  ul.list-inline.product__action
+                    li.list-inline-item
+                      a.product__icon-link(href="#")
+                        i.fas.fa-share-alt
+                    li.list-inline-item
+                      a.product__icon-link(href="#")
+                        i.fas.fa-shopping-cart
+                    li.list-inline-item
+                      a.product__icon-link(href="#")
+                        i.far.fa-heart
+        .load-more
+          ul.list-inline
+            li.list-inline-item
+              span.circle(
+                class= `circle--sm circle--orange`
+              )
+            li.list-inline-item
+              span.circle(
+                class= `circle--sm circle--orange`
+              )
+            li.list-inline-item
+              span.circle(
+                class= `circle--sm circle--orange`
+              )
+  section.advertisment
+    .container
+      .advertisment__list
+        .advertisment__item
+          img(src="images/hot-deal.jpg", alt="hot deal")
+        .advertisment__item
+          img(src="images/advertisment.jpg", alt="advertisment")
+  section.best-sales
+    .container
+      .best-sales__header
+        h3.best-sales__heading
+          span.cl-orange New 
+          | Arrivals
+        p.best-sales__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
+      .best-sales__inner
+        .row
+          -
+            var bestSaleData = [
+              {
+                image: "images/product-sm1.png",
+                name: "Reebok Track Jacket",
+                price: "100$"
+              },
+              {
+                image: "images/product-sm1.png",
+                name: "Reebok Track Jacket",
+                price: "100$"
+              },
+              {
+                image: "images/product-sm1.png",
+                name: "Reebok Track Jacket",
+                price: "100$"
+              }
+            ]
+          each item in bestSaleData
+            .col-md-4
+              .card.product-sales
+                .product-sales__inner
+                  .product-sales__image
+                    a(href="#")
+                      img(src= item.image, alt="best sale")
+                  .product-sales__content
+                    h5.product-sales__title
+                      a(href="#")= item.name
+                    .product-sales__info
+                      .rating
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                      span.product-sales__price= item.price
+                    .product-sales__add-cart
+                      a(href="#")
+                        i.fas.fa-shopping-cart.product-sales__icon
+                        span add to cart
+  section.news-letter
+
+
+
+
+
+
+        
+            
+
+              
