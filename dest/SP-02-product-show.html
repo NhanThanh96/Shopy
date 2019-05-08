@@ -27,9 +27,10 @@
           </div>
           <div class="big-header">
             <div class="row">
-              <div class="col-md-2"><a class="navbar-brand" href="#"><img src="images/logoo.png" alt="shopy" /></a></div>
-              <div class="col-md-10">
-                <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="avbar-toggler-icon"></span></button>
+              <div class="col-lg-2 big-header__logo"><a class="navbar-brand" href="#"><img src="images/logoo.png" alt="shopy" /></a>
+                <button class="navbar-toggler d-md-block d-lg-none big-header__toggle-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              </div>
+              <div class="col-lg-10">
                 <nav class="navbar navbar-expand-lg">
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
@@ -69,7 +70,26 @@
           <div class="product-detail">
             <div class="row">
               <div class="col-md-5">
-                <h1>hello</h1>
+                <div class="carousel slide slideshow-gallery" id="slideshow-gallery" data-ride="carousel">
+                  <div class="carousel-outer">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div class="d-flex align-items-center justify-content-center"><img src="images/product1.png" alt="product detail image"></div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex align-items-center justify-content-center"><img src="images/product2.png" alt="product detail image"></div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex align-items-center justify-content-center"><img src="images/product3.png" alt="product detail image"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <ol class="carousel-indicators">
+                    <li class="slideshow-gallery__indicator active" data-target="#slideshow-gallery" data-slide-to="0"><img src="images/product1.png" alt="product detail image"></li>
+                    <li class="slideshow-gallery__indicator" data-target="#slideshow-gallery" data-slide-to="1"><img src="images/product2.png" alt="product detail image"></li>
+                    <li class="slideshow-gallery__indicator" data-target="#slideshow-gallery" data-slide-to="2"><img src="images/product3.png" alt="product detail image"></li>
+                  </ol>
+                </div>
               </div>
               <div class="col-md-7">
                 <h3 class="product-detail__title">full winter kit</h3>
@@ -222,8 +242,14 @@
                   <div class="news-letter__desc">join us now to get all news and special offers</div>
                 </div>
               </div>
-              <div class="col-12 col-sm-6">
-                <button class="button button--orange" type="button">join us</button>
+              <div class="col-12 col-md-6">
+                <form class="form-inline news-letter__search">
+                  <div class="news-letter__input-feild">
+                    <div class="news-letter__icon"><i class="far fa-envelope"></i></div>
+                    <input class="news-letter__input" type="email" placeholder="type your email here">
+                  </div>
+                  <button class="button button--orange" type="submit">join us</button>
+                </form>
               </div>
             </div>
           </div>
@@ -232,31 +258,31 @@
       <footer class="footer">
         <div class="container">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-12 col-md-4 footer__column">
               <div class="logo"><a href="#"><img src="images/logoo.png" alt="logo" /></a></div>
               <div class="copyright">shopy c 2015 . your copy right here</div>
             </div>
-            <div class="col-md-2">
+            <div class="col-6 col-md-2 footer__column">
               <ul class="info-list">
                 <li><a href="#">about us</a></li>
                 <li><a href="#">contact us</a></li>
                 <li><a href="#">support</a></li>
               </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-6 col-md-2 footer__column">
               <ul class="info-list">
                 <li><a href="#">our feed</a></li>
                 <li><a href="#">term and conditions</a></li>
                 <li><a href="#">our privacy</a></li>
               </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-6 col-md-2 footer__column">
               <ul class="info-list">
                 <li><a href="#">join us</a></li>
                 <li><a href="#">live support</a></li>
               </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-6 col-md-2 footer__column">
               <div class="payment-method">
                 <div class="payment-method__title">Payment Methods</div>
                 <ul class="list-inline payment-method__list">

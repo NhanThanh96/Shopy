@@ -1,0 +1,164 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Shopy Product Show')
+block main
+  section.products-content
+    .container
+      .row
+        .col-md-3
+          .categories
+            h4.categories__title Categories
+            ul
+              each item, index in ["Man", "Women", "Childrens", "Hot Deals"]
+                li
+                  a(href="#")= item
+          .price-filter
+            h4.price-filter__title Price Filter
+          .sizes-filter
+            h4.categories__title Size
+            ul
+              each val, index in ["Small", "Medium", "Large", "X Large"]
+                li
+                  a(href="#")= val
+          .brands-filter
+            ul
+              each val, index in ["Reebok", "Addias", "Nike", "Active"]
+                li
+                  a(href="#")= val
+        .col-md-9
+          .row
+            -
+              var newArrivalsData = [
+                {
+                  image: "images/product1.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                },
+                {
+                  image: "images/product2.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                },
+                {
+                  image: "images/product3.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                },
+                {
+                  image: "images/product3.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                },
+                {
+                  image: "images/product3.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                },
+                {
+                  image: "images/product3.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                },
+                {
+                  image: "images/product3.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                },
+                {
+                  image: "images/product3.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                },
+                {
+                  image: "images/product3.png",
+                  name: "Reebok Track Jacket",
+                  price: "100$",
+                  size: "s - m - xl",
+                  color: ["red", "black", "blue", "green"]
+                }
+              ]
+            each item in newArrivalsData
+              .col-12.col-md-6.col-lg-4
+                .card.product
+                  .product__image
+                    a(href="#")
+                      img.card-img-top(
+                      src= item.image
+                      alt="product new arrivals"
+                      )
+                  .card-body
+                    h5.product__title
+                      a(href="#")= item.name
+                    .product__price= item.price
+                  .product__summary
+                    h5.product__title
+                      a(href="#")= item.name
+                    .product__size
+                      span sizes : 
+                      span= item.size
+                    ul.list-inline.product__color
+                      each val, index in item.color
+                        li.list-inline-item
+                          span.circle(
+                            class= `circle--${val}`
+                          )
+                    hr.product__devider
+                    ul.list-inline.product__action
+                      li.list-inline-item
+                        a.product__icon-link(href="#")
+                          i.fas.fa-share-alt
+                      li.list-inline-item
+                        a.product__icon-link(href="#")
+                          i.fas.fa-shopping-cart
+                      li.list-inline-item
+                        a.product__icon-link(href="#")
+                          i.far.fa-heart
+          .load-more
+            ul.list-inline
+              li.list-inline-item
+                span.circle(
+                  class= `circle--sm circle--orange`
+                )
+              li.list-inline-item
+                span.circle(
+                  class= `circle--sm circle--orange`
+                )
+              li.list-inline-item
+                span.circle(
+                  class= `circle--sm circle--orange`
+                )
+  section.news-letter
+    .container
+      .news-letter__inner
+        .row.align-items-center
+          .col-12.col-md-6
+            .news-letter__content
+              h3.news-letter__title News letter
+              .news-letter__desc join us now to get all news and special offers
+          .col-12.col-md-6
+            form.form-inline.news-letter__search
+              .news-letter__input-feild
+                .news-letter__icon
+                  i.far.fa-envelope
+                input.news-letter__input(
+                  type="email"
+                  placeholder="type your email here"
+                )
+              button.button.button--orange(type="submit") join us

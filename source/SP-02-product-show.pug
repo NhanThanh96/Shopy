@@ -8,7 +8,52 @@ block main
       .product-detail
         .row
           .col-md-5
-            h1 hello
+            .carousel.slide.slideshow-gallery#slideshow-gallery(data-ride='carousel')
+              .carousel-outer
+                .carousel-inner
+                    .carousel-item.active
+                      .d-flex.align-items-center.justify-content-center
+                        img(
+                          src= "images/product1.png"
+                          alt= "product detail image"
+                        )
+                    .carousel-item
+                      .d-flex.align-items-center.justify-content-center
+                        img(
+                          src= "images/product2.png"
+                          alt= "product detail image"
+                        )
+                    .carousel-item
+                      .d-flex.align-items-center.justify-content-center
+                        img(
+                          src= "images/product3.png"
+                          alt= "product detail image"
+                        )
+              ol.carousel-indicators
+                li.slideshow-gallery__indicator.active(
+                  data-target='#slideshow-gallery'
+                  data-slide-to='0'
+                )
+                  img(
+                    src= "images/product1.png"
+                    alt= "product detail image"
+                  )
+                li.slideshow-gallery__indicator(
+                  data-target='#slideshow-gallery'
+                  data-slide-to='1'
+                )
+                  img(
+                    src= "images/product2.png"
+                    alt= "product detail image"
+                  )
+                li.slideshow-gallery__indicator(
+                  data-target='#slideshow-gallery'
+                  data-slide-to='2'
+                )
+                  img(
+                    src= "images/product3.png"
+                    alt= "product detail image"
+                  )
           .col-md-7
             h3.product-detail__title full winter kit
             .product-detail__subtitle Half Jacket + Skiny Trousers + Boot leather
@@ -127,6 +172,13 @@ block main
             .news-letter__content
               h3.news-letter__title News letter
               .news-letter__desc join us now to get all news and special offers
-          .col-12.col-sm-6
-            button.button.button--orange(type="button") join us
-
+          .col-12.col-md-6
+            form.form-inline.news-letter__search
+              .news-letter__input-feild
+                .news-letter__icon
+                  i.far.fa-envelope
+                input.news-letter__input(
+                  type="email"
+                  placeholder="type your email here"
+                )
+              button.button.button--orange(type="submit") join us

@@ -22,11 +22,10 @@ mixin header()
                 i(class= item)
       .big-header
         .row
-          .col-md-2
+          .col-lg-2.big-header__logo
             a.navbar-brand(href="#")
               img(src="images/logoo.png", alt="shopy")
-          .col-md-10
-            button.navbar-toggler.d-none(
+            button.navbar-toggler.d-md-block.d-lg-none.big-header__toggle-button(
               type="button"
               data-toggle="collapse"
               data-target="#navbarSupportedContent"
@@ -34,7 +33,8 @@ mixin header()
               aria-expanded="false"
               aria-label="Toggle navigation"
             )
-              span.avbar-toggler-icon
+              span.navbar-toggler-icon
+          .col-lg-10
             nav.navbar.navbar-expand-lg
               .collapse.navbar-collapse#navbarSupportedContent
                 ul.navbar-nav.mr-auto

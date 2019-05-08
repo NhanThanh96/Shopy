@@ -2,7 +2,11 @@
 // // Pages :: Home
 // // ======================================================
 
-.hero {
+.main-carousel {
+  .carousel-indicators {
+    margin-bottom: 30px;
+  }
+
   &__caption {
     position: absolute;
     top: 55%;
@@ -41,6 +45,16 @@
 
     i {
       margin-right: 8px;
+    }
+  }
+
+  .carousel-item {
+    img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+      height: auto;
+      width: 100%;
     }
   }
 }
@@ -88,13 +102,20 @@
 
     a {
       display: block;
+      width: 100%;
+      height: 100%;
     }
 
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       transition: transform ease .3s;
+      display: block;
+      object-fit: contain;
+    }
+
+    @include breakpoint-down(tablet) {
+      padding: 0 60px;
     }
   }
   .card-body {
@@ -136,7 +157,7 @@
   }
 
   &__devider {
-    margin: 30px 0;
+    margin: 30px 50px;
     border-color: $cl-gray;
   }
 
@@ -172,6 +193,12 @@
       }
     }
 
+    .card-body {
+      #{$product}__title {
+        opacity: 0;
+      }
+    }
+
     #{$product}__price {
       opacity: 0;
     }
@@ -199,9 +226,24 @@
 
 .advertisment-section {
   .banner {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    height: 98px;
+    margin-bottom: 20px;
+
     img {
       display: block;
       max-width: 100%;
+      width: 100%;
+      height: 100%;
+      border: 1px solid darken($cl-gray, 3%);
+    }
+
+    @include breakpoint-down(smallphone) {
+      flex-grow: initial;
+      flex-shrink: initial;
+      flex-basis: initial;
     }
   }
 }
@@ -231,6 +273,7 @@
   padding: 35px 30px;
   border-radius: 0;
   transition: all ease .3s;
+  margin-bottom: 20px;
 
   &:hover {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .1);
@@ -260,7 +303,7 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 
@@ -328,6 +371,10 @@
   &__content {
     display: flex;
     align-items: center;
+
+    @include breakpoint-down (phone) {
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -337,11 +384,61 @@
     color: $cl-orange;
     margin-bottom: 0;
     margin-right: 25px;
+    white-space: nowrap;
   }
 
   &__desc {
     color: $cl-black;
     font-style: italic;
   }
-}
 
+  &__search {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  &__input-feild {
+    position: relative;
+    margin-right: 20px;
+
+    @include breakpoint-down (phone) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 18px;
+    top: 32%;
+    left: 8px;
+    z-index: 2;
+    transform: translateY(0, -50%);
+    color: $cl-orange;
+  }
+
+  &__input {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+    height: 100%;
+    width: 300px;
+    padding: 15px 36px;
+    position: relative;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      font-style: italic;
+      font-size: 14px;
+      color: $cl-light-black;
+    }
+
+    @include breakpoint-down(tablet) {
+      width: auto;
+    }
+  }
+}

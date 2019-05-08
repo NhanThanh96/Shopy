@@ -15,6 +15,11 @@
         "url": "SP-02-product-show",
         "categories": "Product Show",
         "background": "#cd950c"
+      }, {
+        "title": "Products",
+        "url": "SP-03-products",
+        "categories": "Products",
+        "background": "#cd950c"
       }
     ]
   }

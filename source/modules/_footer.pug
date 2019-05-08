@@ -6,12 +6,12 @@ mixin footer()
   footer.footer
     .container
       .row
-        .col-sm-4
+        .col-12.col-md-4.footer__column
           .logo
             a(href="#")
               img(src="images/logoo.png", alt="logo")
           .copyright shopy c 2015 . your copy right here
-        .col-md-2
+        .col-6.col-md-2.footer__column
           ul.info-list
             li
               a(href="#") about us
@@ -19,7 +19,7 @@ mixin footer()
               a(href="#") contact us
             li
               a(href="#") support
-        .col-md-2
+        .col-6.col-md-2.footer__column
           ul.info-list
             li
               a(href="#") our feed
@@ -27,13 +27,13 @@ mixin footer()
               a(href="#") term and conditions
             li
               a(href="#") our privacy
-        .col-md-2
+        .col-6.col-md-2.footer__column
           ul.info-list
             li
               a(href="#") join us
             li
               a(href="#") live support
-        .col-md-2
+        .col-6.col-md-2.footer__column
           .payment-method
             .payment-method__title Payment Methods
             ul.list-inline.payment-method__list
@@ -43,4 +43,3 @@ mixin footer()
                     img(src=`images/${item}`, alt="payment method")
 
                 
-

@@ -3,19 +3,19 @@ extends modules/layout/_page-default
 block head
   +head('Shopy')
 block main 
-  section.hero
-    .carousel.slide#heroCarousel(data-ride="carousel")
+  section.main-carousel
+    .carousel.slide#mainCarousel(data-ride="carousel")
       ul.carousel-indicators
         li.active(
-          data-target="#heroCarousel"
+          data-target="#mainCarousel"
           data-slide-to="0"
         )
         li(
-          data-target="#heroCarousel"
+          data-target="#mainCarousel"
           data-slide-to="1"
         )
         li(
-          data-target="#heroCarousel"
+          data-target="#mainCarousel"
           data-slide-to="2"
         )
       .carousel-inner
@@ -24,13 +24,13 @@ block main
             src="images/banner.jpg"
             alt="Full winter kit"
           )
-          .hero__caption
-            h3.hero__title Full Winter Kit
-            p.hero__product Half Jacket + Skiny Trousers + Boot leather
-            p.hero__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
-            .hero__inner
+          .main-carousel__caption
+            h3.main-carousel__title Full Winter Kit 
+            p.main-carousel__product Half Jacket + Skiny Trousers + Boot leather
+            p.main-carousel__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry 
+            .main-carousel__inner
               span Price: 120$
-              a.hero__order(href="#")
+              a.main-carousel__order(href="#")
                 i.fas.fa-shopping-cart
                 | Order Now
         .carousel-item
@@ -38,13 +38,13 @@ block main
             src="images/banner.jpg"
             alt="Full winter kit"
           )
-          .hero__caption
-            h3.hero__title Full Summer Kit
-            p.hero__product Half Jacket + Skiny Trousers + Boot leather
-            p.hero__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
-            .hero__inner
+          .main-carousel__caption
+            h3.main-carousel__title Full Summer Kit
+            p.main-carousel__product Half Jacket + Skiny Trousers + Boot leather
+            p.main-carousel__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            .main-carousel__inner
               span Price: 120$
-              a.hero__order(href="#")
+              a.main-carousel__order(href="#")
                 i.fas.fa-shopping-cart
                 | Order Now
         .carousel-item
@@ -52,13 +52,13 @@ block main
             src="images/banner.jpg"
             alt="Full winter kit"
           )
-          .hero__caption
-            h3.hero__title Full Spring Kit
-            p.hero__product Half Jacket + Skiny Trousers + Boot leather
-            p.hero__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
-            .hero__inner
+          .main-carousel__caption
+            h3.main-carousel__title Full Spring Kit
+            p.main-carousel__product Half Jacket + Skiny Trousers + Boot leather 
+            p.main-carousel__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            .main-carousel__inner
               span Price: 120$
-              a.hero__order(href="#")
+              a.main-carousel__order(href="#")
                 i.fas.fa-shopping-cart
                 | Order Now
   section.new-arrivals
@@ -102,7 +102,7 @@ block main
               }
             ]
           each item in newArrivalsData
-            .col-md-3
+            .col-12.col-md-6.col-lg-3
               .card.product
                 .product__image
                   a(href="#")
@@ -115,6 +115,8 @@ block main
                     a(href="#")= item.name
                   .product__price= item.price
                 .product__summary
+                  h5.product__title
+                    a(href="#")= item.name
                   .product__size
                     span sizes : 
                     span= item.size
@@ -155,7 +157,7 @@ block main
         .col-12.col-md-6.banner
           img(src="images/hot-deal.jpg", alt="hot deal")
         .col-12.col-md-6.banner
-          img(src="images/hot-deal.jpg", alt="advertisment")
+          img(src="images/advertisment.jpg", alt="advertisment")
   section.best-sales
     .container
       .best-sales__header
@@ -203,7 +205,7 @@ block main
                     .product-sales__add-cart
                       a(href="#")
                         i.fas.fa-shopping-cart.product-sales__icon
-                        span add to cart
+                        span add to cart 
   section.news-letter
     .container
       .news-letter__inner
@@ -212,8 +214,16 @@ block main
             .news-letter__content
               h3.news-letter__title News letter
               .news-letter__desc join us now to get all news and special offers
-          .col-12.col-sm-6
-            button.button.button--orange(type="button") join us
+          .col-12.col-md-6
+            form.form-inline.news-letter__search
+              .news-letter__input-feild
+                .news-letter__icon
+                  i.far.fa-envelope
+                input.news-letter__input(
+                  type="email"
+                  placeholder="type your email here"
+                )
+              button.button.button--orange(type="submit") join us
 
 
 

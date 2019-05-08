@@ -59,13 +59,20 @@
   .navbar {
     padding: 0;
     .nav-item {
-      &:not(:last-child) {
-        margin-right: 40px;
-      }
       &.active .nav-link {
         color: $cl-orange;
       }
     }
+
+    .nav-item:not(:last-child) {
+      margin-right: 40px;
+
+      @include breakpoint-down(tablet) {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
+    }
+
     .nav-link {
       padding: 0;
       font-size: 16px;
@@ -78,6 +85,24 @@
   &__action {
     .list-inline {
       margin-bottom: 0;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint-down(tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__toggle-button {
+    color: rgba(0, 0, 0, .5);
+    border-color: rgba(0, 0, 0, .1);
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox='0%200%2030%2030'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20stroke='rgba(255,%20255,%20255,%200.5)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-miterlimit='10'%20d='M4%207h22M4%2015h22M4%2023h22'/%3E%3C/svg%3E");
     }
   }
 }
@@ -128,11 +153,12 @@
   &__amount {
     position: absolute;
     display: inline-block;
-    top: -4px;
+    top: -8px;
     right: 2px;
     font-size: $font-size-small;
     width: 18px;
     height: 18px;
+    line-height: 18px;
     background-color: $cl-black;
     border-radius: 50%;
     text-align: center;
