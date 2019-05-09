@@ -7,7 +7,7 @@ block main
     .container
       .product-detail
         .row
-          .col-md-5
+          .col-12.col-md-5
             .carousel.slide.slideshow-gallery#slideshow-gallery(data-ride='carousel')
               .carousel-outer
                 .carousel-inner
@@ -54,11 +54,11 @@ block main
                     src= "images/product3.png"
                     alt= "product detail image"
                   )
-          .col-md-7
+          .col-12.col-md-7
             h3.product-detail__title full winter kit
             .product-detail__subtitle Half Jacket + Skiny Trousers + Boot leather
             p.product-detail__desc 
-              | Lorem Ipsum is simply dummy text of the printing and typesetting industry
+              | Lorem Ipsum is simply dummy text of the printing and typesetting industry 
               <br> Lorem Ipsum is simply dummy text of the printing
               <br> and typesetting industry
             .product-detail__option
@@ -90,95 +90,43 @@ block main
                   a.product__icon-link(href="#")
                     i.far.fa-heart
               button.button.button--orange.button--border-radius Order Now
-  section.new-arrivals
-    .container
-      .new-arrivals__header
-        h3.new-arrivals__heading
-          span.cl-orange Related 
-          | Product
-        p.new-arrivals__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
-      .new-arrivals__inner
-        .row.new-arrivals__product-list
-          -
-            var newArrivalsData = [
-              {
-                image: "images/product3.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product1.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product2.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product3.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              }
-            ]
-          each item in newArrivalsData
-            .col-md-3
-              .card.product
-                .product__image
-                  a(href="#")
-                    img.card-img-top(
-                    src= item.image
-                    alt="product new arrivals"
-                    )
-                .card-body
-                  h5.product__title
-                    a(href="#")= item.name
-                  .product__price= item.price
-                .product__summary
-                  .product__size
-                    span sizes : 
-                    span= item.size
-                  ul.list-inline.product__color
-                    each val, index in item.color
-                      li.list-inline-item
-                        span.circle(
-                          class= `circle--${val}`
-                        )
-                  hr.product__devider
-                  ul.list-inline.product__action
-                    li.list-inline-item
-                      a.product__icon-link(href="#")
-                        i.fas.fa-share-alt
-                    li.list-inline-item
-                      a.product__icon-link(href="#")
-                        i.fas.fa-shopping-cart
-                    li.list-inline-item
-                      a.product__icon-link(href="#")
-                        i.far.fa-heart
-  section.news-letter
-    .container
-      .news-letter__inner
-        .row.align-items-center
-          .col-12.col-md-6
-            .news-letter__content
-              h3.news-letter__title News letter
-              .news-letter__desc join us now to get all news and special offers
-          .col-12.col-md-6
-            form.form-inline.news-letter__search
-              .news-letter__input-feild
-                .news-letter__icon
-                  i.far.fa-envelope
-                input.news-letter__input(
-                  type="email"
-                  placeholder="type your email here"
-                )
-              button.button.button--orange(type="submit") join us
+  -
+    var relatedProductData = [
+      {
+        image: "images/product3.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product1.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product2.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product3.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      }
+    ]
+  +previewProduct({
+    title: "Related",
+    subtitle: "Products",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+    data: relatedProductData
+  })
+  +news-letter()
+    
+  

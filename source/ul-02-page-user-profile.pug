@@ -126,50 +126,6 @@ block main
                   data-display="static"
                 )
                 .dropdown-arrow.dropdown-arrow-right
-                .dropdown-menu.dropdown-menu-right.dropdown-menu-md(x-placement="top-end")
-                  +group-input-radio-dropdown({
-                    name: 'dpFilter',
-                    id: 'dpToday',
-                    value: '0',
-                    date: 'Today',
-                    time: 'Mar 27'
-                  })
-                  +group-input-radio-dropdown({
-                    name: 'dpFilter',
-                    id: 'dpYesterday',
-                    value: '1',
-                    date: 'Yesterday',
-                    time: 'Mar 26'
-                  })
-                  +group-input-radio-dropdown({
-                    name: 'dpFilter',
-                    id: 'dpWeek',
-                    value: '2',
-                    date: 'This Week',
-                    time: 'Mar 21-27'
-                  })
-                  +group-input-radio-dropdown({
-                    name: 'dpFilter',
-                    id: 'dpMonth',
-                    value: '3',
-                    date: 'This Month',
-                    time: 'Mar 1-31',
-                    checked: true
-                  })
-                  +group-input-radio-dropdown({
-                    name: 'dpFilter',
-                    id: 'dpYear',
-                    value: '4',
-                    date: 'This Year',
-                    time: '2018'
-                  })
-                  +group-input-radio-dropdown({
-                    name: 'dpFilter',
-                    id: 'dpCustom',
-                    value: '5',
-                    date: 'Custom',
-                    flatpickr: true
-                  })
           .achievement__content
             .row
               .col-xl-8

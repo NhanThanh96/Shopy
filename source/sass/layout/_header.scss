@@ -7,13 +7,17 @@
   color: green;
 }
 .header {
-  padding-top: 25px;
   background-color: #fff;
 }
 .small-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid $cl-gray;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__contact {
     margin-bottom: 0;
     .list-inline-item {
@@ -51,6 +55,8 @@
 }
 .big-header {
   padding: 40px 0;
+  border-bottom: 1px solid $cl-gray;
+
   .navbar-brand {
     padding-bottom: 0;
     padding-top: 0;
@@ -100,9 +106,10 @@
   &__toggle-button {
     color: rgba(0, 0, 0, .5);
     border-color: rgba(0, 0, 0, .1);
+    padding: 4px 8px;
 
     .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20viewBox='0%200%2030%2030'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20stroke='rgba(255,%20255,%20255,%200.5)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-miterlimit='10'%20d='M4%207h22M4%2015h22M4%2023h22'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
     }
   }
 }
@@ -140,7 +147,7 @@
   }
 }
 .cart {
-  &__link {
+  &__button {
     position: relative;
     font-size: $font-size-large;
     display: inline-block;
@@ -148,6 +155,10 @@
     i {
       color: $cl-orange;
       font-size: $font-size-large;
+    }
+
+    &:after {
+      content: none;
     }
   }
   &__amount {

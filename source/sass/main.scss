@@ -5,6 +5,7 @@
 @import 'ionicons/css/ionicons';
 
 @import 'extentions/fontawesome/fontawesome';
+@import 'extentions/bootstrap-slider';
 
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
@@ -17,7 +18,9 @@
 
 // 5. Components
 // -------------
-
+@import 'components/radios';
+@import 'components/preview-product';
+@import 'components/news-letter';
 // 4. Layout
 // ---------
 @import 'layout/header';

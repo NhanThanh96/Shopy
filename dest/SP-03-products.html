@@ -12,20 +12,24 @@
   <body>
     <section class="shopy">
       <header class="header">
-        <div class="container">
-          <div class="small-header">
-            <ul class="list-inline small-header__contact">
-              <li class="list-inline-item"><span class="small-header__icon"><i class="far fa-envelope"></i></span><span class="small-header__text">info@shopy.com</span></li>
-              <li class="list-inline-item"><span class="small-header__icon"><i class="fas fa-phone-volume"></i></span><span class="small-header__text">453 - 5553 - 996</span></li>
-            </ul>
-            <ul class="list-inline small-header__social-network">
-              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-twitter"></i></a></li>
-              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-google-plus-g"></i></a></li>
-              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
+        <div class="small-header">
+          <div class="container">
+            <div class="small-header__inner">
+              <ul class="list-inline small-header__contact">
+                <li class="list-inline-item"><span class="small-header__icon"><i class="far fa-envelope"></i></span><span class="small-header__text">info@shopy.com</span></li>
+                <li class="list-inline-item"><span class="small-header__icon"><i class="fas fa-phone-volume"></i></span><span class="small-header__text">453 - 5553 - 996</span></li>
+              </ul>
+              <ul class="list-inline small-header__social-network">
+                <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
           </div>
-          <div class="big-header">
+        </div>
+        <div class="big-header">
+          <div class="container">
             <div class="row">
               <div class="col-lg-2 big-header__logo"><a class="navbar-brand" href="#"><img src="images/logoo.png" alt="shopy" /></a>
                 <button class="navbar-toggler d-md-block d-lg-none big-header__toggle-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -34,8 +38,8 @@
                 <nav class="navbar navbar-expand-lg">
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                      <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                      <li class="nav-item active"><a class="nav-link" href="home.html">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="SP-02-product-show.html">Products</a></li>
                       <li class="nav-item"><a class="nav-link" href="#">Hot Deals</a></li>
                       <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                       <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
@@ -54,7 +58,11 @@
                           </div>
                         </li>
                         <li class="list-inline-item">
-                          <div class="cart"><a class="cart__link" href="#"><i class="fas fa-shopping-cart"></i><span class="cart__amount">5</span></a></div>
+                          <div class="dropdown cart">
+                            <button class="btn dropdown-toggle cart__button" id="cardDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-cart"></i><span class="cart__amount">5</span></button>
+                            <div class="dropdown-arrow"></div>
+                            <div class="dropdown-menu dropdown-menu-right cart__dropdown" aria-labelledby="cardDropdownButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -68,38 +76,92 @@
       <section class="products-content">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-12 col-md-3">
               <div class="categories">
                 <h4 class="categories__title">Categories</h4>
-                <ul>
-                  <li><a href="#">Man</a></li>
-                  <li><a href="#">Women</a></li>
-                  <li><a href="#">Childrens</a></li>
-                  <li><a href="#">Hot Deals</a></li>
+                <ul class="categories__list">
+                  <li class="categories__item"><a href="#">Man</a></li>
+                  <li class="categories__item"><a href="#">Women</a></li>
+                  <li class="categories__item"><a href="#">Childrens</a></li>
+                  <li class="categories__item"><a href="#">Hot Deals</a></li>
                 </ul>
               </div>
               <div class="price-filter">
                 <h4 class="price-filter__title">Price Filter</h4>
+                <div class="price-filter__feild">
+                  <input class="js-price-range span2" type="text" data-slider-min="100" data-slider-max="1100" data-slider-step="5" value="475,700" data-value="475,700" data-slider-value="[250,450]">
+                </div>
+                <div class="price-filter__inner">
+                  <div class="price-filter__input-feild">
+                    <label for="lower-price">From</label>
+                    <input id="lower-price" type="text">
+                  </div>
+                  <div class="price-filter__input-feild">
+                    <label for="upper-price">To</label>
+                    <input id="upper-price" type="text">
+                  </div>
+                </div>
               </div>
               <div class="sizes-filter">
-                <h4 class="categories__title">Size</h4>
-                <ul>
-                  <li><a href="#">Small</a></li>
-                  <li><a href="#">Medium</a></li>
-                  <li><a href="#">Large</a></li>
-                  <li><a href="#">X Large</a></li>
+                <h4 class="sizes-filter__title">Size</h4>
+                <ul class="sizes-filter__list">
+                  <li class="sizes-filter__item">
+                    <div class="form-group input-radio-custom">
+                      <input class="input-radio" type="radio" name="sizeFilter" id="sizeSmallFilter" />
+                      <label for="sizeSmallFilter">Small</label>
+                    </div>
+                  </li>
+                  <li class="sizes-filter__item">
+                    <div class="form-group input-radio-custom">
+                      <input class="input-radio" type="radio" name="sizeFilter" id="sizeMediumFilter" />
+                      <label for="sizeMediumFilter">Medium</label>
+                    </div>
+                  </li>
+                  <li class="sizes-filter__item">
+                    <div class="form-group input-radio-custom">
+                      <input class="input-radio" type="radio" name="sizeFilter" id="sizeLargeFilter" />
+                      <label for="sizeLargeFilter">Large</label>
+                    </div>
+                  </li>
+                  <li class="sizes-filter__item">
+                    <div class="form-group input-radio-custom">
+                      <input class="input-radio" type="radio" name="sizeFilter" id="sizeXLargeFilter" />
+                      <label for="sizeXLargeFilter">X Large</label>
+                    </div>
+                  </li>
                 </ul>
               </div>
               <div class="brands-filter">
-                <ul>
-                  <li><a href="#">Reebok</a></li>
-                  <li><a href="#">Addias</a></li>
-                  <li><a href="#">Nike</a></li>
-                  <li><a href="#">Active</a></li>
+                <h4 class="brands-filter__title">Brand</h4>
+                <ul class="brands-filter__list">
+                  <li class="brands-filter__item">
+                    <div class="form-group input-radio-custom">
+                      <input class="input-radio" type="radio" name="brandFilter" id="brandReebok" />
+                      <label for="brandReebok">Reebok</label>
+                    </div>
+                  </li>
+                  <li class="brands-filter__item">
+                    <div class="form-group input-radio-custom">
+                      <input class="input-radio" type="radio" name="brandFilter" id="brandAddias" />
+                      <label for="brandAddias">Addias</label>
+                    </div>
+                  </li>
+                  <li class="brands-filter__item">
+                    <div class="form-group input-radio-custom">
+                      <input class="input-radio" type="radio" name="brandFilter" id="brandNike" />
+                      <label for="brandNike">Nike</label>
+                    </div>
+                  </li>
+                  <li class="brands-filter__item">
+                    <div class="form-group input-radio-custom">
+                      <input class="input-radio" type="radio" name="brandFilter" id="brandActive" />
+                      <label for="brandActive">Active</label>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-12 col-md-9">
               <div class="row">
                 <div class="col-12 col-md-6 col-lg-4">
                   <div class="card product">
@@ -345,7 +407,7 @@
               <div class="col-12 col-md-6">
                 <div class="news-letter__content">
                   <h3 class="news-letter__title">News letter</h3>
-                  <div class="news-letter__desc">join us now to get all news and special offers</div>
+                  <div class="news-letter__desc">join us now to get all news and special offers </div>
                 </div>
               </div>
               <div class="col-12 col-md-6">

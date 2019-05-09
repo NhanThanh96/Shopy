@@ -6,27 +6,99 @@ block main
   section.products-content
     .container
       .row
-        .col-md-3
+        .col-12.col-md-3
           .categories
             h4.categories__title Categories
-            ul
+            ul.categories__list
               each item, index in ["Man", "Women", "Childrens", "Hot Deals"]
-                li
+                li.categories__item
                   a(href="#")= item
           .price-filter
             h4.price-filter__title Price Filter
+            .price-filter__feild
+              input.js-price-range(
+                type="text"
+                class="span2"
+                data-slider-min="100"
+                data-slider-max="1100"
+                data-slider-step="5"
+                value="475,700" data-value="475,700"
+                data-slider-value="[250,450]"
+              )
+            .price-filter__inner
+              .price-filter__input-feild
+                label(for= "lower-price") From
+                input#lower-price(type="text")
+              .price-filter__input-feild
+                label(for= "upper-price") To
+                input#upper-price(type="text")
           .sizes-filter
-            h4.categories__title Size
-            ul
-              each val, index in ["Small", "Medium", "Large", "X Large"]
-                li
-                  a(href="#")= val
+            h4.sizes-filter__title Size
+            ul.sizes-filter__list
+              -
+                var sizeFilter = [
+                  {
+                    name: "sizeFilter",
+                    id: "sizeSmallFilter",
+                    label: "Small"
+                  },
+                  {
+                    name: "sizeFilter",
+                    id: "sizeMediumFilter",
+                    label: "Medium"
+                  },
+                  {
+                    name: "sizeFilter",
+                    id: "sizeLargeFilter",
+                    label: "Large"
+                  },
+                  {
+                    name: "sizeFilter",
+                    id: "sizeXLargeFilter",
+                    label: "X Large"
+                  }
+                ]
+              each item in sizeFilter
+                li.sizes-filter__item
+                  +group-input-radio({
+                    name: item.name,
+                    id: item.id,
+                    label: item.label
+                  })
           .brands-filter
-            ul
-              each val, index in ["Reebok", "Addias", "Nike", "Active"]
-                li
-                  a(href="#")= val
-        .col-md-9
+            h4.brands-filter__title Brand
+            ul.brands-filter__list
+              -
+                var brandFilter = [
+                  {
+                    name: "brandFilter",
+                    id: "brandReebok",
+                    label: "Reebok"
+                  },
+                  {
+                    name: "brandFilter",
+                    id: "brandAddias",
+                    label: "Addias"
+                  },
+                  {
+                    name: "brandFilter",
+                    id: "brandNike",
+                    label: "Nike"
+                  },
+                  {
+                    name: "brandFilter",
+                    id: "brandActive",
+                    label: "Active"
+                  }
+                ]
+              each item in brandFilter
+                li.brands-filter__item
+                  +group-input-radio({
+                    name: item.name,
+                    id: item.id,
+                    label: item.label
+                  })
+        .col-12.col-md-9
           .row
             -
               var newArrivalsData = [
@@ -151,7 +223,7 @@ block main
           .col-12.col-md-6
             .news-letter__content
               h3.news-letter__title News letter
-              .news-letter__desc join us now to get all news and special offers
+              .news-letter__desc join us now to get all news and special offers 
           .col-12.col-md-6
             form.form-inline.news-letter__search
               .news-letter__input-feild

@@ -40,6 +40,20 @@ button {
   }
 }
 
+.btn {
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+input {
+  &:focus,
+  &:active {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
 ul,
 ol {
   list-style: none;
@@ -100,5 +114,32 @@ ol {
 
   &--green {
     background-color: $cl-green;
+  }
+}
+
+.dropdown {
+  position: relative;
+
+  .dropdown-arrow {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 12px solid $cl-white;
+    margin-top: -5px;
+    margin-left: -10px;
+    pointer-events: none;
+    z-index: 1001;
+  }
+
+  &.show {
+    .dropdown-arrow {
+      display: block;
+    }
   }
 }

@@ -4,23 +4,25 @@
 
 mixin header()
   header.header
-    .container
-      .small-header
-        ul.list-inline.small-header__contact
-          li.list-inline-item
-            span.small-header__icon
-              i.far.fa-envelope
-            span.small-header__text info@shopy.com
-          li.list-inline-item
-            span.small-header__icon
-              i.fas.fa-phone-volume
-            span.small-header__text 453 - 5553 - 996
-        ul.list-inline.small-header__social-network
-          each item, index in ['fab fa-facebook-f', 'fab fa-twitter', 'fab fa-google-plus-g', 'fab fa-instagram']
+    .small-header
+      .container
+        .small-header__inner
+          ul.list-inline.small-header__contact
             li.list-inline-item
-              a.small-header__link(href="#")
-                i(class= item)
-      .big-header
+              span.small-header__icon
+                i.far.fa-envelope
+              span.small-header__text info@shopy.com
+            li.list-inline-item
+              span.small-header__icon
+                i.fas.fa-phone-volume
+              span.small-header__text 453 - 5553 - 996
+          ul.list-inline.small-header__social-network
+            each item, index in ['fab fa-facebook-f', 'fab fa-twitter', 'fab fa-google-plus-g', 'fab fa-instagram']
+              li.list-inline-item
+                a.small-header__link(href="#")
+                  i(class= item)
+    .big-header
+      .container
         .row
           .col-lg-2.big-header__logo
             a.navbar-brand(href="#")
@@ -42,29 +44,34 @@ mixin header()
                     var navData = [
                       {
                         name: 'Home',
+                        link: 'home.html',
                         active: true
                       },
                       {
-                        name: 'Products'
+                        name: 'Products',
+                        link: 'SP-02-product-show.html'
                       },
                       {
-                        name: 'Hot Deals'
+                        name: 'Hot Deals',
+                        link: '#'
                       },
                       {
-                        name: 'About'
+                        name: 'About',
+                        link: '#'
                       },
                       {
-                        name: 'Contact'
+                        name: 'Contact',
+                        link: '#'
                       }
                     ]
                   each item in navData
                     li.nav-item(class= item.active ? 'active' : null)
-                      a.nav-link(href="#")= item.name
+                      a.nav-link(href= item.link)= item.name
                 .big-header__action
                   ul.list-inline
                     li.list-inline-item
                       form.form-inline.my-2.my-lg-0.search
-                        input.form-control.mr-sm-2.d-none(
+                        input.form-control.mr-sm-2.d-none.search__input(
                           type="search"
                           placeholder="Search"
                           aria-label="Search"
@@ -86,7 +93,17 @@ mixin header()
                           a.dropdown-item(href="#") Profile
                           a.dropdown-item(href="#") Logout
                     li.list-inline-item
-                      .cart
-                        a.cart__link(href="#")
+                      .dropdown.cart
+                        button.btn.dropdown-toggle.cart__button#cardDropdownButton(
+                          type="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        )
                           i.fas.fa-shopping-cart
                           span.cart__amount 5
+                        .dropdown-arrow
+                        .dropdown-menu.dropdown-menu-right.cart__dropdown(aria-labelledby="cardDropdownButton")
+                          a.dropdown-item(href="#") Action
+                          a.dropdown-item(href="#") Another action
+                          a.dropdown-item(href="#") Something else here

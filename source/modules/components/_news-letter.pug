@@ -1,0 +1,22 @@
+//-------------------------------------------------------
+//- Components :: News Letter
+//-------------------------------------------------------
+mixin news-letter()
+  section.news-letter
+    .container
+      .news-letter__inner
+        .row.align-items-center
+          .col-12.col-md-6
+            .news-letter__content
+              h3.news-letter__title News letter
+              .news-letter__desc join us now to get all news and special offers
+          .col-12.col-md-6
+            form.form-inline.news-letter__search
+              .news-letter__input-feild
+                .news-letter__icon
+                  i.far.fa-envelope
+                input.news-letter__input(
+                  type="email"
+                  placeholder="type your email here"
+                )
+              button.button.button--orange(type="submit") join us

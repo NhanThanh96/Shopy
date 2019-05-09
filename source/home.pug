@@ -61,102 +61,63 @@ block main
               a.main-carousel__order(href="#")
                 i.fas.fa-shopping-cart
                 | Order Now
-  section.new-arrivals
-    .container
-      .new-arrivals__header
-        h3.new-arrivals__heading
-          span.cl-orange New 
-          | Arrivals
-        p.new-arrivals__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
-      .new-arrivals__inner
-        .row.new-arrivals__product-list
-          -
-            var newArrivalsData = [
-              {
-                image: "images/product1.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product2.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product3.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product3.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              }
-            ]
-          each item in newArrivalsData
-            .col-12.col-md-6.col-lg-3
-              .card.product
-                .product__image
-                  a(href="#")
-                    img.card-img-top(
-                    src= item.image
-                    alt="product new arrivals"
-                    )
-                .card-body
-                  h5.product__title
-                    a(href="#")= item.name
-                  .product__price= item.price
-                .product__summary
-                  h5.product__title
-                    a(href="#")= item.name
-                  .product__size
-                    span sizes : 
-                    span= item.size
-                  ul.list-inline.product__color
-                    each val, index in item.color
-                      li.list-inline-item
-                        span.circle(
-                          class= `circle--${val}`
-                        )
-                  hr.product__devider
-                  ul.list-inline.product__action
-                    li.list-inline-item
-                      a.product__icon-link(href="#")
-                        i.fas.fa-share-alt
-                    li.list-inline-item
-                      a.product__icon-link(href="#")
-                        i.fas.fa-shopping-cart
-                    li.list-inline-item
-                      a.product__icon-link(href="#")
-                        i.far.fa-heart
-        .load-more
-          ul.list-inline
-            li.list-inline-item
-              span.circle(
-                class= `circle--sm circle--orange`
-              )
-            li.list-inline-item
-              span.circle(
-                class= `circle--sm circle--orange`
-              )
-            li.list-inline-item
-              span.circle(
-                class= `circle--sm circle--orange`
-              )
+  -
+    var newArrivalsData = [
+      {
+        image: "images/product1.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product2.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product3.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product3.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      }
+    ]
+  +previewProduct({
+    title: "New",
+    subtitle: "Arrivals",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+    data: newArrivalsData
+  })
+    .load-more
+      ul.list-inline
+        li.list-inline-item
+          span.circle(
+            class= `circle--sm circle--orange`
+          )
+        li.list-inline-item
+          span.circle(
+            class= `circle--sm circle--orange`
+          )
+        li.list-inline-item
+          span.circle(
+            class= `circle--sm circle--orange`
+          )
   section.advertisment-section
     .container
       .row
-        .col-12.col-md-6.banner
+        .col-12.col-md-7.banner
           img(src="images/hot-deal.jpg", alt="hot deal")
-        .col-12.col-md-6.banner
+        .col-12.col-md-5.banner
           img(src="images/advertisment.jpg", alt="advertisment")
   section.best-sales
     .container
@@ -164,7 +125,7 @@ block main
         h3.best-sales__heading
           span.cl-orange New 
           | Arrivals
-        p.best-sales__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        p.best-sales__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry 
       .best-sales__inner
         .row
           -
@@ -206,24 +167,7 @@ block main
                       a(href="#")
                         i.fas.fa-shopping-cart.product-sales__icon
                         span add to cart 
-  section.news-letter
-    .container
-      .news-letter__inner
-        .row.align-items-center
-          .col-12.col-md-6
-            .news-letter__content
-              h3.news-letter__title News letter
-              .news-letter__desc join us now to get all news and special offers
-          .col-12.col-md-6
-            form.form-inline.news-letter__search
-              .news-letter__input-feild
-                .news-letter__icon
-                  i.far.fa-envelope
-                input.news-letter__input(
-                  type="email"
-                  placeholder="type your email here"
-                )
-              button.button.button--orange(type="submit") join us
+  +news-letter()
 
 
 

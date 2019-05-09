@@ -1,0 +1,28 @@
+// ======================================================
+// Components :: Preview Product
+// ======================================================
+
+.preview-product {
+  padding: 120px 0;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: $cl-black;
+  }
+
+  &__desc {
+    margin-bottom: 80px;
+  }
+
+  &__product-list {
+    margin-bottom: 45px;
+  }
+}

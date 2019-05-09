@@ -1,0 +1,86 @@
+// ======================================================
+// Components :: News Letter
+// ======================================================
+
+.news-letter {
+  margin-bottom: 120px;
+
+  &__inner {
+    background-color: $cl-white;
+    padding: 35px 40px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint-down (phone) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold + 100;
+    color: $cl-orange;
+    margin-bottom: 0;
+    margin-right: 25px;
+    white-space: nowrap;
+  }
+
+  &__desc {
+    color: $cl-black;
+    font-style: italic;
+  }
+
+  &__search {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  &__input-feild {
+    position: relative;
+    margin-right: 20px;
+
+    @include breakpoint-down (phone) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 18px;
+    top: 32%;
+    left: 8px;
+    z-index: 2;
+    transform: translateY(0, -50%);
+    color: $cl-orange;
+  }
+
+  &__input {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+    height: 100%;
+    width: 300px;
+    padding: 15px 36px;
+    position: relative;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      font-style: italic;
+      font-size: 14px;
+      color: $cl-light-black;
+    }
+
+    @include breakpoint-down(tablet) {
+      width: auto;
+    }
+  }
+}

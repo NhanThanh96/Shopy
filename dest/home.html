@@ -12,20 +12,24 @@
   <body>
     <section class="shopy">
       <header class="header">
-        <div class="container">
-          <div class="small-header">
-            <ul class="list-inline small-header__contact">
-              <li class="list-inline-item"><span class="small-header__icon"><i class="far fa-envelope"></i></span><span class="small-header__text">info@shopy.com</span></li>
-              <li class="list-inline-item"><span class="small-header__icon"><i class="fas fa-phone-volume"></i></span><span class="small-header__text">453 - 5553 - 996</span></li>
-            </ul>
-            <ul class="list-inline small-header__social-network">
-              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-twitter"></i></a></li>
-              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-google-plus-g"></i></a></li>
-              <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
+        <div class="small-header">
+          <div class="container">
+            <div class="small-header__inner">
+              <ul class="list-inline small-header__contact">
+                <li class="list-inline-item"><span class="small-header__icon"><i class="far fa-envelope"></i></span><span class="small-header__text">info@shopy.com</span></li>
+                <li class="list-inline-item"><span class="small-header__icon"><i class="fas fa-phone-volume"></i></span><span class="small-header__text">453 - 5553 - 996</span></li>
+              </ul>
+              <ul class="list-inline small-header__social-network">
+                <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li class="list-inline-item"><a class="small-header__link" href="#"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
           </div>
-          <div class="big-header">
+        </div>
+        <div class="big-header">
+          <div class="container">
             <div class="row">
               <div class="col-lg-2 big-header__logo"><a class="navbar-brand" href="#"><img src="images/logoo.png" alt="shopy" /></a>
                 <button class="navbar-toggler d-md-block d-lg-none big-header__toggle-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -34,8 +38,8 @@
                 <nav class="navbar navbar-expand-lg">
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                      <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+                      <li class="nav-item active"><a class="nav-link" href="home.html">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="SP-02-product-show.html">Products</a></li>
                       <li class="nav-item"><a class="nav-link" href="#">Hot Deals</a></li>
                       <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                       <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
@@ -44,7 +48,7 @@
                       <ul class="list-inline">
                         <li class="list-inline-item">
                           <form class="form-inline my-2 my-lg-0 search">
-                            <input class="form-control mr-sm-2 d-none" type="search" placeholder="Search" aria-label="Search" />
+                            <input class="form-control mr-sm-2 d-none search__input" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn search__button" type="submit"><i class="fas fa-search"></i></button>
                           </form>
                         </li>
@@ -54,7 +58,11 @@
                           </div>
                         </li>
                         <li class="list-inline-item">
-                          <div class="cart"><a class="cart__link" href="#"><i class="fas fa-shopping-cart"></i><span class="cart__amount">5</span></a></div>
+                          <div class="dropdown cart">
+                            <button class="btn dropdown-toggle cart__button" id="cardDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-cart"></i><span class="cart__amount">5</span></button>
+                            <div class="dropdown-arrow"></div>
+                            <div class="dropdown-menu dropdown-menu-right cart__dropdown" aria-labelledby="cardDropdownButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -100,17 +108,17 @@
           </div>
         </div>
       </section>
-      <section class="new-arrivals">
+      <section class="preview-product">
         <div class="container">
-          <div class="new-arrivals__header">
-            <h3 class="new-arrivals__heading"><span class="cl-orange">New </span>Arrivals</h3>
-            <p class="new-arrivals__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+          <div class="preview-product__header">
+            <h3 class="preview-product__heading"><span class="cl-orange">New</span> Arrivals</h3>
+            <p class="preview-product__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
           </div>
-          <div class="new-arrivals__inner">
-            <div class="row new-arrivals__product-list">
+          <div class="preview-product__inner">
+            <div class="row preview-product__product-list">
               <div class="col-12 col-md-6 col-lg-3">
                 <div class="card product">
-                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product1.png" alt="product new arrivals"></a></div>
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product1.png" alt="product new arrivals" /></a></div>
                   <div class="card-body">
                     <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
                     <div class="product__price">100$</div>
@@ -124,7 +132,7 @@
                       <li class="list-inline-item"><span class="circle circle--blue"></span></li>
                       <li class="list-inline-item"><span class="circle circle--green"></span></li>
                     </ul>
-                    <hr class="product__devider">
+                    <hr class="product__devider" />
                     <ul class="list-inline product__action">
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -135,7 +143,7 @@
               </div>
               <div class="col-12 col-md-6 col-lg-3">
                 <div class="card product">
-                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product2.png" alt="product new arrivals"></a></div>
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product2.png" alt="product new arrivals" /></a></div>
                   <div class="card-body">
                     <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
                     <div class="product__price">100$</div>
@@ -149,7 +157,7 @@
                       <li class="list-inline-item"><span class="circle circle--blue"></span></li>
                       <li class="list-inline-item"><span class="circle circle--green"></span></li>
                     </ul>
-                    <hr class="product__devider">
+                    <hr class="product__devider" />
                     <ul class="list-inline product__action">
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -160,7 +168,7 @@
               </div>
               <div class="col-12 col-md-6 col-lg-3">
                 <div class="card product">
-                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals"></a></div>
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals" /></a></div>
                   <div class="card-body">
                     <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
                     <div class="product__price">100$</div>
@@ -174,7 +182,7 @@
                       <li class="list-inline-item"><span class="circle circle--blue"></span></li>
                       <li class="list-inline-item"><span class="circle circle--green"></span></li>
                     </ul>
-                    <hr class="product__devider">
+                    <hr class="product__devider" />
                     <ul class="list-inline product__action">
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -185,7 +193,7 @@
               </div>
               <div class="col-12 col-md-6 col-lg-3">
                 <div class="card product">
-                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals"></a></div>
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals" /></a></div>
                   <div class="card-body">
                     <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
                     <div class="product__price">100$</div>
@@ -199,7 +207,7 @@
                       <li class="list-inline-item"><span class="circle circle--blue"></span></li>
                       <li class="list-inline-item"><span class="circle circle--green"></span></li>
                     </ul>
-                    <hr class="product__devider">
+                    <hr class="product__devider" />
                     <ul class="list-inline product__action">
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
                       <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
@@ -222,8 +230,8 @@
       <section class="advertisment-section">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-md-6 banner"><img src="images/hot-deal.jpg" alt="hot deal"></div>
-            <div class="col-12 col-md-6 banner"><img src="images/advertisment.jpg" alt="advertisment"></div>
+            <div class="col-12 col-md-7 banner"><img src="images/hot-deal.jpg" alt="hot deal"></div>
+            <div class="col-12 col-md-5 banner"><img src="images/advertisment.jpg" alt="advertisment"></div>
           </div>
         </div>
       </section>
@@ -231,7 +239,7 @@
         <div class="container">
           <div class="best-sales__header">
             <h3 class="best-sales__heading"><span class="cl-orange">New </span>Arrivals</h3>
-            <p class="best-sales__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            <p class="best-sales__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
           </div>
           <div class="best-sales__inner">
             <div class="row">
@@ -295,7 +303,7 @@
                 <form class="form-inline news-letter__search">
                   <div class="news-letter__input-feild">
                     <div class="news-letter__icon"><i class="far fa-envelope"></i></div>
-                    <input class="news-letter__input" type="email" placeholder="type your email here">
+                    <input class="news-letter__input" type="email" placeholder="type your email here" />
                   </div>
                   <button class="button button--orange" type="submit">join us</button>
                 </form>

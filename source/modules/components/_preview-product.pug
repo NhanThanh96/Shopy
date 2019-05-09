@@ -1,0 +1,82 @@
+//-------------------------------------------------------
+//- Components :: Product by Category
+//-------------------------------------------------------
+
+mixin previewProduct({title, subtitle, desc, data})
+  section.preview-product
+    .container
+      .preview-product__header
+        h3.preview-product__heading
+          span.cl-orange= title
+          |  #{subtitle}
+        p.preview-product__desc= desc
+      .preview-product__inner
+        .row.preview-product__product-list
+          -
+            var newArrivalsData = [
+              {
+                image: "images/product1.png",
+                name: "Reebok Track Jacket",
+                price: "100$",
+                size: "s - m - xl",
+                color: ["red", "black", "blue", "green"]
+              },
+              {
+                image: "images/product2.png",
+                name: "Reebok Track Jacket",
+                price: "100$",
+                size: "s - m - xl",
+                color: ["red", "black", "blue", "green"]
+              },
+              {
+                image: "images/product3.png",
+                name: "Reebok Track Jacket",
+                price: "100$",
+                size: "s - m - xl",
+                color: ["red", "black", "blue", "green"]
+              },
+              {
+                image: "images/product3.png",
+                name: "Reebok Track Jacket",
+                price: "100$",
+                size: "s - m - xl",
+                color: ["red", "black", "blue", "green"]
+              }
+            ]
+          each item in data
+            .col-12.col-md-6.col-lg-3
+              .card.product
+                .product__image
+                  a(href="#")
+                    img.card-img-top(
+                    src= item.image
+                    alt="product new arrivals"
+                    )
+                .card-body
+                  h5.product__title
+                    a(href="#")= item.name
+                  .product__price= item.price
+                .product__summary
+                  h5.product__title
+                    a(href="#")= item.name
+                  .product__size
+                    span sizes : 
+                    span= item.size
+                  ul.list-inline.product__color
+                    each val, index in item.color
+                      li.list-inline-item
+                        span.circle(
+                          class= `circle--${val}`
+                        )
+                  hr.product__devider
+                  ul.list-inline.product__action
+                    li.list-inline-item
+                      a.product__icon-link(href="#")
+                        i.fas.fa-share-alt
+                    li.list-inline-item
+                      a.product__icon-link(href="#")
+                        i.fas.fa-shopping-cart
+                    li.list-inline-item
+                      a.product__icon-link(href="#")
+                        i.far.fa-heart
+        block
