@@ -25,7 +25,7 @@ a {
   &:hover,
   &:focus,
   &:active {
-    color: $cl-orange;
+    color: inherit;
     outline: 0;
     box-shadow: none;
     text-decoration: none;
@@ -71,11 +71,13 @@ ol {
   padding: 15px 25px;
   font-size: $font-size-base;
   color: $cl-white;
-  border: 0;
+  border: 1px solid transparent;
   transition: color ease .3s;
 
   &:hover {
-    color: $cl-black;
+    border: 1px solid $cl-orange;
+    background-color: $cl-white;
+    color: $cl-orange;
   }
 
   &--orange {

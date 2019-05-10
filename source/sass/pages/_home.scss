@@ -19,8 +19,8 @@
       top: 45%;
     }
 
-    @include breakpoint-down('phone') {
-      left: 10%;
+    @include breakpoint-down('smallphone') {
+      display: none;
     }
   }
 
@@ -125,10 +125,6 @@
       transition: transform ease .3s;
       display: block;
       object-fit: contain;
-    }
-
-    @include breakpoint-down(tablet) {
-      padding: 0 60px;
     }
   }
   .card-body {
@@ -317,6 +313,10 @@
   &__title {
     font-size: 18px;
     margin-bottom: 30px;
+
+    &:hover {
+      color: $cl-orange;
+    }
   }
 
   &__content {
@@ -327,10 +327,14 @@
   &__info {
     display: flex;
     transition: all ease .3s;
+    justify-content: space-between;
+
+    @include breakpoint-down('phone') {
+      flex-wrap: wrap;
+    }
   }
 
   &__price {
-    margin-left: auto;
     color: $cl-orange;
     font-size: $font-size-base;
     font-weight: $font-weight-bold;
@@ -359,6 +363,7 @@
 
 .rating {
   color: $cl-orange;
+  white-space: nowrap;
   i {
     margin-right: 4px;
     &:last-child {

@@ -6,10 +6,16 @@
 
 @import 'extentions/fontawesome/fontawesome';
 @import 'extentions/bootstrap-slider';
+@import 'extentions/perfect-scrollbar';
+@import 'extentions/slick-carousel/slick';
+@import 'extentions/slick-carousel/slick-theme';
 
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 @import 'abstracts/functions';
+
+// Custom
+@import 'extentions/slick-carousel/slick-custom';
 
 @import 'base/global';
 @import 'base/colors';
@@ -24,7 +30,6 @@
 // 4. Layout
 // ---------
 @import 'layout/header';
-@import 'layout/sidebar';
 @import 'layout/footer';
 
 // 6. Pages

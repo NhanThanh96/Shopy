@@ -38,7 +38,7 @@ mixin footer()
             .payment-method__title Payment Methods
             ul.list-inline.payment-method__list
               each item, index in ["amex.jpg", "card.jpg", "visa.jpg", "paypent.jpg", "cash.jpg"]
-                li.list-inline-item
+                li.list-inline-item.payment-method__item
                   a(href="#")
                     img(src=`images/${item}`, alt="payment method")
 

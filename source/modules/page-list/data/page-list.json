@@ -1,11 +1,6 @@
 {
   "pageList": {
     "data": [{
-        "title": "Style Guides",
-        "url": "styleguides",
-        "categories": "N/A",
-        "background": "gray"
-      }, {
         "title": "Home",
         "url": "home",
         "categories": "Home",

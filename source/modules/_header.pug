@@ -70,14 +70,12 @@ mixin header()
                 .big-header__action
                   ul.list-inline
                     li.list-inline-item
-                      form.form-inline.my-2.my-lg-0.search
-                        input.form-control.mr-sm-2.d-none.search__input(
+                      form.search(action="#")
+                        input.form-control.search__input(
                           type="search"
                           placeholder="Search"
                           aria-label="Search"
                         )
-                        button.btn.search__button(type="submit")
-                          i.fas.fa-search
                     li.list-inline-item
                       .dropdown.show.profile
                         a.btn.dropdown-toggle.profile__button(
@@ -89,7 +87,7 @@ mixin header()
                           aria-expanded="false"
                         )
                           i.far.fa-user
-                        .dropdown-menu.profile__dropdown-menu(aria-labelledby="profile")
+                        .dropdown-menu.dropdown-menu-right.profile__dropdown-menu(aria-labelledby="profile")
                           a.dropdown-item(href="#") Profile
                           a.dropdown-item(href="#") Logout
                     li.list-inline-item
@@ -102,8 +100,58 @@ mixin header()
                         )
                           i.fas.fa-shopping-cart
                           span.cart__amount 5
-                        .dropdown-arrow
                         .dropdown-menu.dropdown-menu-right.cart__dropdown(aria-labelledby="cardDropdownButton")
-                          a.dropdown-item(href="#") Action
-                          a.dropdown-item(href="#") Another action
-                          a.dropdown-item(href="#") Something else here
+                          ul.list-group.list-group-flush.cart__dropdown-list.js-cart-dropdown-scrollbar
+                            -
+                              var selectedProductList = [
+                                {
+                                  image: "images/product1.png",
+                                  name: "Reebok Track Jacket",
+                                  quantity: "2",
+                                  price: "120$"
+                                },
+                                {
+                                  image: "images/product2.png",
+                                  name: "Reebok Track Jacket Jacket Jacket Jacket",
+                                  quantity: "2",
+                                  price: "120$"
+                                },
+                                {
+                                  image: "images/product3.png",
+                                  name: "Reebok Track Jacket",
+                                  quantity: "2",
+                                  price: "120$"
+                                },
+                                {
+                                  image: "images/product1.png",
+                                  name: "Reebok Track Jacket",
+                                  quantity: "2",
+                                  price: "120$"
+                                },
+                                {
+                                  image: "images/product2.png",
+                                  name: "Reebok Track Jacket",
+                                  quantity: "2",
+                                  price: "120$"
+                                },
+                                {
+                                  image: "images/product3.png",
+                                  name: "Reebok Track Jacket",
+                                  quantity: "2",
+                                  price: "120$"
+                                }
+                              ]
+                            each item in selectedProductList
+                              li.list-group-item.selected-product
+                                a.selected-product__link(href="#")
+                                  .selected-product__image
+                                    img(src= item.image, alt="Selected product")
+                                  .selected-product__body
+                                    h5.selected-product__name= item.name
+                                    .selected-product__info
+                                      .selected-product__quantity Quantity: 
+                                        span= item.quantity
+                                      .selected-product__price Price: 
+                                        span= item.price
+                          .dropdown-footer
+                            a(href="#") View Cart

@@ -90,28 +90,63 @@ block main
         price: "100$",
         size: "s - m - xl",
         color: ["red", "black", "blue", "green"]
-      }
+      },
+      {
+        image: "images/product1.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product1.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product2.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product3.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product2.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product1.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product3.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
     ]
   +previewProduct({
-    title: "New",
-    subtitle: "Arrivals",
+    pretitle: "New",
+    aftertitle: "Arrivals",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
     data: newArrivalsData
-  })
-    .load-more
-      ul.list-inline
-        li.list-inline-item
-          span.circle(
-            class= `circle--sm circle--orange`
-          )
-        li.list-inline-item
-          span.circle(
-            class= `circle--sm circle--orange`
-          )
-        li.list-inline-item
-          span.circle(
-            class= `circle--sm circle--orange`
-          )
+  })(class="js-new-product-carousel")
   section.advertisment-section
     .container
       .row
@@ -122,10 +157,10 @@ block main
   section.best-sales
     .container
       .best-sales__header
-        h3.best-sales__heading
-          span.cl-orange New 
-          | Arrivals
-        p.best-sales__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry 
+        h2.best-sales__heading
+          span.cl-orange Best  
+          | Sales
+        p.best-sales__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
       .best-sales__inner
         .row
           -
@@ -166,7 +201,7 @@ block main
                     .product-sales__add-cart
                       a(href="#")
                         i.fas.fa-shopping-cart.product-sales__icon
-                        span add to cart 
+                        span add to cart  
   +news-letter()
 
 

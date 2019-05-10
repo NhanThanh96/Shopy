@@ -14,6 +14,14 @@
     display: flex;
     align-items: center;
 
+    @include breakpoint-down (desktop) {
+      align-items: flex-start;
+    }
+
+    @include breakpoint-down (tablet) {
+      flex-wrap: wrap;
+    }
+
     @include breakpoint-down (phone) {
       margin-bottom: 20px;
     }
@@ -27,6 +35,10 @@
     margin-bottom: 0;
     margin-right: 25px;
     white-space: nowrap;
+
+    @include breakpoint-down (tablet) {
+      margin-bottom: 10px;
+    }
   }
 
   &__desc {

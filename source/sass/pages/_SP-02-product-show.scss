@@ -16,6 +16,12 @@
     position: relative;
   }
 
+  &__carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .carousel-indicators {
     margin: 50px 0 0;
     position: static;
@@ -75,6 +81,10 @@
     line-height: 1;
     color: $cl-orange;
     margin-bottom: 30px;
+
+    @include breakpoint-down(tablet) {
+      font-size: 40px;
+    }
   }
 
   &__subtitle {
@@ -95,6 +105,10 @@
     margin: 42px 0;
     border-top: 1px solid $cl-gray;
     border-bottom: 1px solid $cl-gray;
+
+    @include breakpoint-down(tablet) {
+      flex-wrap: wrap;
+    }
   }
 
   &__size-choose {
@@ -102,17 +116,33 @@
     color: $cl-black;
   }
 
+  &__size-choose:first-of-type {
+    @include breakpoint-down(tablet) {
+      margin-bottom: 10px;
+    }
+
+    @include breakpoint-down(phone) {
+      margin-bottom: 0;
+    }
+  }
+
   &__sizes {
     margin-left: 20px;
   }
 
   &__size {
+    transition: color ease .3s;
+
     &:not(:first-of-type) {
       &:before {
         content: '-';
         margin: 0 8px;
         color: $cl-light-black;
       }
+    }
+
+    &:hover {
+      color: $cl-orange;
     }
   }
 

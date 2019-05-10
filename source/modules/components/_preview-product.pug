@@ -2,47 +2,16 @@
 //- Components :: Product by Category
 //-------------------------------------------------------
 
-mixin previewProduct({title, subtitle, desc, data})
+mixin previewProduct({pretitle, aftertitle, desc, data})
   section.preview-product
     .container
       .preview-product__header
-        h3.preview-product__heading
-          span.cl-orange= title
-          |  #{subtitle}
+        h2.preview-product__heading
+          span.cl-orange= pretitle
+          |  #{aftertitle}
         p.preview-product__desc= desc
       .preview-product__inner
-        .row.preview-product__product-list
-          -
-            var newArrivalsData = [
-              {
-                image: "images/product1.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product2.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product3.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              },
-              {
-                image: "images/product3.png",
-                name: "Reebok Track Jacket",
-                price: "100$",
-                size: "s - m - xl",
-                color: ["red", "black", "blue", "green"]
-              }
-            ]
+        .row.preview-product__product-list&attributes(attributes)
           each item in data
             .col-12.col-md-6.col-lg-3
               .card.product

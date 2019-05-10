@@ -47,21 +47,83 @@
                     <div class="big-header__action">
                       <ul class="list-inline">
                         <li class="list-inline-item">
-                          <form class="form-inline my-2 my-lg-0 search">
-                            <input class="form-control mr-sm-2 d-none" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn search__button" type="submit"><i class="fas fa-search"></i></button>
+                          <form class="search" action="#">
+                            <input class="form-control search__input" type="search" placeholder="Search" aria-label="Search" />
                           </form>
                         </li>
                         <li class="list-inline-item">
                           <div class="dropdown show profile"><a class="btn dropdown-toggle profile__button" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i></a>
-                            <div class="dropdown-menu profile__dropdown-menu" aria-labelledby="profile"><a class="dropdown-item" href="#">Profile</a><a class="dropdown-item" href="#">Logout</a></div>
+                            <div class="dropdown-menu dropdown-menu-right profile__dropdown-menu" aria-labelledby="profile"><a class="dropdown-item" href="#">Profile</a><a class="dropdown-item" href="#">Logout</a></div>
                           </div>
                         </li>
                         <li class="list-inline-item">
                           <div class="dropdown cart">
                             <button class="btn dropdown-toggle cart__button" id="cardDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-cart"></i><span class="cart__amount">5</span></button>
-                            <div class="dropdown-arrow"></div>
-                            <div class="dropdown-menu dropdown-menu-right cart__dropdown" aria-labelledby="cardDropdownButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
+                            <div class="dropdown-menu dropdown-menu-right cart__dropdown" aria-labelledby="cardDropdownButton">
+                              <ul class="list-group list-group-flush cart__dropdown-list js-cart-dropdown-scrollbar">
+                                <li class="list-group-item selected-product"><a class="selected-product__link" href="#">
+                                    <div class="selected-product__image"><img src="images/product1.png" alt="Selected product" /></div>
+                                    <div class="selected-product__body">
+                                      <h5 class="selected-product__name">Reebok Track Jacket</h5>
+                                      <div class="selected-product__info">
+                                        <div class="selected-product__quantity">Quantity: <span>2</span></div>
+                                        <div class="selected-product__price">Price: <span>120$</span></div>
+                                      </div>
+                                    </div>
+                                  </a></li>
+                                <li class="list-group-item selected-product"><a class="selected-product__link" href="#">
+                                    <div class="selected-product__image"><img src="images/product2.png" alt="Selected product" /></div>
+                                    <div class="selected-product__body">
+                                      <h5 class="selected-product__name">Reebok Track Jacket Jacket Jacket Jacket</h5>
+                                      <div class="selected-product__info">
+                                        <div class="selected-product__quantity">Quantity: <span>2</span></div>
+                                        <div class="selected-product__price">Price: <span>120$</span></div>
+                                      </div>
+                                    </div>
+                                  </a></li>
+                                <li class="list-group-item selected-product"><a class="selected-product__link" href="#">
+                                    <div class="selected-product__image"><img src="images/product3.png" alt="Selected product" /></div>
+                                    <div class="selected-product__body">
+                                      <h5 class="selected-product__name">Reebok Track Jacket</h5>
+                                      <div class="selected-product__info">
+                                        <div class="selected-product__quantity">Quantity: <span>2</span></div>
+                                        <div class="selected-product__price">Price: <span>120$</span></div>
+                                      </div>
+                                    </div>
+                                  </a></li>
+                                <li class="list-group-item selected-product"><a class="selected-product__link" href="#">
+                                    <div class="selected-product__image"><img src="images/product1.png" alt="Selected product" /></div>
+                                    <div class="selected-product__body">
+                                      <h5 class="selected-product__name">Reebok Track Jacket</h5>
+                                      <div class="selected-product__info">
+                                        <div class="selected-product__quantity">Quantity: <span>2</span></div>
+                                        <div class="selected-product__price">Price: <span>120$</span></div>
+                                      </div>
+                                    </div>
+                                  </a></li>
+                                <li class="list-group-item selected-product"><a class="selected-product__link" href="#">
+                                    <div class="selected-product__image"><img src="images/product2.png" alt="Selected product" /></div>
+                                    <div class="selected-product__body">
+                                      <h5 class="selected-product__name">Reebok Track Jacket</h5>
+                                      <div class="selected-product__info">
+                                        <div class="selected-product__quantity">Quantity: <span>2</span></div>
+                                        <div class="selected-product__price">Price: <span>120$</span></div>
+                                      </div>
+                                    </div>
+                                  </a></li>
+                                <li class="list-group-item selected-product"><a class="selected-product__link" href="#">
+                                    <div class="selected-product__image"><img src="images/product3.png" alt="Selected product" /></div>
+                                    <div class="selected-product__body">
+                                      <h5 class="selected-product__name">Reebok Track Jacket</h5>
+                                      <div class="selected-product__info">
+                                        <div class="selected-product__quantity">Quantity: <span>2</span></div>
+                                        <div class="selected-product__price">Price: <span>120$</span></div>
+                                      </div>
+                                    </div>
+                                  </a></li>
+                              </ul>
+                              <div class="dropdown-footer"><a href="#">View Cart</a></div>
+                            </div>
                           </div>
                         </li>
                       </ul>
@@ -82,18 +144,18 @@
                   <div class="carousel-outer">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <div class="d-flex align-items-center justify-content-center"><img src="images/product1.png" alt="product detail image"></div>
+                        <div class="slideshow-gallery__carousel-item"><img src="images/product-detail1.png" alt="product detail image"></div>
                       </div>
                       <div class="carousel-item">
-                        <div class="d-flex align-items-center justify-content-center"><img src="images/product2.png" alt="product detail image"></div>
+                        <div class="slideshow-gallery__carousel-item"><img src="images/product2.png" alt="product detail image"></div>
                       </div>
                       <div class="carousel-item">
-                        <div class="d-flex align-items-center justify-content-center"><img src="images/product3.png" alt="product detail image"></div>
+                        <div class="slideshow-gallery__carousel-item"><img src="images/product3.png" alt="product detail image"></div>
                       </div>
                     </div>
                   </div>
                   <ol class="carousel-indicators">
-                    <li class="slideshow-gallery__indicator active" data-target="#slideshow-gallery" data-slide-to="0"><img src="images/product1.png" alt="product detail image"></li>
+                    <li class="slideshow-gallery__indicator active" data-target="#slideshow-gallery" data-slide-to="0"><img src="images/product-detail1.png" alt="product detail image"></li>
                     <li class="slideshow-gallery__indicator" data-target="#slideshow-gallery" data-slide-to="1"><img src="images/product2.png" alt="product detail image"></li>
                     <li class="slideshow-gallery__indicator" data-target="#slideshow-gallery" data-slide-to="2"><img src="images/product3.png" alt="product detail image"></li>
                   </ol>
@@ -101,9 +163,9 @@
               </div>
               <div class="col-12 col-md-7">
                 <h3 class="product-detail__title">full winter kit</h3>
-                <div class="product-detail__subtitle">Half Jacket + Skiny Trousers + Boot leather</div>
+                <p class="product-detail__subtitle">Half Jacket + Skiny Trousers + Boot leather</p>
                 <p class="product-detail__desc">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry <br> Lorem Ipsum is simply dummy text of the printing
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry<br> Lorem Ipsum is simply dummy text of the printing
                   <br> and typesetting industry
                 </p>
                 <div class="product-detail__option">
@@ -113,9 +175,9 @@
                   </div>
                   <div class="product-detail__quantity-choose"><span>Choose Quantity</span>
                     <div class="quantity">
-                      <button class="quantity__button">+</button>
+                      <button class="quantity__button js-quantity-increase">+</button>
                       <input class="quantity__input" type="text" min="1" value="3">
-                      <button class="quantity__button">-</button>
+                      <button class="quantity__button js-quantity-decrease">-</button>
                     </div>
                   </div>
                 </div>
@@ -125,7 +187,7 @@
                     <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
                     <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
                   </ul>
-                  <button class="button button--orange button--border-radius">Order Now</button>
+                  <button class="button button--orange button--border-radius">Order Now </button>
                 </div>
               </div>
             </div>
@@ -135,11 +197,11 @@
       <section class="preview-product">
         <div class="container">
           <div class="preview-product__header">
-            <h3 class="preview-product__heading"><span class="cl-orange">Related</span> Products</h3>
+            <h2 class="preview-product__heading"><span class="cl-orange">Related</span> Products</h2>
             <p class="preview-product__desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
           </div>
           <div class="preview-product__inner">
-            <div class="row preview-product__product-list">
+            <div class="row preview-product__product-list js-related-product-carousel">
               <div class="col-12 col-md-6 col-lg-3">
                 <div class="card product">
                   <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals" /></a></div>
@@ -240,6 +302,156 @@
                   </div>
                 </div>
               </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals" /></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                  </div>
+                  <div class="product__summary">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                    <ul class="list-inline product__color">
+                      <li class="list-inline-item"><span class="circle circle--red"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--black"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--blue"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--green"></span></li>
+                    </ul>
+                    <hr class="product__devider" />
+                    <ul class="list-inline product__action">
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product2.png" alt="product new arrivals" /></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                  </div>
+                  <div class="product__summary">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                    <ul class="list-inline product__color">
+                      <li class="list-inline-item"><span class="circle circle--red"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--black"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--blue"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--green"></span></li>
+                    </ul>
+                    <hr class="product__devider" />
+                    <ul class="list-inline product__action">
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product1.png" alt="product new arrivals" /></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                  </div>
+                  <div class="product__summary">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                    <ul class="list-inline product__color">
+                      <li class="list-inline-item"><span class="circle circle--red"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--black"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--blue"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--green"></span></li>
+                    </ul>
+                    <hr class="product__devider" />
+                    <ul class="list-inline product__action">
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product2.png" alt="product new arrivals" /></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                  </div>
+                  <div class="product__summary">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                    <ul class="list-inline product__color">
+                      <li class="list-inline-item"><span class="circle circle--red"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--black"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--blue"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--green"></span></li>
+                    </ul>
+                    <hr class="product__devider" />
+                    <ul class="list-inline product__action">
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product3.png" alt="product new arrivals" /></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                  </div>
+                  <div class="product__summary">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                    <ul class="list-inline product__color">
+                      <li class="list-inline-item"><span class="circle circle--red"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--black"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--blue"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--green"></span></li>
+                    </ul>
+                    <hr class="product__devider" />
+                    <ul class="list-inline product__action">
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card product">
+                  <div class="product__image"><a href="#"><img class="card-img-top" src="images/product1.png" alt="product new arrivals" /></a></div>
+                  <div class="card-body">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__price">100$</div>
+                  </div>
+                  <div class="product__summary">
+                    <h5 class="product__title"><a href="#">Reebok Track Jacket</a></h5>
+                    <div class="product__size"><span>sizes : </span><span>s - m - xl</span></div>
+                    <ul class="list-inline product__color">
+                      <li class="list-inline-item"><span class="circle circle--red"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--black"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--blue"></span></li>
+                      <li class="list-inline-item"><span class="circle circle--green"></span></li>
+                    </ul>
+                    <hr class="product__devider" />
+                    <ul class="list-inline product__action">
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-share-alt"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                      <li class="list-inline-item"><a class="product__icon-link" href="#"><i class="far fa-heart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -298,11 +510,11 @@
               <div class="payment-method">
                 <div class="payment-method__title">Payment Methods</div>
                 <ul class="list-inline payment-method__list">
-                  <li class="list-inline-item"><a href="#"><img src="images/amex.jpg" alt="payment method" /></a></li>
-                  <li class="list-inline-item"><a href="#"><img src="images/card.jpg" alt="payment method" /></a></li>
-                  <li class="list-inline-item"><a href="#"><img src="images/visa.jpg" alt="payment method" /></a></li>
-                  <li class="list-inline-item"><a href="#"><img src="images/paypent.jpg" alt="payment method" /></a></li>
-                  <li class="list-inline-item"><a href="#"><img src="images/cash.jpg" alt="payment method" /></a></li>
+                  <li class="list-inline-item payment-method__item"><a href="#"><img src="images/amex.jpg" alt="payment method" /></a></li>
+                  <li class="list-inline-item payment-method__item"><a href="#"><img src="images/card.jpg" alt="payment method" /></a></li>
+                  <li class="list-inline-item payment-method__item"><a href="#"><img src="images/visa.jpg" alt="payment method" /></a></li>
+                  <li class="list-inline-item payment-method__item"><a href="#"><img src="images/paypent.jpg" alt="payment method" /></a></li>
+                  <li class="list-inline-item payment-method__item"><a href="#"><img src="images/cash.jpg" alt="payment method" /></a></li>
                 </ul>
               </div>
             </div>

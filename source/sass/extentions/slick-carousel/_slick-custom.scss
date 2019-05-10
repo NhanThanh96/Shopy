@@ -1,0 +1,34 @@
+/* stylelint-disable */
+.slick-dots {
+  height: 60px;
+  line-height: 60px;
+  background-color: #fff;
+  bottom: -90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+  width: calc(100% - 30px);
+
+  li {
+    width: 13px;
+    margin: 0;
+
+    button {
+      &:before {
+        font-size: 30px;
+        color: $cl-orange;
+        opacity: .4;
+      }
+    }
+
+    &.slick-active {
+      button:before {
+        font-size: 30px;
+        color: $cl-orange;
+        opacity: 1;
+      }
+    }
+  }
+}
+/* stylelint-enable */

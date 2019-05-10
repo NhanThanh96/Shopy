@@ -21,6 +21,7 @@
   .info-list {
     li {
       pointer-events: none;
+      padding-left: 14px;
 
       &:before {
         content: '\2022';
@@ -68,5 +69,9 @@
         margin-right: 2px;
       }
     }
+  }
+
+  &__item {
+    margin-bottom: 6px;
   }
 }

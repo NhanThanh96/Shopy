@@ -7,4 +7,5 @@
 //=require pace-js/pace.min.js
 //=require flatpickr/dist/flatpickr.min.js
 //=require bootstrap-slider/dist/bootstrap-slider.min.js
+//=require slick-carousel/slick/slick.min.js
 //=require _custom.js

@@ -12,19 +12,19 @@ block main
               .carousel-outer
                 .carousel-inner
                     .carousel-item.active
-                      .d-flex.align-items-center.justify-content-center
+                      .slideshow-gallery__carousel-item
                         img(
-                          src= "images/product1.png"
+                          src= "images/product-detail1.png"
                           alt= "product detail image"
                         )
                     .carousel-item
-                      .d-flex.align-items-center.justify-content-center
+                      .slideshow-gallery__carousel-item
                         img(
                           src= "images/product2.png"
                           alt= "product detail image"
                         )
                     .carousel-item
-                      .d-flex.align-items-center.justify-content-center
+                      .slideshow-gallery__carousel-item
                         img(
                           src= "images/product3.png"
                           alt= "product detail image"
@@ -35,7 +35,7 @@ block main
                   data-slide-to='0'
                 )
                   img(
-                    src= "images/product1.png"
+                    src= "images/product-detail1.png"
                     alt= "product detail image"
                   )
                 li.slideshow-gallery__indicator(
@@ -56,9 +56,9 @@ block main
                   )
           .col-12.col-md-7
             h3.product-detail__title full winter kit
-            .product-detail__subtitle Half Jacket + Skiny Trousers + Boot leather
+            p.product-detail__subtitle Half Jacket + Skiny Trousers + Boot leather
             p.product-detail__desc 
-              | Lorem Ipsum is simply dummy text of the printing and typesetting industry 
+              | Lorem Ipsum is simply dummy text of the printing and typesetting industry
               <br> Lorem Ipsum is simply dummy text of the printing
               <br> and typesetting industry
             .product-detail__option
@@ -70,13 +70,13 @@ block main
               .product-detail__quantity-choose
                 span Choose Quantity
                 .quantity
-                  button.quantity__button +
+                  button.quantity__button.js-quantity-increase +
                   input.quantity__input(
                     type="text"
                     min= "1"
                     value= "3"
                     )
-                  button.quantity__button -
+                  button.quantity__button.js-quantity-decrease -
             .product-detail__inner
               span.product-detail__price Price : 120$
               ul.list-inline.product-detail__action
@@ -89,7 +89,7 @@ block main
                 li.list-inline-item
                   a.product__icon-link(href="#")
                     i.far.fa-heart
-              button.button.button--orange.button--border-radius Order Now
+              button.button.button--orange.button--border-radius Order Now 
   -
     var relatedProductData = [
       {
@@ -119,14 +119,56 @@ block main
         price: "100$",
         size: "s - m - xl",
         color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product3.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product2.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product1.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product2.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product3.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
+      },
+      {
+        image: "images/product1.png",
+        name: "Reebok Track Jacket",
+        price: "100$",
+        size: "s - m - xl",
+        color: ["red", "black", "blue", "green"]
       }
     ]
   +previewProduct({
-    title: "Related",
-    subtitle: "Products",
+    pretitle: "Related",
+    aftertitle: "Products",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
     data: relatedProductData
-  })
+  }).js-related-product-carousel
   +news-letter()
     
   

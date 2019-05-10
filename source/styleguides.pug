@@ -60,34 +60,6 @@ block main
       {
         id: 'colors',
         title: 'Colors',
-      },
-      {
-        id: 'typography',
-        title: 'Typography'
-      },
-      {
-        id: 'buttons',
-        title: 'Buttons'
-      },
-      {
-        id: 'input',
-        title: 'Input',
-      },
-      {
-        id: 'selects',
-        title: 'Selects'
-      },
-      {
-        id: 'checkboxes',
-        title: 'Checkboxes',
-      },
-      {
-        id: 'radios',
-        title: 'Radios',
-      },
-      {
-        id: 'switcher',
-        title: 'Switcher',
       }
     ];
   .container-fluid.pl-4.pr-4
@@ -126,20 +98,6 @@ block main
               case val.id
                 when 'colors'
                   include styleguides/_colors
-                when 'typography'
-                  include styleguides/_typography
-                when 'buttons'
-                  include styleguides/_buttons
-                when 'input'
-                  include styleguides/_input
-                when 'selects'
-                  include styleguides/_selects
-                when 'checkboxes'
-                  include styleguides/_checkboxes
-                when 'radios'
-                  include styleguides/_radios
-                when 'switcher'
-                  include styleguides/_switcher
                 default
                   - throw new Error('"val.id" must be in "components" variable')
 
