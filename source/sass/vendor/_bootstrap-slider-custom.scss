@@ -1,0 +1,18 @@
+// ======================================================
+// Vendor :: Bootstrap slider custom
+// ======================================================
+.tooltip {
+  &.in {
+    opacity: 1;
+  }
+
+  &-min {
+    display: block;
+    opacity: 1;
+  }
+
+  &-max {
+    display: block;
+    opacity: 1;
+  }
+}

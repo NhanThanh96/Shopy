@@ -18,21 +18,17 @@ $(document).ready(function() {
   // decrease/increase quantity product
 
   $('.js-quantity-increase').on('click', function(){
-    var input = $(this).parent().find('input');
-    var oldInput = $(this).parent().find('input').val();
-    var oldValue = parseInt(oldInput);
-    input.val(oldValue + 1);
+    var currentVal = parseInt($(this).next('input').val());
+
+    $(this).next("input").val(currentVal + 1);
   });
+
   $('.js-quantity-decrease').on('click', function(){
-    var input = $(this).parent().find('input');
-    var minInput = input.attr('min');
-    var minValue = parseInt(minInput);
-    var oldInput = $(this).parent().find('input').val();
-    var oldValue = parseInt(oldInput)
-    if(oldValue > minValue){
-      input.val(oldValue - 1);
-    }
+    var currentVal = parseInt($(this).prev('input').val());
+
+    if(currentVal >= 1) $(this).prev("input").val(currentVal - 1);
   });
+
   // make slide carousel
   $('.js-new-product-carousel').slick({
     dots: true,

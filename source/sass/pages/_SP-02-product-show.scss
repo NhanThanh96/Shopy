@@ -23,19 +23,19 @@
   }
 
   .carousel-indicators {
+    display: flex;
     margin: 50px 0 0;
     position: static;
     text-align: left;
     white-space: nowrap;
     width: 100%;
-    display: flex;
 
     #{$slideshow}__indicator {
+      display: flex;
       background-color: $cl-gray;
       border-radius: 0;
       height: auto;
       flex: 1;
-      display: flex;
       justify-content: center;
       align-items: center;
       opacity: 1;
@@ -59,8 +59,8 @@
       }
 
       &.active:before {
-        position: absolute;
         content: '';
+        position: absolute;
         width: 100%;
         height: 100%;
         top: 0;
@@ -83,7 +83,7 @@
     margin-bottom: 30px;
 
     @include breakpoint-down(tablet) {
-      font-size: 40px;
+      font-size: $font-size-large + 32;
     }
   }
 
@@ -97,7 +97,7 @@
     margin-bottom: 0;
   }
 
-  &__option {
+  &__option-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -111,18 +111,22 @@
     }
   }
 
-  &__size-choose {
+  &__option {
     display: flex;
-    color: $cl-black;
-  }
+    align-items: center;
 
-  &__size-choose:first-of-type {
-    @include breakpoint-down(tablet) {
-      margin-bottom: 10px;
+    &:first-of-type {
+      @include breakpoint-down(tablet) {
+        margin-bottom: 10px;
+      }
+
+      @include breakpoint-down(phone) {
+        margin-bottom: 0;
+      }
     }
 
-    @include breakpoint-down(phone) {
-      margin-bottom: 0;
+    .quantity {
+      margin-left: 16px;
     }
   }
 
@@ -131,7 +135,7 @@
   }
 
   &__size {
-    transition: color ease .3s;
+    transition: all ease .3s;
 
     &:not(:first-of-type) {
       &:before {
@@ -143,15 +147,6 @@
 
     &:hover {
       color: $cl-orange;
-    }
-  }
-
-  &__quantity-choose {
-    display: flex;
-    align-items: center;
-
-    .quantity {
-      margin-left: 16px;
     }
   }
 
@@ -176,15 +171,15 @@
 
 .quantity {
   &__button {
-    border: none;
+    border: 0;
     background-color: transparent;
-    font-size: 18px;
+    font-size: $font-size-large;
     width: 25px;
     height: 25px;
   }
 
   &__input {
-    border: none;
+    border: 0;
     width: 25px;
     height: 25px;
     text-align: center;

@@ -2,19 +2,21 @@ extends modules/layout/_page-default
 
 block head
   +head('Shopy Product Show')
+block header
+  +header('Products')
 block main
   section.products-content
     .container
       .row
         .col-12.col-md-3
           .categories
-            h4.categories__title Categories
+            h3.categories__title Categories
             ul.categories__list
               each item, index in ["Man", "Women", "Childrens", "Hot Deals"]
                 li.categories__item
                   a(href="#")= item
           .price-filter
-            h4.price-filter__title Price Filter
+            h3.price-filter__title Price Filter
             .price-filter__feild
               input.js-price-range(
                 type="text"
@@ -22,18 +24,19 @@ block main
                 data-slider-min="100"
                 data-slider-max="1100"
                 data-slider-step="5"
-                value="475,700" data-value="475,700"
+                value="475,700"
+                data-value="475,700"
                 data-slider-value="[250,450]"
               )
             .price-filter__inner
               .price-filter__input-feild
-                label(for= "lower-price") From
+                label(for="lower-price") From
                 input#lower-price(type="text")
               .price-filter__input-feild
-                label(for= "upper-price") To
+                label(for="upper-price") To
                 input#upper-price(type="text")
           .sizes-filter
-            h4.sizes-filter__title Size
+            h3.sizes-filter__title Size
             ul.sizes-filter__list
               -
                 var sizeFilter = [
@@ -66,28 +69,28 @@ block main
                     label: item.label
                   })
           .brands-filter
-            h4.brands-filter__title Brand
+            h3.brands-filter__title Brand
             ul.brands-filter__list
               -
                 var brandFilter = [
                   {
-                    name: "brandFilter",
                     id: "brandReebok",
+                    name: "brandFilter",
                     label: "Reebok"
                   },
                   {
-                    name: "brandFilter",
                     id: "brandAddias",
+                    name: "brandFilter",
                     label: "Addias"
                   },
                   {
-                    name: "brandFilter",
                     id: "brandNike",
+                    name: "brandFilter",
                     label: "Nike"
                   },
                   {
-                    name: "brandFilter",
                     id: "brandActive",
+                    name: "brandFilter",
                     label: "Active"
                   }
                 ]
@@ -257,8 +260,8 @@ block main
                   .product__image
                     a(href="#")
                       img.card-img-top(
-                      src= item.image
-                      alt="product new arrivals"
+                        src= item.image
+                        alt="product new arrivals"
                       )
                   .card-body
                     h5.product__title
@@ -287,21 +290,4 @@ block main
                       li.list-inline-item
                         a.product__icon-link(href="#")
                           i.far.fa-heart
-  section.news-letter
-    .container
-      .news-letter__inner
-        .row.align-items-center
-          .col-12.col-md-6
-            .news-letter__content
-              h3.news-letter__title News letter 
-              .news-letter__desc join us now to get all news and special offers 
-          .col-12.col-md-6
-            form.form-inline.news-letter__search
-              .news-letter__input-feild
-                .news-letter__icon
-                  i.far.fa-envelope
-                input.news-letter__input(
-                  type="email"
-                  placeholder="type your email here"
-                )
-              button.button.button--orange(type="submit") join us 
+  +news-letter()

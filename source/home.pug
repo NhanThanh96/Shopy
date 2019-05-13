@@ -2,65 +2,36 @@ extends modules/layout/_page-default
 
 block head
   +head('Shopy')
+block header
+  +header('Home')
 block main 
   section.main-carousel
     .carousel.slide#mainCarousel(data-ride="carousel")
       ul.carousel-indicators
-        li.active(
-          data-target="#mainCarousel"
-          data-slide-to="0"
-        )
-        li(
-          data-target="#mainCarousel"
-          data-slide-to="1"
-        )
-        li(
-          data-target="#mainCarousel"
-          data-slide-to="2"
-        )
+        - for (var i = 0; i < 3; i++) {
+          li(
+            class= i === 0 && 'active'
+            data-target="#mainCarousel"
+            data-slide-to= i
+          )
+        - }
       .carousel-inner
-        .carousel-item.active
-          img(
-            src="images/banner.jpg"
-            alt="Full winter kit"
-          )
-          .main-carousel__caption
-            h3.main-carousel__title Full Winter Kit 
-            p.main-carousel__product Half Jacket + Skiny Trousers + Boot leather
-            p.main-carousel__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry 
-            .main-carousel__inner
-              span Price: 120$
-              a.main-carousel__order(href="#")
-                i.fas.fa-shopping-cart
-                | Order Now
-        .carousel-item
-          img(
-            src="images/banner.jpg"
-            alt="Full winter kit"
-          )
-          .main-carousel__caption
-            h3.main-carousel__title Full Summer Kit
-            p.main-carousel__product Half Jacket + Skiny Trousers + Boot leather
-            p.main-carousel__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
-            .main-carousel__inner
-              span Price: 120$
-              a.main-carousel__order(href="#")
-                i.fas.fa-shopping-cart
-                | Order Now
-        .carousel-item
-          img(
-            src="images/banner.jpg"
-            alt="Full winter kit"
-          )
-          .main-carousel__caption
-            h3.main-carousel__title Full Spring Kit
-            p.main-carousel__product Half Jacket + Skiny Trousers + Boot leather 
-            p.main-carousel__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry
-            .main-carousel__inner
-              span Price: 120$
-              a.main-carousel__order(href="#")
-                i.fas.fa-shopping-cart
-                | Order Now
+        - for (var i = 0; i < 3; i++) {
+          .carousel-item(class= i === 0 && 'active')
+            img(
+              src="images/banner.jpg"
+              alt="Full winter kit"
+            )
+            .main-carousel__caption
+              h3.main-carousel__title=  i !== 0 ? 'Full Winter Kit' : 'Full Summer Kit'
+              p.main-carousel__product Half Jacket + Skiny Trousers + Boot leather
+              p.main-carousel__desc Lorem Ipsum is simply dummy text of the printing and typesetting industry 
+              .main-carousel__inner
+                span Price: 120$
+                a.main-carousel__order(href="#")
+                  i.fas.fa-shopping-cart
+                  | Order Now
+        - }
   -
     var newArrivalsData = [
       {

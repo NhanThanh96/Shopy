@@ -2,7 +2,7 @@
 //- Modules :: Header
 //-------------------------------------------------------
 
-mixin header()
+mixin header(current)
   header.header
     .small-header
       .container
@@ -49,7 +49,7 @@ mixin header()
                       },
                       {
                         name: 'Products',
-                        link: 'SP-02-product-show.html'
+                        link: 'SP-03-products.html'
                       },
                       {
                         name: 'Hot Deals',
@@ -65,7 +65,7 @@ mixin header()
                       }
                     ]
                   each item in navData
-                    li.nav-item(class= item.active ? 'active' : null)
+                    li.nav-item(class= (item.name == current) && 'active')
                       a.nav-link(href= item.link)= item.name
                 .big-header__action
                   ul.list-inline

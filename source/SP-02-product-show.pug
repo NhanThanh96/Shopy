@@ -2,6 +2,8 @@ extends modules/layout/_page-default
 
 block head
   +head('Shopy Product Show')
+block header
+  +header('Products')
 block main
   section.product-show
     .container
@@ -58,16 +60,14 @@ block main
             h3.product-detail__title full winter kit
             p.product-detail__subtitle Half Jacket + Skiny Trousers + Boot leather
             p.product-detail__desc 
-              | Lorem Ipsum is simply dummy text of the printing and typesetting industry
-              <br> Lorem Ipsum is simply dummy text of the printing
-              <br> and typesetting industry
-            .product-detail__option
-              .product-detail__size-choose
+              | Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            .product-detail__option-list
+              .product-detail__option
                 span Choose Size
                 .product-detail__sizes
                   each item, index in ["X", "M", "L", "XL"]
                     a.product-detail__size(href="#")= item
-              .product-detail__quantity-choose
+              .product-detail__option
                 span Choose Quantity
                 .quantity
                   button.quantity__button.js-quantity-increase +
@@ -89,7 +89,7 @@ block main
                 li.list-inline-item
                   a.product__icon-link(href="#")
                     i.far.fa-heart
-              button.button.button--orange.button--border-radius Order Now 
+              button.button.button--orange.button--rounded Order Now 
   -
     var relatedProductData = [
       {

@@ -12,7 +12,7 @@
   margin-bottom: 30px;
 
   &__title {
-    font-size: 18px;
+    font-size: $font-size-large;
     color: $cl-orange;
     margin-bottom: 40px;
   }
@@ -20,6 +20,12 @@
   &__item {
     &:not(:last-of-type) {
       margin-bottom: 40px;
+    }
+
+    a {
+      &:hover {
+        color: $cl-orange;
+      }
     }
   }
 }
@@ -30,7 +36,7 @@
   margin-bottom: 30px;
 
   &__title {
-    font-size: 18px;
+    font-size: $font-size-large;
     color: $cl-orange;
     margin-bottom: 40px;
   }
@@ -76,7 +82,7 @@
   margin-bottom: 30px;
 
   &__title {
-    font-size: 18px;
+    font-size: $font-size-large;
     color: $cl-orange;
     margin-bottom: 40px;
   }
@@ -94,7 +100,7 @@
   margin-bottom: 30px;
 
   &__title {
-    font-size: 18px;
+    font-size: $font-size-large;
     color: $cl-orange;
     margin-bottom: 40px;
   }
